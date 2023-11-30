@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.mauro-uno{
+    background-color: #f8f9fa;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+
+}
+
+.mauro-dos{
+    background-color: #293964;
+    height: 150px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.mauro-cuatro{
+    background-color: rgb(24, 160, 0);
+    color: white;
+}
+
+.mauro-cinco{
+    background-color: aquamarine;
+    color: white;
+}
+
+.botones-ida{
+    margin: 4px;
+}
+
+.boton-ida{
+    border-radius: 20px;
+    background-color: #92F69C;
+    border: solid 1px rgb(100, 100, 100);
+    color: black;
+    margin: 5px;
+}

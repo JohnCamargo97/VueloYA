@@ -1,56 +1,30 @@
-{% load static %}
+{% extends "index.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="https://boxicons.com/css/boxicons.min.css">
+{% block titulo %} Home {% endblock %}
 
-    <title>VueloYA</title>
-</head>
-<body>
-    
+{% block contenido %} 
+
+
+<div class="container-fluid mauro-uno">
+  <div class="container mauro-dos">
+
+
     <div class="container">
-
-        <div class="navbar">
-            <div class="navbar-brand">
-                <span class="logo">Logo</span>
-            </div>
-            <input type="checkbox" id="toggle">
-            <div class="navbar-links">
-                
-                <a href="#">
-                    <div class="contact-container">
-                      <img class="iconouno-img" src="{% static 'favicon.ico/IconoPhone.png' %}" alt="">
-                      <span>Contactanos</span>
-                    </div>
-                </a>
-                  
-                <a href="#">
-                    <div class="contact-container">
-                      <img class="iconouno-img" src="{% static 'favicon.ico/IconoEquipaje.png' %}" alt="">
-                      <span>Mis Viajes</span>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="contact-container">
-                      <img class="iconouno-img" src="{% static 'favicon.ico/IconoUser.png' %}" alt="">
-                      <span>Iniciar Sesión</span>
-                    </div>
-                </a>
-
-            </div>
-            <label for="toggle" class="burger">&#9776;</label>
+      <div class="row align-items-start">
+        <div class="col mauro-cuatro">
+          <div class="botones-ida">
+            <div class="titulo"><h6>VUELOS</h6></div>
+            <button type="button" class="boton-ida">Solo Ida</button>
+            <button type="button" class="boton-ida">Ida y Vuelta</button>
+          </div>
         </div>
-
-        
-
+        <div class="col mauro-cinco">
+          Col 2
+        </div>
+      </div>
     </div>
+      
+  </div>
+</div>
 
-</body>
-</html>
+{% endblock %}
