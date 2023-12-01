@@ -4,27 +4,65 @@
 
 {% block contenido %} 
 
+{% load static %}
+
 
 <div class="container-fluid mauro-uno">
   <div class="container mauro-dos">
 
+  </div>
+</div>
 
-    <div class="container">
-      <div class="row align-items-start">
-        <div class="col mauro-cuatro">
-          <div class="botones-ida">
-            <div class="titulo"><h6>VUELOS</h6></div>
-            <button type="button" class="boton-ida">Solo Ida</button>
-            <button type="button" class="boton-ida">Ida y Vuelta</button>
-          </div>
+<div class="container">
+
+  <h3 class="ofertas" style="color: #505050;">Ofertas que no te puedes perder</h3>
+
+    <div class="card-group">
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top" src="{% static 'img/Dubai.png' %}" alt="">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Dubai</h5>
+          <p class="card-text" style="color: #505050;">Dubái, en los Emiratos Árabes Unidos, es una ciudad conocida por su impresionante arquitectura y rascacielos emblemáticos como el Burj Khalifa.</p>
         </div>
-        <div class="col mauro-cinco">
-          Col 2
+        <div class="card-footer">
+          <small class="text-muted">$8.000.000 COP</small>
+        </div>
+      </div>
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top" src="{% static 'img/Jamaica.png' %}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Jamaica</h5>
+          <p class="card-text" style="color: #505050;">Jamaica, una isla caribeña vibrante y llena de diversidad, cautiva con sus playas de arena blanca, aguas cristalinas y exuberantes paisajes tropicales.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$6.000.000 COP</small>
+        </div>
+      </div>
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top"  src="{% static 'img/Ottawa.png' %}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Ottawa</h5>
+          <p class="card-text" style="color: #505050;">Ottawa, la capital de Canadá, es una ciudad encantadora que combina la majestuosidad de su arquitectura gubernamental con la belleza natural que ofrece el río Ottawa y el Canal Rideau. </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$4.500.000 COP</small>
         </div>
       </div>
     </div>
+
+</div>
+
+<div class="container-fluid mauro-tres">
+  <div class="row tabla-uno">
+    <div class="col-md-6 top-lugares">
       
+    </div>
+    <div class="col-md-6 informacion">
+      
+    </div>
   </div>
 </div>
+
+
 
 {% endblock %}

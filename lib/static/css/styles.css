@@ -6,7 +6,7 @@ body {
 }
 
 .mauro-uno{
-    background-color: #f8f9fa;
+    background-color: #e0e0e0;
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -23,24 +23,27 @@ body {
     border-radius: 10px;
 }
 
-.mauro-cuatro{
-    background-color: rgb(24, 160, 0);
-    color: white;
+.mauro-tres{
+    background-color: #e0e0e0;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+
 }
 
-.mauro-cinco{
-    background-color: aquamarine;
-    color: white;
+
+.tabla-uno{
+    background-color: rgb(0, 255, 255);
+    width: 70%;
+    height: 40vh;
 }
 
-.botones-ida{
-    margin: 4px;
+.top-lugares{
+    background-color: rgb(255, 178, 178);
 }
 
-.boton-ida{
-    border-radius: 20px;
-    background-color: #92F69C;
-    border: solid 1px rgb(100, 100, 100);
-    color: black;
-    margin: 5px;
+.informacion{
+    background-color: rgb(180, 255, 230);
 }
