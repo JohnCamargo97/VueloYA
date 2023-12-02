@@ -52,24 +52,29 @@
 
 </div>
 
-<div class="container-fluid mauro-gei">
-
-  {% for vuelo in lista_vuelos %}
-  <tr>  
-    <td>{{vuelo.origen}}</td>
-    <td>{{vuelo.destino}}</td>
-    <td>{{vuelo.horasalida}}</td>
-    <td>{{vuelo.Escalado}}</td>
-  </tr>
+<div class="container-fluid" style="height: 45vh; width: 70%; justify-content: center; align-items: center; margin-top: 30px;">
+  <table style="width: 70%;">
+    <tr>  
+      <th>ORIGEN</th>
+      <th>DESTINO</th>
+      <th>Hora Salida</th>
+      <th>Escalas</th>
+    </tr>
+    {% for vuelo in lista_vuelos %}
+    <tr>  
+      <td>{{vuelo.origen}}</td>
+      <td>{{vuelo.destino}}</td>
+      <td>{{vuelo.horasalida}}</td>
+      <td>{{vuelo.Escalado}}</td>
+    </tr>
   {% endfor %}
-
+   </table>
 </div>
 
 <div class="container-fluid mauro-tres">
   <div class="row tabla-uno">
     <div class="col-md-6 top-lugares">
-      
-      
+           
     </div>
     <div class="col-md-6 informacion">
       
