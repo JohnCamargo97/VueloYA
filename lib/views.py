@@ -1,10 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from .models import Vuelo
+from .forms import BusquedaForm
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'paginas/home.html')
+    form_busqueda = BusquedaForm(request.POST or None)
+    lista_vuelos = Vuelo.objects.all()
+    #print(form_busqueda)
+    return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
