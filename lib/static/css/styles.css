@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; 
+    height: 20vh; 
 
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .top-lugares{
-    background-color: rgb(255, 178, 178);
+    background-color: rgb(243, 42, 42);
 }
 
 .informacion{
