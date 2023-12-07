@@ -8,8 +8,14 @@ from .forms import BusquedaForm
 def home(request):
     form_busqueda = BusquedaForm(request.POST or None)
     lista_vuelos = Vuelo.objects.all()
-    #print(form_busqueda["origen"])
+    print(form_busqueda["origen"])
     return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
+
+def home_dev2(request):
+    form_busqueda = BusquedaForm(request.POST or None)
+    lista_vuelos = Vuelo.objects.all()
+    print(form_busqueda["origen"])
+    return render(request, 'paginas/home_dev2.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
