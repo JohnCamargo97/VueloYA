@@ -7,80 +7,51 @@
 {% load static %}
 
 
-<div class="container-fluid mauro-gei">
+<div class="container-fluid mauro-uno">
   <div class="container mauro-dos">
-    <div style="height: 50%;"></div>
-      <div style="margin-left: 3%; margin-right: 3%; display:flex; flex-direction: row; justify-content: left; align-items: left;">
-        <div style="background-color: white; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
-          <form>
-            {% csrf_token%}
-            <div>
-              <label>Origen:</label>
-              <input placeholder="origen">
+    <div class="container destinos">
 
-            </div>
-          </form>
+      <form class="formulario-uno" action="#" method="post">
+
+        <div class="busqueda-uno row">
+          <div class="col">
+            <label for="origen">Origen:</label>
+            <input class="origen-uno" type="text" class="form-control" id="origen" name="origen" placeholder="Ingresa Origen" required>
+          </div>
+          <div class="col">
+            <label for="destino">Destino:</label>
+            <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino" required>
+          </div>
         </div>
 
-        <div style="background-color: white;">
-          <form>
-            {% csrf_token%}
-            <div>
-              <label>Destino:</label>
-              <input placeholder="destino">
-
-            </div>
-          </form>
+        <div class="busqueda-dos row">
+          <div class="col">
+            <label for="fecha-ida">Fecha de Ida:</label>
+            <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+          </div>
+          <div class="col">
+            <label for="fecha-regreso">Fecha de Regreso:</label>
+            <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+          </div>
         </div>
 
-
-        <div style="min-width: 3px;"></div>
-        
-
-        <div style="background-color: white;">
-          <form>
-            {% csrf_token%}
-            <div>
-              <label>Fechas:</label>
-              <input placeholder="Ida">
-
-            </div>
-          </form>
+        <div class="busqueda-tres row">
+          <div class="col">
+            <label for="pasajeros">Número de Pasajeros:</label>
+            <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+              <option value="1">1 pasajero</option>
+              <option value="2">2 pasajeros</option>
+              <option value="3">3 pasajeros</option>
+              <option value="4">4 pasajeros</option>
+            </select>
+          </div>
         </div>
+      
+          <button class="boton-uno" type="submit">Buscar</button>
 
-        <div style="background-color: white;">
-          <form>
-            {% csrf_token%}
-            <div>
-              <label></label>
-              <input placeholder="Vuelta">
+      </form>
 
-            </div>
-          </form>
-        </div>
-
-        
-        <div style="min-width: 3px;"></div>
-        
-
-        <div style="background-color: white; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-          <form>
-            {% csrf_token%}
-            <div>
-              <label>Pasajeros:</label>
-              <input placeholder="1 Adulto">
-
-            </div>
-          </form>
-        </div>
-
-        <div style="min-width: 3px;"></div>
-
-
-        <button type="button"  style="min-width: 120px; background-color: #FF7D70; border-radius: 12px; border:none">Buscar</button>
-
-
-      </div>
+    </div>
   </div>
 </div>
 
@@ -123,24 +94,7 @@
 
 </div>
 
-<div class="container-fluid" style="height: 45vh; width: 70%; justify-content: center; align-items: center; margin-top: 30px;">
-  <table style="width: 70%;">
-    <tr>  
-      <th>ORIGEN</th>
-      <th>DESTINO</th>
-      <th>Hora Salida</th>
-      <th>Escalas</th>
-    </tr>
-    {% for vuelo in lista_vuelos %}
-    <tr>  
-      <td>{{vuelo.origen}}</td>
-      <td>{{vuelo.destino}}</td>
-      <td>{{vuelo.horasalida}}</td>
-      <td>{{vuelo.Escalado}}</td>
-    </tr>
-  {% endfor %}
-   </table>
-</div>
+
 
 <div class="container-fluid mauro-tres">
 
@@ -189,9 +143,6 @@
       </div>
       <div class="col-md-6 informacion">
         <img src="{% static 'img/SanAndres2.png' %}" class="img-fluid" alt="Responsive image">
-        <button type="button" class="btn btn-primary">Primary</button>
-
-        
       </div>
     </div>
   </div>  
