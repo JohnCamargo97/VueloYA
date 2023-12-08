@@ -5,45 +5,275 @@ body {
 
 }
 
+.container {
+    max-width: 1200px; /* Limita el ancho máximo del contenedor principal */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/*Formuario Destinos*/
+
 .mauro-uno{
-    background-color: #e0e0e0;
+    background-color: #eeeeee;
     margin: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 20vh; 
+    height: 360px; 
 
 }
 
 .mauro-dos{
     background-color: #293964;
-    height: 150px;
-    display: block;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.mauro-tres{
-    background-color: #e0e0e0;
-    margin: 20px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh; 
+    border-radius: 10px;
+    color: rgb(88, 88, 88);
+}
+
+.navbar-title{
+    color: white;
+}
+
+
+.busqueda-uno{
+    background-color: white;
+    display: block;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    padding: 5.2px;
+    border: solid 1px rgb(144, 144, 144);
+
+}
+
+.origen-uno{
+    width: 82%;
+    border-radius: 5px;
+    border: none;
+}
+
+.origen-uno:focus{
+    outline: none;
+}
+
+.destino-uno{
+    width: 82%;
+    border-radius: 5px;
+    border: none;
+}
+
+.destino-uno:focus{
+    outline: none;
+}
+
+.busqueda-dos{
+    background-color: white;
+    display: block;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    padding: 4.5px;
+    border: solid 1px rgb(144, 144, 144);
+}
+
+.fecha-ida{
+    border-radius: 5px;
+    border: solid 2px rgb(215, 215, 215);
+    color: #808080;
+    
+}
+
+.fecha-ida:focus{
+    outline: none;
+    
+}
+
+.fecha-regreso{
+    border-radius: 5px;
+    border: solid 2px rgb(215, 215, 215);
+    color: #808080;
+}
+
+.fecha-regreso:focus{
+    outline: none;
+}
+
+.busqueda-tres{
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    padding: 5px;
+    border: solid 1px rgb(144, 144, 144);
+}
+
+.num-pasajeros{
+    display: block;
+    border: solid 2px rgb(215, 215, 215);
+    color: #808080;
+    border-radius: 10px;
+}
+
+.num-pasajeros:focus{
+    outline: none;
+    box-shadow: none; /* Elimina cualquier sombra al hacer clic */
+}
+
+.boton-uno{
+    background-color: #fd6456;
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-uno:hover{
+    background-color: #fe6b5d;
+    transform: translateY(1px);
+}
+
+/*Formuario Destinos*/
+
+
+
+
+
+/*Ofertas de Viajes*/
+
+.precio-jamaica{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.kk-k{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.precio-ottawa{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.jj-j{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.precio-dubai{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.qq-q{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.boton-dos{
+    background-color: #fd6456;
+    width: 22%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-dos:hover{
+    background-color: #fc6d60;
+    transform: translateY(1px);
+}
+
+
+
+
+/*Ofertas de Viajes*/
+
+
+/*Top lugares más buscados*/
+
+.mauro-tres{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    height: 650px;
+    margin-top: 20px;
+}
+
+
+
+/*Top lugares más buscados*/
+
+/*Pantalla PC*/
+
+@media only screen and (min-width: 1080px) {
+
+    .mauro-uno{
+        height: 220px;
+
+    }
+
+    .mauro-dos{
+        height: 180px;
+
+    }
+
+    .formulario-uno{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navbar-uno {
+        margin-top: -20px; /* Ajusta la cantidad de margen superior según tus necesidades */
+      }
+      
+      .navbar {
+        padding: 10px;
+      }
+      
+      .navbar-title {
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+    .busqueda-uno{
+        background-color: rgb(255, 255, 255);
+        width: 33%;
+        border-radius: 0%;
+        border-top-left-radius: 20px;
+        border-end-start-radius: 20px;
+    }
+
+    .busqueda-dos{
+        background-color: rgb(255, 255, 255);
+        width: 33%;
+        border-radius: 0%;
+    }
+    
+    .busqueda-tres{
+        background-color: rgb(255, 255, 255);
+        width: 18%;
+        border-radius: 0%;
+        border-top-right-radius: 20px;
+        border-end-end-radius: 20px;
+    }
+
+    .boton-uno{
+        background-color: #fd6456;
+        width: 10%;
+    }
+
 
 }
 
 
-.tabla-uno{
-    background-color: rgb(0, 255, 255);
-    width: 70%;
-    height: 40vh;
-}
+/*Pantalla grande*/
 
-.top-lugares{
-    background-color: rgb(243, 42, 42);
-}
-
-.informacion{
-    background-color: rgb(180, 255, 230);
-}
