@@ -1,0 +1,175 @@
+{% extends "index.html" %}
+
+{% block titulo %} Home {% endblock %}
+
+{% block contenido %} 
+
+{% load static %}
+
+
+<div class="container-fluid mauro-gei">
+  <div class="container mauro-dos">
+    <div style="height: 50%;"></div>
+      <form action="" method="post">
+        <div style="margin-left: 3%; margin-right: 3%; display:flex; flex-direction: row; justify-content: left; align-items: left;">
+                
+            <div style="background-color: white; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+
+              {% csrf_token%}
+              <div>
+                <label>{{form_busqueda.origen.label}}</label>
+                <input 
+                type="{{form_busqueda.origen.widget.input_type}}"
+                name="{{form_busqueda.origen.name}}"
+                aria-describedby="helpId"
+                placeholder="{{form_busqueda.origen.label}}">
+
+              </div>
+              <div style="color: #FF7D70;">{{form_busqueda.origen.errors}}</div>
+            </div>
+
+            <div style="background-color: white;">
+              
+                
+                <div>
+                  <label>{{form_busqueda.destino.label}}</label>
+                  <input 
+                  type="{{form_busqueda.destino.widget.input_type}}"
+                  name="{{form_busqueda.destino.name}}"
+                  aria-describedby="helpId"
+                  placeholder="{{form_busqueda.destino.label}}">
+
+                </div>
+              
+            </div>
+
+
+            <div style="min-width: 3px;"></div>
+          
+
+            <div style="background-color: white;">
+              
+                
+                <div>
+                  <label>{{form_busqueda.horasalida.label}}</label>
+                  <input 
+                  type="{{form_busqueda.horasalida.widget.input_type}}"
+                  name="{{form_busqueda.horasalida.name}}"
+                  aria-describedby="helpId"
+                  placeholder="{{form_busqueda.horasalida.label}}">
+
+                </div>
+              
+            </div>
+
+            <div style="background-color: white;">
+              
+                
+                <div>
+                  <label>{{form_busqueda.horasalida.label}}</label>
+                  <input 
+                  type="{{form_busqueda.horasalida.widget.input_type}}"
+                  name="{{form_busqueda.horasalida.name}}"
+                  aria-describedby="helpId"
+                  placeholder="{{form_busqueda.horasalida.label}}">
+                </div>
+              
+            </div>
+
+          
+            <div style="min-width: 3px;"></div>
+          
+
+            <div style="background-color: white; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              
+                
+                <div>
+                  <label>Pasajeros:</label>
+                  <input placeholder="1 Adulto">
+
+                </div>
+              
+            </div>
+
+            <div style="min-width: 3px;"></div>
+
+
+            <input type="submit"  style="min-width: 120px; background-color: #FF7D70; border-radius: 12px; border:none" value="Buscar"/>
+          
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="container">
+
+  <h3 class="ofertas" style="color: #505050;">Ofertas que no te puedes perder</h3>
+
+    <div class="card-group">
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top" src="{% static 'img/Dubai.png' %}" alt="">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Dubai</h5>
+          <p class="card-text" style="color: #505050;">Dubái, en los Emiratos Árabes Unidos, es una ciudad conocida por su impresionante arquitectura y rascacielos emblemáticos como el Burj Khalifa.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$8.000.000 COP</small>
+        </div>
+      </div>
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top" src="{% static 'img/Jamaica.png' %}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Jamaica</h5>
+          <p class="card-text" style="color: #505050;">Jamaica, una isla caribeña vibrante y llena de diversidad, cautiva con sus playas de arena blanca, aguas cristalinas y exuberantes paisajes tropicales.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$6.000.000 COP</small>
+        </div>
+      </div> 
+      <div class="card card-with-margin" style="margin: 5px;">
+        <img class="card-img-top"  src="{% static 'img/Ottawa.png' %}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #505050;">Ottawa</h5>
+          <p class="card-text" style="color: #505050;">Ottawa, la capital de Canadá, es una ciudad encantadora que combina la majestuosidad de su arquitectura gubernamental con la belleza natural que ofrece el río Ottawa y el Canal Rideau. </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$4.500.000 COP</small>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="container-fluid" style="height: 45vh; width: 70%; justify-content: center; align-items: center; margin-top: 30px;">
+  <table style="width: 70%;">
+    <tr>  
+      <th>ORIGEN</th>
+      <th>DESTINO</th>
+      <th>Hora Salida</th>
+      <th>Escalas</th>
+    </tr>
+    {% for vuelo in lista_vuelos %}
+    <tr>  
+      <td>{{vuelo.origen}}</td>
+      <td>{{vuelo.destino}}</td>
+      <td>{{vuelo.horasalida}}</td>
+      <td>{{vuelo.Escalado}}</td>
+    </tr>
+  {% endfor %}
+   </table>
+</div>
+
+<div class="container-fluid mauro-tres">
+  <div class="row tabla-uno">
+    <div class="col-md-6 top-lugares">
+           
+    </div>
+    <div class="col-md-6 informacion">
+      
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

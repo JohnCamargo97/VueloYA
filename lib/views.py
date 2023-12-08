@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #from django.http import HttpResponse
 from .models import Vuelo
 from .forms import BusquedaForm
@@ -10,6 +10,15 @@ def home(request):
     lista_vuelos = Vuelo.objects.all()
     #print(form_busqueda["origen"])
     return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
+
+def home_dev2(request):
+    form_busqueda = BusquedaForm(request.POST or None)
+    if form_busqueda.is_valid():
+        print(request.POST)
+        return redirect('misviajes')
+    lista_vuelos = Vuelo.objects.all()
+    #print(form_busqueda)
+    return render(request, 'paginas/home_dev2.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
