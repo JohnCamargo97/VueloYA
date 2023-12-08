@@ -5,25 +5,34 @@ body {
 
 }
 
+.container {
+    max-width: 1200px; /* Limita el ancho máximo del contenedor principal */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
 /*Formuario Destinos*/
 
 .mauro-uno{
-    background-color: #e0e0e0;
+    background-color: #eeeeee;
     margin: 20px;
     display: flex;
     align-items: center;
-    height: 38vh; 
+    height: 360px; 
 
 }
 
 .mauro-dos{
     background-color: #293964;
-    height: 32vh;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     color: rgb(88, 88, 88);
+}
+
+.navbar-title{
+    color: white;
 }
 
 
@@ -32,7 +41,8 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5px;
+    padding: 5.2px;
+    border: solid 1px rgb(144, 144, 144);
 
 }
 
@@ -61,12 +71,12 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5px;
+    padding: 4.5px;
+    border: solid 1px rgb(144, 144, 144);
 }
 
 .fecha-ida{
     border-radius: 5px;
-    height: 32px;
     border: solid 2px rgb(215, 215, 215);
     color: #808080;
     
@@ -79,7 +89,6 @@ body {
 
 .fecha-regreso{
     border-radius: 5px;
-    height: 32px;
     border: solid 2px rgb(215, 215, 215);
     color: #808080;
 }
@@ -93,6 +102,7 @@ body {
     margin-bottom: 5px;
     border-radius: 8px;
     padding: 5px;
+    border: solid 1px rgb(144, 144, 144);
 }
 
 .num-pasajeros{
@@ -128,18 +138,74 @@ body {
 
 
 
-/*Top lugares más buscados*/
+/*Ofertas de Viajes*/
 
-.mauro-tres{
-    background-color: #e0e0e0;
+.precio-jamaica{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.kk-k{
     display: flex;
-    align-items: center;
-    height: 60vh;
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.precio-ottawa{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.jj-j{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.precio-dubai{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.qq-q{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.boton-dos{
+    background-color: #fd6456;
+    width: 22%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-dos:hover{
+    background-color: #fc6d60;
+    transform: translateY(1px);
 }
 
 
 
+
+/*Ofertas de Viajes*/
+
+
+/*Top lugares más buscados*/
+
+.mauro-tres{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    height: 650px;
+    margin-top: 20px;
+}
 
 
 
@@ -150,12 +216,12 @@ body {
 @media only screen and (min-width: 1080px) {
 
     .mauro-uno{
-        height: 25vh;
+        height: 220px;
 
     }
 
     .mauro-dos{
-        height: 18vh;
+        height: 180px;
 
     }
 
@@ -165,22 +231,39 @@ body {
         align-items: center;
     }
 
+    .navbar-uno {
+        margin-top: -20px; /* Ajusta la cantidad de margen superior según tus necesidades */
+      }
+      
+      .navbar {
+        padding: 10px;
+      }
+      
+      .navbar-title {
+        color: #ffffff;
+        font-size: 20px;
+      }
+
     .busqueda-uno{
         background-color: rgb(255, 255, 255);
-        width: 30%;
-
+        width: 33%;
+        border-radius: 0%;
+        border-top-left-radius: 20px;
+        border-end-start-radius: 20px;
     }
 
     .busqueda-dos{
         background-color: rgb(255, 255, 255);
-        width: 30%;
-
+        width: 33%;
+        border-radius: 0%;
     }
     
     .busqueda-tres{
         background-color: rgb(255, 255, 255);
         width: 18%;
-
+        border-radius: 0%;
+        border-top-right-radius: 20px;
+        border-end-end-radius: 20px;
     }
 
     .boton-uno{
@@ -189,7 +272,7 @@ body {
     }
 
 
-  }
+}
 
 
 /*Pantalla grande*/
