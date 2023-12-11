@@ -140,13 +140,25 @@ body {
 
 /*Ofertas de Viajes*/
 
+.precio-dubai{
+    text-decoration: none;
+    color: #808080;
+
+}
+
+.dubai{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
 .precio-jamaica{
     text-decoration: none;
     color: #808080;
 
 }
 
-.kk-k{
+.jamaica{
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -158,26 +170,14 @@ body {
 
 }
 
-.jj-j{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-
-.precio-dubai{
-    text-decoration: none;
-    color: #808080;
-
-}
-
-.qq-q{
+.ottawa{
     display: flex;
     justify-content: space-between;
     align-items: end;
 }
 
 .boton-dos{
-    background-color: #fd6456;
+    background-color: #4277ff;
     width: 22%;
     height: 30px;
     border-radius: 8px;
@@ -187,14 +187,14 @@ body {
 }
 
 .boton-dos:hover{
-    background-color: #fc6d60;
+    background-color: #4e80ff;
     transform: translateY(1px);
 }
 
-
-
-
 /*Ofertas de Viajes*/
+
+
+
 
 
 /*Top lugares más buscados*/
@@ -203,13 +203,81 @@ body {
     background-color: #eeeeee;
     display: flex;
     align-items: center;
-    height: 650px;
+    height: 630px;
     margin-top: 20px;
 }
 
 
-
 /*Top lugares más buscados*/
+
+
+
+
+
+/*Recibir ofertas al correo*/
+
+.bb-b{
+    display: flex;
+    align-items: center;
+    height: 180px;
+    margin-top: 20px;
+}
+
+.boton-tres{
+    background-color: #4277ff;
+    width: 20%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-tres:hover{
+    background-color: #4e80ff;
+    transform: translateY(1px);
+}
+
+.ofertas-correo{
+    width: 78%;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eeeeee;
+    padding: 10px;
+    border: solid 1px #999999;
+}
+
+.ofertas-correo:focus{
+    outline-color: #b0b0b0;
+}
+
+.politicas-privacidad{
+    font-size: 15px;
+    color: #999999;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/*Recibir ofertas al correo*/
+
+
+
+
+
+/*Footer*/
+
+.kk-k{
+    width: 100%;
+    background-color: #4277ff;
+}
+
+.pie-pagina{
+    text-align: center;
+}
+
+
+/*Footer*/
 
 /*Pantalla PC*/
 
@@ -271,7 +339,32 @@ body {
         width: 10%;
     }
 
+    .bb-b{
+        display: grid;
+        justify-content: center;
+        height: 200px;
+    }
 
+
+    .ofertas-correo{
+        width: 75%;
+        height: 42px;
+        border: none;
+        border-radius: 8px;
+        background-color: #eeeeee;
+        padding: 10px;
+        border: solid 1px #999999;
+    }
+
+    .boton-tres{
+        background-color: #4277ff;
+        width: 20%;
+        height: 40px;
+        border-radius: 8px;
+        margin: 10px;
+        border: none;
+        color: white;
+    }
 }
 
 
