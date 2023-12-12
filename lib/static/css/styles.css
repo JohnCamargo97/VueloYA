@@ -203,10 +203,13 @@ body {
     background-color: #eeeeee;
     display: flex;
     align-items: center;
-    height: 630px;
+    height: 680px;
     margin-top: 20px;
 }
 
+.img-fluid{
+    margin-top: 12px;
+}
 
 /*Top lugares más buscados*/
 
@@ -219,7 +222,7 @@ body {
 .bb-b{
     display: flex;
     align-items: center;
-    height: 180px;
+    height: 200px;
     margin-top: 20px;
 }
 
@@ -268,13 +271,30 @@ body {
 /*Footer*/
 
 .kk-k{
-    width: 100%;
-    background-color: #4277ff;
+    background-color: #eeeeee;
 }
 
-.pie-pagina{
-    text-align: center;
+.row.info-vueloya{
+    color: #505050;
+    text-align: start;
 }
+
+.text-uppercase{
+    margin-top: 25px;
+    font-size: 16px;
+
+}
+
+.text-body-uno{
+    color: #505050;
+    text-decoration: none;
+}
+
+.text-body-uno:hover{
+    color: #808080;
+    text-decoration-line: underline;
+}
+
 
 
 /*Footer*/
@@ -337,6 +357,18 @@ body {
     .boton-uno{
         background-color: #fd6456;
         width: 10%;
+    }
+
+
+    .mauro-tres{
+        background-color: #eeeeee;
+        display: flex;
+        align-items: center;
+        height: 600px;
+    }
+    
+    .img-fluid{
+        margin-top: 0px;
     }
 
     .bb-b{
