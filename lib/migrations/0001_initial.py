@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('origen', models.CharField(max_length=100, verbose_name='Origen')),
                 ('destino', models.CharField(max_length=100, verbose_name='Destino')),
-                ('horasalida', models.DateTimeField(verbose_name='Salida')),
+                ('fechasalida', models.DateTimeField(verbose_name='Salida')),
                 ('Escalado', models.BooleanField(verbose_name='Escalas')),
             ],
         ),
