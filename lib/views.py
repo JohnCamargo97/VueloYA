@@ -51,3 +51,6 @@ def iniciarsesion(request):
 
 def registrarse(request):
     return render(request, 'paginas/registrarse.html')
+
+def busqueda(request):
+    return render(request, 'paginas/busqueda.html')

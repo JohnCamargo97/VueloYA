@@ -1,0 +1,200 @@
+{% extends "index.html" %}
+
+{% block titulo %} Home {% endblock %}
+
+{% block contenido %} 
+
+{% load static %}
+
+<div class="conatiner">
+
+    <div class="container-fluid mauro-uno">
+        <div class="container mauro-dos">
+
+            <div class="container navbar-uno">
+
+                <nav class="navbar">
+                <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono de vuelo"></h5>
+                </nav>
+
+                <form class="formulario-uno" action="#" method="post">
+
+                    <div class="busqueda-uno row">
+                    <div class="col">
+                        <label for="origen">Origen:</label>
+                        <input class="origen-uno" type="text" class="form-control" id="origen" name="origen" placeholder="Ingresa Origen" required>
+                    </div>
+                    <div class="col">
+                        <label for="destino">Destino:</label>
+                        <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino" required>
+                    </div>
+                    </div>
+
+                    <div class="busqueda-dos row">
+                    <div class="col">
+                        <label for="fecha-ida">Fecha de Ida:</label>
+                        <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+                    </div>
+                    <div class="col">
+                        <label for="fecha-regreso">Fecha de Regreso:</label>
+                        <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+                    </div>
+                    </div>
+
+                    <div class="busqueda-tres row">
+                    <div class="col">
+                        <label for="pasajeros">Número de Pasajeros:</label>
+                        <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+                        <option value="1">1 pasajero</option>
+                        <option value="2">2 pasajeros</option>
+                        <option value="3">3 pasajeros</option>
+                        <option value="4">4 pasajeros</option>
+                        </select>
+                    </div>
+                    </div>
+                    
+                        <button class="boton-uno" type="submit">Buscar</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mauro-seis">
+        <div class="container">
+
+            <div class="busqueda-vuelos">
+
+                <div class="ida-vuelo">
+                    <div class="icono-avion">
+                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                    </div>
+                    <div class="fecha-salida-avion">
+                        <span>Jue/14 Dic/2023</span>
+                    </div>
+                </div>
+
+                <div class="info-vuelos">
+                        
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container mauro-cuatro">
+        <div class="container">
+
+            <h3 style="color: #505050; margin-bottom: 15px;"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+
+            <div class="presentacion">
+                <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
+                <button class="boton-tres" type="submit">Enviar</button>
+            </div>
+
+            <div class="politicas-privacidad">
+                Recibirás correos promocionales de VueloYA. Para más información consulta las <a href="####">políticas de privacidad.</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid mauro-cinco">
+        <div class="container">
+            <footer class="footer-uno">
+
+                <div class="row info-vueloya">
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
+                        <h5 class="text-uppercase">Mi Cuenta</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                            <a href="#!" class="text-body-uno">Mis Viajes</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Mi Perfil</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Somos VueloYA</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                            <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Relación con Inversores</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Sobre VueloYA</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Confianza en tus compras</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                            <a href="#!" class="text-body-uno">Terminos y condiciones</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Promociones vigentes</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Politica de privacidad</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Aerolíneas</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                            <a href="#!" class="text-body-uno">American Airlines</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Air France</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Avianca</a>
+                            </li>
+                            <li>
+                            <a href="#!" class="text-body-uno">Latam</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+    <div class="container">
+      <footer class="footer-dos">
+        <div class="footer-izquierda">
+            <p class="pp-p">© 2023 Copyright:VueloYA</p>
+        </div>
+        <div class="footer-derecha">
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+        </div>
+      </footer>
+    </div>
+    
+</div>
+
+{% endblock %}
