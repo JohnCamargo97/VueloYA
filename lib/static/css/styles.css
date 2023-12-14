@@ -222,7 +222,7 @@ body {
 .bb-b{
     display: flex;
     align-items: center;
-    height: 200px;
+    height: 300px;
     margin-top: 20px;
 }
 
@@ -271,16 +271,18 @@ body {
 /*Footer*/
 
 .kk-k{
+    display: flex;
+    align-items: center;
     background-color: #eeeeee;
 }
 
 .row.info-vueloya{
     color: #505050;
-    text-align: start;
+    text-align: center;
 }
 
 .text-uppercase{
-    margin-top: 25px;
+    margin-top: 24px;
     font-size: 16px;
 
 }
@@ -295,6 +297,26 @@ body {
     text-decoration-line: underline;
 }
 
+.footer-dos {
+    color: #505050;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.ww-w{
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.ww-w:hover{
+    transform: scale(1.1);
+}
+
+.footer-derecha a {
+    margin-left: 15px;
+}
+
+
 
 
 /*Footer*/
@@ -302,6 +324,8 @@ body {
 /*Pantalla PC*/
 
 @media only screen and (min-width: 1080px) {
+
+    /*Formuario Destinos*/
 
     .mauro-uno{
         height: 220px;
@@ -320,7 +344,7 @@ body {
     }
 
     .navbar-uno {
-        margin-top: -20px; /* Ajusta la cantidad de margen superior según tus necesidades */
+        margin-top: -20px;
       }
       
       .navbar {
@@ -359,6 +383,10 @@ body {
         width: 10%;
     }
 
+    /*Formuario Destinos*/
+
+
+    /*Top lugares más buscados*/
 
     .mauro-tres{
         background-color: #eeeeee;
@@ -371,10 +399,14 @@ body {
         margin-top: 0px;
     }
 
+    /*Top lugares más buscados*/
+
+    /*Recibir ofertas al correo*/
+
     .bb-b{
         display: grid;
         justify-content: center;
-        height: 200px;
+        height: 350px;
     }
 
 
@@ -397,6 +429,40 @@ body {
         border: none;
         color: white;
     }
+
+    /*Recibir ofertas al correo*/
+
+
+    /*Footer*/
+
+    .kk-k{
+        height: 200px;
+    }
+
+    .row.info-vueloya{
+        color: #505050;
+        text-align: start;
+    }
+
+    .footer-dos {
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .footer-izquierda{
+        align-self: flex-end;
+        cursor: auto;
+    }
+
+    .pp-p{
+        margin: 0;
+
+    }
+
+    /*Footer*/
 }
 
 
