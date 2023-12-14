@@ -7,99 +7,60 @@
 {% load static %}
 
 
-<div class="container-fluid mauro-gei">
-  <div class="container mauro-dos">
-    <div style="height: 50%;"></div>
-      <form action="" method="post">
-        <div style="margin-left: 3%; margin-right: 3%; display:flex; flex-direction: row; justify-content: left; align-items: left;">
-                
-            <div style="background-color: white; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+<div class="conatiner">
 
-              {% csrf_token%}
-              <div>
-                <label>{{form_busqueda.origen.label}}</label>
-                <input 
-                type="{{form_busqueda.origen.widget.input_type}}"
-                name="{{form_busqueda.origen.name}}"
-                aria-describedby="helpId"
-                placeholder="{{form_busqueda.origen.label}}">
+  <div class="container-fluid mauro-uno">
+    <div class="container mauro-dos">
 
+      <div class="container navbar-uno">
+
+        <nav class="navbar">
+          <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono de vuelo"></h5>
+        </nav>
+
+          <form class="formulario-uno" action="#" method="post">
+            {% csrf_token%}
+            <div class="busqueda-uno row">
+              <div class="col">
+                <label for="origen">{{form_busqueda.origen.label}}</label>
+                {{form_busqueda.origen}}
               </div>
-              <div style="color: #FF7D70;">{{form_busqueda.origen.errors}}</div>
+              <div class="col">
+                <label for="destino">{{form_busqueda.destino.label}}</label>
+                <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino" required>
+              </div>
             </div>
 
-            <div style="background-color: white;">
-              
-                
-                <div>
-                  <label>{{form_busqueda.destino.label}}</label>
-                  <input 
-                  type="{{form_busqueda.destino.widget.input_type}}"
-                  name="{{form_busqueda.destino.name}}"
-                  aria-describedby="helpId"
-                  placeholder="{{form_busqueda.destino.label}}">
-
-                </div>
-              
+            <div class="busqueda-dos row">
+              <div class="col">
+                <label for="fecha-ida">{{form_busqueda.fechasalida.label}}</label>
+                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+              </div>
+              <div class="col">
+                <label for="fecha-regreso">{{form_busqueda.fechavuelta.label}}</label>
+                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+              </div>
             </div>
 
-
-            <div style="min-width: 3px;"></div>
-          
-
-            <div style="background-color: white;">
-              
-                
-                <div>
-                  <label>{{form_busqueda.horasalida.label}}</label>
-                  <input 
-                  type="{{form_busqueda.horasalida.widget.input_type}}"
-                  name="{{form_busqueda.horasalida.name}}"
-                  aria-describedby="helpId"
-                  placeholder="{{form_busqueda.horasalida.label}}">
-
-                </div>
-              
+            <div class="busqueda-tres row">
+              <div class="col">
+                <label for="pasajeros">{{form_busqueda.numero_pasajeros.label}}</label>
+                <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+                  <option value="1">1 pasajero</option>
+                  <option value="2">2 pasajeros</option>
+                  <option value="3">3 pasajeros</option>
+                  <option value="4">4 pasajeros</option>
+                </select>
+              </div>
             </div>
+            
+                <button class="boton-uno" type="submit">Buscar</button>
 
-            <div style="background-color: white;">
-              
-                
-                <div>
-                  <label>{{form_busqueda.horasalida.label}}</label>
-                  <input 
-                  type="{{form_busqueda.horasalida.widget.input_type}}"
-                  name="{{form_busqueda.horasalida.name}}"
-                  aria-describedby="helpId"
-                  placeholder="{{form_busqueda.horasalida.label}}">
-                </div>
-              
-            </div>
+          </form>
 
-          
-            <div style="min-width: 3px;"></div>
-          
-
-            <div style="background-color: white; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              
-                
-                <div>
-                  <label>Pasajeros:</label>
-                  <input placeholder="1 Adulto">
-
-                </div>
-              
-            </div>
-
-            <div style="min-width: 3px;"></div>
-
-
-            <input type="submit"  style="min-width: 120px; background-color: #FF7D70; border-radius: 12px; border:none" value="Buscar"/>
-          
-        </div>
-      </form>
+      </div>
+    </div>
   </div>
-</div>
 
 <div class="container">
 
