@@ -316,10 +316,47 @@ body {
     margin-left: 15px;
 }
 
-
-
-
 /*Footer*/
+
+
+
+
+
+/*Busqueda de Vuelos*/
+
+
+/*Resultados de a busqueda de vuelos*/
+
+.mauro-seis{
+    background-color: #eeeeee;
+    display: flex;
+    height: 500px;
+}
+
+.busqueda-vuelos{
+    background-color: aquamarine;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.ida-vuelo{
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 8px;
+    border: solid 1px #a2a2a2;
+    border-radius: 8px;
+}
+
+
+
+/*Resultados de a busqueda de vuelos*/
+
+
+
+
+
 
 /*Pantalla PC*/
 
