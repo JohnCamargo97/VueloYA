@@ -38,7 +38,11 @@ def home_dev2(request):
 def resultados(request):
 
     form_response = request.session
-    lista_resultado = Vuelo.objects.filter(origen= form_response['origen']).values()
+    if form_response['destino']:
+        print(form_response['destino'])
+    else:
+        print(0)
+    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).values()
     #print(form_response)
     return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
 
