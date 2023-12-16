@@ -8,13 +8,16 @@ class aerolinea(models.Model):
     nombre_aerolinea= models.CharField(max_length=100, verbose_name='nombre')
     logo_aerolinea = models.ImageField()
 
+    def __str__(self):
+        return self.nombre_aerolinea
+
 class Vuelo(models.Model):
-    #id= models.AutoField(primary_key=True)
+    id= models.AutoField(primary_key=True)
     origen= models.CharField(max_length=100, verbose_name='Origen')
     destino= models.CharField(max_length=100, verbose_name='Destino')
-    fechasalida= models.DateTimeField(default='2023-12-01 00:00:00', verbose_name='Salida_d', blank=True)
-    fechavuelta= models.DateTimeField(default='2023-12-01 00:00:00', verbose_name='vuelta_d', blank=True)
-    #id_aerolinea= models.ForeignKey(aerolinea, on_delete=models.CASCADE, default=0)
+    fechasalida= models.DateTimeField(verbose_name='Salida_d', blank=True)
+    fechavuelta= models.DateTimeField(verbose_name='vuelta_d', blank=True)
+    id_aerolinea= models.ForeignKey(aerolinea, on_delete=models.CASCADE)
     Escalado= models.BooleanField(verbose_name='Escalas')
     escalas= models.IntegerField(verbose_name='# escalas', blank=True, default= 0)
     precio= models.CharField(max_length=100, verbose_name='Precio', default= 'ND')
