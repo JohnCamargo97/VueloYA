@@ -3,7 +3,7 @@ from django import forms
 
 class BusquedaForm(forms.Form):
 
-    origen= forms.CharField(max_length=100, label='Origen')
+    origen= forms.CharField(max_length=100, label='Origen', required=False)
     destino= forms.CharField(max_length=100, label='Destino', required=False)
     fechasalida= forms.DateTimeField(label='Salida_d', required=False)
     fechavuelta= forms.DateTimeField(label='vuelta_d', required=False)
