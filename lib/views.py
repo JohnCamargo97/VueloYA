@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Vuelo, aerolinea, puestos
 from .forms import BusquedaForm
 
+
 # Create your views here.
 
 def home(request):
@@ -38,8 +39,9 @@ def home_dev2(request):
 def resultados(request):
 
     form_response = request.session
-    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).values()
-    print(lista_resultado.aerolinea)
+    #lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino'])
+    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
+    print(lista_resultado)
     return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
 
 
