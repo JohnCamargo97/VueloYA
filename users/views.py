@@ -22,7 +22,7 @@ def register(request):
         
     else:
         form = formUser()
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, 'users/registrarse.html', {'form': form})
 
 
 
@@ -40,10 +40,10 @@ def login_user(request):
         else:
             # Return an 'invalid login' error message.
             messages.error(request, ('Usuario desconocido'))
-            return render (request, 'users/login.html')
+            return render (request, 'users/iniciarsesion.html')
     else:
         form = formUser()
-        return render (request, 'users/login.html', {'form': form})
+        return render (request, 'users/iniciarsesion.html', {'form': form})
 
     
 
