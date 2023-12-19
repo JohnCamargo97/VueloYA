@@ -38,10 +38,5 @@ class puestos(models.Model):
         numerostr = str(self.id)
         return  numerostr
 
-class usuarios(models.Model):
-    email = models.EmailField(verbose_name='user email')
-    FullName= models.CharField(max_length=100, verbose_name='full name')
 
-    def __str__(self):
-        return  self.FullName
 
