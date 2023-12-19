@@ -219,7 +219,7 @@ body {
 
 /*Recibir ofertas al correo*/
 
-.bb-b{
+.recibir-ofertas{
     display: flex;
     align-items: center;
     height: 300px;
@@ -270,7 +270,7 @@ body {
 
 /*Footer*/
 
-.kk-k{
+.informacion-footer{
     display: flex;
     align-items: center;
     background-color: #eeeeee;
@@ -304,11 +304,11 @@ body {
 }
 
 
-.ww-w{
+.iconos-redes-sociales{
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
-.ww-w:hover{
+.iconos-redes-sociales:hover{
     transform: scale(1.1);
 }
 
@@ -330,13 +330,8 @@ body {
 .mauro-seis{
     background-color: #eeeeee;
     display: flex;
-    height: 500px;
-}
-
-.busqueda-vuelos{
-    background-color: aquamarine;
-    height: 200px;
-    margin-top: 10px;
+    align-items: center;
+    height: 400px;
 }
 
 .ida-vuelo{
@@ -345,10 +340,89 @@ body {
     justify-content: space-between;
     text-align: center;
     padding: 5px 8px;
-    border: solid 1px #a2a2a2;
-    border-radius: 8px;
+    border-top: solid 1px #d4d4d4;
+    border-left: solid 1px #d4d4d4;
+    border-right: solid 1px #d4d4d4;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
+.regreso-vuelo{
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 8px;
+    border-left: solid 1px #d4d4d4;
+    border-right: solid 1px #d4d4d4;
+}
+
+.info-vuelos{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-left: solid 1px #d4d4d4;
+    border-right: solid 1px #d4d4d4;
+}
+
+.nombre-aerolinea{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 8px;
+}
+
+.horario-viaje{
+    border-top: 1px solid #d4d4d4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+}
+
+.tiempo-viaje{
+    font-size: 14px;
+   padding: 2px 6px;
+   color: #808080;
+}
+
+.precio-total-vuelo{
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    border: solid 1px #d4d4d4;
+    display: flex;
+    justify-content: space-between;
+    border-end-end-radius: 8px;
+    border-end-start-radius: 8px;
+    padding: 5px 8px;
+}
+
+.precio-final{
+    text-align: center;
+}
+
+.boton-buy{
+
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+
+.boton-comprar{
+    background-color: #4277ff;
+    width: 100%;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    padding: 2px;
+
+}
+
+.boton-comprar:hover{
+    background-color: #4e80ff;
+    transform: translateY(1px);
+}
 
 
 /*Resultados de a busqueda de vuelos*/
@@ -382,16 +456,16 @@ body {
 
     .navbar-uno {
         margin-top: -20px;
-      }
+    }
       
-      .navbar {
-        padding: 10px;
-      }
+    .navbar {
+    padding: 10px;
+    }
       
-      .navbar-title {
-        color: #ffffff;
-        font-size: 20px;
-      }
+    .navbar-title {
+    color: #ffffff;
+    font-size: 20px;
+    }
 
     .busqueda-uno{
         background-color: rgb(255, 255, 255);
@@ -440,7 +514,7 @@ body {
 
     /*Recibir ofertas al correo*/
 
-    .bb-b{
+    .recibir-ofertas{
         display: grid;
         justify-content: center;
         height: 350px;
@@ -472,7 +546,7 @@ body {
 
     /*Footer*/
 
-    .kk-k{
+    .informacion-footer{
         height: 200px;
     }
 

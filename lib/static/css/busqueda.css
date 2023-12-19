@@ -1,0 +1,508 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.container {
+    max-width: 1200px; /* Limita el ancho máximo del contenedor principal */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+
+/*Recibir ofertas al correo*/
+
+.recibir-ofertas{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.boton-tres{
+    background-color: #4277ff;
+    width: 20%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-tres:hover{
+    background-color: #4e80ff;
+    transform: translateY(1px);
+}
+
+.ofertas-correo{
+    width: 78%;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eeeeee;
+    padding: 10px;
+    border: solid 1px #999999;
+}
+
+.ofertas-correo:focus{
+    outline-color: #b0b0b0;
+}
+
+.politicas-privacidad{
+    font-size: 15px;
+    color: #999999;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/*Recibir ofertas al correo*/
+
+
+
+
+
+/*Footer*/
+
+.informacion-footer{
+    display: flex;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+.row.info-vueloya{
+    color: #505050;
+    text-align: center;
+}
+
+.text-uppercase{
+    margin-top: 24px;
+    font-size: 16px;
+
+}
+
+.text-body-uno{
+    color: #505050;
+    text-decoration: none;
+}
+
+.text-body-uno:hover{
+    color: #808080;
+    text-decoration-line: underline;
+}
+
+.footer-dos {
+    color: #505050;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.iconos-redes-sociales{
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.iconos-redes-sociales:hover{
+    transform: scale(1.1);
+}
+
+.footer-derecha a {
+    margin-left: 15px;
+}
+
+/*Footer*/
+
+
+
+
+
+/*Busqueda de Vuelos*/
+
+
+/*Resultados de a busqueda de vuelos*/
+
+.mauro-seis{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+
+}
+
+/*Resultados de a busqueda de vuelos*/
+
+
+
+
+
+
+/*Pantalla PC*/
+
+@media only screen and (min-width: 1080px) {
+
+    /*Resultados Vuelos*/
+
+    .contenedor-busqueda-vuelos{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .contenido-busquedas{
+        width:50%;
+        max-height: 1000px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .resultados-busqueda{
+        width: 100%;
+        max-height: 1400px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .filtros{
+        background-color: #2c2423;
+        width:95%;
+        height: 300px;
+        margin-top: 25px;
+    }
+
+    .imagen-full {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        filter: brightness(0.7);
+    }
+
+    .texto-prueba{
+        color: white;
+        font-size: 40px;
+    }
+
+    .imagen-informacion{
+        width: 100%;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.3),
+            rgba(0,0,0,0.3)
+        ) 
+         ,url("../img/PlayaMexico.png");
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+
+    }
+
+    /*Resultados Vuelos*/
+
+
+    /*Formulario Vuelos*/
+
+    .uno{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .ida-vuelo{
+        background-color: #eeeeee;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px 8px;
+        border-top: solid 1px #d4d4d4;
+        border-left: solid 1px #d4d4d4;
+        border-right: solid 1px #d4d4d4;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    
+    .regreso-vuelo{
+        background-color: #eeeeee;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 5px 8px;
+        border-left: solid 1px #d4d4d4;
+        border-right: solid 1px #d4d4d4;
+    }
+    
+    .info-vuelos{
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        border-left: solid 1px #d4d4d4;
+        border-right: solid 1px #d4d4d4;
+    }
+    
+    .nombre-aerolinea{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 8px;
+    }
+    
+    .horario-viaje{
+        border-top: 1px solid #d4d4d4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 8px;
+    }
+    
+    .tiempo-viaje{
+        font-size: 14px;
+       padding: 2px 6px;
+       color: #808080;
+    }
+    
+    .precio-total-vuelo{
+        width: 100%;
+        height: 65px;
+        background-color: white;
+        border: solid 1px #d4d4d4;
+        display: flex;
+        justify-content: space-between;
+        border-end-end-radius: 8px;
+        border-end-start-radius: 8px;
+        padding: 5px 8px;
+    }
+    
+    .precio-final{
+        text-align: center;
+    }
+    
+    .boton-buy{
+    
+        display: flex;
+        align-items: center;
+        width: 20%;
+    }
+    
+    .boton-comprar{
+        background-color: #4277ff;
+        width: 100%;
+        height: 32px;
+        border-radius: 8px;
+        border: none;
+        padding: 2px;
+    
+    }
+    
+    .boton-comprar:hover{
+        background-color: #4e80ff;
+        transform: translateY(1px);
+    }
+
+    /*Formulario Vuelos*/
+
+
+
+    /*Formulario Destinos*/
+
+    .titulo-vuelos{
+        margin: 10px;
+    }
+
+    .mauro-dos{
+        background-color: #293964;
+        width: 95%;
+        height: 380px;
+        border-radius: 10px;
+        color: rgb(88, 88, 88);
+
+    }
+
+    .formulario-uno{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-title{
+        color: white;
+        text-align: right;
+    }
+
+
+    .busqueda-uno{
+        background-color: white;
+        display: block;
+        width: 90%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 5px;
+        border: solid 1px rgb(144, 144, 144);
+
+    }
+
+    .origen-uno{
+        width: 82%;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .origen-uno:focus{
+        outline: none;
+    }
+
+    .destino-uno{
+        width: 82%;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .destino-uno:focus{
+        outline: none;
+    }
+
+    .busqueda-dos{
+        background-color: white;
+        display: block;
+        width: 90%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 4.5px;
+        border: solid 1px rgb(144, 144, 144);
+    }
+
+    .fecha-ida{
+        border-radius: 5px;
+        border: solid 2px rgb(215, 215, 215);
+        color: #808080;
+        
+    }
+
+    .fecha-ida:focus{
+        outline: none;
+        
+    }
+
+    .fecha-regreso{
+        border-radius: 5px;
+        border: solid 2px rgb(215, 215, 215);
+        color: #808080;
+    }
+
+    .fecha-regreso:focus{
+        outline: none;
+    }
+
+    .busqueda-tres{
+        background-color: white;
+        width: 90%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 5px;
+        border: solid 1px rgb(144, 144, 144);
+    }
+
+    .num-pasajeros{
+        display: block;
+        border: solid 2px rgb(215, 215, 215);
+        color: #808080;
+        border-radius: 10px;
+    }
+
+    .num-pasajeros:focus{
+        outline: none;
+        box-shadow: none; /* Elimina cualquier sombra al hacer clic */
+    }
+
+    .boton-uno{
+        background-color: #fd6456;
+        width: 90%;
+        height: 35px;
+        border-radius: 12px;
+        border: none;
+        margin-top: 6px;
+        color: white;
+    }
+
+    .boton-uno:hover{
+        background-color: #fe6b5d;
+        transform: translateY(1px);
+    }
+
+    /*Formuario Destinos*/
+
+
+
+
+    /*Recibir ofertas al correo*/
+
+    .recibir-ofertas{
+        display: grid;
+        justify-content: center;
+        height: 350px;
+    }
+
+
+    .ofertas-correo{
+        width: 75%;
+        height: 42px;
+        border: none;
+        border-radius: 8px;
+        background-color: #eeeeee;
+        padding: 10px;
+        border: solid 1px #999999;
+    }
+
+    .boton-tres{
+        background-color: #4277ff;
+        width: 20%;
+        height: 40px;
+        border-radius: 8px;
+        margin: 10px;
+        border: none;
+        color: white;
+    }
+
+    /*Recibir ofertas al correo*/
+
+
+    /*Footer*/
+
+    .informacion-footer{
+        height: 200px;
+    }
+
+    .row.info-vueloya{
+        color: #505050;
+        text-align: start;
+    }
+
+    .footer-dos {
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .footer-izquierda{
+        align-self: flex-end;
+        cursor: auto;
+    }
+
+    .pp-p{
+        margin: 0;
+
+    }
+
+    /*Footer*/
+
+}
+
+
+/*Pantalla grande*/
