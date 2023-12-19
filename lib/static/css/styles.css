@@ -456,16 +456,16 @@ body {
 
     .navbar-uno {
         margin-top: -20px;
-      }
+    }
       
-      .navbar {
-        padding: 10px;
-      }
+    .navbar {
+    padding: 10px;
+    }
       
-      .navbar-title {
-        color: #ffffff;
-        font-size: 20px;
-      }
+    .navbar-title {
+    color: #ffffff;
+    font-size: 20px;
+    }
 
     .busqueda-uno{
         background-color: rgb(255, 255, 255);
