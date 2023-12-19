@@ -1,0 +1,25 @@
+{% extends "indexdos.html" %}
+
+{% block titulo %} Inicio Sesión {% endblock %}
+
+
+{% block contenido %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+   
+                    <div class="alert alert-info" role="alert">
+                        {% if messages %}
+                            {% for message in messages%}
+                                {{message}}
+                            {% endfor%}
+                        {% endif %}
+                        <a href="{% url 'home_dev2' %}" class="alert-link">Click para regresar</a>. al inicio.
+                      </div>
+         
+        </div>
+    </div>
+</div>
+   
+{% endblock %}
