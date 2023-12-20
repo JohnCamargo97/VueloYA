@@ -2,49 +2,65 @@
 
 {% block titulo %} Inicio Sesión {% endblock %}
 
+{% load static %}
 
 {% block contenido %}
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                {% if messages %}
-                    {% for message in messages%}
-                        {{message}}
-                    {% endfor%}
-                {% endif %} 
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Login</h3>
-                    </div>
-                    <div class="card-body">
-                        <!-- Formulario de inicio de sesión -->
-                        <form method="POST">
-                            {% csrf_token %}
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">{{form.email.label}}</label>
-                                <input type="text" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">{{form.username.label}}</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="contrasena" class="form-label">{{form.password.label}}</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </div>
-                        </form>
-                        <!-- Fin del formulario -->
-                        <div>
-                            <small class="text-muted">No tienes cuenta? <a class="ml-2" href="#">Registrate</a></small>
+
+    <div class="container-fluid mauro-siete">
+
+        <div class="container qq-q">
+            
+            <div class="cuerpo-carta">
+
+                <div class="cabecera-iniciar">
+                    <img class="imagen-usuario" src="{% static 'img/CirculoUsuario.png' %}" alt="">
+                    <h3 class="text-bienvenida">¡Hola!</h3>
+                </div>
+
+                <div class="contenido-carta">
+
+                    <form>
+
+                        <div class="parte-usuario row">
+                            <input class="input-formulario-login" type="text" id="usuario" name="usuario" placeholder="Ingresa el Usuario">
                         </div>
-                    </div>
+
+                        
+                        <div class="parte-usuario row">
+                            <input class="input-formulario-login" type="password" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña">
+                        </div>
+
+                        <div class="parte-usuario">
+                            <button class="boton-iniciar" type="submit">Ingresar</button>
+                        </div>
+
+                        <div class="parte-recordar-usuario">
+                            <div>
+                                <input type="checkbox" id="recuerdame">
+                                <label for="recuerdame">Recúerdame</label>
+                            </div>
+                            <a style="color: #505050;" href="##">¿Necesitas ayuda?</a>
+                        </div>
+
+                        <div class="logos-redes-sociales">
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+                        </div>
+
+                        <div class="texto.oficial">
+                            <p style="color: #505050; text-align: center;">©VUELOYA COLOMBIA</p>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
+
         </div>
+
     </div>
+
     
 {% endblock %}
