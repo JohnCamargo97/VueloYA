@@ -200,7 +200,6 @@ body {
         padding: 12px;
         margin-bottom: 20px;
         border-radius: 10px;
-
     }
 
     /*Resultados Vuelos*/
@@ -437,6 +436,140 @@ body {
     /*Formuario Destinos*/
 
 
+    /*Formulario Log-in*/
+
+    .mauro-siete{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .tt-t{
+        width: 35%;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image:url("../img/Avion.png");
+        border-radius: 8px 0px 0px 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .qq-q{
+        width: 100%;
+        height: 690px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+
+    }
+
+    .imagen-usuario{
+        cursor: pointer;
+
+    }
+
+    .imagen-usuario{
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    }
+    
+    .imagen-usuario:hover{
+        transform: scale(1.1);
+    }
+
+    .cuerpo-carta{
+        background-color: #eeeeee;
+        width: 35%;
+        height: 600px;
+        border-radius: 0px 8px 8px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cabecera-iniciar{
+        color: #505050;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .contenido-carta{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parte-usuario{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .input-formulario-login{
+        border-radius: 20px;
+        border: solid 2px #505050;
+        height: 50px;
+    }
+
+    .input-formulario-login:focus{
+        outline: none;
+    }
+
+    .boton-iniciar{
+        background-color: white;
+        width: 60%;
+        height:40px;
+        border-radius: 20px;
+        border: solid 2px #505050;
+        margin-top: 6px;
+        color: #505050;
+    }
+
+    .boton-iniciar:hover{
+        transform: translateY(1px);
+    }
+
+    .parte-recordar-usuario{
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 5px;
+        color: #505050;
+    }
+
+
+    .logos-redes-sociales {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .logos-redes-sociales a{
+        margin-left: 15px;
+    }
+
+    .iconos-redes-sociales{
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    }
+    
+    .iconos-redes-sociales:hover{
+        transform: scale(1.1);
+    }
+
+    /*Formulario Log-in*/
 
 
     /*Recibir ofertas al correo*/
@@ -446,7 +579,6 @@ body {
         justify-content: center;
         height: 350px;
     }
-
 
     .ofertas-correo{
         width: 75%;
