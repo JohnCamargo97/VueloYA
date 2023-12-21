@@ -200,7 +200,6 @@ body {
         padding: 12px;
         margin-bottom: 20px;
         border-radius: 10px;
-
     }
 
     /*Resultados Vuelos*/
@@ -440,22 +439,26 @@ body {
     /*Formulario Log-in*/
 
     .mauro-siete{
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.8),
-            rgba(0,0,0,0.8)
-        ) 
-         ,url("../img/PlayaMexico.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
+    .tt-t{
+        width: 35%;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image:url("../img/Avion.png");
+        border-radius: 8px 0px 0px 8px;
+
+    }
     .qq-q{
 
         width: 100%;
-        height: 800px;
+        height: 690px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -463,10 +466,10 @@ body {
     }
 
     .cuerpo-carta{
-        width: 30%;
+        background-color: #eeeeee;
+        width: 35%;
         height: 600px;
-        border: solid 4px #293964;
-        border-radius: 14px;
+        border-radius: 0px 8px 8px 0px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -513,7 +516,8 @@ body {
     }
 
     .boton-iniciar{
-        width: 90%;
+        background-color: white;
+        width: 60%;
         height:40px;
         border-radius: 20px;
         border: solid 2px #505050;
@@ -526,7 +530,7 @@ body {
     }
 
     .parte-recordar-usuario{
-        width: 300px;
+        width: 350px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -566,7 +570,6 @@ body {
         justify-content: center;
         height: 350px;
     }
-
 
     .ofertas-correo{
         width: 75%;
