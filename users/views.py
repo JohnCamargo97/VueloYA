@@ -1,27 +1,28 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-#from django.contrib.auth import authenticate, login, logout
 from .forms import formUser
 from .models import user
 
 def register(request):
     
     if request.method == "POST":
-        form = formUser(request.POST or None)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
-              
-            usuario_repetido = user.objects.filter(email = request.POST['email']).values()
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
 
-            if usuario_repetido:
-                messages.error(request, ('Este usuario ya existe'))
-            else:
-                request.session['username'] = request.POST['username']
-                print(request.session['username'])
-                form.save()
-                return redirect('mensaje_user')
+            user = authenticate(usename = username, password = password)
+            login(request, user)
+            messages.success(request, ('Registro exitoso'))
+
+        else:
+            messages.error(request, ('Error con el formulario'))
         
     else:
-        form = formUser()
+        form = UserCreationForm()
     return render(request, 'users/registrarse.html', {'form': form})
 
 
@@ -29,21 +30,18 @@ def register(request):
 def login_user(request):
 
     if request.method == "POST":
-        form = formUser(request.POST or None)
         username = request.POST["username"]
         password = request.POST["password"]
-        Auth_user = user.objects.filter(username = username, password = password).values()
-
-        if Auth_user:
-            request.session['username'] = username
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
             return redirect('home_dev2')
         else:
-            # Return an 'invalid login' error message.
             messages.error(request, ('Usuario desconocido'))
             return render (request, 'users/iniciarsesion.html')
     else:
-        form = formUser()
-        return render (request, 'users/iniciarsesion.html', {'form': form})
+        return render (request, 'users/iniciarsesion.html', {})
 
     
 
