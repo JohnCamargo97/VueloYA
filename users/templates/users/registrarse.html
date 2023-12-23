@@ -2,24 +2,23 @@
 
 {% block titulo %} Registrarse {% endblock %}
 
+{% load static %}
 
 {% block contenido %}
 
-                        <!-- Formulario de inicio de sesión -->
-                        <form method="POST">
-                            {% csrf_token %}
-                            
-                            {{form}}
-                            
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </div>
 
-                        </form>
-                        <!-- Fin del formulario -->
-                        <div>
-                            <small class="text-muted">ya tienes una cuenta? <a class="ml-2" href="#">Loguearse</a></small>
-                        </div>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
 
+</form>                        
+{% if messages %}
+{% for message in messages%}
+    {{message}}
+{% endfor%}
+{% endif %} 
     
 {% endblock %}

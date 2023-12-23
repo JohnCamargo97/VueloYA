@@ -9,20 +9,28 @@ def register(request):
     
     if request.method == "POST":
         form = UserCreationForm(request.POST)
+        
         if form.is_valid():
+            
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
+            print(form.cleaned_data)
 
             user = authenticate(usename = username, password = password)
-            login(request, user)
-            messages.success(request, ('Registro exitoso'))
-
+            print(user)
+            try:
+                login(request, user)
+                messages.success(request, ('Registro exitoso'))
+                return redirect('home_dev2')
+            except:
+                messages.success(request, ('valio pija mi compa'))
+            
         else:
-            messages.error(request, ('Error con el formulario'))
-        
+            messages.error(request, ('Error con el formulario'))        
     else:
         form = UserCreationForm()
+        print("empty", form)
     return render(request, 'users/registrarse.html', {'form': form})
 
 
@@ -43,7 +51,11 @@ def login_user(request):
     else:
         return render (request, 'users/iniciarsesion.html', {})
 
-    
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, ('Sesion terminada correctamente'))
+    return redirect('home_dev2') 
 
 
 def mensaje_user(request):
