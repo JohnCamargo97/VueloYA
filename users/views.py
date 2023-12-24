@@ -12,15 +12,15 @@ def register(request):
         
         if form.is_valid():
             
-            form.save()
+            user = form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             print(form.cleaned_data)
 
-            user = authenticate(usename = username, password = password)
+            #user = authenticate(usename = username, password = password)
             print(user)
             try:
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, ('Registro exitoso'))
                 return redirect('home_dev2')
             except:
