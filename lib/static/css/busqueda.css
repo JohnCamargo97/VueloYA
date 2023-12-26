@@ -447,10 +447,10 @@ body {
 
     .tt-t{
         width: 35%;
-        height: 600px;
+        height: 650px;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-image:url("../img/Avion.png");
         border-radius: 8px 0px 0px 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -481,7 +481,7 @@ body {
     .cuerpo-carta{
         background-color: #eeeeee;
         width: 35%;
-        height: 600px;
+        height: 650px;
         border-radius: 0px 8px 8px 0px;
         display: flex;
         align-items: center;
@@ -570,6 +570,133 @@ body {
     }
 
     /*Formulario Log-in*/
+
+    /*Formulario Sign-Up*/
+
+    .mauro-ocho{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .carta-imagen-signup{
+        background-color: #eeeeee;
+        width: 35%;
+        height: 550px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image:url("../img/Avion.png");
+        border-radius: 8px 0px 0px 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .centrar-cartas-signup{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .cuerpo-carta-signup{
+        background-color: #eeeeee;
+        width: 40%;
+        height: 550px;
+        border-radius: 0px 8px 8px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cabecera-iniciar{
+        color: #505050;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .contenido-carta-signup{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .parte-registrarse{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .input-formulario-login{
+        border-radius: 20px;
+        border: solid 2px #505050;
+        height: 50px;
+    }
+
+    .input-formulario-login:focus{
+        outline: none;
+    }
+
+    .boton-registrarse{
+        background-color: white;
+        width: 60%;
+        height:40px;
+        border-radius: 20px;
+        border: solid 2px #505050;
+        margin-top: 6px;
+        color: #505050;
+    }
+
+    .boton-iniciar:hover{
+        transform: translateY(1px);
+    }
+
+    .texto-ya-tengo-cuenta{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #505050;
+    }
+
+    .aceptar-terminos{
+        display: flex;
+        align-items: center;
+        color: #505050;
+    }
+
+
+    .logos-redes-sociales {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    .logos-redes-sociales a{
+        margin-left: 15px;
+    }
+
+    .iconos-redes-sociales{
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    }
+    
+    .iconos-redes-sociales:hover{
+        transform: scale(1.1);
+    }
+    
+    /*Formulario Sing-Up*/
 
 
     /*Recibir ofertas al correo*/

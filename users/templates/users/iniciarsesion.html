@@ -40,14 +40,14 @@
                                 <button class="boton-iniciar" type="submit">Ingresar</button>
                             </div>
 
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 {% if messages %}
-                                {% for message in messages%}
-                                    {{message}}
-                                {% endfor%}
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    {% for message in messages%}
+                                        {{message}}
+                                    {% endfor%}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
                                 {% endif %} 
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>
 
                             <div class="parte-recordar-usuario">
                                 <div>

@@ -46,7 +46,7 @@ def login_user(request):
             login(request, user)
             return redirect('home_dev2')
         else:
-            messages.error(request, ('Usuario desconocido'))
+            messages.error(request, ('Usuario o contraseña incorrecta'))
             return render (request, 'users/iniciarsesion.html')
     else:
         return render (request, 'users/iniciarsesion.html', {})
