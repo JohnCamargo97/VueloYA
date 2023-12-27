@@ -7,9 +7,25 @@ from .forms import BusquedaForm
 # Create your views here.
 
 def home(request):
-    form_busqueda = BusquedaForm(request.POST or None)
+    if request.method == "POST":
+
+        # if this is a POST request we need to process the form data
+        form_busqueda = BusquedaForm(request.POST)
+        
+        if form_busqueda.is_valid():
+                     
+            request.session['origen'] = request.POST['origen']
+            request.session['destino'] = request.POST['destino']
+            print("session updated")
+
+            return redirect('resultados')
+        else:
+            print("campos no validos")
+    else:
+        form_busqueda = BusquedaForm()
+
+ 
     lista_vuelos = Vuelo.objects.all()
-    #print(form_busqueda["origen"])
     return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
 def home_dev2(request):

@@ -18,7 +18,7 @@
         </nav>
 
           <form class="formulario-uno" action="#" method="post">
-
+            {% csrf_token%}
             <div class="busqueda-uno row">
               <div class="col">
                 <label for="origen">Origen:</label>
@@ -26,18 +26,18 @@
               </div>
               <div class="col">
                 <label for="destino">Destino:</label>
-                <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino" required>
+                <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino">
               </div>
             </div>
 
             <div class="busqueda-dos row">
               <div class="col">
                 <label for="fecha-ida">Fecha de Ida:</label>
-                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
               </div>
               <div class="col">
                 <label for="fecha-regreso">Fecha de Regreso:</label>
-                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
               </div>
             </div>
 
