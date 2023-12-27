@@ -129,3 +129,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = '/logos_aerolineas/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTHENTICATION_BACKENDS = [
+
+   'django.contrib.auth.backends.ModelBackend', 
+]

@@ -40,16 +40,36 @@
               <li><a class="dropdown-item" href="#">Correo: vueloya@gmail.com</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'misviajes' %}">Mis Viajes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
-          </li>
+          
         </ul>
+      </div>
+
+      <div>
+
+          {% if user.is_authenticated %}
+            <div class="btn-group">
+              <button type="button" class="btn btn-light" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                {{ user.username }}
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="{% url 'misviajes' %}">Mis viajes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'cerrarsesion' %}">Cerrar sesion</a></li>
+              </ul>
+            </div>
+
+          {% else %} 
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
+              </li>
+            </ul>
+          {% endif %}
+
       </div>
 
     </div>

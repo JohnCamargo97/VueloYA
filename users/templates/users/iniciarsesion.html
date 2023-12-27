@@ -7,75 +7,77 @@
 {% block contenido %}
 
 
-    <div class="container-fluid mauro-siete">
+<div class="container-fluid mauro-siete">
 
-        <div class="container qq-q">
+    <div class="container centrar-cartas-signin">
 
+            <div class="carta-imagen-signin"></div>
+            
+            <div class="cuerpo-carta-signin">
 
+                <div class="cabecera-iniciar">
+                    <img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
+                    <h3 style="margin-top: 6px;" class="text-bienvenida">¡Bienvenido!</h3>
+                </div>
 
-                <div class="tt-t"></div>
-                
-                <div class="cuerpo-carta">
+                <div class="contenido-carta">
 
-                    <div class="cabecera-iniciar">
-                        <img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
-                        <h3 style="margin-top: 6px;" class="text-bienvenida">¡Bienvenido!</h3>
-                    </div>
+                    <form method="POST">
 
-                    <div class="contenido-carta">
+                        {% csrf_token %}
 
-                        <form method="POST">
+                        <div class="parte-usuario row">
+                            <input class="input-formulario-login" type="text" id="username" name="username" placeholder="Ingresa el Usuario">
+                        </div>
 
-                            {% csrf_token %}
+                        <div class="parte-usuario row">
+                            <input class="input-formulario-login" type="password" id="password" name="password" placeholder="Ingresa la Contraseña">
+                        </div>
 
-                            <div class="parte-usuario row">
-                                <input class="input-formulario-login" type="text" id="username" name="username" placeholder="Ingresa el Usuario">
-                            </div>
-    
-                            <div class="parte-usuario row">
-                                <input class="input-formulario-login" type="password" id="password" name="password" placeholder="Ingresa la Contraseña">
-                            </div>
+                        <div class="parte-usuario">
+                            <button class="boton-iniciar" type="submit">Ingresar</button>
+                        </div>
 
-                            <div class="parte-usuario">
-                                <button class="boton-iniciar" type="submit">Ingresar</button>
-                            </div>
-
+                            {% if messages %}
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                {% if messages %}
                                 {% for message in messages%}
                                     {{message}}
                                 {% endfor%}
-                                {% endif %} 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>
-
-                            <div class="parte-recordar-usuario">
-                                <div>
-                                    <input type="checkbox" id="recuerdame">
-                                    <label for="recuerdame">Recúerdame</label>
-                                </div>
-                                <a style="color: #505050;" href="##">¿Olvidaste tu contraseña?</a>
                             </div>
+                            {% endif %} 
 
-                            <div class="logos-redes-sociales">
-                                <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
-                                <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
-                                <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+                        <div class="parte-recordar-usuario">
+                            <div>
+                                <input type="checkbox" id="recuerdame">
+                                <label for="recuerdame">Recúerdame</label>
                             </div>
+                            <a style="font-weight: 500; color: #303030;" href="##">¿Olvidaste tu contraseña?</a>
+                        </div>
 
-                            <div class="texto.oficial">
-                                <p style="color: #505050; text-align: center;">©VUELOYA COLOMBIA</p>
-                            </div>
+                        <div class="texto-no-tengo-cuenta">
+                            <small>Aún no tienes cuenta? <a style="font-weight: 600; color: #303030;" href="{% url 'registrarse' %}">Registrate</a></small>
+                        </div>  
 
-                        </form>
+                        <div class="logos-redes-sociales">
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+                        </div>
 
-                    </div>
+                        <div class="texto.oficial">
+                            <p style="color: #505050; text-align: center;">©VUELOYA COLOMBIA</p>
+                        </div>
+
+
+                    </form>
+
                 </div>
-
-
-        </div>
+            </div>
 
     </div>
+
+</div>
 
     
 

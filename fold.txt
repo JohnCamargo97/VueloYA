@@ -1,0 +1,82 @@
+<div class="container-fluid mauro-siete">
+
+    <div class="container qq-q">
+
+
+
+            <div class="tt-t" style="height: 800px;"></div>
+            
+            <div class="cuerpo-carta" style="height: 800px;">
+
+                <div class="cabecera-iniciar">
+                    <img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
+                    <h3 style="margin-top: 6px;" class="text-bienvenida">¡Bienvenido!</h3>
+                </div>
+
+                <div style="padding-left: 5%; padding-right: 5%;">
+                    
+                    <form  method="POST">
+                        {% csrf_token %}
+                        <br>
+                        <div style="max-width: 500px;">
+
+
+                            <div class="parte-usuario row">
+                                <input class="input-formulario-login" type="text" name="username" value= "{{ form.username.value }}" placeholder="Nombre de Usuario" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
+                                {% if form.username.errors %}
+                                    <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ form.username.errors }}</div>
+                                {% else %}
+                                    {% if form.username.help_text %}
+                                    <div class="form-text" id="basic-addon4">{{ form.username.help_text }}</div>
+                                    {% endif %}
+                                {% endif %}
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                  </div>
+                            </div> 
+                            
+                            <div class="parte-usuario row">
+                                <input class="input-formulario-login" type="password" name="password1" placeholder="Contraseña" autocomplete="Nueva contraseña" autofocus required id="id_password1">
+                                {% if form.password1.errors %}
+                                    <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ form.password1.errors }}</div>   
+                                {% else %}
+                                    {% if form.password1.help_text %}
+                                        <div class="form-text" id="basic-addon4">{{ form.password1.help_text }}</div>
+                                    {% endif %}  
+                                {% endif %}  
+                            </div>
+
+                            <div class="parte-usuario row">
+                                <input class="input-formulario-login" type="password" name="password2" placeholder="Confirmar Contraseña" autocomplete="Confirmar contraseña" autofocus required id="id_password2">
+                                {% if form.password2.errors %}
+                                    {% for error in form.password2.errors %}
+                                    <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ error|escape }}</div>
+                                    {% endfor %}
+                                {% else %}
+                                    {% if form.password2.help_text %}
+                                        <div class="form-text" id="basic-addon4">{{ form.password2.help_text }}</div>
+                                    {% endif %}  
+                                {% endif %}     
+                            </div>
+                                  
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <!-- Fin del formulario -->
+                    <div>
+                        <small class="text-muted">ya tienes una cuenta? <a class="ml-2" href="#">Loguearse</a></small>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+    </div>
+
+</div>
+
+                        <!-- Formulario de inicio de sesión -->
