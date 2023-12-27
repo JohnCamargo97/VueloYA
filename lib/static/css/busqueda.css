@@ -445,9 +445,9 @@ body {
 
     }
 
-    .tt-t{
+    .carta-imagen-signin{
         width: 35%;
-        height: 650px;
+        height: 700px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -455,13 +455,14 @@ body {
         border-radius: 8px 0px 0px 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-    .qq-q{
+
+    .centrar-cartas-signin{
         width: 100%;
-        height: 690px;
+        height: 760px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 80px;
+        margin-top: 10px;
 
     }
 
@@ -478,10 +479,10 @@ body {
         transform: scale(1.1);
     }
 
-    .cuerpo-carta{
+    .cuerpo-carta-signin{
         background-color: #eeeeee;
         width: 35%;
-        height: 650px;
+        height: 700px;
         border-radius: 0px 8px 8px 0px;
         display: flex;
         align-items: center;
@@ -538,6 +539,15 @@ body {
         transform: translateY(1px);
     }
 
+    .texto-no-tengo-cuenta{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #505050;
+
+    }
+
     .parte-recordar-usuario{
         width: 350px;
         display: flex;
@@ -555,6 +565,7 @@ body {
         justify-content: center;
         padding: 10px;
         margin-bottom: 5px;
+        margin-top: 20px;
     }
 
     .logos-redes-sociales a{
@@ -583,7 +594,7 @@ body {
     .carta-imagen-signup{
         background-color: #eeeeee;
         width: 35%;
-        height: 550px;
+        height: 650px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -594,17 +605,18 @@ body {
 
     .centrar-cartas-signup{
         width: 100%;
+        height: 760px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 40px;
+        margin-top: 10px;
         margin-bottom: 40px;
     }
 
     .cuerpo-carta-signup{
         background-color: #eeeeee;
         width: 40%;
-        height: 550px;
+        height: 650px;
         border-radius: 0px 8px 8px 0px;
         display: flex;
         align-items: center;
@@ -613,13 +625,12 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    .cabecera-iniciar{
+    .cabecera-iniciar-signup{
         color: #505050;
         padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
         margin-bottom: 5px;
     }
 
@@ -658,11 +669,12 @@ body {
         color: #505050;
     }
 
-    .boton-iniciar:hover{
+    .boton-registrarse:hover{
         transform: translateY(1px);
     }
 
     .texto-ya-tengo-cuenta{
+        margin-top: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -670,30 +682,11 @@ body {
     }
 
     .aceptar-terminos{
+        margin-top: 10px;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
         color: #505050;
-    }
-
-
-    .logos-redes-sociales {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-    }
-
-    .logos-redes-sociales a{
-        margin-left: 15px;
-    }
-
-    .iconos-redes-sociales{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
-    
-    .iconos-redes-sociales:hover{
-        transform: scale(1.1);
     }
     
     /*Formulario Sing-Up*/
