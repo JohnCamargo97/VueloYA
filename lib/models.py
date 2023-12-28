@@ -15,8 +15,15 @@ class Vuelo(models.Model):
     #id= models.AutoField(primary_key=True)
     origen= models.CharField(max_length=100, verbose_name='Origen')
     destino= models.CharField(max_length=100, verbose_name='Destino')
-    fechasalida= models.DateTimeField(verbose_name='Salida_d', blank=True)
-    fechavuelta= models.DateTimeField(verbose_name='vuelta_d', blank=True)
+    
+    fechasalida= models.DateField(verbose_name='fecha salida', blank=True)
+    horasalida1= models.TimeField(verbose_name='hora salida', blank=True, default=None)
+    horasalida2= models.TimeField(verbose_name='hora llegada', blank=True, default=None)
+    
+    fechavuelta= models.DateField(verbose_name='fecha regreso', blank=True)
+    horavuelta1= models.TimeField(verbose_name='hora salida', blank=True, default=None)
+    horavuelta2= models.TimeField(verbose_name='hora llegada', blank=True, default=None)
+    
     id_aerolinea= models.ForeignKey(aerolinea, on_delete=models.CASCADE)
     Escalado= models.BooleanField(verbose_name='Escalas')
     escalas= models.IntegerField(verbose_name='# escalas', blank=True, default= 0)

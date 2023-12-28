@@ -18,7 +18,7 @@ def home(request):
             request.session['destino'] = request.POST['destino']
             print("session updated")
 
-            return redirect('resultados')
+            return redirect('busqueda')
         else:
             print("campos no validos")
     else:
@@ -71,4 +71,8 @@ def registrarse(request):
     return render(request, 'paginas/registrarse.html')
 
 def busqueda(request):
-    return render(request, 'paginas/busqueda.html')
+    form_response = request.session
+    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
+
+    #print(Vuelo.objects.horasalida1)
+    return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
