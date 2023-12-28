@@ -9,6 +9,7 @@ urlpatterns = [
     path('busqueda', views.busqueda, name='busqueda'),
     path('home_dev2', views.home_dev2, name='home_dev2'),
     path('misviajes', views.misviajes, name='misviajes'),
+    path('pagos', views.pagos, name='pagos'),
     path('resultados', views.resultados, name='resultados'),
 
     path('users/', include('users.urls')),

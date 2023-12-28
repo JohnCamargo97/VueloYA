@@ -64,6 +64,9 @@ def resultados(request):
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
 
+def pagos(request):
+    return render (request, 'paginas/pagos.html')
+
 def iniciarsesion(request):
     return render (request, 'paginas/iniciarsesion.html')
 
