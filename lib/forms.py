@@ -5,8 +5,8 @@ class BusquedaForm(forms.Form):
 
     origen= forms.CharField(max_length=100, label='Origen', required=False)
     destino= forms.CharField(max_length=100, label='Destino', required=False)
-    fechasalida= forms.DateTimeField(label='Salida_d', required=False)
-    fechavuelta= forms.DateTimeField(label='vuelta_d', required=False)
+    fechasalida= forms.DateField(label='Salida_d', required=False)
+    fechavuelta= forms.DateField(label='vuelta_d', required=False)
     solo_ida= forms.BooleanField(label='solo_ida', required=False)
     ida_vuelta= forms.BooleanField(label='ida_vuelta', required=False)
     clase_economica= forms.BooleanField(label='clase_economica', required=False)
