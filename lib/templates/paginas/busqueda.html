@@ -6,7 +6,7 @@
 
 {% load static %}
 
-<div class="conatiner">
+<div class="container">
 
   <div class="container-fluid mauro-seis">
     <div class="container">
@@ -75,79 +75,74 @@
               </div>
             </div>
 
-            {% for vuelo in lista_resultado %}
+            
+            <div class="uno">
+              <div class="busqueda-vuelos">
 
-              <div class="uno">
-                <div class="busqueda-vuelos">
-
-                  <div class="ida-vuelo">
-                      <div class="icono-avion">
-                          <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
-                      </div>
-                      <div class="fecha-salida-avion">
-                          <span>{{vuelo.fechasalida}}</span>
-                      </div>
-                  </div>
-
-                  <div class="info-vuelos">
-                      <div class="nombre-aerolinea">
-                          <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
-                      </div>
-                      <div class="horario-viaje">
-                          <span style="cursor: pointer;"> {{vuelo.origen}} </span>
-                          <span style="display: block; font-weight: bold;"> {{vuelo.horasalida1}} </span>
-                          <span>-------</span>
-                          <span style="cursor: pointer;"> {{vuelo.destino}} </span>
-                          <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2}} </span>
-                          <span>-------</span>
-                          <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                      </div>
-                      <span class="tiempo-viaje"> Duración de Viaje {{vuelo.horasalida1}} </span>
-                  </div>
-
-
-
-                  <div class="regreso-vuelo">
-                      <div class="icono-avion">
-                          <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
-                      </div>
-                      <div class="fecha-regreso-avion">
-                          <span>{{vuelo.fechavuelta}}</span>
-                      </div>
-                  </div>
-
-                  <div class="info-vuelos">
-                      <div class="nombre-aerolinea">
-                          <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
-                      </div>
-                      <div class="horario-viaje">
-                          <span style="cursor: pointer;"> {{vuelo.destino}} </span>
-                          <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta1}} </span>
-                          <span>-------</span>
-                          <span style="cursor: pointer;"> {{vuelo.origen}} </span>
-                          <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta2}} </span>
-                          <span>-------</span>
-                          <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                      </div>
-                      <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
-                  </div>
-
-                  <div class="precio-total-vuelo">
-
-                      <div class="precio-final">
-                          <span> Precio final a pagar </span>
-                          <span style="font-weight: bold; font-size: 20px; display: block;">{{vuelo.precio}}</span>
-                      </div>
-
-                      <div class="boton-buy">
-                          <button class="boton-comprar" type="submit"><a style="text-decoration: none; color: white;" href="{% url 'misviajes' %}"> Comprar </a></button>
-                      </div>
-                  </div>
-
+                <div class="ida-vuelo">
+                    <div class="icono-avion">
+                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                    </div>
+                    <div class="fecha-salida-avion">
+                        <span>Jue/14 Dic/2023</span>
+                    </div>
                 </div>
-              </div>
 
-            {% endfor %}
+                <div class="info-vuelos">
+                    <div class="nombre-aerolinea">
+                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Avianca"> Avianca Airlines</span>
+                    </div>
+                    <div class="horario-viaje">
+                        <span style="cursor: pointer;"> VVC </span>
+                        <span style="display: block; font-weight: bold;"> 7:00AM </span>
+                        <span>-------</span>
+                        <span style="cursor: pointer;"> MDE </span>
+                        <span style="display: block; font-weight: bold;"> 10:30AM </span>
+                        <span>-------</span>
+                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                    </div>
+                    <span class="tiempo-viaje"> Duración de Viaje 3h 30m </span>
+                </div>
+
+                <div class="regreso-vuelo">
+                    <div class="icono-avion">
+                        <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                    </div>
+                    <div class="fecha-regreso-avion">
+                        <span>Jue/22 Dic/2023</span>
+                    </div>
+                </div>
+
+                <div class="info-vuelos">
+                    <div class="nombre-aerolinea">
+                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Avianca"> Avianca Airlines</span>
+                    </div>
+                    <div class="horario-viaje">
+                        <span style="cursor: pointer;"> MDE </span>
+                        <span style="display: block; font-weight: bold;"> 4:00AM </span>
+                        <span>-------</span>
+                        <span style="cursor: pointer;"> VVC </span>
+                        <span style="display: block; font-weight: bold;"> 8:30AM </span>
+                        <span>-------</span>
+                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                    </div>
+                    <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                </div>
+
+                <div class="precio-total-vuelo">
+
+                    <div class="precio-final">
+                        <span> Precio final a pagar </span>
+                        <span style="font-weight: bold; font-size: 20px; display: block;">$ 1.800.000 COP</span>
+                    </div>
+
+                    <div class="boton-buy">
+                        <button class="boton-comprar" type="submit"><a style="text-decoration: none; color: white;" href="{% url 'misviajes' %}"> Comprar </a></button>
+                    </div>
+                </div>
+
+              </div>
+            </div>
           
           </div>
 
@@ -157,7 +152,7 @@
   </div>
 
 
-
+  
   <div class="container recibir-ofertas">
       <div class="container">
 

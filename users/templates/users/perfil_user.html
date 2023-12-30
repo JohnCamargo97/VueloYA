@@ -1,0 +1,36 @@
+{% extends "indexdos.html" %}
+
+{% block titulo %} Inicio Sesión {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h1> Mi perfil </h1>
+<br>
+
+<img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
+{{ user.email }}
+<div style="min-width: 40%;"></div>
+<div class="parte-usuario">
+    <button class="btn btn-primary" type="submit">Editar</button>
+</div>
+            
+<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Datos Personales</a>
+<br>
+<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Telefono</a>
+<br>
+<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">email</a>
+<br>
+<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Contraseña</a>
+
+        <div style="min-width: 50%; height: 200px;"></div>
+    </div>
+
+    <div style="background-color: rgb(118, 158, 158); min-width: 50%;"></div>
+
+
+
+
+  
+{% endblock %}

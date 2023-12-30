@@ -1,0 +1,20 @@
+{% extends "indexdos.html" %}
+
+{% block titulo %} Inicio Sesión {% endblock %}
+
+
+{% block contenido %}
+
+
+<br>
+<form method="POST">
+    {% csrf_token %}
+
+    {{form}}
+    <div class="parte-registrarse">
+        <button class="boton-registrarse" type="submit">Actualizar</button>
+    </div>
+</form>
+
+
+{% endblock %}
