@@ -8,19 +8,32 @@
 
 <h1> Mi perfil </h1>
 <br>
-
-<img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
-{{ user.email }}
-<div style="min-width: 40%;"></div>
-<div class="parte-usuario">
-    <button class="btn btn-primary" type="submit">Editar</button>
+<div style="display: flex;">
+    <img class="rounded-circle" src="{{user.uservueloya.picture.url}}" height="60">
+    <div>
+        {{ user.username }}
+        <br>
+        {{ user.email }} 
+    </div> 
+    <div class="parte-usuario">
+        <a style="background-color: rgb(70, 144, 184); 
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;" 
+        
+        href="{% url 'personal-info' %}">Editar</a>
+    </div>     
 </div>
-            
-<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Datos Personales</a>
 <br>
-<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Telefono</a>
+
+<div style="min-width: 40%;"></div>
+
+Nombre completo: {{user.get_full_name}}        
 <br>
-<a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">email</a>
+
+Telefono: {{user.username}}
 <br>
 <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Contraseña</a>
 

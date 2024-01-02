@@ -12,5 +12,11 @@ class RegUserForm(UserCreationForm):
       model = User
       fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
+class UpdateUserForm(forms.ModelForm):
+   email = forms.EmailField()
+   first_name = forms.CharField(max_length=30, required=None)
+   last_name = forms.CharField(max_length=30, required=None)
+   class Meta:
+      model = User
+      fields = ('username', 'first_name', 'last_name', 'email')
    
-    

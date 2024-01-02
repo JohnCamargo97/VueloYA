@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import RegUserForm
+from .forms import RegUserForm, UpdateUserForm
+from lib.forms import UpdateUserVYaForm
 from django.contrib.auth.models import User
 
 def register(request):
@@ -67,17 +68,27 @@ def perfil_user(request):
     return render (request, 'users/perfil_user.html')
 
 def personal_info(request):
-    if request.user.is_authenticated:
-        actual_user = User.objects.get(id=request.user.id)
-        form = RegUserForm(request.POST or None, instance= actual_user)
-        if form.is_valid():
-            form.save()
-            login(request, actual_user)
+    
+    if request.method == "POST":
+        u_form = UpdateUserForm(request.POST, instance=request.user)
+        uvy_form = UpdateUserVYaForm(request.POST, request.FILES, instance=request.user.uservueloya)
+
+        if u_form.is_valid() and uvy_form.is_valid():
+            u_form.save()
+            uvy_form.save()
             return redirect('perfil_user')
-
-        return render (request, 'users/personal-info.html', {'form': form})
-
     else:
-        return redirect('iniciarsesion')
+        u_form = UpdateUserForm(instance=request.user)
+        uvy_form = UpdateUserVYaForm(instance=request.user.uservueloya)
+
+    context = {
+        'u_form' : u_form,
+        'uvy_form' : uvy_form
+    }
+    
+
+
+    return render (request, 'users/personal-info.html', context)
+
     
 #def update_user(request):

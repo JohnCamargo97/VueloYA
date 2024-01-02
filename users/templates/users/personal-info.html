@@ -1,16 +1,16 @@
 {% extends "indexdos.html" %}
-
-{% block titulo %} Inicio Sesión {% endblock %}
+{% block titulo %} Personal-info {% endblock %}
 
 
 {% block contenido %}
 
 
 <br>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
-    {{form}}
+    {{u_form.as_p}}
+    {{uvy_form.as_p}}
     <div class="parte-registrarse">
         <button class="boton-registrarse" type="submit">Actualizar</button>
     </div>
