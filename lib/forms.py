@@ -21,4 +21,4 @@ class BusquedaForm(forms.Form):
 class UpdateUserVYaForm(forms.ModelForm):
     class Meta:
         model = userVueloYa
-        fields = ['picture']
+        fields = ('picture', 'genero', 'telefono', 'fechaNacimiento')

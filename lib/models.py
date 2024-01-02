@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from PIL import Image
+
 class aerolinea(models.Model):
     #id = models.IntegerField(primary_key=True)
     nombre_aerolinea= models.CharField(max_length=100, verbose_name='nombre')
@@ -48,18 +49,28 @@ class puestos(models.Model):
 class userVueloYa(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     picture = models.ImageField(default='default.png', upload_to='profile_pictures')
+    genero = models.CharField(default='No especificado', max_length=15)
+    fechaNacimiento = models.DateField(default='1900-01-01', blank=True)
+    telefono = models.CharField(default='', blank=True, max_length=10)
 
     def __str__(self):
             return f'{self.user.username}'
     
     #overrite save function for the model to resize images
-    def save(self):
+    def save(self, *args, **kwargs):
         #run the father class first
-        super().save()
+        super().save(*args, **kwargs)
 
         img = Image.open(self.picture.path)
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
+        if img.height > 200 or img.width > 200:
+            output_size = (200, 200)
             img.thumbnail(output_size)
-            img.save(self.picture.path)
+            w, h = img.size
+            if w > h:
+                (left, upper, right, lower) = ((w-h)/2, 0, h+(w-h)/2, h)
+            else:
+                (left, upper, right, lower) = (0, (h-w)/2, 0, w+(h-w)/2)
+            
+            img.crop((left, upper, right, lower)).save(self.picture.path)
+
