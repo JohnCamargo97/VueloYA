@@ -717,16 +717,6 @@ body {
         text-align: start;
     }
 
-    .detalles-pagos{
-        background-color: #808080;
-        width: 50%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin: 10px;
-    }
-
     .mauro-diez{
         width: 100%;
         height: 400px;
@@ -975,11 +965,57 @@ body {
 
     /*Detalles del pago*/
 
-    .pp-p{
-        width: 100%;
-        height: 500px;
-        background-color: #fd6456;
+    .detalles-pagos{
+        background-color: #ff5656;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
 
+    .contenedor-de-formularios-detalles{
+        width: 95%;
+    }
+
+    .contenedor-detalles-pago{
+        width: 100%;
+        height: 180px;
+        background-color: rgb(255, 165, 48);
+        padding: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario-detalles-pago{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .formulario-detalles-pago-dos{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px;
+        margin-top: 10px;
+    }
+
+    .total-factura{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .contenedor-detalles-compra{
+        width: 100%;
+        height: 400px;
+        background-color: rgb(255, 165, 48);
+        padding: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     /*Detalles del pago*/
