@@ -11,14 +11,16 @@
     <div class="container-fluid mauro-nueve">
   
         <div class="container">
-  
+
+                <div class="texto-compra">
+                    <div class="gg-g">
+                        <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
+                    </div>
+                </div>
+
             <div class="contenedor-datos-para-pagos">
     
                 <div class="contenido-formulario-para-pagos">
-    
-                    <div class="texto-compra">
-                        <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
-                    </div>
         
                     <div class="mauro-diez">
                         <form class="formulario-pagos" action="#">
@@ -279,18 +281,19 @@
 
 
                 <div class="detalles-pagos">
-                    <div class="texto-compra">
-                        <h3 style="color: #505050;">Detalles del pago</h3>
-                    </div>
 
                     <div class="contenedor-detalles-pago">
 
                         <div class="contenedor-de-formularios-detalles">
 
+                            <div class="texto-detalles-pago">
+                                <h3 style="color: #505050;">Detalles del pago</h3>
+                            </div>
+
                             <form class="formulario-detalles-pago" action="#">
                 
                                 <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 16px;">Valor para 1 persona</h3>
+                                    <h3 style="color: #505050; font-size: 18px;">Valor para 1 persona</h3>
                                 </div>
                 
                                 <div class="texto-detalles-pagos">
@@ -302,7 +305,7 @@
                             <form class="formulario-detalles-pago-dos" action="#">
                 
                                 <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 16px;">Impuestos, tasas y recargas</h3>
+                                    <h3 style="color: #505050; font-size: 18px;">Impuestos, tasas y recargas</h3>
                                 </div>
                 
                                 <div class="texto-detalles-pagos">
@@ -326,6 +329,66 @@
                     </div>
 
                     <div class="contenedor-detalles-compra">
+
+
+
+                        <div class="uno">
+                            <div class="busqueda-vuelos">
+            
+                                <div class="ida-vuelo">
+                                    <div class="icono-avion">
+                                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                                    </div>
+                                    <div class="fecha-salida-avion">
+                                        <span>{{DetallesVuelo.fechasalida}}</span>
+                                    </div>
+                                </div>
+                
+                                <div class="info-vuelos">
+                                    <div class="nombre-aerolinea">
+                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                    </div>
+                                    <div class="horario-viaje">
+                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
+                                        <span>-----</span>
+                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
+                                        <span>-----</span>
+                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                    </div>
+                                    <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
+                                </div>
+                
+                
+                
+                                <div class="regreso-vuelo">
+                                    <div class="icono-avion">
+                                        <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                                    </div>
+                                    <div class="fecha-regreso-avion">
+                                        <span>{{DetallesVuelo.fechavuelta}}</span>
+                                    </div>
+                                </div>
+                
+                                <div class="info-vuelos">
+                                    <div class="nombre-aerolinea">
+                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                    </div>
+                                    <div class="horario-viaje">
+                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
+                                        <span>-----</span>
+                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
+                                        <span>-----</span>
+                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                    </div>
+                                    <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                                </div>
+            
+                            </div>
+                        </div>
 
                     </div>
 
