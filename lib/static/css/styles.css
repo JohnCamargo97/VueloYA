@@ -10,6 +10,7 @@ body {
     margin: 0 auto; /* Centra el contenedor en la página */
 }
 
+
 /*Formuario Destinos*/
 
 .mauro-uno{
@@ -436,6 +437,46 @@ body {
 
 @media only screen and (min-width: 1080px) {
 
+    /*Navbar*/
+
+    .contenedor-logo-vueloYa{
+        background-color: #eeeeee;
+        padding: 10px;
+        font-size: 25px;
+        font-weight: 700;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        cursor: pointer;
+    }
+
+    .ll-l{
+        color: #505050;
+        text-decoration: none;
+    }
+
+    .navbar-collapse{
+        flex-grow: 0!important;
+        background-color: #eeeeee;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        height: 50px;
+    }
+
+    .dropdown-toggle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        border-right: solid 1px #828282;
+    }
+
+    .kk-k{
+        margin-right: 10px;
+        border-right: solid 1px #828282;
+    }
+
+    /*Navbar*/
+
     /*Formuario Destinos*/
 
     .mauro-uno{
@@ -454,6 +495,7 @@ body {
         align-items: center;
     }
 
+    /*
     .navbar-uno {
         margin-top: -20px;
     }
@@ -465,7 +507,7 @@ body {
     .navbar-title {
     color: #ffffff;
     font-size: 20px;
-    }
+    }*/
 
     .busqueda-uno{
         background-color: rgb(255, 255, 255);

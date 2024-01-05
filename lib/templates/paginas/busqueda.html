@@ -140,11 +140,9 @@
                         <span> Precio final a pagar </span>
                         <span style="font-weight: bold; font-size: 20px; display: block;">{{vuelo.precio}}</span>
                     </div>
-                    <form action="" method="POST">
+                    <form class="boton-buy" action="" method="POST">
                       {% csrf_token%}
-                      <div class="boton-buy">
                           <button class="boton-comprar" name="Comprar" value="{{vuelo.pk}}" type="submit">Comprar</button>
-                      </div>
                     </form>
                 </div>
               </div>
