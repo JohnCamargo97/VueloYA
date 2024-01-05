@@ -238,7 +238,7 @@ body {
 }
 
 .boton-tres:hover{
-    background-color: #4e80ff;
+    background-color: #2563ff;
     transform: translateY(1px);
 }
 
@@ -421,7 +421,7 @@ body {
 }
 
 .boton-comprar:hover{
-    background-color: #4e80ff;
+    background-color: #2563ff;
     transform: translateY(1px);
 }
 
@@ -495,20 +495,6 @@ body {
         align-items: center;
     }
 
-    /*
-    .navbar-uno {
-        margin-top: -20px;
-    }
-      
-    .navbar {
-    padding: 10px;
-    }
-      
-    .navbar-title {
-    color: #ffffff;
-    font-size: 20px;
-    }*/
-
     .busqueda-uno{
         background-color: rgb(255, 255, 255);
         width: 33%;
@@ -581,6 +567,11 @@ body {
         margin: 10px;
         border: none;
         color: white;
+    }
+
+    .boton-tres:hover{
+        background-color: #2563ff;
+        transform: translateY(1px);
     }
 
     /*Recibir ofertas al correo*/
