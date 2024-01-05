@@ -1,0 +1,95 @@
+{% extends "indexdos.html" %}
+
+{% block titulo %} Inicio Sesión {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h1> Mi perfil </h1>
+    <div style="display: flex; ">
+        
+        <div style="padding: 15px; min-width: 50%;">
+            <hr></hr>
+            <div style="display: flex; background-color: rgb(35, 35, 90); padding: 10px;">
+                <div style="padding: 5px; aspect-ratio: 1 / 1;"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
+                <div style="color: white; display: flex; justify-content: center; align-items: center;">
+                    {{ user.username }}
+                    <br>
+                    {{ user.email }} 
+                </div> 
+                <div class="parte-usuario" style="margin-left: auto;">
+                    <a style="background-color: rgb(70, 144, 184); 
+                            color: white;
+                            padding: 14px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;" 
+                    
+                    href="{% url 'personal-info' %}">Editar</a>
+                </div>     
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); margin-bottom: 10px; margin-top: 10px;">
+                <div style="padding: 5px; margin: 5px;">Nombre completo: {{user.get_full_name}} </div>       
+                <div style="padding: 5px; margin: 5px;">Telefono: {{user.uservueloya.telefono}} </div>
+                <div style="padding: 5px; margin: 5px;">Fecha de Nacimiento: {{user.uservueloya.fechaNacimiento}} </div>
+                <div style="padding: 5px; margin: 5px;">genero: {{user.uservueloya.genero}} </div>
+            </div>
+
+
+            <hr></hr>
+
+
+            <div style="padding: 10px;"><a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a></div>
+            <hr></hr>
+
+
+            <div style="display: flex;">
+                <div style="padding: 10px;">
+                    <h6>Tarjetas de credito:</h6>
+                    Tarjeta1
+                </div>
+                <div class="parte-usuario" style="margin-left: auto;">
+                    <a style="background-color: rgb(70, 144, 184); 
+                            color: white;
+                            padding: 14px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;" 
+                    
+                    href="{% url 'personal-info' %}">Agregar tarjeta</a>
+                </div>   
+            </div>
+
+
+            <hr></hr>
+
+
+            <div style="display: flex;">
+                <div style="padding: 10px;">
+                    <h6>Datos de Facturacion:</h6>
+                    User1 CC 1234
+                </div>
+                <div class="parte-usuario" style="margin-left: auto;">
+                    <a style="background-color: rgb(70, 144, 184) ; 
+                            color: white;
+                            padding: 14px 25px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;" 
+                    
+                    href="{% url 'personal-info' %}">Agregar facturacion</a>
+                </div>   
+            </div>
+
+            <hr></hr>
+
+            <h6>Preferencias:</h6>
+            Recibir notificaciones (yes/no)
+            <br>
+            Eliminar mi cuenta
+        </div>
+        <div style="min-width: 50%;"></div>
+    </div>   
+{% endblock %}

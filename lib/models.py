@@ -1,8 +1,11 @@
+import os
+from uuid import uuid4
 from django.db import models
 from django.utils import timezone
-
-# Create your models here.
-
+from django.contrib.auth.models import User
+from PIL import Image
+from django.core.validators import FileExtensionValidator
+from django.core.exceptions import ObjectDoesNotExist
 class aerolinea(models.Model):
     #id = models.IntegerField(primary_key=True)
     nombre_aerolinea= models.CharField(max_length=100, verbose_name='nombre')
@@ -44,6 +47,55 @@ class puestos(models.Model):
     def __str__(self):
         numerostr = str(self.id)
         return  numerostr
+    
+class userVueloYa(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    picture = models.ImageField(default='default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
+    genero = models.CharField(default='No especificado', max_length=15)
+    fechaNacimiento = models.DateField(default='1900-01-01', blank=True)
+    telefono = models.CharField(default='', blank=True, max_length=10)
+
+    def __str__(self):
+            return f'{self.user.username}'
+    
+    #rename picture to upload
+
+    def wrapper(instance, filename):
+        extension= filename.split('.')[-1]
+        print(extension)
+        if instance.pk:
+            filename= '{}{}'.format(instance.user.username, extension)
+        else:
+            # set filename as random string
+            filename = '{}.{}'.format(uuid4().hex, extension)
+        # return the whole path to the file
+        return os.path.join(path, filename)
 
 
 
+    #overrite save function for the model to resize images and replace old ones
+    def save(self, *args, **kwargs):
+        #run the father class first deleting old picture
+        try:
+            actual= userVueloYa.objects.get(id=self.id)
+            if actual.picture!= self.picture:
+                actual.picture.delete(save=False)
+        except ObjectDoesNotExist:
+            pass
+        super().save(*args, **kwargs)
+
+        #create thumbnail 1:1 aspect ratio if picture exists
+        try:
+            img = Image.open(self.picture.path)
+
+            if img.height > 300 or img.width > 300:
+                output_size = (300, 300)
+                img.thumbnail(output_size)
+            w, h = img.size
+            if w > h:
+                (left, upper, right, lower) = ((w-h)/2, 0, h+(w-h)/2, h)
+            else:
+                (left, upper, right, lower) = (0, (h-w)/2, w, w+(h-w)/2)
+            img.crop((left, upper, right, lower)).save(self.picture.path)
+        except:
+            pass

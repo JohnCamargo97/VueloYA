@@ -2,35 +2,38 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import formUser
-from .models import user
+from .forms import RegUserForm, UpdateUserForm
+from lib.forms import UpdateUserVYaForm
+from django.contrib.auth.models import User
 
 def register(request):
     
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegUserForm(request.POST)
         
         if form.is_valid():
             
             user = form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
-            print(form.cleaned_data)
+            print("form valid")
 
             #user = authenticate(usename = username, password = password)
-            print(user)
             try:
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-                messages.success(request, ('Registro exitoso'))
-                return redirect('home_dev2')
+                print("registro exitoso")
+                return redirect('home')
             except:
-                messages.success(request, ('valio pija mi compa'))
+                messages.success(request, ('Error creando usuario'))
+                print("Error con logueo")
             
         else:
-            messages.error(request, ('Error con el formulario'))        
+            messages.error(request, ('Error con el formulario'))
+            print("Formulario invalido", request.POST)
+
     else:
-        form = UserCreationForm()
-        print("empty", form)
+        form = RegUserForm()
+        print("no post request")
     return render(request, 'users/registrarse.html', {'form': form})
 
 
@@ -44,7 +47,7 @@ def login_user(request):
         
         if user is not None:
             login(request, user)
-            return redirect('home_dev2')
+            return redirect('home')
         else:
             messages.error(request, ('Usuario o contraseña incorrecta'))
             return render (request, 'users/iniciarsesion.html')
@@ -54,13 +57,38 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    messages.success(request, ('Sesion terminada correctamente'))
-    return redirect('home_dev2') 
+    return redirect('home') 
 
 
 def mensaje_user(request):
     messages.success(request, ('Registrado exitosamente!'))
     return render (request, 'users/mensaje_user.html')
 
+def perfil_user(request):
+    return render (request, 'users/perfil_user.html')
+
+def personal_info(request):
+    
+    if request.method == "POST":
+        u_form = UpdateUserForm(request.POST, instance=request.user)
+        uvy_form = UpdateUserVYaForm(request.POST, request.FILES, instance=request.user.uservueloya)
+
+        if u_form.is_valid() and uvy_form.is_valid():
+            u_form.save()
+            uvy_form.save()
+            return redirect('perfil_user')
+    else:
+        u_form = UpdateUserForm(instance=request.user)
+        uvy_form = UpdateUserVYaForm(instance=request.user.uservueloya)
+
+    context = {
+        'u_form' : u_form,
+        'uvy_form' : uvy_form
+    }
     
 
+
+    return render (request, 'users/personal-info.html', context)
+
+    
+#def update_user(request):

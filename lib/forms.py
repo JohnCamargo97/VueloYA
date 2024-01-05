@@ -1,4 +1,6 @@
 from django import forms
+from .models import userVueloYa
+from django.forms.widgets import ClearableFileInput
 #from .models import Vuelo
 
 class BusquedaForm(forms.Form):
@@ -17,3 +19,10 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
+
+class UpdateUserVYaForm(forms.ModelForm):
+    class Meta:
+        model = userVueloYa
+        widgets = {'picture': ClearableFileInput(attrs={'accept': 'application/png,application/jpg'})}
+        fields = ('picture', 'genero', 'telefono', 'fechaNacimiento')
+        
