@@ -19,66 +19,67 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeeeee;">
+  <nav class="navbar navbar-expand-lg navbar-light">
 
-    <div class="container-fluid">
+      <div class="container-fluid">
 
-      <a class="navbar-brand" href="{% url 'home' %}"><img class="logo-img" src="{% static 'img/Logo.png' %}" alt="" style="width: 80px; border-radius: 80px;"></a>
+        <div class="contenedor-logo-vueloYa">
+          <a class="ll-l" href="{% url 'home' %}"> <span style="color: #505050;">Vuelo<span style="color: #fd6456;">YA</span></span></a>
+        </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-              Contactanos
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Tel: 3202232882</a></li>
-              <li><a class="dropdown-item" href="#">Correo: vueloya@gmail.com</a></li>
-            </ul>
-          </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           
-        </ul>
-      </div>
-
-      <div>
-
-          {% if user.is_authenticated %}
-            <div class="btn-group">
-              <img class="rounded-circle" src="{{user.uservueloya.picture.url}}" height="40">
-              <button type="button" class="btn btn-light" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                {{ user.username }}
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="{% url 'perfil_user' %}">Perfil</a></li>
-                <li><a class="dropdown-item" href="{% url 'misviajes' %}">Mis viajes</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{% url 'cerrarsesion' %}">Cerrar sesion</a></li>
-              </ul>
-            </div>
-
-          {% else %} 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #505050;"><img style="width: 15px;" src="{% static 'favicon.ico/IconoAuriculares.png' %}" alt="Icono Contactanos">
+                  Contactanos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" style="color: #505050;"> <img style="width: 15px;" src="{% static 'favicon.ico/IconoLLamada.png' %}" alt="Icono Llamada"> 3202232882</a></li>
+                  <li><a class="dropdown-item" href="#" style="color: #505050;"> <img style="width: 15px;" src="{% static 'favicon.ico/IconoCorreoDos.png' %}" alt="Icono Correo Contacto">  vueloya@gmail.com</a></li>
+                </ul>
               </li>
             </ul>
-          {% endif %}
 
-      </div>
 
-    </div>
+              {% if user.is_authenticated %}
+                <div class="btn-group">
+                  <button type="button" class="btn btn-light" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                    {{ user.username }}
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li><a class="dropdown-item" href="{% url 'misviajes' %}">Mis viajes</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'cerrarsesion' %}">Cerrar sesion</a></li>
+                  </ul>
+                </div>
+
+              {% else %} 
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
+                  <li class="nav-item">
+                    <a class="nav-link active kk-k" aria-current="page" href="{% url 'registrarse' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoRegistroUsuario.png' %}" alt="Icono Registro">Registrarse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active " aria-current="page" href="{% url 'iniciarsesion' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoUsuario.png' %}" alt="Icono Inicio Sesión">Iniciar Sesión</a>
+                  </li>
+                </ul>
+              {% endif %}
+
+
+          </div>
+
+        </div>
+        
+      </div>  
 
   </nav>
 
 
-    {% block contenido %} {% endblock %}
+  {% block contenido %} {% endblock %}
 
 
 

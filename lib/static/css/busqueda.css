@@ -31,7 +31,7 @@ body {
 }
 
 .boton-tres:hover{
-    background-color: #4e80ff;
+    background-color: #2563ff;;
     transform: translateY(1px);
 }
 
@@ -125,7 +125,6 @@ body {
     background-color: #eeeeee;
     display: flex;
     align-items: center;
-
 }
 
 /*Resultados de a busqueda de vuelos*/
@@ -139,17 +138,55 @@ body {
 
 @media only screen and (min-width: 1080px) {
 
+    /*Navbar*/
+
+    .contenedor-logo-vueloYa{
+        background-color: #eeeeee;
+        padding: 10px;
+        font-size: 25px;
+        font-weight: 700;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        cursor: pointer;
+    }
+
+    .ll-l{
+        color: #505050;
+        text-decoration: none;
+    }
+
+    .navbar-collapse{
+        flex-grow: 0!important;
+        background-color: #eeeeee;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        height: 50px;
+    }
+
+    .pp-p{
+        font-weight: 500;
+        font-size: 18px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /*Navbar*/
+
+
     /*Resultados Vuelos*/
 
     .contenedor-busqueda-vuelos{
         display: flex;
         justify-content: space-between;
         padding: 10px;
+
     }
 
     .contenido-busquedas{
         width:50%;
-        max-height: 1000px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -158,7 +195,6 @@ body {
 
     .resultados-busqueda{
         width: 100%;
-        max-height: 1400px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -187,7 +223,7 @@ body {
 
     .imagen-informacion{
         width: 100%;
-        height: 200px;
+        height: 30%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -241,6 +277,7 @@ body {
         background-color: white;
         border-left: solid 1px #d4d4d4;
         border-right: solid 1px #d4d4d4;
+        border-bottom: solid 1px #d4d4d4;
     }
     
     .nombre-aerolinea{
@@ -281,14 +318,16 @@ body {
     }
     
     .boton-buy{
-    
         display: flex;
         align-items: center;
-        width: 20%;
+        justify-content: center;
+        width: 15%;
     }
+
     
     .boton-comprar{
-        background-color: #4277ff;
+        background-color: #3d74ff;
+        color: white;
         width: 100%;
         height: 32px;
         border-radius: 8px;
@@ -298,7 +337,7 @@ body {
     }
     
     .boton-comprar:hover{
-        background-color: #4e80ff;
+        background-color: #2563ff;
         transform: translateY(1px);
     }
 
@@ -691,6 +730,337 @@ body {
     
     /*Formulario Sing-Up*/
 
+    /*Formulario Pagos*/
+
+    .contenedor-datos-para-pagos{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 40px;
+    }
+
+    .contenido-formulario-para-pagos{
+
+        width:80%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .texto-compra{
+        width: 100%;
+        display: flex;
+        align-items: start;
+        text-align: start;
+        margin-top: 20px;
+    }
+
+    .gg-g{
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    .texto-detalles-pago{
+        width: 100%;
+        display: flex;
+        align-items: start;
+        text-align: start;
+    }
+
+    .mauro-diez{
+        width: 100%;
+        height: 400px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .formulario-pagos{
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .texto-recibir-vouchers{
+        margin-bottom: 10px;
+    }
+
+
+    .mauro-once{
+        width: 100%;
+        height: 300px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .mauro-doce{
+        width: 100%;
+        height: 300px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .metodos-de-pagos{
+        border-top: solid 1px;
+        width: 450px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .metodos-de-pagos-NA{
+        width: 450px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .metodo-uno{
+        width: 10%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+
+    }
+
+    .mauro-trece{
+        width: 100%;
+        height: 250px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-de-unir-datostarjeta-uno{
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-agrupa-colums-datostarjeta-uno{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 16px;
+    }
+
+    .contenedor-agrupa-colums-datostarjeta-uno-b{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjeta-usuario{
+        width: 100%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+    }
+
+    .tarjeta-usuario:focus{
+        outline: none;
+    }
+
+    .contenedor-de-unir-datostarjeta-dos{
+        display: flex;
+    }
+
+    .contenedor-vencimiento-tarjeta{
+        display: flex;
+        flex-direction: column;
+        margin-right: 15px;
+    }
+
+    .vencimiento-tarjeta{
+        width: 120px;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+    }
+
+    .vencimiento-tarjeta:focus{
+        outline: none;
+    }
+
+    .contenedor-codigo-seguridad{
+        display: flex;
+        flex-direction: column;
+        margin-right: 28px;
+    }
+
+    .codigo-seguridad{
+        width: 150px;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+    }
+
+    .codigo-seguridad:focus{
+        outline: none;
+    }
+
+    .contenedor-documento-titular{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aceptar-terminos-compra{
+        height: 80px;
+    }
+
+    .contenedor-uno-del-input{
+        display: flex;
+    }
+
+    .texto-de-aceptarterminos{
+        margin-left: 8px;
+    }
+
+
+    .datos-pasajeros{
+        width: 450px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .pasajero-uno{
+        width: 100%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+    }
+
+    .pasajero-uno:focus{
+        outline: none;
+    }
+
+    .documento-pasajero{
+        width: 50%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+        display: block;
+    }
+
+    .documento-pasajero:focus{
+        outline: none;
+    }
+    
+    .documento-container {
+        display: flex;
+    }
+    
+    .documento-pasajero {
+        flex: 1; /* Ocupa todo el espacio disponible en la fila */
+        margin-right: 10px; /* Ajusta el margen entre el select y el input según tus necesidades */
+    }
+    
+    .num-documento{
+        width: 50%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 1px #505050;
+        display: block;
+    }
+
+    .num-documento:hover{
+        outline: none;
+    }
+
+    .contenedor-boton-comprar{
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    .contenedor-del-boton-comprar-ahora{
+        width: 100%;
+    }
+
+    .boton-comprar-ahora{
+        background-color: rgb(255, 81, 81);
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 20px;
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+    .boton-comprar-ahora:hover{
+        background-color: rgb(252, 66, 66);
+        transform: translateY(1px);
+    }
+
+    .texto-del-total-pago{
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /*Formulario Pagos*/
+
+    /*Detalles del pago*/
+
+    .detalles-pagos{
+        width: 60%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .contenedor-de-formularios-detalles{
+        width: 95%;
+    }
+
+    .contenedor-detalles-pago{
+        width: 100%;
+        height: 200px;
+        background-color: #f2f2f2;
+        padding: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario-detalles-pago{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .formulario-detalles-pago-dos{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #505050;
+        margin-top: 10px;
+    }
+
+    .total-factura{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .contenedor-detalles-compra{
+        width: 100%;
+        height: 300px;
+    }
+
+    /*Detalles del pago*/
+
 
     /*Recibir ofertas al correo*/
 
@@ -718,6 +1088,11 @@ body {
         margin: 10px;
         border: none;
         color: white;
+    }
+
+    .boton-tres:hover{
+        background-color: #2563ff;
+        transform: translateY(1px);
     }
 
     /*Recibir ofertas al correo*/
