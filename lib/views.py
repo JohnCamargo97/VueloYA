@@ -37,15 +37,8 @@ def resultados(request):
     print(lista_resultado)
     return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
 
-
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
-
-def iniciarsesion(request):
-    return render (request, 'paginas/iniciarsesion.html')
-
-def registrarse(request):
-    return render(request, 'paginas/registrarse.html')
 
 def busqueda(request):
     form_response = request.session

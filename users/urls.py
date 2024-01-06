@@ -10,5 +10,6 @@ urlpatterns = [
     path('mensaje_user', views.mensaje_user, name='mensaje_user'),
     path('perfil', views.perfil_user, name='perfil_user'),
     path('perfil/personal-info', views.personal_info, name='personal-info'),
+    path('perfil/facturacion', views.facturacion , name='facturacion'),
     
 ]
