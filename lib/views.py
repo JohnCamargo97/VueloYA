@@ -27,8 +27,6 @@ def home(request):
     lista_vuelos = Vuelo.objects.all()
     return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
-
-
 def resultados(request):
 
     form_response = request.session
@@ -37,7 +35,6 @@ def resultados(request):
     print(lista_resultado)
     return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
 
-
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
 
@@ -45,12 +42,6 @@ def pagos(request):
     VueloSeleccionado = request.session
     DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
     return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo})
-
-def iniciarsesion(request):
-    return render (request, 'paginas/iniciarsesion.html')
-
-def registrarse(request):
-    return render(request, 'paginas/registrarse.html')
 
 def busqueda(request):
     form_response = request.session

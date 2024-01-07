@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import RegUserForm, UpdateUserForm
 from lib.forms import UpdateUserVYaForm
+from users.forms import userFactForm
 from django.contrib.auth.models import User
 
 def register(request):
@@ -14,11 +15,6 @@ def register(request):
         if form.is_valid():
             
             user = form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            print("form valid")
-
-            #user = authenticate(usename = username, password = password)
             try:
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 print("registro exitoso")
@@ -36,8 +32,6 @@ def register(request):
         print("no post request")
     return render(request, 'users/registrarse.html', {'form': form})
 
-
-
 def login_user(request):
 
     if request.method == "POST":
@@ -54,11 +48,9 @@ def login_user(request):
     else:
         return render (request, 'users/iniciarsesion.html', {})
 
-
 def logout_user(request):
     logout(request)
     return redirect('home') 
-
 
 def mensaje_user(request):
     messages.success(request, ('Registrado exitosamente!'))
@@ -68,7 +60,7 @@ def perfil_user(request):
     return render (request, 'users/perfil_user.html')
 
 def personal_info(request):
-    
+ 
     if request.method == "POST":
         u_form = UpdateUserForm(request.POST, instance=request.user)
         uvy_form = UpdateUserVYaForm(request.POST, request.FILES, instance=request.user.uservueloya)
@@ -85,10 +77,22 @@ def personal_info(request):
         'u_form' : u_form,
         'uvy_form' : uvy_form
     }
-    
-
-
     return render (request, 'users/personal-info.html', context)
 
+def facturacion(request):
+    if request.method == "POST":
+        fact_form = userFactForm(request.POST, instance=request.user)
+
+        if fact_form.is_valid():
+            fact_form.save()
+            return redirect('perfil_user')
+        else:
+            print ('not valid')
+    else:
+        fact_form = userFactForm(instance=request.user)
+
+    context = {
+        'form' : fact_form,
+    }
     
-#def update_user(request):
+    return render (request, 'users/facturacion.html', context)

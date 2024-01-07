@@ -1,13 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-
-class user(models.Model):
-    email = models.EmailField(verbose_name='user email')
-    fullname= models.CharField(max_length=100, verbose_name='full name')
-    username= models.CharField(max_length= 30, verbose_name='username', default='')
-    password= models.CharField(max_length=50)
-
-
-    def __str__(self):
-        return  self.fullname
-
+class userFacturacion(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    situacionFiscal = models.BooleanField()
+    nombre = models.CharField(max_length= 40)
+    apellido = models.CharField(max_length= 40)
+    tipoDeDocumento = models.CharField(max_length= 40)
+    nDocumento = models.IntegerField()
+    departamento = models.CharField(max_length= 40)
+    ciudad = models.CharField(max_length= 40)
+    direccion = models.CharField(max_length= 40)

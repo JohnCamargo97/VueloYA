@@ -1,0 +1,18 @@
+{% extends "indexdos.html" %}
+{% block titulo %} Personal-info {% endblock %}
+
+
+{% block contenido %}
+
+
+<br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="parte-registrarse">
+        <button class="boton-registrarse" type="submit">Actualizar</button>
+    </div>
+</form>
+
+
+{% endblock %}

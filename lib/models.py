@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from PIL import Image
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ObjectDoesNotExist
+
 class aerolinea(models.Model):
     #id = models.IntegerField(primary_key=True)
     nombre_aerolinea= models.CharField(max_length=100, verbose_name='nombre')
@@ -59,7 +60,6 @@ class userVueloYa(models.Model):
             return f'{self.user.username}'
     
     #rename picture to upload
-
     def wrapper(instance, filename):
         extension= filename.split('.')[-1]
         print(extension)
@@ -67,11 +67,9 @@ class userVueloYa(models.Model):
             filename= '{}{}'.format(instance.user.username, extension)
         else:
             # set filename as random string
-            filename = '{}.{}'.format(uuid4().hex, extension)
+            filename  = '{}.{}'.format(uuid4().hex, extension)
         # return the whole path to the file
         return os.path.join(path, filename)
-
-
 
     #overrite save function for the model to resize images and replace old ones
     def save(self, *args, **kwargs):
@@ -99,3 +97,6 @@ class userVueloYa(models.Model):
             img.crop((left, upper, right, lower)).save(self.picture.path)
         except:
             pass
+
+
+
