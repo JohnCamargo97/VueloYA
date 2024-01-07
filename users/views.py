@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import RegUserForm, UpdateUserForm
 from lib.forms import UpdateUserVYaForm
 from users.forms import userFactForm
-from django.contrib.auth.models import User
+from .models import userFacturacion
+
 
 def register(request):
     
@@ -57,7 +58,9 @@ def mensaje_user(request):
     return render (request, 'users/mensaje_user.html')
 
 def perfil_user(request):
-    return render (request, 'users/perfil_user.html')
+    factos = userFacturacion.objects.filter(user = request.user).all()
+    print(factos)
+    return render (request, 'users/perfil_user.html', {'factos': factos})
 
 def personal_info(request):
  
@@ -79,9 +82,52 @@ def personal_info(request):
     }
     return render (request, 'users/personal-info.html', context)
 
-def facturacion(request):
+def facturacion_crear(request):
     if request.method == "POST":
-        fact_form = userFactForm(request.POST, instance=request.user)
+        fact_form = userFactForm(request.POST)
+        if fact_form.is_valid():
+            facto= fact_form.save(commit= False)
+            facto.user= request.user
+            facto.save()
+            return redirect('perfil_user')
+        else:
+            print ('not valid')
+    else:
+        fact_form = userFactForm()
+
+    context = {
+        'form' : fact_form,
+    }
+    return render (request, 'users/facturacion.html', context)
+
+def facturacion_editar(request, pk):
+    if request.user.is_authenticated:
+        facto = get_object_or_404(userFacturacion, id= pk)
+        if request.user.username == facto.user.username:    
+            fact_form = userFactForm(request.POST or None, instance=facto)
+            if request.method == "POST":
+                if fact_form.is_valid():
+                    facto = fact_form.save(commit=False)
+                    facto.user = request.user
+                    facto.save()
+                    return redirect('perfil_user')
+                else:
+                    print ('not valid')
+            else:
+                fact_form = userFactForm(instance=facto)
+
+            context = {
+                'form' : fact_form,
+            }
+            return render (request, 'users/facturacion.html', context)
+        else:
+            redirect('perfil_user')
+    else:
+        redirect('home')
+
+def facturacion_borrar(request):
+    if request.method == "POST":
+        fact_form = userFactForm(request.POST)
 
         if fact_form.is_valid():
             fact_form.save()
@@ -89,10 +135,9 @@ def facturacion(request):
         else:
             print ('not valid')
     else:
-        fact_form = userFactForm(instance=request.user)
+        fact_form = userFactForm()
 
     context = {
         'form' : fact_form,
     }
-    
     return render (request, 'users/facturacion.html', context)

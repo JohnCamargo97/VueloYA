@@ -65,23 +65,42 @@
 
             <hr></hr>
 
-
-            <div style="display: flex;">
-                <div style="padding: 10px;">
-                    <h6>Datos de Facturacion:</h6>
-                    User1 CC 1234
+            <h6>Datos de Facturacion:</h6>
+            {% for facto in factos%}
+                <div style="display: flex;">
+                    <div style="padding: 10px;">
+                        
+                        {{facto}}
+                    </div>
+                    <div class="parte-usuario" style="margin-left: auto;">
+                        <a style="background-color: rgb(70, 144, 184) ; 
+                                color: white;
+                                padding: 14px 25px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;" 
+                        
+                        href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
+                        <a style="background-color: rgb(70, 144, 184) ; 
+                                color: white;
+                                padding: 14px 25px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;" 
+                        
+                        href="{% url 'facturacion_borrar' %}">Borrar</a>
+                    </div>   
                 </div>
-                <div class="parte-usuario" style="margin-left: auto;">
-                    <a style="background-color: rgb(70, 144, 184) ; 
+            {% endfor %}
+            <a style="background-color: rgb(70, 144, 184) ; 
                             color: white;
                             padding: 14px 25px;
                             text-align: center;
                             text-decoration: none;
-                            display: inline-block;" 
+                            display: inline-block;
+                            width: 100%;" 
                     
-                    href="{% url 'facturacion' %}">Agregar facturacion</a>
-                </div>   
-            </div>
+                    href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
 
             <hr></hr>
 
