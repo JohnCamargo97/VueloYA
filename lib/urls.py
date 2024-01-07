@@ -8,6 +8,7 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('busqueda', views.busqueda, name='busqueda'),
     path('misviajes', views.misviajes, name='misviajes'),
+    path('pagos', views.pagos, name='pagos'),
     path('resultados', views.resultados, name='resultados'),
 
     path('users/', include('users.urls')),

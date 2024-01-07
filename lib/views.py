@@ -27,8 +27,6 @@ def home(request):
     lista_vuelos = Vuelo.objects.all()
     return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
 
-
-
 def resultados(request):
 
     form_response = request.session
@@ -40,9 +38,16 @@ def resultados(request):
 def misviajes(request):
     return render (request, 'paginas/misviajes.html')
 
+def pagos(request):
+    VueloSeleccionado = request.session
+    DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
+    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo})
+
 def busqueda(request):
     form_response = request.session
     lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
-
-    #print(Vuelo.objects.horasalida1)
-    return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
+    if request.method == "POST":
+        request.session['vueloID'] = request.POST['Comprar']
+        return redirect('pagos')
+    else:
+        return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})

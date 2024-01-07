@@ -1,12 +1,13 @@
 {% extends "indexdos.html" %}
 
-{% block titulo %} Home {% endblock %}
-
-{% block contenido %} 
+{% block titulo %} Busqueda {% endblock %}
 
 {% load static %}
 
-<div class="container">
+{% block contenido %} 
+
+
+<div class="conatiner">
 
   <div class="container-fluid mauro-seis">
     <div class="container">
@@ -22,7 +23,7 @@
               <nav class="titulo-vuelos">
                 <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono de vuelo"></h5>
               </nav>
-
+                
                 <div class="busqueda-uno row">
                   <div class="col">
                       <label for="origen">Origen:</label>
@@ -68,14 +69,16 @@
         </div>
 
 
-          <div  class="resultados-busqueda">
-            <div class="imagen-informacion">
-              <div>
-                <h5 class="texto-prueba">Ofertas que no te <br> puedes perder!</h5>
-              </div>
+        <div  class="resultados-busqueda">
+          
+          <div class="imagen-informacion">
+            <div>
+              <h5 class="texto-prueba">Ofertas que no te <br> puedes perder!</h5>
             </div>
+          </div>
 
-            
+          {% for vuelo in lista_resultado %}
+
             <div class="uno">
               <div class="busqueda-vuelos">
 
@@ -84,45 +87,47 @@
                         <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
                     </div>
                     <div class="fecha-salida-avion">
-                        <span>Jue/14 Dic/2023</span>
+                        <span>{{vuelo.fechasalida}}</span>
                     </div>
                 </div>
 
                 <div class="info-vuelos">
                     <div class="nombre-aerolinea">
-                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Avianca"> Avianca Airlines</span>
+                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
                     </div>
                     <div class="horario-viaje">
-                        <span style="cursor: pointer;"> VVC </span>
-                        <span style="display: block; font-weight: bold;"> 7:00AM </span>
+                        <span style="cursor: pointer;"> {{vuelo.origen}} </span>
+                        <span style="display: block; font-weight: bold;"> {{vuelo.horasalida1}} </span>
                         <span>-------</span>
-                        <span style="cursor: pointer;"> MDE </span>
-                        <span style="display: block; font-weight: bold;"> 10:30AM </span>
+                        <span style="cursor: pointer;"> {{vuelo.destino}} </span>
+                        <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2}} </span>
                         <span>-------</span>
                         <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                     </div>
-                    <span class="tiempo-viaje"> Duración de Viaje 3h 30m </span>
+                    <span class="tiempo-viaje"> Duración de Viaje {{vuelo.horasalida1}} </span>
                 </div>
+
+
 
                 <div class="regreso-vuelo">
                     <div class="icono-avion">
                         <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
                     </div>
                     <div class="fecha-regreso-avion">
-                        <span>Jue/22 Dic/2023</span>
+                        <span>{{vuelo.fechavuelta}}</span>
                     </div>
                 </div>
 
                 <div class="info-vuelos">
                     <div class="nombre-aerolinea">
-                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Avianca"> Avianca Airlines</span>
+                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
                     </div>
                     <div class="horario-viaje">
-                        <span style="cursor: pointer;"> MDE </span>
-                        <span style="display: block; font-weight: bold;"> 4:00AM </span>
+                        <span style="cursor: pointer;"> {{vuelo.destino}} </span>
+                        <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta1}} </span>
                         <span>-------</span>
-                        <span style="cursor: pointer;"> VVC </span>
-                        <span style="display: block; font-weight: bold;"> 8:30AM </span>
+                        <span style="cursor: pointer;"> {{vuelo.origen}} </span>
+                        <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta2}} </span>
                         <span>-------</span>
                         <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                     </div>
@@ -133,18 +138,19 @@
 
                     <div class="precio-final">
                         <span> Precio final a pagar </span>
-                        <span style="font-weight: bold; font-size: 20px; display: block;">$ 1.800.000 COP</span>
+                        <span style="font-weight: bold; font-size: 20px; display: block;">{{vuelo.precio}}</span>
                     </div>
-
-                    <div class="boton-buy">
-                        <button class="boton-comprar" type="submit"><a style="text-decoration: none; color: white;" href="{% url 'misviajes' %}"> Comprar </a></button>
-                    </div>
+                    <form class="boton-buy" action="" method="POST">
+                      {% csrf_token%}
+                          <button class="boton-comprar" name="Comprar" value="{{vuelo.pk}}" type="submit">Comprar</button>
+                    </form>
                 </div>
-
               </div>
             </div>
-          
-          </div>
+
+          {% endfor %}
+        
+        </div>
 
       </div>
 
@@ -152,7 +158,7 @@
   </div>
 
 
-  
+
   <div class="container recibir-ofertas">
       <div class="container">
 
@@ -168,7 +174,7 @@
         </div>
 
       </div>
-    </div>
+  </div>
   
     <div class="container-fluid informacion-footer">
       <div class="container">
@@ -271,47 +277,6 @@
 
     </div>
 
-</div>
-
-
-
-
-
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img style="height: 600px; border-radius: 8px 0px 0px 8px;" src="{% static 'img/Avion.png' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img style="height: 600px; border-radius: 8px 0px 0px 8px;" src="{% static 'img/PlayaDos.png' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img style="height: 600px; border-radius: 8px 0px 0px 8px;" src="{% static 'img/PlayaUno.png' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img style="height: 600px; border-radius: 8px 0px 0px 8px;" src="{% static 'img/EdificioDubai.png' %}" class="d-block w-100" alt="...">
-    </div>
-  </div>
 </div>
 
 {% endblock %}
