@@ -6,101 +6,110 @@
 
 {% block contenido %}
 
-<h1> Mi perfil </h1>
-    <div style="display: flex; ">
-        
-        <div style="padding: 15px; min-width: 50%;">
-            <hr></hr>
-            <div style="display: flex; background-color: rgb(35, 35, 90); padding: 10px;">
-                <div style="padding: 5px; aspect-ratio: 1 / 1;"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
-                <div style="color: white; display: flex; justify-content: center; align-items: center;">
-                    {{ user.username }}
-                    <br>
-                    {{ user.email }} 
-                </div> 
-                <div class="parte-usuario" style="margin-left: auto;">
-                    <a style="background-color: rgb(70, 144, 184); 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;" 
-                    
-                    href="{% url 'personal-info' %}">Editar</a>
-                </div>     
-            </div>
+<div class="container-fluid" style="background-color: #eeeeee;">
 
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); margin-bottom: 10px; margin-top: 10px;">
-                <div style="padding: 5px; margin: 5px;">Nombre completo: {{user.get_full_name}} </div>       
-                <div style="padding: 5px; margin: 5px;">Telefono: {{user.uservueloya.telefono}} </div>
-                <div style="padding: 5px; margin: 5px;">Fecha de Nacimiento: {{user.uservueloya.fechaNacimiento}} </div>
-                <div style="padding: 5px; margin: 5px;">genero: {{user.uservueloya.genero}} </div>
-            </div>
+    <div class="container">
 
+        <h1> Mi perfil </h1>
 
-            <hr></hr>
+        <div class="contenedor-formulario-editar-perfil">
+            
+            <div class="contenedor-edi-datos-perfil">
+                
+                <div class="contenedor-datos-perfil">
 
-
-            <div style="padding: 10px;"><a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a></div>
-            <hr></hr>
-
-
-            <div style="display: flex;">
-                <div style="padding: 10px;">
-                    <h6>Tarjetas de credito:</h6>
-                    Tarjeta1
-                </div>
-                <div class="parte-usuario" style="margin-left: auto;">
-                    <a style="background-color: rgb(70, 144, 184); 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;" 
-                    
-                    href="{% url 'personal-info' %}">Agregar tarjeta</a>
-                </div>   
-            </div>
-
-
-            <hr></hr>
-
-            <h6>Datos de Facturacion:</h6>
-            {% for facto in factos%}
-                <div style="display: flex;">
-                    <div style="padding: 10px;">
-                        
-                        {{facto}}
+                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
+                    <div class="contenedor-nombre-email">
+                        {{ user.username }}
+                        <br>
+                        {{ user.email }} 
                     </div>
-                    <div class="parte-usuario" style="margin-left: auto;">
-                        <a style="background-color: rgb(70, 144, 184) ; 
-                                color: white;
-                                padding: 14px 25px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;" 
-                        
-                        href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
-                        <a style="background-color: rgb(70, 144, 184) ; 
-                                color: white;
-                                padding: 14px 25px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;" 
-                        
-                        href="{% url 'facturacion_borrar' %}">Borrar</a>
-                    </div>   
+
+                    <div class="parte-usuario">
+                        <a class="boton-editar-perfil" href="{% url 'personal-info' %}">Editar</a>
+                    </div>
+
                 </div>
-            {% endfor %}
-            <a style="background-color: rgb(70, 144, 184) ; 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            width: 100%;" 
-                    
-                    href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
+
+                <div class="contenedor-datos-personales">
+
+                    <div class="contenedor-datos">
+                        <div style="margin-bottom: 10px;">Nombre completo <br> {{user.get_full_name}} </div>
+
+                        <div>Telefono {{user.uservueloya.telefono}} </div>
+                    </div>
+
+                    <div class="contenedor-datos-dos">
+                        <div style="margin-bottom: 10px; ">Fecha de Nacimiento {{user.uservueloya.fechaNacimiento}} </div>
+                        <div>Genero {{user.uservueloya.genero}} </div>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div style="padding: 10px; display: flex; align-items: center;">
+                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
+                </div>
+
+            </div>
+
+            <div class="contenedor-datos-metodos-pagos">
+                
+                <div class="contenedor-datos-tarjeta">
+
+                    <div class="contenedor-texto-tarjeta-credito">
+                        <h6>Tarjetas de credito:</h6>
+                        Tarjeta 1
+                    </div>
+
+                    <div class="parte-tarjetas" style="margin-left: auto;">
+                        <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}">Agregar tarjeta</a>
+                    </div>  
+
+                </div>
+    
+            </div>
+
+            <div class="contenedor-datos-metodos-pagos">
+                
+                <h6>Datos de Facturacion:</h6>
+                {% for facto in factos%}
+                    <div style="display: flex;">
+                        <div style="padding: 10px;">
+                            
+                            {{facto}}
+                        </div>
+                        <div class="parte-usuario" style="margin-left: auto;">
+                            <a style="background-color: rgb(70, 144, 184) ; 
+                                    color: white;
+                                    padding: 14px 25px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;" 
+                            
+                            href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
+                            <a style="background-color: rgb(70, 144, 184) ; 
+                                    color: white;
+                                    padding: 14px 25px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;" 
+                            
+                            href="{% url 'facturacion_borrar' %}">Borrar</a>
+                        </div>   
+                    </div>
+                {% endfor %}
+                <a style="background-color: rgb(70, 144, 184) ; 
+                                color: white;
+                                padding: 14px 25px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                width: 100%;" 
+                        
+                        href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
+            </div>
 
             <hr></hr>
 
@@ -108,7 +117,11 @@
             Recibir notificaciones (yes/no)
             <br>
             Eliminar mi cuenta
+            
         </div>
-        <div style="min-width: 50%;"></div>
-    </div>   
+
+    </div>
+
+</div>
+
 {% endblock %}

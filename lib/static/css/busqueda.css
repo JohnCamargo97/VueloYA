@@ -1061,6 +1061,118 @@ body {
 
     /*Detalles del pago*/
 
+    /*Formulario Editar Perfil*/
+
+    .contenedor-formulario-editar-perfil{
+        width: 100%;
+        height: auto;
+    }
+
+    .rounded-circle{
+        width: 70px;
+        cursor: pointer;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .rounded-circle:hover{
+        transform: scale(1.1);
+    }
+
+    .contenedor-datos-perfil{
+        display: flex;
+        align-items: center;
+        background-color:rgb(43, 43, 255);
+        width: 100%;
+        padding: 10px;
+        height: 150px;
+    }
+
+    .parte-usuario{
+        margin-left: auto;
+    }
+
+    .contenedor-nombre-email{
+        color: white;
+    }
+
+    .contenedor-edi-datos-perfil{
+        width: 85%;
+        background-color: rgb(255, 255, 255);
+        height: 330px;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-imagen-perfil{
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    .boton-editar-perfil{
+        background-color: rgb(70, 144, 184);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-editar-perfil:hover{
+        background-color: rgb(66, 135, 172);
+        color: white;
+    }
+
+    .contenedor-datos-personales{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: 100px;
+    }
+
+    .contenedor-datos{
+        background-color: rgb(0, 167, 111);
+        width: 50%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-dos{
+        background-color: aquamarine;
+        width: 50%;
+        display:flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-metodos-pagos{
+        width: 85%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-datos-tarjeta{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .boton-agregar-tarjetas{
+        background-color: rgb(70, 144, 184);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-agregar-tarjetas:hover{
+        background-color: rgb(0, 136, 209);
+        color: white;
+    }
+
+    /*Formulario Editar Perfil*/
 
     /*Recibir ofertas al correo*/
 
