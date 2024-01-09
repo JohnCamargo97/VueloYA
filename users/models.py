@@ -14,3 +14,14 @@ class userFacturacion(models.Model):
 
     def __str__(self):
             return f'{self.nombre} {self.apellido} {self.tipoDeDocumento} {self.nDocumento}'
+
+class pasajero(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length= 40)
+    apellido = models.CharField(max_length= 40)
+    tipoDeDocumento = models.CharField(max_length= 40)
+    nDocumento = models.IntegerField()
+    ciudadDeResidencia = models.CharField(max_length= 40)
+
+    def __str__(self):
+        return f'{self.nombre} {self.apellido}'

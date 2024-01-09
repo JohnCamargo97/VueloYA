@@ -48,7 +48,7 @@ class puestos(models.Model):
     def __str__(self):
         numerostr = str(self.id)
         return  numerostr
-    
+
 class userVueloYa(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     picture = models.ImageField(default='default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
