@@ -1063,9 +1063,15 @@ body {
 
     /*Formulario Editar Perfil*/
 
+    .hh-h{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .contenedor-formulario-editar-perfil{
-        width: 100%;
-        height: auto;
+        width: 85%;
+        padding: 20px;
     }
 
     .rounded-circle{
@@ -1082,7 +1088,7 @@ body {
     .contenedor-datos-perfil{
         display: flex;
         align-items: center;
-        background-color:rgb(43, 43, 255);
+        background-color:rgb(30, 30, 204);
         width: 100%;
         padding: 10px;
         height: 150px;
@@ -1097,9 +1103,9 @@ body {
     }
 
     .contenedor-edi-datos-perfil{
-        width: 85%;
+        width: 100%;
         background-color: rgb(255, 255, 255);
-        height: 330px;
+        height: auto;
         margin-bottom: 20px;
     }
 
@@ -1109,8 +1115,8 @@ body {
     }
 
     .boton-editar-perfil{
-        background-color: rgb(70, 144, 184);
-        color: white;
+        background-color: rgb(255, 255, 255);
+        color: rgb(60, 60, 60);
         padding: 14px 25px;
         text-align: center;
         text-decoration: none;
@@ -1118,8 +1124,8 @@ body {
     }
 
     .boton-editar-perfil:hover{
-        background-color: rgb(66, 135, 172);
-        color: white;
+        background-color: rgb(249, 249, 249);
+        color: rgb(60, 60, 60);
     }
 
     .contenedor-datos-personales{
@@ -1130,7 +1136,6 @@ body {
     }
 
     .contenedor-datos{
-        background-color: rgb(0, 167, 111);
         width: 50%;
         display: flex;
         align-items: start;
@@ -1138,7 +1143,6 @@ body {
     }
 
     .contenedor-datos-dos{
-        background-color: aquamarine;
         width: 50%;
         display:flex;
         align-items: start;
@@ -1146,7 +1150,7 @@ body {
     }
 
     .contenedor-datos-metodos-pagos{
-        width: 85%;
+        width: 100%;
         background-color: white;
         height: auto;
         margin-bottom: 20px;
@@ -1159,7 +1163,7 @@ body {
     }
 
     .boton-agregar-tarjetas{
-        background-color: rgb(70, 144, 184);
+        background-color: rgb(30, 30, 204);
         color: white;
         padding: 14px 25px;
         text-align: center;
@@ -1168,8 +1172,100 @@ body {
     }
 
     .boton-agregar-tarjetas:hover{
-        background-color: rgb(0, 136, 209);
+        background-color: rgb(33, 33, 225);
         color: white;
+    }
+
+    .contenedor-datos-facturacion{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-info-usuarios{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contenedor-nombre-cedula-user{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .boton-facturacion-editar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;  
+    }
+
+    .boton-facturacion-editar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .boton-facturacion-borrar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-facturacion-borrar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .xx-x{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .boton-facturacion-agregar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .boton-facturacion-agregar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .zz-z{
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+    }
+
+    .contenedor-recibir-notificaciones{
+        display: flex;
+        align-items: center;
+    }
+
+    .texto-recibir-notificaciones{
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .vv-v{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
     }
 
     /*Formulario Editar Perfil*/
