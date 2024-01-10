@@ -1061,6 +1061,214 @@ body {
 
     /*Detalles del pago*/
 
+    /*Formulario Editar Perfil*/
+
+    .hh-h{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contenedor-formulario-editar-perfil{
+        width: 85%;
+        padding: 20px;
+    }
+
+    .rounded-circle{
+        width: 70px;
+        cursor: pointer;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .rounded-circle:hover{
+        transform: scale(1.1);
+    }
+
+    .contenedor-datos-perfil{
+        display: flex;
+        align-items: center;
+        background-color:rgb(30, 30, 204);
+        width: 100%;
+        padding: 10px;
+        height: 150px;
+    }
+
+    .parte-usuario{
+        margin-left: auto;
+    }
+
+    .contenedor-nombre-email{
+        color: white;
+    }
+
+    .contenedor-edi-datos-perfil{
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-imagen-perfil{
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    .boton-editar-perfil{
+        background-color: rgb(255, 255, 255);
+        color: rgb(60, 60, 60);
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-editar-perfil:hover{
+        background-color: rgb(249, 249, 249);
+        color: rgb(60, 60, 60);
+    }
+
+    .contenedor-datos-personales{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: 100px;
+    }
+
+    .contenedor-datos{
+        width: 50%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-dos{
+        width: 50%;
+        display:flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-metodos-pagos{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-datos-tarjeta{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .boton-agregar-tarjetas{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-agregar-tarjetas:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .contenedor-datos-facturacion{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-info-usuarios{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contenedor-nombre-cedula-user{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .boton-facturacion-editar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;  
+    }
+
+    .boton-facturacion-editar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .boton-facturacion-borrar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-facturacion-borrar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .xx-x{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .boton-facturacion-agregar{
+        background-color: rgb(30, 30, 204);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .boton-facturacion-agregar:hover{
+        background-color: rgb(33, 33, 225);
+        color: white;
+    }
+
+    .zz-z{
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+    }
+
+    .contenedor-recibir-notificaciones{
+        display: flex;
+        align-items: center;
+    }
+
+    .texto-recibir-notificaciones{
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .vv-v{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    /*Formulario Editar Perfil*/
 
     /*Recibir ofertas al correo*/
 
