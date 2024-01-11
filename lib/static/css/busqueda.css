@@ -150,7 +150,7 @@ body {
         cursor: pointer;
     }
 
-    .ll-l{
+    .logo-vueloya{
         color: #505050;
         text-decoration: none;
     }
@@ -163,7 +163,7 @@ body {
         height: 50px;
     }
 
-    .pp-p{
+    .contenedor-icono-helpme{
         font-weight: 500;
         font-size: 18px;
         padding: 10px;
@@ -1223,7 +1223,7 @@ body {
         color: white;
     }
 
-    .xx-x{
+    .contenedor-boton-facturacion-agregar{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1246,7 +1246,7 @@ body {
         color: white;
     }
 
-    .zz-z{
+    .contenedor-preferencias{
         width: 100%;
         background-color: white;
         padding: 10px;
@@ -1262,13 +1262,77 @@ body {
         text-decoration: none;
     }
 
-    .vv-v{
+    .contenedor-aceptar-notificaciones{
         display: flex;
         align-items: center;
         margin-left: 10px;
     }
 
     /*Formulario Editar Perfil*/
+
+    /*Formulario Facturación*/
+
+    .ll-l{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    .contenedor-editar-facturacion{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .contenedor-datos-facturacion{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .cc-c{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        width: 40%;
+    }
+
+    .bb-b{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        width: 40%;  
+    }
+
+    .input-datos-facturacion{
+        width: 85%;
+        height: 40px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        border: 1px solid #505050;
+        padding: 5px;
+        color: #505050;
+    }
+
+    .input-datos-facturacion:focus{
+        outline: none;
+    }
+
+    .label-datos-facturacion{
+        font-weight: 500;
+        color: #505050;
+        margin-bottom: 5px;
+    }
+
+    /*Formulario Facturación*/
+
 
     /*Recibir ofertas al correo*/
 
