@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from lib.models import puestos
 
 class userFacturacion(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -17,6 +18,7 @@ class userFacturacion(models.Model):
 
 class pasajero(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    puesto = models.OneToOneField(puestos, default=200, on_delete=models.DO_NOTHING)
     nombre = models.CharField(max_length= 40)
     apellido = models.CharField(max_length= 40)
     tipoDeDocumento = models.CharField(max_length= 40)

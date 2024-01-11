@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 #from django.http import HttpResponse
 from .models import Vuelo, aerolinea, puestos
 from .forms import BusquedaForm
-
-
-# Create your views here.
+from users.forms import userPasajeroForm
+from django.forms import formset_factory
 
 def home(request):
     if request.method == "POST":
@@ -16,7 +15,8 @@ def home(request):
                      
             request.session['origen'] = request.POST['origen']
             request.session['destino'] = request.POST['destino']
-            print("session updated")
+            request.session['pasajeros'] = request.POST['pasajeros']
+            print(request.POST)
 
             return redirect('busqueda')
         else:
@@ -40,14 +40,30 @@ def misviajes(request):
 
 def pagos(request):
     VueloSeleccionado = request.session
+    nPasajeros = int(VueloSeleccionado['pasajeros'])
+    PasajeroFormSet = formset_factory(userPasajeroForm, extra= nPasajeros)
     DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
-    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo})
+    if request.method == "POST":
+        pasaje = PasajeroFormSet(request.POST)
+        if pasaje.is_valid():
+            pasaje.save()
+            return redirect('resumen')
+        else:
+            print(pasaje.errors)
+    else:
+        pasaje = PasajeroFormSet()
+    
+    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo, 'pasaje': pasaje})
 
 def busqueda(request):
     form_response = request.session
     lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
     if request.method == "POST":
         request.session['vueloID'] = request.POST['Comprar']
+        #request.session['pasajeros'] = form_response['pasajeros']
         return redirect('pagos')
     else:
         return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
+
+def resumen(request):
+    return render (request, 'paginas/resumen.html')
