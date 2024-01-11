@@ -32,18 +32,35 @@
                 <div class="contenedor-datos-personales">
 
                     <div class="contenedor-datos">
+
                         <div style="margin-bottom: 10px; font-weight: 600;">Nombre completo
 
-                            <div style="background-color: antiquewhite;"> {{user.get_full_name}} </div>
+                            <div style="font-weight: 400;"> {{user.get_full_name}} </div>
               
-                            </div>
+                        </div>
 
-                        <div>Telefono {{user.uservueloya.telefono}} </div>
+                        <div style="font-weight: 600; display:flex;">Telefono 
+                        
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.telefono}}</div>
+                        
+                        </div>
+
                     </div>
 
                     <div class="contenedor-datos-dos">
-                        <div style="margin-bottom: 10px; ">Fecha de Nacimiento <br> {{user.uservueloya.fechaNacimiento}} </div>
-                        <div>Genero {{user.uservueloya.genero}} </div>
+
+                        <div style="margin-bottom: 10px; font-weight: 600; ">Fecha de Nacimiento
+                        
+                            <div style="font-weight: 400;">{{user.uservueloya.fechaNacimiento}}</div>
+                        
+                        </div>
+
+                        <div style="font-weight: 600; display:flex;">Genero
+
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.genero}} </div>
+
+                        </div>
+
                     </div>
 
                 </div>
