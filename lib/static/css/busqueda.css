@@ -1088,7 +1088,7 @@ body {
     .contenedor-datos-perfil{
         display: flex;
         align-items: center;
-        background-color:rgb(30, 30, 204);
+        background-color:rgb(0, 34, 156);
         width: 100%;
         padding: 10px;
         height: 150px;
@@ -1211,10 +1211,11 @@ body {
     .boton-facturacion-editar{
         background-color: rgb(30, 30, 204);
         color: white;
-        padding: 14px 25px;
+        padding: 10px 20px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;  
+        display: inline-block;
+        margin-right: 5px;  
     }
 
     .boton-facturacion-editar:hover{
@@ -1225,7 +1226,7 @@ body {
     .boton-facturacion-borrar{
         background-color: rgb(30, 30, 204);
         color: white;
-        padding: 14px 25px;
+        padding: 10px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -1277,11 +1278,6 @@ body {
         align-items: center;
     }
 
-    .texto-recibir-notificaciones{
-        color: #000000;
-        text-decoration: none;
-    }
-
     .contenedor-aceptar-notificaciones{
         display: flex;
         align-items: center;
@@ -1322,6 +1318,7 @@ body {
         text-decoration: none;
         display: inline-block;
         width: 50%;
+        border: none;
         border-radius: 5px;
     }
 

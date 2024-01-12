@@ -20,7 +20,7 @@
                     <div class="contenedor-nombre-email">
                         {{ user.username }}
                         <br>
-                        {{ user.email }} 
+                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
                     </div>
 
                     
@@ -34,7 +34,7 @@
 
             <div class="contenedor-datos-facturacion">
 
-                <div class="texto-datos-personales"><h5 style="color: #505050; padding: 12px;">Datos Facturación</h5></div>
+                <div class="texto-datos-personales" style="display: flex; align-items: center; justify-content: center;"><h5 style="color: #505050; padding: 12px;">Datos Facturación</h5></div>
     
                     <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
 
@@ -86,8 +86,6 @@
 
                     </form>
 
-
-
             </div>
 
         </div>
@@ -124,10 +122,10 @@
     
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" class="text-body-uno">Mis Viajes</a>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-body-uno">Mi Perfil</a>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
                         </li>
                     </ul>
 

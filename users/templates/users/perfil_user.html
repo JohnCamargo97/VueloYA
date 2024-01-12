@@ -20,7 +20,7 @@
                     <div class="contenedor-nombre-email">
                         {{ user.username }}
                         <br>
-                        {{ user.email }} 
+                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
                     </div>
 
                     <div class="parte-usuario">
@@ -35,7 +35,7 @@
 
                         <div style="margin-bottom: 10px; font-weight: 600;">Nombre Completo
 
-                            <div style="font-weight: 400;"> {{user.get_full_name}} </div>
+                            <div style="font-weight: 400;"> {{user.get_full_name}}</div>
               
                         </div>
 
@@ -118,21 +118,24 @@
 
                 <div class="contenedor-recibir-notificaciones">
 
-                    <a class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
+                    <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
+                    <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
 
                     <div class="contenedor-aceptar-notificaciones">
-                        <input style="cursor: pointer;" type="checkbox" id="recibir notificaciones">
+                        <input type="checkbox" id="recibir notificaciones">
                     </div>
 
                 </div>
 
-                <div>
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
                     <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
                 </div>
 
 
-                <div>
-                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar mi cuenta</a>
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
+                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
                 </div>
 
             </div>
@@ -169,10 +172,10 @@
     
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" class="text-body-uno">Mis Viajes</a>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-body-uno">Mi Perfil</a>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
                         </li>
                     </ul>
 
