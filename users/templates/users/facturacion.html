@@ -23,27 +23,36 @@
                         {{ user.email }} 
                     </div>
 
+                    
+                    <div class="parte-usuario">
+                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}">Regresar a Mi Perfil</a>
+                    </div>
+
                 </div>
 
             </div>
 
             <div class="contenedor-datos-facturacion">
 
-                <div class="texto-datos-personales"><h5 style="color: #505050; padding: 10px;">Datos Facturación</h5></div>
-                
-                <div class="contenedor-editar-facturacion">
+                <div class="texto-datos-personales"><h5 style="color: #505050; padding: 12px;">Datos Facturación</h5></div>
     
-                    <form class="ll-l" method="POST" enctype="multipart/form-data">
+                    <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
 
                         {% csrf_token %}
 
+                        <div class="jj-j">
+
                             <div class="cc-c">
 
-                                <label class="label-datos-facturacion" for="id_nombre">Nombre</label>
+                                <label class="label-datos-facturacion" for="id_nombre">Nombres</label>
                                 <input class="input-datos-facturacion" type="text" name="nombre" value="John Alexander" maxlength="40" required="" id="id_nombre">
 
                                 <label class="label-datos-facturacion" for="id_tipoDeDocumento">Tipo de Documento</label>
-                                <input class="input-datos-facturacion" type="text" name="tipoDeDocumento" value="CC" maxlength="40" required="" id="id_tipoDeDocumento">
+                                <input class="input-datos-facturacion" list="tipoDeDocumento" type="text" name="tipoDeDocumento"  maxlength="40" autocomplete="off" placeholder="CC" id="id_tipoDeDocumento">
+                                <datalist id="tipoDeDocumento">
+                                    <option value="Cédula"></option>
+                                    <option value="Tarjeta de Identidad"></option>
+                                </datalist>
 
                                 <label class="label-datos-facturacion" for="id_departamento">Departamento</label>
                                 <input class="input-datos-facturacion" type="text" name="departamento" value="Meta" maxlength="40" required="" id="id_departamento">
@@ -55,11 +64,11 @@
 
                             <div class="bb-b">
 
-                                <label class="label-datos-facturacion" for="id_apellido">Apellido</label>
+                                <label class="label-datos-facturacion" for="id_apellido">Apellidos</label>
                                 <input class="input-datos-facturacion" type="text" name="apellido" value="Camargo Echavarria" maxlength="40" required="" id="id_apellido">
 
                                 <label class="label-datos-facturacion" for="id_nDocumento">Número del Documento</label>
-                                <input class="input-datos-facturacion" type="number" name="nDocumento" value="1234788444" required="" id="id_nDocumento">
+                                <input class="input-datos-facturacion" type="text" name="nDocumento" value="1234788444" required="" id="id_nDocumento">
 
                                 <label class="label-datos-facturacion" for="id_ciudad">Ciudad</label>
                                 <input class="input-datos-facturacion" type="text" name="ciudad" value="Villavicencio" maxlength="40" required="" id="id_ciudad">
@@ -69,13 +78,15 @@
                             
                             </div>
 
-                            <div class="parte-registrarse">
-                                <button class="boton-registrarse" type="submit">Actualizar</button>
+                        </div>
+
+                            <div class="contenedor-boton-actualizar">
+                                <button class="boton-actualizar" type="submit">Actualizar</button>
                             </div>
 
                     </form>
-    
-                </div>
+
+
 
             </div>
 
