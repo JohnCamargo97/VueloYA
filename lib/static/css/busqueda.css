@@ -416,7 +416,7 @@ body {
 
     .fecha-ida{
         border-radius: 5px;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
         
     }
@@ -428,7 +428,7 @@ body {
 
     .fecha-regreso{
         border-radius: 5px;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
     }
 
@@ -447,7 +447,7 @@ body {
 
     .num-pasajeros{
         display: block;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
         border-radius: 10px;
     }
@@ -458,7 +458,7 @@ body {
     }
 
     .boton-uno{
-        background-color: #fd6456;
+        background-color: rgb(255, 72, 72);
         width: 90%;
         height: 35px;
         border-radius: 12px;
@@ -468,7 +468,7 @@ body {
     }
 
     .boton-uno:hover{
-        background-color: #fe6b5d;
+        background-color: rgb(255, 81, 81);
         transform: translateY(1px);
     }
 
@@ -1088,7 +1088,7 @@ body {
     .contenedor-datos-perfil{
         display: flex;
         align-items: center;
-        background-color:rgb(0, 34, 156);
+        background-color:#293964;
         width: 100%;
         padding: 10px;
         height: 150px;
@@ -1174,7 +1174,7 @@ body {
     }
 
     .boton-agregar-tarjetas{
-        background-color: rgb(30, 30, 204);
+        background-color: #293964;
         color: white;
         padding: 14px 25px;
         text-align: center;
@@ -1183,7 +1183,7 @@ body {
     }
 
     .boton-agregar-tarjetas:hover{
-        background-color: rgb(33, 33, 225);
+        background-color: #27345a;
         color: white;
     }
 
@@ -1209,7 +1209,7 @@ body {
     }
 
     .boton-facturacion-editar{
-        background-color: rgb(30, 30, 204);
+        background-color: #293964;
         color: white;
         padding: 10px 20px;
         text-align: center;
@@ -1219,12 +1219,12 @@ body {
     }
 
     .boton-facturacion-editar:hover{
-        background-color: rgb(33, 33, 225);
+        background-color: #27345a;
         color: white;
     }
 
     .boton-facturacion-borrar{
-        background-color: rgb(30, 30, 204);
+        background-color: #293964;
         color: white;
         padding: 10px 20px;
         text-align: center;
@@ -1233,7 +1233,7 @@ body {
     }
 
     .boton-facturacion-borrar:hover{
-        background-color: rgb(33, 33, 225);
+        background-color: #27345a;
         color: white;
     }
 
@@ -1246,7 +1246,7 @@ body {
     }
 
     .boton-facturacion-agregar{
-        background-color: rgb(30, 30, 204);
+        background-color: #293964;
         color: white;
         padding: 14px 25px;
         text-align: center;
@@ -1256,7 +1256,7 @@ body {
     }
 
     .boton-facturacion-agregar:hover{
-        background-color: rgb(33, 33, 225);
+        background-color: #27345a;
         color: white;
     }
 
@@ -1311,7 +1311,7 @@ body {
     }
 
     .boton-actualizar{
-        background-color: rgb(30, 30, 204);
+        background-color: #293964;
         color: white;
         padding: 14px 25px;
         text-align: center;
@@ -1323,7 +1323,7 @@ body {
     }
 
     .boton-actualizar:hover{
-        background-color: rgb(33, 33, 225);
+        background-color: #27345a;
         color: white;
         transform: translateY(1px);
     }
@@ -1394,7 +1394,7 @@ body {
     }
 
     .boton-tres{
-        background-color: #4277ff;
+        background-color: #2563ff;
         width: 20%;
         height: 40px;
         border-radius: 8px;
@@ -1404,7 +1404,7 @@ body {
     }
 
     .boton-tres:hover{
-        background-color: #2563ff;
+        background-color: #2d69ff;
         transform: translateY(1px);
     }
 
