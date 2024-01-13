@@ -23,14 +23,15 @@
                 <div class="contenido-formulario-para-pagos">
         
                     <div class="mauro-diez">
-                        <form class="formulario-pagos" action="#">
+                        <form class="formulario-pagos" method="POST">
+                            
                             {% csrf_token %}
                             <div class="pasajeros">
                                 <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
                             </div>
-                            {% for pasajero in pasaje %}
-                                {{pasajero.as_p}}
-                            {% endfor %}
+                        
+                            {{pasaje.as_p}}
+
 
                             <div class="contenedor-del-boton-comprar-ahora">
                                 <button class="boton-comprar-ahora" type="submit">Comprar</button>

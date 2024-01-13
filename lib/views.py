@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 #from django.http import HttpResponse
+from django.contrib.auth.models import User
 from .models import Vuelo, aerolinea, puestos
+from users.models import pasajero
 from .forms import BusquedaForm
 from users.forms import userPasajeroForm
-from django.forms import formset_factory
+from django.forms import inlineformset_factory
 
 def home(request):
     if request.method == "POST":
@@ -36,22 +38,26 @@ def resultados(request):
     return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
 
 def misviajes(request):
-    return render (request, 'paginas/misviajes.html')
-
+    return render (request, 'paginas/resumen.html')
+    
 def pagos(request):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
-    PasajeroFormSet = formset_factory(userPasajeroForm, extra= nPasajeros)
+    PasajeroFormSet = inlineformset_factory(User, pasajero, userPasajeroForm, exclude=["user"], extra=nPasajeros)
     DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
     if request.method == "POST":
+        print("Posted")
         pasaje = PasajeroFormSet(request.POST)
         if pasaje.is_valid():
-            pasaje.save()
+            pasaje.save(commit= False)
+            pasaje.user = request.user
             return redirect('resumen')
         else:
-            print(pasaje.errors)
+            print("no valido")
+            print(pasaje)
     else:
         pasaje = PasajeroFormSet()
+        print("not posted")
     
     return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo, 'pasaje': pasaje})
 
