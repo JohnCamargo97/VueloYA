@@ -29,9 +29,10 @@
                             <div class="pasajeros">
                                 <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
                             </div>
-                        
-                            {{pasaje.as_p}}
-
+                            {% for pasajero in pasaje %}
+                                {{pasajero.as_p}}
+                                <br>
+                            {% endfor %}
 
                             <div class="contenedor-del-boton-comprar-ahora">
                                 <button class="boton-comprar-ahora" type="submit">Comprar</button>

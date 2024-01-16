@@ -29,4 +29,5 @@ class userFactForm(forms.ModelForm):
 class userPasajeroForm(forms.ModelForm):
    class Meta:
       model = pasajero
-      fields = "__all__"
+      fields = ('puesto', 'nombre', 'apellido', 'tipoDeDocumento', 'nDocumento', 'ciudadDeResidencia')
+      

@@ -86,6 +86,7 @@ def facturacion_crear(request):
     if request.method == "POST":
         fact_form = userFactForm(request.POST)
         if fact_form.is_valid():
+            print(fact_form)
             facto= fact_form.save(commit= False)
             facto.user= request.user
             facto.save()

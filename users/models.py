@@ -17,7 +17,7 @@ class userFacturacion(models.Model):
             return f'{self.nombre} {self.apellido} {self.tipoDeDocumento} {self.nDocumento}'
 
 class pasajero(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     puesto = models.OneToOneField(puestos, default=200, on_delete=models.DO_NOTHING)
     nombre = models.CharField(max_length= 40)
     apellido = models.CharField(max_length= 40)
