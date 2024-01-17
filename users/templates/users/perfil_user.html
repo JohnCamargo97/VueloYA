@@ -20,7 +20,7 @@
                     <div class="contenedor-nombre-email">
                         {{ user.username }}
                         <br>
-                        {{ user.email }} 
+                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
                     </div>
 
                     <div class="parte-usuario">
@@ -32,18 +32,35 @@
                 <div class="contenedor-datos-personales">
 
                     <div class="contenedor-datos">
-                        <div style="margin-bottom: 10px; font-weight: 600;">Nombre completo
 
-                            <div style="background-color: antiquewhite;"> {{user.get_full_name}} </div>
+                        <div style="margin-bottom: 10px; font-weight: 600;">Nombre Completo
+
+                            <div style="font-weight: 400;"> {{user.get_full_name}}</div>
               
-                            </div>
+                        </div>
 
-                        <div>Telefono {{user.uservueloya.telefono}} </div>
+                        <div style="font-weight: 600; display:flex;">Telefono 
+                        
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.telefono}}</div>
+                        
+                        </div>
+
                     </div>
 
                     <div class="contenedor-datos-dos">
-                        <div style="margin-bottom: 10px; ">Fecha de Nacimiento <br> {{user.uservueloya.fechaNacimiento}} </div>
-                        <div>Genero {{user.uservueloya.genero}} </div>
+
+                        <div style="margin-bottom: 10px; font-weight: 600; ">Fecha de Nacimiento
+                        
+                            <div style="font-weight: 400;">{{user.uservueloya.fechaNacimiento}}</div>
+                        
+                        </div>
+
+                        <div style="font-weight: 600; display:flex;">Genero
+
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.genero}} </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -55,7 +72,7 @@
                 <div class="contenedor-datos-tarjeta">
 
                     <div class="contenedor-texto-tarjeta-credito">
-                        <h6>Tarjetas de credito</h6>
+                        <h5 style="color: #505050;">Tarjetas de credito</h5>
                         Tarjeta 1
                     </div>
 
@@ -69,7 +86,7 @@
 
             <div class="contenedor-datos-facturacion">
                 
-                <h6 style="padding: 10px;">Datos de Facturacion</h6>
+                <h5 style="padding: 10px; color: #505050;">Datos de Facturacion</h5>
 
                 {% for facto in factos%}
 
@@ -89,33 +106,36 @@
 
                 {% endfor %}
                 
-                <div class="xx-x">
+                <div class="contenedor-boton-facturacion-agregar">
                     <a class="boton-facturacion-agregar"href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
                 </div>
 
             </div>
 
-            <div class="zz-z">
+            <div class="contenedor-preferencias">
 
-                <h6>Preferencias</h6>
+                <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
 
                 <div class="contenedor-recibir-notificaciones">
 
-                    <a class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
+                    <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
+                    <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
 
-                    <div class="vv-v">
-                        <input style="cursor: pointer;" type="checkbox" id="recuerdame">
+                    <div class="contenedor-aceptar-notificaciones">
+                        <input type="checkbox" id="recibir notificaciones">
                     </div>
 
                 </div>
 
-                <div>
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
                     <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
                 </div>
 
 
-                <div>
-                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar mi cuenta</a>
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
+                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
                 </div>
 
             </div>
@@ -152,10 +172,10 @@
     
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" class="text-body-uno">Mis Viajes</a>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-body-uno">Mi Perfil</a>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
                         </li>
                     </ul>
 

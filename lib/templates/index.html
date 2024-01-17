@@ -24,7 +24,7 @@
       <div class="container-fluid">
 
         <div class="contenedor-logo-vueloYa">
-          <a class="ll-l" href="{% url 'home' %}"> <span style="color: #505050;">Vuelo<span style="color: #fd6456;">YA</span></span></a>
+          <a class="contenedor-nombre-vueloya" href="{% url 'home' %}"> <span style="color: #505050;">Vuelo<span style="color: #fd6456;">YA</span></span></a>
         </div>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
               {% if user.is_authenticated %}
                 <div class="btn-group">
                   <img class="rounded-circle" src="{{user.uservueloya.picture.url}}" height="40">
-                  <button type="button" class="btn" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                  <button type="button" class="btn" style="box-shadow: none;" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                     {{ user.username }}
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -66,7 +66,7 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
                   <li class="nav-item">
-                    <a class="nav-link active kk-k" aria-current="page" href="{% url 'registrarse' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoRegistroUsuario.png' %}" alt="Icono Registro">Registrarse</a>
+                    <a class="nav-link active linea-separadora" aria-current="page" href="{% url 'registrarse' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoRegistroUsuario.png' %}" alt="Icono Registro">Registrarse</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active " aria-current="page" href="{% url 'iniciarsesion' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoUsuario.png' %}" alt="Icono Inicio Sesión">Iniciar Sesión</a>
