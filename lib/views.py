@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.db.models.query import EmptyQuerySet
 from django.contrib.auth.models import User
-from .models import Vuelo, aerolinea, puestos
+from .models import Vuelo
 from users.models import pasajero
-from .forms import BusquedaForm
+from .forms import BusquedaForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
 from users.forms import userPasajeroForm
 from django.forms import modelformset_factory
 
@@ -42,27 +41,44 @@ def misviajes(request):
     
 def pagos(request):
     VueloSeleccionado = request.session
-    nPasajeros = int(VueloSeleccionado['pasajeros'])
-    PasajeroFormSet = modelformset_factory(pasajero, form= userPasajeroForm, extra=nPasajeros)
-    DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
+    #nPasajeros = int(VueloSeleccionado['pasajeros'])
+    detallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
     if request.method == "POST":
         print("Posted", request.POST)
-        pasaje = PasajeroFormSet(request.POST, EmptyQuerySet)
-        for pas in pasaje:
-            if pas.is_valid():
-                print(pas.cleaned_data)
-                pas1 = pas.save(commit= False)
-                pas1.user = request.user
-                pas1.save()
-    
-            else:
-                print("no valido")
+        userpasajeroForm = userPasajeroForm(request.POST)
+        uservoucherForm =  voucherForm(request.POST)
+        usermetodopagoForm = metodoPago(request.POST)
+        userdatostarjetaForm = datosTarjeta(request.POST)
+        usertyc = terminosyCondiciones(request.POST)
+        if  userpasajeroForm.is_valid():
+            print(userpasajeroForm.cleaned_data)
+            pasajero = userpasajeroForm.save(commit= False)
+            pasajero.user = request.user
+            pasajero.save()
+        else:
+            print(userpasajeroForm)
+        
+        if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
+            print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}') 
+
         return redirect('resumen')
     else:
-        pasaje = PasajeroFormSet(queryset= EmptyQuerySet)
-        print("not posted")
+        userpasajeroForm = userPasajeroForm()
+        uservoucherForm =  voucherForm()
+        usermetodopagoForm = metodoPago()
+        userdatostarjetaForm = datosTarjeta()
+        usertyc = terminosyCondiciones()
+
+    context = {
+        'detallesVuelo': detallesVuelo,
+        'userpasajeroForm': userpasajeroForm,
+        'uservoucherForm': uservoucherForm,
+        'usermetodopagoForm': usermetodopagoForm,
+        'userdatostarjetaForm': userdatostarjetaForm,
+        'tyc': usertyc
+    }
     
-    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo, 'pasaje': pasaje})
+    return render (request, 'paginas/pagos.html', context)
 
 def busqueda(request):
     form_response = request.session

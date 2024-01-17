@@ -774,6 +774,7 @@ body {
         width: 100%;
         background-color: #f2f2f2;
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         padding: 20px;
         margin-bottom: 20px;
@@ -797,6 +798,7 @@ body {
         background-color: #f2f2f2;
         display: flex;
         justify-content: flex-start;
+        flex-direction: column;
         padding: 20px;
         margin-bottom: 20px;
     }
@@ -807,6 +809,7 @@ body {
         background-color: #f2f2f2;
         display: flex;
         justify-content: flex-start;
+        flex-direction: column;
         padding: 20px;
         margin-bottom: 20px;
     }
@@ -838,6 +841,7 @@ body {
         background-color: #f2f2f2;
         display: flex;
         justify-content: flex-start;
+        flex-direction: column;
         padding: 20px;
         margin-bottom: 20px;
     }

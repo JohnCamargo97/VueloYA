@@ -21,183 +21,156 @@
             <div class="contenedor-datos-para-pagos">
     
                 <div class="contenido-formulario-para-pagos">
-        
-                    <div class="mauro-diez">
-                        <form class="formulario-pagos" method="POST">
-                            
-                            {% csrf_token %}
-                            <div class="pasajeros">
-                                <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                            </div>
-                            {% for pasajero in pasaje %}
-                                {{pasajero.as_p}}
-                                <br>
-                            {% endfor %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mauro-diez">            
+                                <div class="pasajeros">
+                                    <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
+                                </div>                              
+                                {{userpasajeroForm.as_p}}
+                        </div>
 
+                        <div class="mauro-once">
+                
+                                <div class="texto-recibir-vouchers">
+                                    <h3 style="color: #505050; font-size: 25px;">¿A dónde enviamos tus vouchers?</h3>
+                                </div>
+                
+                                <div class="texto-recibir-vouchers">
+                                    <h3 style="color: #505050; font-size: 15px; margin-top: 10px;">El email que elijas será fundamental para que gestiones tu reserva y recibas información importante sobre tu viaje.</h3>
+                                </div>
+                                <div class="datos-pasajeros row">
+                                    <div class="col">
+                                        <label for="pasajeros">EMAIL (DONDE RECIBIRÁS TUS VOUCHERS)</label>
+                                        <input class="pasajero-uno" type="email" class="form-control" id="id_email" name="email" placeholder="ejemplo@gmail.com" required>
+                                    </div>
+                                </div>
+                
+                                <div class="datos-pasajeros row">
+                                    <div class="col">
+                                        <label for="pasajeros">CONFIRMA TU EMAIL</label>
+                                        <input class="pasajero-uno" type="text" class="form-control" id="id_emailConfirmacion" name="emailConfirmacion" placeholder="ejemplo@gmail.com" required>
+                                    </div>
+                                </div>
+                        </div>
+        
+                        <div class="mauro-doce">
+                                <div class="texto-recibir-vouchers">
+                                    <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
+                                </div>
+                
+                                <div class="metodos-de-pagos-NA row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_tarjetacredito" name="tarjetacredito">
+                                        <label for="pago-credito">Tarjeta de crédito</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_tarjetadebito" name="tarjetadebito">
+                                        <label for="pago-debito">Tarjeta de débito</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_pse" name="pse">
+                                        <label for="pago-pse">PSE</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_criptomonedas" name="criptomonedas">
+                                        <label for="pago-cripto">Criptomonedas</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_efecty" name="efecty">
+                                        <label for="pago-efecty">Efecty</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos row">
+                                    <div class="col">
+                                        <input style="cursor: pointer;" type="checkbox" id="id_sured" name="sured">
+                                        <label for="pago-sured">Su Red</label>
+                                    </div>
+                                </div>
+                        </div>
+            
+                        <div class="mauro-trece">
+                                <div class="texto-recibir-vouchers">
+                                    <h3 style="color: #505050; font-size: 25px;">Ingresa los datos de la tarjeta</h3>
+                                </div>
+                
+                                <div class="datos-tarjetas row">
+                                    <div class="col contenedor-de-unir-datostarjeta-uno">
+                    
+                                        <div class="contenedor-agrupa-colums-datostarjeta-uno">
+                                            <label for="tarjetas">NÚMERO DE TARJETA</label>
+                                            <input class="tarjeta-usuario" type="number" id="id_numerodetarjeta" placeholder="Ingresa el número de tu tarjeta" name="numerodetarjeta">
+                                        </div>
+                    
+                                        <div class="contenedor-agrupa-colums-datostarjeta-uno-b">
+                                            <label for="tarjetas">TITULAR DE LA TARJETA</label>
+                                            <input class="tarjeta-usuario" type="text" id="id_titulartarjeta" placeholder="Como figura en la tarjeta" name="titulartarjeta">
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                
+                
+                                <div class="datos-tarjetas row">
+                                    <div class="col contenedor-de-unir-datostarjeta-dos">
+                    
+                                        <div class="contenedor-vencimiento-tarjeta">
+                                            <label for="tarjetas">VENCIMIENTO</label>
+                                            <input class="vencimiento-tarjeta" type="text" id="id_vencimiento" placeholder="MM/AA" name="vencimiento" maxlenght="5">
+                                        </div>
+                    
+                                        <div class="contenedor-codigo-seguridad">
+                                            <label for="tarjetas">CÓD. SEGURIDAD</label>
+                                            <input class="codigo-seguridad" type="number" id="id_codseguridad" placeholder="MM/AA" name="codseguridad">
+                                        </div>
+                    
+                                        <div class="contenedor-documento-titular">
+                                            <label for="tarjetas">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
+                                            <input class="tarjeta-usuario" type="number" id="id_documentotitulartarjeta" placeholder="Ej: 15234568" name="documentotitulartarjeta">
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                        </div>
+            
+                        <div class="aceptar-terminos-compra">
+                            <div class="contenedor-uno-del-input">
+                                <div class="contenedor-para-alinear">
+                                    <input style="cursor: pointer;" type="checkbox" id="id_tyc" name="tyc" required>
+                                </div>
+                
+                                <div class="texto-de-aceptarterminos">
+                                    <label for="aceptar">Leí y acepto las condiciones de compra , políticas de privacidad y políticas de cambios y cancelaciones.</label>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class="contenedor-boton-comprar">
                             <div class="contenedor-del-boton-comprar-ahora">
                                 <button class="boton-comprar-ahora" type="submit">Comprar</button>
                             </div>
 
-                        </form>
-                    </div>
-        
-        
-                    <div class="mauro-once">
-                        <form class="formulario-pagos" action="#">
-            
-                            <div class="texto-recibir-vouchers">
-                                <h3 style="color: #505050; font-size: 25px;">¿A dónde enviamos tus vouchers?</h3>
+                            <div class="texto-del-total-pago">
+                                <label style="color: #505050;" for="pagos">Total a pagar</label>
+                                <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ 900.000 </a></span>
                             </div>
-            
-                            <div class="texto-recibir-vouchers">
-                                <h3 style="color: #505050; font-size: 15px; margin-top: 10px;">El email que elijas será fundamental para que gestiones tu reserva y recibas información importante sobre tu viaje.</h3>
-                            </div>
-            
-                            <div class="datos-pasajeros row">
-                                <div class="col">
-                                    <label for="pasajeros">EMAIL (DONDE RECIBIRÁS TUS VOUCHERS)</label>
-                                    <input class="pasajero-uno" type="text" class="form-control" id="origen" name="origen" placeholder="ejemplo@gmail.com" required>
-                                </div>
-                            </div>
-            
-                            <div class="datos-pasajeros row">
-                                <div class="col">
-                                    <label for="pasajeros">CONFIRMA TU EMAIL</label>
-                                    <input class="pasajero-uno" type="text" class="form-control" id="origen" name="origen" placeholder="ejemplo@gmail.com" required>
-                                </div>
-                            </div>
-            
-                        </form>
-                    </div>
-        
-        
-                    <div class="mauro-doce">
-                        <form class="formulario-pagos" action="#">
-            
-                            <div class="texto-recibir-vouchers">
-                                <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
-                            </div>
-            
-                            <div class="metodos-de-pagos-NA row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-credito">Tarjeta de crédito</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-debito">Tarjeta de débito</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-pse">PSE</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-cripto">Criptomonedas</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-efecty">Efecty</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos row">
-                                <div class="col">
-                                    <input style="cursor: pointer;" type="checkbox" id="pagos" name="pagos" required>
-                                    <label for="pago-sured">Su Red</label>
-                                </div>
-                            </div>
-            
-                        </form>
-                    </div>
-        
-                    <div class="mauro-trece">
-                        <form class="formulario-pagos" action="#">
-            
-                            <div class="texto-recibir-vouchers">
-                                <h3 style="color: #505050; font-size: 25px;">Ingresa los datos de la tarjeta</h3>
-                            </div>
-            
-                            <div class="datos-tarjetas row">
-                                <div class="col contenedor-de-unir-datostarjeta-uno">
-                
-                                    <div class="contenedor-agrupa-colums-datostarjeta-uno">
-                                        <label for="tarjetas">NÚMERO DE TARJETA</label>
-                                        <input class="tarjeta-usuario" type="text" id="tarjetas" placeholder="Ingresa el número de tu tarjeta" name="tarjetas" required>
-                                    </div>
-                
-                                    <div class="contenedor-agrupa-colums-datostarjeta-uno-b">
-                                        <label for="tarjetas">TITULAR DE LA TARJETA</label>
-                                        <input class="tarjeta-usuario" type="text" id="tarjetas" placeholder="Como figura en la tarjeta" name="tarjetas" required>
-                                    </div>
-                
-                                </div>
-                            </div>
-            
-            
-                            <div class="datos-tarjetas row">
-                                <div class="col contenedor-de-unir-datostarjeta-dos">
-                
-                                    <div class="contenedor-vencimiento-tarjeta">
-                                        <label for="tarjetas">VENCIMIENTO</label>
-                                        <input class="vencimiento-tarjeta" type="text" id="tarjetas" placeholder="MM/AA" name="tarjetas" required>
-                                    </div>
-                
-                                    <div class="contenedor-codigo-seguridad">
-                                        <label for="tarjetas">CÓD. SEGURIDAD</label>
-                                        <input class="codigo-seguridad" type="text" id="tarjetas" placeholder="MM/AA" name="tarjetas" required>
-                                    </div>
-                
-                                    <div class="contenedor-documento-titular">
-                                        <label for="tarjetas">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
-                                        <input class="tarjeta-usuario" type="text" id="tarjetas" placeholder="Ej: 15234568" name="tarjetas" required>
-                                    </div>
-                
-                                </div>
-                            </div>
-            
-                        </form>
-                    </div>
-        
-                    <div class="aceptar-terminos-compra">
-                        <div class="contenedor-uno-del-input">
-                            <div class="contenedor-para-alinear">
-                                <input style="cursor: pointer;" type="checkbox" id="aceptar-terminos" name="aceptar-terminos" required>
-                            </div>
-            
-                            <div class="texto-de-aceptarterminos">
-                                <label for="aceptar">Leí y acepto las condiciones de compra , políticas de privacidad y políticas de cambios y cancelaciones.</label>
-                            </div>
-            
-                        </div>
-                    </div>
-
-                    <div class="contenedor-boton-comprar">
-                        <div class="contenedor-del-boton-comprar-ahora">
-                            <button class="boton-comprar-ahora" type="submit">Comprar</button>
-                        </div>
-
-                        <div class="texto-del-total-pago">
-                            <label style="color: #505050;" for="pagos">Total a pagar</label>
-                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ 900.000 </a></span>
-                        </div>
-                    </div>
-                
+                        </div>    
+                    </form>          
                 </div>
-
-
 
                 <div class="detalles-pagos">
 

@@ -19,10 +19,30 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
-
 class UpdateUserVYaForm(forms.ModelForm):
     class Meta:
         model = userVueloYa
         widgets = {'picture': ClearableFileInput(attrs={'accept': 'application/png,application/jpg'})}
         fields = ('picture', 'genero', 'telefono', 'fechaNacimiento')
-        
+
+class voucherForm(forms.Form):
+    email= forms.EmailField(required=True)
+    emailConfirmacion= forms.EmailField(required=True)
+
+class metodoPago(forms.Form):
+    tarjetacredito= forms.BooleanField(required=False)
+    tarjetadebito= forms.BooleanField(required=False)
+    pse= forms.BooleanField(required=False)
+    criptomonedas= forms.BooleanField(required=False)
+    efecty= forms.BooleanField(required=False)
+    sured= forms.BooleanField(required=False)
+    
+class datosTarjeta(forms.Form):
+    numerodetarjeta= forms.IntegerField(required=False)
+    titulartarjeta= forms.CharField(max_length=50, required=False)
+    vencimiento= forms.CharField(max_length=5, required=False)
+    codseguridad= forms.IntegerField(required=False)
+    documentotitulartarjeta= forms.IntegerField(required= False)
+    
+class terminosyCondiciones(forms.Form):
+    tyc= forms.BooleanField(required=True)
