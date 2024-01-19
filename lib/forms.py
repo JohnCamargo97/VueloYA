@@ -30,12 +30,16 @@ class voucherForm(forms.Form):
     emailConfirmacion= forms.EmailField(required=True)
 
 class metodoPago(forms.Form):
-    tarjetacredito= forms.BooleanField(required=False)
-    tarjetadebito= forms.BooleanField(required=False)
-    pse= forms.BooleanField(required=False)
-    criptomonedas= forms.BooleanField(required=False)
-    efecty= forms.BooleanField(required=False)
-    sured= forms.BooleanField(required=False)
+    METODOS_PAGO_CHOICES = [
+        ("tarjetacredito", "tarjetacredito"),
+        ("tarjetadebito", "tarjetadebito"),
+        ("pse", "pse"),
+        ("criptomonedas", "criptomonedas"),
+        ("efecty", "efecty"),
+        ("sured", "sured"),
+    ]
+
+    metodopago = forms.MultipleChoiceField(required=True, widget= forms.RadioSelect, choices=METODOS_PAGO_CHOICES)  
     
 class datosTarjeta(forms.Form):
     numerodetarjeta= forms.IntegerField(required=False)

@@ -58,46 +58,49 @@
                                 <div class="texto-recibir-vouchers">
                                     <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
                                 </div>
-                
-                                <div class="metodos-de-pagos-NA row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_tarjetacredito" name="tarjetacredito">
-                                        <label for="pago-credito">Tarjeta de crédito</label>
+                                
+                        
+                                <div id="id_metodopago">
+                                    <div class="metodos-de-pagos-NA row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_0" name="metodopago" value="tarjetacredito" required>
+                                            <label for="id_metodopago_0">tarjeta de credito</label>
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="metodos-de-pagos row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_tarjetadebito" name="tarjetadebito">
-                                        <label for="pago-debito">Tarjeta de débito</label>
+                    
+                                    <div class="metodos-de-pagos row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_1" name="metodopago" value="tarjetadebito" required>
+                                            <label for="id_metodopago_1">Tarjeta de débito</label>
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="metodos-de-pagos row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_pse" name="pse">
-                                        <label for="pago-pse">PSE</label>
+                    
+                                    <div class="metodos-de-pagos row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_2" name="metodopago" value="pse" required>
+                                            <label for="id_metodopago_2">PSE</label>
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="metodos-de-pagos row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_criptomonedas" name="criptomonedas">
-                                        <label for="pago-cripto">Criptomonedas</label>
+                    
+                                    <div class="metodos-de-pagos row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_3" name="metodopago" value="criptomonedas" required>
+                                            <label for="id_metodopago_3">Criptomonedas</label>
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="metodos-de-pagos row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_efecty" name="efecty">
-                                        <label for="pago-efecty">Efecty</label>
+                    
+                                    <div class="metodos-de-pagos row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_4" name="metodopago" value="efecty" required>
+                                            <label for="id_metodopago_4">Efecty</label>
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="metodos-de-pagos row">
-                                    <div class="col">
-                                        <input style="cursor: pointer;" type="checkbox" id="id_sured" name="sured">
-                                        <label for="pago-sured">Su Red</label>
+                    
+                                    <div class="metodos-de-pagos row">
+                                        <div class="col">
+                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_5" name="metodopago" value="sured" required>
+                                            <label for="id_metodopago_5">Su Red</label>
+                                        </div>
                                     </div>
                                 </div>
                         </div>
