@@ -10,6 +10,7 @@ urlpatterns = [
     path('misviajes', views.misviajes, name='misviajes'),
     path('pagos', views.pagos, name='pagos'),
     path('resultados', views.resultados, name='resultados'),
+    path('resumen', views.resumen, name='resumen'),
 
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),

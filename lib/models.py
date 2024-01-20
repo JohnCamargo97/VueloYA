@@ -48,7 +48,7 @@ class puestos(models.Model):
     def __str__(self):
         numerostr = str(self.id)
         return  numerostr
-    
+
 class userVueloYa(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     picture = models.ImageField(default='default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
@@ -98,5 +98,13 @@ class userVueloYa(models.Model):
         except:
             pass
 
-
+class historicoReserva(models.Model):
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.DO_NOTHING)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    puestos = models.CharField(max_length=25)
+    pasajeros = models.SmallIntegerField()
+    estado = models.CharField(max_length=25)
+    
+    
 
