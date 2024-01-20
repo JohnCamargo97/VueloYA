@@ -101,7 +101,7 @@ class userVueloYa(models.Model):
 class historicoReserva(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     vuelo = models.ForeignKey(Vuelo, on_delete=models.DO_NOTHING)
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(auto_now_add=True)
     puestos = models.CharField(max_length=25)
     pasajeros = models.SmallIntegerField()
     estado = models.CharField(max_length=25)

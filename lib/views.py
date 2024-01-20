@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Vuelo
+from .models import Vuelo, historicoReserva
 from users.models import pasajero
 from .forms import BusquedaForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
 from users.forms import userPasajeroForm
@@ -41,7 +41,7 @@ def misviajes(request):
     
 def pagos(request):
     VueloSeleccionado = request.session
-    #nPasajeros = int(VueloSeleccionado['pasajeros'])
+    nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
     if request.method == "POST":
         userpasajeroForm = userPasajeroForm(request.POST)
@@ -56,7 +56,9 @@ def pagos(request):
             pasajero.save()
 
             if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
-                print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}') 
+                print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}')
+                Reserva = historicoReserva(user= request.user, vuelo= detallesVuelo, puestos= pasajero.puesto, pasajeros= nPasajeros, estado="Reservado")
+                Reserva.save()
                 return redirect('resumen')
             else:
                 print("error con formularios")
