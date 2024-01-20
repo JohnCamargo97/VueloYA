@@ -44,7 +44,6 @@ def pagos(request):
     #nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
     if request.method == "POST":
-        print("Posted", request.POST)
         userpasajeroForm = userPasajeroForm(request.POST)
         uservoucherForm =  voucherForm(request.POST)
         usermetodopagoForm = metodoPago(request.POST)
@@ -55,13 +54,15 @@ def pagos(request):
             pasajero = userpasajeroForm.save(commit= False)
             pasajero.user = request.user
             pasajero.save()
-        else:
-            print(userpasajeroForm)
-        
-        if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
-            print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}') 
 
-        return redirect('resumen')
+            if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
+                print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}') 
+                return redirect('resumen')
+            else:
+                print("error con formularios")
+        else:
+            print(userpasajeroForm.errors)
+        
     else:
         userpasajeroForm = userPasajeroForm()
         uservoucherForm =  voucherForm()

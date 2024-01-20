@@ -39,7 +39,7 @@ class metodoPago(forms.Form):
         ("sured", "sured"),
     ]
 
-    metodopago = forms.MultipleChoiceField(required=True, widget= forms.RadioSelect, choices=METODOS_PAGO_CHOICES)  
+    metodopago = forms.ChoiceField(required=True, widget= forms.RadioSelect, choices=METODOS_PAGO_CHOICES)  
     
 class datosTarjeta(forms.Form):
     numerodetarjeta= forms.IntegerField(required=False)
