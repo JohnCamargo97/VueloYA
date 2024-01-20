@@ -6,109 +6,260 @@
 
 {% block contenido %}
 
-<h1> Mi perfil </h1>
-    <div style="display: flex; ">
-        
-        <div style="padding: 15px; min-width: 50%;">
-            <hr></hr>
-            <div style="display: flex; background-color: rgb(35, 35, 90); padding: 10px;">
-                <div style="padding: 5px; aspect-ratio: 1 / 1;"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
-                <div style="color: white; display: flex; justify-content: center; align-items: center;">
-                    {{ user.username }}
-                    <br>
-                    {{ user.email }} 
-                </div> 
-                <div class="parte-usuario" style="margin-left: auto;">
-                    <a style="background-color: rgb(70, 144, 184); 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;" 
-                    
-                    href="{% url 'personal-info' %}">Editar</a>
-                </div>     
-            </div>
+<div class="container-fluid" style="background-color: #eeeeee;">
 
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); margin-bottom: 10px; margin-top: 10px;">
-                <div style="padding: 5px; margin: 5px;">Nombre completo: {{user.get_full_name}} </div>       
-                <div style="padding: 5px; margin: 5px;">Telefono: {{user.uservueloya.telefono}} </div>
-                <div style="padding: 5px; margin: 5px;">Fecha de Nacimiento: {{user.uservueloya.fechaNacimiento}} </div>
-                <div style="padding: 5px; margin: 5px;">genero: {{user.uservueloya.genero}} </div>
-            </div>
+    <div class="container hh-h">
 
+        <div class="contenedor-formulario-editar-perfil">
+            
+            <div class="contenedor-edi-datos-perfil">
+                
+                <div class="contenedor-datos-perfil">
 
-            <hr></hr>
-
-
-            <div style="padding: 10px;"><a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a></div>
-            <hr></hr>
-
-
-            <div style="display: flex;">
-                <div style="padding: 10px;">
-                    <h6>Tarjetas de credito:</h6>
-                    Tarjeta1
-                </div>
-                <div class="parte-usuario" style="margin-left: auto;">
-                    <a style="background-color: rgb(70, 144, 184); 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;" 
-                    
-                    href="{% url 'personal-info' %}">Agregar tarjeta</a>
-                </div>   
-            </div>
-
-
-            <hr></hr>
-
-            <h6>Datos de Facturacion:</h6>
-            {% for facto in factos%}
-                <div style="display: flex;">
-                    <div style="padding: 10px;">
-                        
-                        {{facto}}
+                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
+                    <div class="contenedor-nombre-email">
+                        {{ user.username }}
+                        <br>
+                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
                     </div>
-                    <div class="parte-usuario" style="margin-left: auto;">
-                        <a style="background-color: rgb(70, 144, 184) ; 
-                                color: white;
-                                padding: 14px 25px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;" 
-                        
-                        href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
-                        <a style="background-color: rgb(70, 144, 184) ; 
-                                color: white;
-                                padding: 14px 25px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;" 
-                        
-                        href="{% url 'facturacion_borrar' %}">Borrar</a>
-                    </div>   
+
+                    <div class="parte-usuario">
+                        <a class="boton-editar-perfil" href="{% url 'personal-info' %}">Editar</a>
+                    </div>
+
                 </div>
-            {% endfor %}
-            <a style="background-color: rgb(70, 144, 184) ; 
-                            color: white;
-                            padding: 14px 25px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            width: 100%;" 
-                    
-                    href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
 
-            <hr></hr>
+                <div class="contenedor-datos-personales">
 
-            <h6>Preferencias:</h6>
-            Recibir notificaciones (yes/no)
-            <br>
-            Eliminar mi cuenta
+                    <div class="contenedor-datos">
+
+                        <div style="margin-bottom: 10px; font-weight: 600;">Nombre Completo
+
+                            <div style="font-weight: 400;"> {{user.get_full_name}}</div>
+              
+                        </div>
+
+                        <div style="font-weight: 600; display:flex;">Telefono 
+                        
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.telefono}}</div>
+                        
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-datos-dos">
+
+                        <div style="margin-bottom: 10px; font-weight: 600; ">Fecha de Nacimiento
+                        
+                            <div style="font-weight: 400;">{{user.uservueloya.fechaNacimiento}}</div>
+                        
+                        </div>
+
+                        <div style="font-weight: 600; display:flex;">Genero
+
+                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.genero}} </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-datos-metodos-pagos">
+                
+                <div class="contenedor-datos-tarjeta">
+
+                    <div class="contenedor-texto-tarjeta-credito">
+                        <h5 style="color: #505050;">Tarjetas de credito</h5>
+                        Tarjeta 1
+                    </div>
+
+                    <div class="parte-tarjetas" style="margin-left: auto;">
+                        <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}">Agregar tarjeta</a>
+                    </div>  
+
+                </div>
+    
+            </div>
+
+            <div class="contenedor-datos-facturacion">
+                
+                <h5 style="padding: 10px; color: #505050;">Datos de Facturacion</h5>
+
+                {% for facto in factos%}
+
+                    <div class="contenedor-info-usuarios">
+
+                        <div class="contenedor-nombre-cedula-user">{{facto}}</div>
+
+                        <div class="parte-facturacion" style="margin-left: auto;">
+
+                            <a class="boton-facturacion-editar" href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
+
+                            <a class="boton-facturacion-borrar"href="{% url 'facturacion_borrar' %}">Borrar</a>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+                
+                <div class="contenedor-boton-facturacion-agregar">
+                    <a class="boton-facturacion-agregar"href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
+                </div>
+
+            </div>
+
+            <div class="contenedor-preferencias">
+
+                <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
+
+                <div class="contenedor-recibir-notificaciones">
+
+                    <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
+                    <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
+
+                    <div class="contenedor-aceptar-notificaciones">
+                        <input type="checkbox" id="recibir notificaciones">
+                    </div>
+
+                </div>
+
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
+                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
+                </div>
+
+
+                <div style="margin-top: 5px;">
+                    <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
+                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
+                </div>
+
+            </div>
         </div>
-        <div style="min-width: 50%;"></div>
-    </div>   
+
+    </div>
+</div>
+
+<div class="container recibir-ofertas">
+    <div class="container">
+
+      <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+
+      <div class="presentacion">
+        <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
+        <button class="boton-tres" type="submit">Enviar</button>
+      </div>
+
+      <div class="politicas-privacidad">
+        Recibirás correos promocionales de VueloYA. Para más información consulta las <a href="####">políticas de privacidad.</a>
+      </div>
+
+    </div>
+</div>
+
+<div class="container-fluid informacion-footer">
+    <div class="container">
+        <footer class="footer-uno">
+
+            <div class="row info-vueloya">
+    
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
+                    <h5 class="text-uppercase">Mi Cuenta</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Somos VueloYA</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Relación con Inversores</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Sobre VueloYA</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Confianza en tus compras</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">Terminos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Promociones vigentes</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Politica de privacidad</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Aerolíneas</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">American Airlines</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Air France</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Avianca</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Latam</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </footer>
+    </div>
+</div>
+
+<div class="container">
+
+    <footer class="footer-dos">
+
+        <div class="footer-izquierda">
+            <p class="pp-p">© 2023 Copyright:VueloYA</p>
+        </div>
+
+        <div class="footer-derecha">
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+        </div>
+
+    </footer>
+
+</div>
+
 {% endblock %}

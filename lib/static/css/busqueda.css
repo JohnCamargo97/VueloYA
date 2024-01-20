@@ -150,7 +150,7 @@ body {
         cursor: pointer;
     }
 
-    .ll-l{
+    .logo-vueloya{
         color: #505050;
         text-decoration: none;
     }
@@ -163,7 +163,7 @@ body {
         height: 50px;
     }
 
-    .pp-p{
+    .contenedor-icono-helpme{
         font-weight: 500;
         font-size: 18px;
         padding: 10px;
@@ -202,10 +202,12 @@ body {
     }
 
     .filtros{
-        background-color: #2c2423;
         width:95%;
-        height: 300px;
+        height: auto;
         margin-top: 25px;
+        border-top: 1px solid #505050;
+        border-bottom: 1px solid #505050;
+        padding: 5px;
     }
 
     .imagen-full {
@@ -282,8 +284,6 @@ body {
     
     .nombre-aerolinea{
         display: flex;
-        justify-content: space-between;
-        padding: 5px 8px;
     }
     
     .horario-viaje{
@@ -416,7 +416,7 @@ body {
 
     .fecha-ida{
         border-radius: 5px;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
         
     }
@@ -428,7 +428,7 @@ body {
 
     .fecha-regreso{
         border-radius: 5px;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
     }
 
@@ -447,7 +447,7 @@ body {
 
     .num-pasajeros{
         display: block;
-        border: solid 2px rgb(215, 215, 215);
+        border: none;
         color: #808080;
         border-radius: 10px;
     }
@@ -458,7 +458,7 @@ body {
     }
 
     .boton-uno{
-        background-color: #fd6456;
+        background-color: rgb(255, 72, 72);
         width: 90%;
         height: 35px;
         border-radius: 12px;
@@ -468,7 +468,7 @@ body {
     }
 
     .boton-uno:hover{
-        background-color: #fe6b5d;
+        background-color: rgb(255, 81, 81);
         transform: translateY(1px);
     }
 
@@ -1064,6 +1064,414 @@ body {
 
     /*Detalles del pago*/
 
+    /*Formulario Editar Perfil*/
+
+    .hh-h{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contenedor-formulario-editar-perfil{
+        width: 85%;
+        padding: 20px;
+    }
+
+    .rounded-circle{
+        width: 70px;
+        cursor: pointer;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .rounded-circle:hover{
+        transform: scale(1.1);
+    }
+
+    .contenedor-datos-perfil{
+        display: flex;
+        align-items: center;
+        background-color:#293964;
+        width: 100%;
+        padding: 10px;
+        height: 150px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .parte-usuario{
+        margin-left: auto;
+    }
+
+    .contenedor-nombre-email{
+        color: white;
+    }
+
+    .contenedor-edi-datos-perfil{
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .contenedor-imagen-perfil{
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    .boton-editar-perfil{
+        background-color: rgb(255, 255, 255);
+        color: rgb(60, 60, 60);
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-editar-perfil:hover{
+        background-color: rgb(249, 249, 249);
+        color: rgb(60, 60, 60);
+    }
+
+    .contenedor-datos-personales{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: 100px;
+    }
+
+    .contenedor-datos{
+        width: 50%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-dos{
+        width: 50%;
+        display:flex;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .contenedor-datos-metodos-pagos{
+        width: 100%;
+        background-color: white;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contenedor-datos-tarjeta{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .boton-agregar-tarjetas{
+        background-color: #293964;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-agregar-tarjetas:hover{
+        background-color: #27345a;
+        color: white;
+    }
+
+    .contenedor-datos-facturacion{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .contenedor-info-usuarios{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contenedor-nombre-cedula-user{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .boton-facturacion-editar{
+        background-color: #293964;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 5px;  
+    }
+
+    .boton-facturacion-editar:hover{
+        background-color: #27345a;
+        color: white;
+    }
+
+    .boton-facturacion-borrar{
+        background-color: #293964;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .boton-facturacion-borrar:hover{
+        background-color: #27345a;
+        color: white;
+    }
+
+    .contenedor-boton-facturacion-agregar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .boton-facturacion-agregar{
+        background-color: #293964;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .boton-facturacion-agregar:hover{
+        background-color: #27345a;
+        color: white;
+    }
+
+    .contenedor-preferencias{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 150px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .contenedor-recibir-notificaciones{
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-aceptar-notificaciones{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    /*Formulario Editar Perfil*/
+
+    /*Formulario Facturación*/
+
+    .contenedor-formulario-facturacion{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .contenedor-datos-facturacion{
+        width: 100%;
+        background-color: white;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .contenedor-boton-actualizar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .boton-actualizar{
+        background-color: #293964;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: 50%;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .boton-actualizar:hover{
+        background-color: #27345a;
+        color: white;
+        transform: translateY(1px);
+    }
+
+    .jj-j{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .cc-c{
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        width: 40%;
+    }
+
+    .bb-b{
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        width: 40%;
+
+    }
+
+    .input-datos-facturacion{
+        width: 85%;
+        height: 40px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        border: 1px solid #b0b0b0;
+        padding: 5px;
+        color: #505050;
+    }
+
+    .input-datos-facturacion:focus{
+        outline: none;
+    }
+
+    .label-datos-facturacion{
+        font-weight: 500;
+        color: #505050;
+        margin-bottom: 5px;
+    }
+
+    /*Formulario Facturación*/
+
+    /* Vista Mis Viajes*/
+
+    .cotenedor-all-misviajes{
+        background-color: #eeeeee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .contenedor-historial-misviajes{
+        height: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-registro-misviajes{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .registro-misviajes-uno{
+        background-color: white;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contenedor-misviajes-num-uno{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-nombre-logo-aerolinea{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-right: 1px solid #808080;
+    }
+
+    .contenedor-logo-aerolinea-nombre{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .contenedor-informacion-del-vuelo{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-right: 1px solid #808080;
+    }
+
+    .contenedor-estado-valor-vuelos{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-avianca-misviajes{
+        width: 50px;
+        border-radius: 100px;
+        cursor: pointer;
+        height: auto;
+        transition: transform 0.5s ease;
+        border: 1px solid #eeeeee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-avianca-misviajes:hover{
+        transform: scale(1.1);
+    }
+
+
+
+    /* Vista Mis Viajes*/
+
 
     /*Recibir ofertas al correo*/
 
@@ -1084,7 +1492,7 @@ body {
     }
 
     .boton-tres{
-        background-color: #4277ff;
+        background-color: #2563ff;
         width: 20%;
         height: 40px;
         border-radius: 8px;
@@ -1094,7 +1502,7 @@ body {
     }
 
     .boton-tres:hover{
-        background-color: #2563ff;
+        background-color: #2d69ff;
         transform: translateY(1px);
     }
 

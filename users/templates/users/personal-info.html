@@ -1,20 +1,213 @@
 {% extends "indexdos.html" %}
+
 {% block titulo %} Personal-info {% endblock %}
 
+{% load static %}
 
 {% block contenido %}
 
+<div class="container-fluid" style="background-color: #eeeeee;">
 
-<br>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+    <div class="container hh-h">
 
-    {{u_form.as_p}}
-    {{uvy_form.as_p}}
-    <div class="parte-registrarse">
-        <button class="boton-registrarse" type="submit">Actualizar</button>
+        <div class="contenedor-formulario-editar-perfil">
+            
+            <div class="contenedor-edi-datos-perfil">
+                
+                <div class="contenedor-datos-perfil">
+
+                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
+                    <div class="contenedor-nombre-email">
+                        {{ user.username }}
+                        <br>
+                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
+                    </div>
+
+                    
+                    <div class="parte-usuario">
+                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}">Regresar a Mi Perfil</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-datos-facturacion">
+
+                <div class="texto-datos-personales" style="display: flex; align-items: center; justify-content: center;"><h5 style="color: #505050; padding: 12px;">Datos Personales</h5></div>
+    
+                    <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="jj-j">
+
+                            <div class="cc-c">
+
+                                <label class="label-datos-facturacion" for="id_username">Nombre de Usuario</label>
+                                <input class="input-datos-facturacion" type="text" name="username" value="JohnAdmin" maxlength="150" required="" id="id_username">
+
+                                <label class="label-datos-facturacion" for="id_first_name">Nombres</label>
+                                <input class="input-datos-facturacion" type="text" name="first_name" value="John Alexander" maxlength="30" id="id_first_name">
+
+                                <label class="label-datos-facturacion" for="id_last_name">Apellidos</label>
+                                <input class="input-datos-facturacion" type="text" name="last_name" value="Camargo Echavarria" maxlength="30" id="id_last_name">
+
+                                <label class="label-datos-facturacion" for="id_email">Correo</label>
+                                <input class="input-datos-facturacion" type="email" name="email" value="john-alex131@hotmail.com" maxlength="320" required="" id="id_email">
+
+                            </div>
+
+                            <div class="bb-b">
+
+                                <label class="label-datos-facturacion" for="id_genero">Genero</label>
+                                <input class="input-datos-facturacion" type="text" name="genero" value="M" maxlength="15" required="" id="id_genero">
+
+                                <label class="label-datos-facturacion" for="id_telefono">Telefono</label>
+                                <input class="input-datos-facturacion" type="text" name="telefono" value="3138562603" maxlength="10" id="id_telefono">
+
+                                <label class="label-datos-facturacion" for="id_fechaNacimiento">Fecha de Nacimiento</label>
+                                <input class="input-datos-facturacion" type="text" name="fechaNacimiento" value="2023-08-12" id="id_fechaNacimiento">
+
+                                <label class="label-datos-facturacion" for="id_picture">Cambiar Fotografía</label>
+                                <a style="cursor: pointer;" href="/media/profile_pictures/Breadog.jpg"></a>
+                                <input style="cursor: pointer;" type="file" name="picture" accept="application/png,application/jpg" id="id_picture">
+                            
+                            </div>
+
+                        </div>
+
+                            <div class="contenedor-boton-actualizar">
+                                <button class="boton-actualizar" type="submit">Actualizar</button>
+                            </div>
+
+                    </form>
+
+            </div>
+
+        </div>
+
     </div>
-</form>
+</div>
+
+
+<div class="container recibir-ofertas">
+    <div class="container">
+
+      <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+
+      <div class="presentacion">
+        <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
+        <button class="boton-tres" type="submit">Enviar</button>
+      </div>
+
+      <div class="politicas-privacidad">
+        Recibirás correos promocionales de VueloYA. Para más información consulta las <a href="####">políticas de privacidad.</a>
+      </div>
+
+    </div>
+</div>
+
+<div class="container-fluid informacion-footer">
+    <div class="container">
+        <footer class="footer-uno">
+
+            <div class="row info-vueloya">
+    
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
+                    <h5 class="text-uppercase">Mi Cuenta</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Somos VueloYA</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Relación con Inversores</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Sobre VueloYA</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Confianza en tus compras</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">Terminos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Promociones vigentes</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Politica de privacidad</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Aerolíneas</h5>
+    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-body-uno">American Airlines</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Air France</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Avianca</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-body-uno">Latam</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </footer>
+    </div>
+</div>
+
+<div class="container">
+
+    <footer class="footer-dos">
+
+        <div class="footer-izquierda">
+            <p class="pp-p">© 2023 Copyright:VueloYA</p>
+        </div>
+
+        <div class="footer-derecha">
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+        </div>
+
+    </footer>
+
+</div>
 
 
 {% endblock %}
