@@ -201,7 +201,7 @@ body {
         margin: 10px;
     }
 
-    .filtros{
+    .filtro-precio{
         width:95%;
         height: auto;
         margin-top: 25px;
@@ -210,7 +210,14 @@ body {
         padding: 5px;
     }
 
-    /*Formulario Moneda Cambio*/
+    .filtro-aerolineas{
+        width:95%;
+        height: auto;
+        border-bottom: 1px solid #505050;
+        padding: 5px;
+    }
+
+    /*Filtro Precio y Moneda*/
 
     .accordion-item-s{
         background-color: #eeeeee;
@@ -235,14 +242,66 @@ body {
     }
 
     .num-monedas{
+        width: 50%;
         margin-left: 20px;
         border: 1px solid #b0b0b0;
         color: #808080;
         border-radius: 4px;
     }
-
     
-    /*Formulario Moneda Cambio*/
+    .opciones-monedas, select:focus{
+        outline: none;
+        box-shadow: none; /* Elimina cualquier sombra al hacer clic */
+    }
+
+    .rango-valor{
+        margin-bottom: 30px;
+    }
+
+    .rango-valor-vuelos{
+        width: 100%;
+    }
+
+    .rango-precios{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    /*Filtro Precio y Moneda*/
+
+    /*Filtro Aerolíneas*/
+
+    .input-aerolineas{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .label-aerolineas{
+        width: 100%;
+        font-weight: 500;
+        color: #505050;
+    }
+
+    .aerolineas{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .rango-valor-vuelos {
+        width: 100%;
+        -webkit-appearance: none; /* Elimina la apariencia nativa de los navegadores */
+        appearance: none;
+        height: 10px;
+        background: #a3d0ff; /* Color de fondo del rango */
+        border-radius: 5px;
+        outline: none; /* Elimina el contorno predeterminado del rango */
+      }
+
+    /*Filtro Aerolíneas*/
 
     .imagen-full {
         width: 100%;
@@ -824,7 +883,6 @@ body {
     .texto-recibir-vouchers{
         margin-bottom: 10px;
     }
-
 
     .mauro-once{
         width: 100%;

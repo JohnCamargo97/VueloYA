@@ -66,17 +66,28 @@
 
         </div>
 
-        <div class="filtros">
+        <div class="filtro-precio">
 
           <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item-s">
               <h2 class="accordion-header" id="panelsStayOpen-headingOne" style="flex-grow: 0!important;">
                 <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Precio
+                Precio
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                 <div class="accordion-body">
+
+                  <div class="rango-valor">
+
+                    <input class="rango-valor-vuelos" type="range">
+
+                    <div class="rango-precios">
+                      <h3 class="texto-moneda">$ 450.000</h3>
+                      <h3 class="texto-moneda">$ 1.500.000</h3>
+                    </div>
+
+                  </div>
 
                   <div class="contenedor-elegir-moneda">
                     
@@ -84,17 +95,62 @@
 
                       <h3 class="texto-moneda">Moneda</h3>
 
-                      <select class="num-monedas" name="" id="">
-                        <option value="COL">COP</option>
-                        <option value="COL">USD</option>
-                        <option value="COL">EUR</option>
-                      </select>
+                        <select class="num-monedas" name="tipo-moneda" id="moneda">
+                          <option class="opciones-monedas" value="COL">COP</option>
+                          <option class="opciones-monedas" value="COL">USD</option>
+                          <option class="opciones-monedas" value="COL">EUR</option>
+                        </select>
 
                     </div>
 
                   </div>
 
                 </div>
+
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
+
+        <div class="filtro-aerolineas">
+
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item-s">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo" style="flex-grow: 0!important;">
+                <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                Aerolíneas
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+
+                <div class="accordion-body">
+
+                  <div class="contenedor-selecion-aerolineas">
+
+                    <div class="aerolineas">
+                        <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                        <label class="label-aerolineas" for="Aerolineas">Avianca Airlines</label>
+                        <span>(80)</span>
+                    </div>
+
+                    <div class="aerolineas">
+                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                      <label class="label-aerolineas" for="Aerolineas">Qatar Airways</label>
+                      <span>(20)</span>
+                    </div>
+
+                    <div class="aerolineas">
+                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                      <label class="label-aerolineas" for="Aerolineas">American Airlines</label>
+                      <span>(10)</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
