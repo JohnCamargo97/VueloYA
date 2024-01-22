@@ -106,5 +106,10 @@ class historicoReserva(models.Model):
     pasajeros = models.SmallIntegerField()
     estado = models.CharField(max_length=25)
     
-    
+class oferta(models.Model):
+    vuelo = models.OneToOneField(Vuelo, on_delete=models.DO_NOTHING)
+    image = models.ImageField(default='defaultbg.jpg', upload_to= 'imagen_ofertas')
+    descripcion = models.TextField()
 
+    def __str__(self):
+        return f'{self.vuelo.origen} - {self.vuelo.destino}'
