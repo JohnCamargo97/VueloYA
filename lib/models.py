@@ -50,9 +50,15 @@ class puestos(models.Model):
         return  numerostr
 
 class userVueloYa(models.Model):
+
+    GENEROS=[
+        ("Masculino", "Masculino"),
+        ("Femenino", "Femenino"),
+        ("Prefiero no decir", "Prefiero no decir")       
+    ]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     picture = models.ImageField(default='default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
-    genero = models.CharField(default='No especificado', max_length=15)
+    genero = models.CharField(default='No especificado', max_length=25, choices=GENEROS)
     fechaNacimiento = models.DateField(default='1900-01-01', blank=True)
     telefono = models.CharField(default='', blank=True, max_length=10)
 

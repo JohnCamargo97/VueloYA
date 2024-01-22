@@ -45,32 +45,35 @@
                             <div class="cc-c">
 
                                 <label class="label-datos-facturacion" for="id_username">Nombre de Usuario</label>
-                                <input class="input-datos-facturacion" type="text" name="username" value="JohnAdmin" maxlength="150" required="" id="id_username">
+                                <input class="input-datos-facturacion" type="text" name="username" value="{{ user.username }}" maxlength="150" required="" id="id_username">
 
                                 <label class="label-datos-facturacion" for="id_first_name">Nombres</label>
-                                <input class="input-datos-facturacion" type="text" name="first_name" value="John Alexander" maxlength="30" id="id_first_name">
+                                <input class="input-datos-facturacion" type="text" name="first_name" value="{{ user.first_name }}" maxlength="30" id="id_first_name">
 
                                 <label class="label-datos-facturacion" for="id_last_name">Apellidos</label>
-                                <input class="input-datos-facturacion" type="text" name="last_name" value="Camargo Echavarria" maxlength="30" id="id_last_name">
+                                <input class="input-datos-facturacion" type="text" name="last_name" value="{{ user.last_name }}" maxlength="30" id="id_last_name">
 
                                 <label class="label-datos-facturacion" for="id_email">Correo</label>
-                                <input class="input-datos-facturacion" type="email" name="email" value="john-alex131@hotmail.com" maxlength="320" required="" id="id_email">
+                                <input class="input-datos-facturacion" type="email" name="email" value="{{ user.email }}" maxlength="320" required="" id="id_email">
 
                             </div>
 
                             <div class="bb-b">
-
                                 <label class="label-datos-facturacion" for="id_genero">Genero</label>
-                                <input class="input-datos-facturacion" type="text" name="genero" value="M" maxlength="15" required="" id="id_genero">
+                                <select class="form-select" aria-label="Default select example" name="genero" required="" id="id_genero">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Prefiero no decir">Prefiero no decir</option>
+                                  </select>
 
                                 <label class="label-datos-facturacion" for="id_telefono">Telefono</label>
-                                <input class="input-datos-facturacion" type="text" name="telefono" value="3138562603" maxlength="10" id="id_telefono">
+                                <input class="input-datos-facturacion" type="text" name="telefono" value="{{ user.uservueloya.telefono }}" maxlength="10" id="id_telefono">
 
                                 <label class="label-datos-facturacion" for="id_fechaNacimiento">Fecha de Nacimiento</label>
-                                <input class="input-datos-facturacion" type="text" name="fechaNacimiento" value="2023-08-12" id="id_fechaNacimiento">
+                                <input class="input-datos-facturacion" type="text" name="fechaNacimiento" value="{{ user.uservueloya.fechaNacimiento }}" id="id_fechaNacimiento">
 
                                 <label class="label-datos-facturacion" for="id_picture">Cambiar Fotografía</label>
-                                <a style="cursor: pointer;" href="/media/profile_pictures/Breadog.jpg"></a>
+                                <a style="cursor: pointer;" href="{{user.uservueloya.picture.url}}"></a>
                                 <input style="cursor: pointer;" type="file" name="picture" accept="application/png,application/jpg" id="id_picture">
                             
                             </div>

@@ -72,6 +72,7 @@ def personal_info(request):
             u_form.save()
             uvy_form.save()
             return redirect('perfil_user')
+
     else:
         u_form = UpdateUserForm(instance=request.user)
         uvy_form = UpdateUserVYaForm(instance=request.user.uservueloya)
