@@ -14,6 +14,7 @@ body {
 
 .rounded-circle{
     width: 40px;
+    margin-right: 8px;
 }
 
 .navbar-collapse{
@@ -35,7 +36,6 @@ body {
 .nombre-usuario{
     font-weight: 600;
     color: #505050;
-    margin-right: 8px;
 }
 
 .contenedor-menu-opciones{
@@ -80,47 +80,45 @@ body {
     color: white;
 }
 
+.contenedor-origen-destino{
+    background-color: white;
+    display: block;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    padding: 5px;
+}
 
-.busqueda-uno{
+.origen{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+.origen:focus{
+    outline: none;
+}
+
+.destino{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+.destino:focus{
+    outline: none;
+}
+
+
+.contenedor-fechas-vuelos{
     background-color: white;
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
     padding: 5.2px;
-    border: solid 1px rgb(185, 185, 185);
-
-}
-
-.origen-uno{
-    width: 82%;
-    border-radius: 5px;
-    border: none;
-}
-
-.origen-uno:focus{
-    outline: none;
-}
-
-.destino-uno{
-    width: 82%;
-    border-radius: 5px;
-    border: none;
-}
-
-.destino-uno:focus{
-    outline: none;
-}
-
-.busqueda-dos{
-    background-color: white;
-    display: block;
-    margin-bottom: 6px;
-    border-radius: 8px;
-    padding: 4.5px;
-    border: solid 1px rgb(185, 185, 185);
 }
 
 .fecha-ida{
+    width: 100%;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -128,10 +126,10 @@ body {
 
 .fecha-ida:focus{
     outline: none;
-    
 }
 
 .fecha-regreso{
+    width: 100%;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -141,20 +139,20 @@ body {
     outline: none;
 }
 
-.busqueda-tres{
+
+.contenedor-pasajeros{
     background-color: white;
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5px;
-    border: solid 1px rgb(185, 185, 185);
+    padding: 5.2px;
 }
 
 .num-pasajeros{
-    display: block;
+    width: 70%;
+    border-radius: 5px;
     border: none;
     color: #808080;
-    border-radius: 10px;
-    cursor: pointer;
 }
 
 .num-pasajeros:focus{
@@ -553,7 +551,7 @@ body {
         align-items: center;
     }
 
-    .busqueda-uno{
+    .contenedor-origen-destino{
         background-color: rgb(255, 255, 255);
         width: 33%;
         border-radius: 0%;
@@ -561,15 +559,15 @@ body {
         border-end-start-radius: 20px;
     }
 
-    .busqueda-dos{
+    .contenedor-fechas-vuelos{
         background-color: rgb(255, 255, 255);
         width: 33%;
         border-radius: 0%;
     }
-    
-    .busqueda-tres{
+
+    .contenedor-pasajeros{
         background-color: rgb(255, 255, 255);
-        width: 18%;
+        width: 20%;
         border-radius: 0%;
         border-top-right-radius: 20px;
         border-end-end-radius: 20px;

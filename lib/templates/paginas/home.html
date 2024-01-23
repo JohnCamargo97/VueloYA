@@ -17,41 +17,54 @@
 
           <form class="formulario-uno" action="#" method="post">
             {% csrf_token%}
-            <div class="busqueda-uno row">
+
+            <div class="contenedor-origen-destino row">
+
               <div class="col">
-                <label for="origen">Origen:</label>
-                <input class="origen-uno" type="text" class="form-control" id="origen" name="origen" placeholder="Ingresa Origen" required>
+                <label for="origen">Origen</label>
+                <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa el Origen" required>
               </div>
+
               <div class="col">
-                <label for="destino">Destino:</label>
-                <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino">
+                <label for="destino">Destino</label>
+                <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa el Destino" required>
               </div>
+
             </div>
 
-            <div class="busqueda-dos row">
+
+            <div class="contenedor-fechas-vuelos row">
+
               <div class="col">
-                <label for="fecha-ida">Fecha de Ida:</label>
-                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
+                <label for="fecha-ida">Fecha Ida</label>
+                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
               </div>
+
               <div class="col">
-                <label for="fecha-regreso">Fecha de Regreso:</label>
-                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
+                <label for="fecha-regreso">Fecha Regreso</label>
+                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
               </div>
+
             </div>
 
-            <div class="busqueda-tres row">
+
+            <div class="contenedor-pasajeros row">
+
               <div class="col">
-                <label for="pasajeros">Número de Pasajeros:</label>
+
+                <label for="pasajeros">Número de Pasajeros</label>
                 <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
                   <option value="1">1 pasajero</option>
                   <option value="2">2 pasajeros</option>
                   <option value="3">3 pasajeros</option>
                   <option value="4">4 pasajeros</option>
                 </select>
+                
               </div>
+
             </div>
             
-                <button class="boton-uno" type="submit">Buscar</button>
+            <button class="boton-uno" type="submit">Buscar</button>
 
           </form>
 
