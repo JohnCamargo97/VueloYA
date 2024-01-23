@@ -12,6 +12,6 @@ urlpatterns = [
     path('perfil/personal-info', views.personal_info, name='personal-info'),
     path('perfil/facturacion/crear', views.facturacion_crear , name='facturacion_crear'),
     path('perfil/facturacion/editar/<int:pk>', views.facturacion_editar , name='facturacion_editar'),
-    path('perfil/facturacion/borrar', views.facturacion_borrar , name='facturacion_borrar'),
+    path('perfil/facturacion/borrar/<int:pk>', views.facturacion_borrar , name='facturacion_borrar'),
     
 ]

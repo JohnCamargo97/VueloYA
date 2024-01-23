@@ -7,7 +7,6 @@
 {% block contenido %}
 
 {{form}}
-
 <div class="container-fluid" style="background-color: #eeeeee;">
 
     <div class="container hh-h">
@@ -47,36 +46,40 @@
                             <div class="cc-c">
 
                                 <label class="label-datos-facturacion" for="id_nombre">Nombres</label>
-                                <input class="input-datos-facturacion" type="text" name="nombre" value="John Alexander" maxlength="40" required="" id="id_nombre">
+                                <input class="input-datos-facturacion" type="text" name="nombre" value="{{ form.nombre.value }}" maxlength="40" required="" id="id_nombre">
 
                                 <label class="label-datos-facturacion" for="id_tipoDeDocumento">Tipo de Documento</label>
-                                <input class="input-datos-facturacion" list="tipoDeDocumento" type="text" name="tipoDeDocumento"  maxlength="40" autocomplete="off" placeholder="CC" id="id_tipoDeDocumento">
-                                <datalist id="tipoDeDocumento">
-                                    <option value="Cédula"></option>
-                                    <option value="Tarjeta de Identidad"></option>
-                                </datalist>
+                                <select class="input-datos-facturacion" name="tipoDeDocumento" required id="id_tipoDeDocumento">
+                                    <option value="">---------</option>
+                                    <option value="CC" selected>CC</option>                               
+                                    <option value="TI">TI</option>                                
+                                    <option value="Pasaporte">Pasaporte</option>                                 
+                                </select>
 
                                 <label class="label-datos-facturacion" for="id_departamento">Departamento</label>
-                                <input class="input-datos-facturacion" type="text" name="departamento" value="Meta" maxlength="40" required="" id="id_departamento">
+                                <input class="input-datos-facturacion" type="text" name="departamento" value="{{ form.departamento.value }}" maxlength="40" required="" id="id_departamento">
 
                                 <label class="label-datos-facturacion" for="id_situacionFiscal">Situación Fiscal</label>
-                                <input class="input-datos-facturacion" type="text" name="situacionFiscal" value="Persona natural" maxlength="40" required="" id="id_situacionFiscal">
-
+                                <select class="input-datos-facturacion" name="situacionFiscal" required id="id_situacionFiscal">
+                                    <option value="">---------</option>                               
+                                    <option selected value="Persona Natural">Persona Natural</option>                              
+                                    <option value="Persona Juridica">Persona Juridica</option>
+                                </select>
                             </div>
 
                             <div class="bb-b">
 
                                 <label class="label-datos-facturacion" for="id_apellido">Apellidos</label>
-                                <input class="input-datos-facturacion" type="text" name="apellido" value="Camargo Echavarria" maxlength="40" required="" id="id_apellido">
+                                <input class="input-datos-facturacion" type="text" name="apellido" value="{{ form.apellido.value }}" maxlength="40" required="" id="id_apellido">
 
                                 <label class="label-datos-facturacion" for="id_nDocumento">Número del Documento</label>
-                                <input class="input-datos-facturacion" type="text" name="nDocumento" value="1234788444" required="" id="id_nDocumento">
+                                <input class="input-datos-facturacion" type="text" name="nDocumento" value="{{ form.nDocumento.value }}" required="" id="id_nDocumento">
 
                                 <label class="label-datos-facturacion" for="id_ciudad">Ciudad</label>
-                                <input class="input-datos-facturacion" type="text" name="ciudad" value="Villavicencio" maxlength="40" required="" id="id_ciudad">
+                                <input class="input-datos-facturacion" type="text" name="ciudad" value="{{ form.ciudad.value }}" maxlength="40" required="" id="id_ciudad">
 
                                 <label class="label-datos-facturacion" for="id_direccion">Dirección</label>
-                                <input class="input-datos-facturacion" type="text" name="direccion" value="Cra 40 # 23 b 51" maxlength="40" required="" id="id_direccion">
+                                <input class="input-datos-facturacion" type="text" name="direccion" value="{{ form.direccion.value }}" maxlength="40" required="" id="id_direccion">
                             
                             </div>
 
