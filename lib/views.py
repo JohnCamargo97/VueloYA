@@ -1,14 +1,20 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Vuelo, historicoReserva
+from .models import Vuelo, historicoReserva, oferta
 from users.models import pasajero
 from .forms import BusquedaForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
 from users.forms import userPasajeroForm
 from django.forms import modelformset_factory
+from random import sample
 
 def home(request):
-    if request.method == "POST":
 
+    #3 ofertas aleatorio con sample y list comprehension
+    ofertaIds = sample([offer.id for offer in oferta.objects.all()], 3)
+    ofertas = oferta.objects.filter(id__in=ofertaIds).all()
+    lista_vuelos = Vuelo.objects.all()
+
+    if request.method == "POST":
         # if this is a POST request we need to process the form data
         form_busqueda = BusquedaForm(request.POST)
         
@@ -18,23 +24,17 @@ def home(request):
             request.session['destino'] = request.POST['destino']
             request.session['pasajeros'] = request.POST['pasajeros']
             print(request.POST)
-
             return redirect('busqueda')
         else:
             print("campos no validos")
     else:
         form_busqueda = BusquedaForm()
 
-    lista_vuelos = Vuelo.objects.all()
-    return render(request, 'paginas/home.html', {'lista_vuelos': lista_vuelos, 'form_busqueda': form_busqueda})
-
-def resultados(request):
-
-    form_response = request.session
-    #lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino'])
-    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
-    print(lista_resultado)
-    return render (request, 'paginas/resultados.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
+    context = {
+        'ofertas': ofertas,
+        'form_busqueda': form_busqueda
+    }
+    return render(request, 'paginas/home.html', context)
 
 def misviajes(request):
     return render (request, 'paginas/resumen.html')

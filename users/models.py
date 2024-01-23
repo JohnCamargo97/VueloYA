@@ -3,11 +3,21 @@ from django.contrib.auth.models import User
 from lib.models import puestos
 
 class userFacturacion(models.Model):
+    SITUACION_FISCAL = [
+         ("Persona Natural", "Persona Natural"),
+         ("Persona Juridica", "Persona Juridica")
+    ]
+    TIPO_DOCUMENTO = [
+         ("CC", "CC"),
+         ("TI", "TI"),
+         ("Pasaporte", "Pasaporte")
+    ]
+    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    situacionFiscal = models.CharField(max_length= 40)
+    situacionFiscal = models.CharField(max_length= 40, choices=SITUACION_FISCAL)
     nombre = models.CharField(max_length= 40)
     apellido = models.CharField(max_length= 40)
-    tipoDeDocumento = models.CharField(max_length= 40)
+    tipoDeDocumento = models.CharField(max_length= 40, choices=TIPO_DOCUMENTO)
     nDocumento = models.IntegerField()
     departamento = models.CharField(max_length= 40)
     ciudad = models.CharField(max_length= 40)
