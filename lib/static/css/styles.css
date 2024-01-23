@@ -10,6 +10,50 @@ body {
     margin: 0 auto; /* Centra el contenedor en la página */
 }
 
+/*Navbar*/
+
+.rounded-circle{
+    width: 40px;
+}
+
+.navbar-collapse{
+    margin-top: 20px;
+    color: #505050!important;
+    flex-direction: row-reverse!important;
+}
+
+.contenedor-logo-vueloYa{
+    background-color: #eeeeee;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+}
+
+.nombre-usuario{
+    font-weight: 600;
+    color: #505050;
+    margin-right: 8px;
+}
+
+.contenedor-menu-opciones{
+    display:flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.contenedor-nombre-vueloya{
+    color: #505050;
+    text-decoration: none;
+}
+
+/*Navbar*/
+
+
+
+
 
 /*Formuario Destinos*/
 
@@ -454,12 +498,26 @@ body {
         text-decoration: none;
     }
 
+    .contenedor-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+    }
+
     .navbar-collapse{
         flex-grow: 0!important;
         background-color: #eeeeee;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         padding: 10px;
+        margin-top: 0px;
+    }
+
+    .nombre-usuario{
+        font-weight: 600;
+        color: #505050;
+        margin-left: 0px;
     }
 
     .dropdown-toggle{

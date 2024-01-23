@@ -299,6 +299,7 @@ body {
         background: #a3d0ff; /* Color de fondo del rango */
         border-radius: 5px;
         outline: none; /* Elimina el contorno predeterminado del rango */
+        cursor: pointer;
       }
 
     /*Filtro Aerolíneas*/
