@@ -209,11 +209,7 @@ body {
 }
 
 .contenido-carta-signup{
-    background-color: #2d69ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 85%;
+    width: 95%;
 }
 
 .parte-registrarse{
@@ -316,11 +312,8 @@ body {
     margin-bottom: 5px;
 }
 
-.contenido-carta{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.contenido-carta-singin{
+    width: 95%;
 }
 
 .parte-usuario{
@@ -368,7 +361,7 @@ body {
 
 .imagen-usuario{
     cursor: pointer;
-
+    width: 80px;
 }
 
 .imagen-usuario{
@@ -820,7 +813,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        height: auto;
     }
 
     .carta-imagen-signin{
@@ -840,21 +833,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 10px;
-
-    }
-
-    .imagen-usuario{
-        cursor: pointer;
-
-    }
-
-    .imagen-usuario{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
-    
-    .imagen-usuario:hover{
-        transform: scale(1.1);
     }
 
     .cuerpo-carta-signin{
@@ -871,18 +849,13 @@ body {
 
     .cabecera-iniciar{
         color: #505050;
-        padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        margin-bottom: 5px;
     }
 
-    .contenido-carta{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .contenido-carta-singin{
+        width: 90%;
     }
 
     .parte-usuario{
@@ -927,7 +900,7 @@ body {
     }
 
     .parte-recordar-usuario{
-        width: 350px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -936,14 +909,17 @@ body {
         color: #505050;
     }
 
+    .imagen-usuario{
+        cursor: pointer;
 
-    .logos-redes-sociales {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-        margin-top: 20px;
+    }
+
+    .imagen-usuario{
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    }
+    
+    .imagen-usuario:hover{
+        transform: scale(1.1);
     }
 
     .logos-redes-sociales a{

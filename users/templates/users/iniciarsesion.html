@@ -20,7 +20,7 @@
                     <h3 style="margin-top: 6px;" class="text-bienvenida">¡Bienvenido!</h3>
                 </div>
 
-                <div class="contenido-carta">
+                <div class="contenido-carta-singin">
 
                     <form method="POST">
 
@@ -39,7 +39,7 @@
                         </div>
 
                         {% if messages %}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <div style="display: flex; justify-content: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
                             {% for message in messages%}
                                 {{message}}
                             {% endfor%}
@@ -65,7 +65,7 @@
                             <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
                         </div>
 
-                        <div class="texto.oficial">
+                        <div class="texto.oficial" style="margin-bottom: 20px;">
                             <p style="color: #505050; text-align: center;">©VUELOYA COLOMBIA</p>
                         </div>
 
