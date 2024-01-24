@@ -38,21 +38,21 @@
                             <button class="boton-iniciar" type="submit">Ingresar</button>
                         </div>
 
-                            {% if messages %}
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                {% for message in messages%}
-                                    {{message}}
-                                {% endfor%}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            {% endif %} 
+                        {% if messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {% for message in messages%}
+                                {{message}}
+                            {% endfor%}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %} 
 
                         <div class="parte-recordar-usuario">
-                            <div>
-                                <input type="checkbox" id="recuerdame">
+                            <small style="display: flex;">
+                                <input style="margin-right: 8px;" type="checkbox" id="recuerdame">
                                 <label for="recuerdame">Recúerdame</label>
-                            </div>
-                            <a style="font-weight: 500; color: #303030;" href="##">¿Olvidaste tu contraseña?</a>
+                            </small>
+                            <a style="font-weight: 500; color: #303030; margin-top: 10px;" href="##">¿Olvidaste tu contraseña?</a>
                         </div>
 
                         <div class="texto-no-tengo-cuenta">

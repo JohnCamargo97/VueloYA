@@ -25,44 +25,44 @@
 
                     {% csrf_token %}
 
-                    <div class="parte-usuario row">
+                    <div class="parte-registrarse row">
                         <input class="input-formulario-login" type="text" name="email" value= "{{ form.email.value }}" placeholder="Email" maxlength="100" autocapitalize="none" autocomplete="email" autofocus required id="id_email">
 
                         {% if form.email.errors %}
-                            <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ form.email.errors }}</div>
+                            <div class="form-text-error-datos" id="basic-addon4">{{ form.email.errors }}</div>
                         {% else %}
                         {% endif %}
 
                     </div>
 
-                    <div class="parte-usuario row">
+                    <div class="parte-registrarse row">
 
                         <input class="input-formulario-login" type="text" name="username" placeholder="Nombre de Usuario" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
 
                         {% if form.username.errors %}
-                            <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ form.username.errors }}</div>
+                            <div class="form-text-error-datos" id="basic-addon4">{{ form.username.errors }}</div>
                         {% else %}
 
                         {% endif %}
 
                     </div> 
 
-                    <div class="parte-usuario row">
+                    <div class="parte-registrarse row">
                         <input class="input-formulario-login" type="password" name="password1" placeholder="Ingresar Contraseña" autocomplete="Nueva contraseña" autofocus required id="id_password1">
 
                         {% if form.password1.errors %}
-                            <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ form.password1.errors }}</div>
+                            <div class="form-text-error-datos" id="basic-addon4">{{ form.password1.errors }}</div>
                         {% else %}
                         {% endif %}
 
                     </div>
 
-                    <div class="parte-usuario row">
+                    <div class="parte-registrarse row">
                         <input class="input-formulario-login" type="password" name="password2" placeholder="Repetir Contraseña" autocomplete="Confirmar contraseña" autofocus required id="id_password2">
 
                         {% if form.password2.errors %}
                             {% for error in form.password2.errors %}
-                            <div class="form-text" style="color: rgb(213, 114, 114);" id="basic-addon4">{{ error|escape }}</div>
+                            <div class="form-text-error-datos" id="basic-addon4">{{ error|escape }}</div>
                         {% endfor %}
 
                         {% else %}
@@ -72,7 +72,7 @@
 
                     <div class="aceptar-terminos">
                         <small style="display: flex;">
-                            <input style="margin-right: 5px;" type="checkbox" id="recuerdame">
+                            <input style="margin-right: 10px;" type="checkbox" id="recuerdame">
                             <label for="recuerdame">Acepto los <a style="text-decoration: none; font-weight: 600; color: #303030;" href="#">Términos de Servicio</a> y la <a style="text-decoration: none; font-weight: 600; color: #303030;" href=""> Política de Privacidad.</a></label>
                         </small>
                     </div>
