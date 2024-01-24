@@ -18,91 +18,155 @@
 
       <div class="contenido-busquedas">
 
-        <div class="mauro-dos">
-          <form class="formulario-uno" action="#" method="post">
-            {% csrf_token%}
+        <div class="container mauro-dos">
 
-            <nav class="titulo-vuelos">
-              <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono de vuelo"></h5>
+          <div class="container navbar-uno">
+    
+            <nav class="navbar">
+              <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
             </nav>
-              
-              <div class="busqueda-uno row">
-                <div class="col">
-                    <label for="origen">Origen:</label>
-                    <input class="origen-uno" type="text" class="form-control" id="origen" name="origen" placeholder="Ingresa Origen" required>
+    
+              <form class="formulario-uno" action="#" method="post">
+                {% csrf_token%}
+    
+                <div class="contenedor-origen-destino row">
+    
+                  <div class="col">
+                    <label for="origen">Origen</label>
+                    <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa el Origen" required>
+                  </div>
+    
+                  <div class="col">
+                    <label for="destino">Destino</label>
+                    <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa el Destino" required>
+                  </div>
+    
                 </div>
-                <div class="col">
-                    <label for="destino">Destino:</label>
-                    <input class="destino-uno" type="text" class="form-control" id="destino" name="destino" placeholder="Ingresa Destino" required>
-                </div>
-              </div>
-
-              <div class="busqueda-dos row">
-                <div class="col">
-                    <label for="fecha-ida">Fecha de Ida:</label>
+    
+    
+                <div class="contenedor-fechas-vuelos row">
+    
+                  <div class="col">
+                    <label for="fecha-ida">Fecha Ida</label>
                     <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
-                </div>
-                <div class="col">
-                    <label for="fecha-regreso">Fecha de Regreso:</label>
+                  </div>
+    
+                  <div class="col">
+                    <label for="fecha-regreso">Fecha Regreso</label>
                     <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+                  </div>
+    
                 </div>
-              </div>
-
-              <div class="busqueda-tres row">
-                <div class="col">
-                    <label for="pasajeros">Número de Pasajeros:</label>
+    
+    
+                <div class="contenedor-pasajeros row">
+    
+                  <div class="col">
+    
+                    <label for="pasajeros">Número de Pasajeros</label>
                     <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
-                    <option value="1">1 pasajero</option>
-                    <option value="2">2 pasajeros</option>
-                    <option value="3">3 pasajeros</option>
-                    <option value="4">4 pasajeros</option>
+                      <option value="1">1 pasajero</option>
+                      <option value="2">2 pasajeros</option>
+                      <option value="3">3 pasajeros</option>
+                      <option value="4">4 pasajeros</option>
                     </select>
+                    
+                  </div>
+    
                 </div>
-              </div>
-              
-              <button class="boton-uno" type="submit">Buscar</button>
-
-          </form>
-
+                
+                <button class="boton-uno" type="submit">Buscar</button>
+    
+              </form>
+    
+          </div>
         </div>
 
-        <div class="filtros">
+        <div class="filtro-precio">
 
           <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Precio
+            <div class="accordion-item-s">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne" style="flex-grow: 0!important;">
+                <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Precio
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+                  <div class="rango-valor">
+
+                    <input class="rango-valor-vuelos" type="range">
+
+                    <div class="rango-precios">
+                      <h3 class="texto-moneda">$ 450.000</h3>
+                      <h3 class="texto-moneda">$ 1.500.000</h3>
+                    </div>
+
+                  </div>
+
+                  <div class="contenedor-elegir-moneda">
+                    
+                    <div class="monedas-para-elegir">
+
+                      <h3 class="texto-moneda">Moneda</h3>
+
+                        <select class="num-monedas" name="tipo-moneda" id="moneda">
+                          <option class="opciones-monedas" value="COL">COP</option>
+                          <option class="opciones-monedas" value="COL">USD</option>
+                          <option class="opciones-monedas" value="COL">EUR</option>
+                        </select>
+
+                    </div>
+
+                  </div>
+
                 </div>
+
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  Accordion Item #2
+          </div>
+        
+        </div>
+
+
+        <div class="filtro-aerolineas">
+
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item-s">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo" style="flex-grow: 0!important;">
+                <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                Aerolíneas
                 </button>
               </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+                  <div class="contenedor-selecion-aerolineas">
+
+                    <div class="aerolineas">
+                        <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                        <label class="label-aerolineas" for="Aerolineas">Avianca Airlines</label>
+                        <span>(80)</span>
+                    </div>
+
+                    <div class="aerolineas">
+                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                      <label class="label-aerolineas" for="Aerolineas">Qatar Airways</label>
+                      <span>(20)</span>
+                    </div>
+
+                    <div class="aerolineas">
+                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
+                      <label class="label-aerolineas" for="Aerolineas">American Airlines</label>
+                      <span>(10)</span>
+                    </div>
+
+                  </div>
+
                 </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  Accordion Item #3
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
+
               </div>
             </div>
           </div>
