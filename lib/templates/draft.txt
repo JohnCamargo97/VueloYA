@@ -1,0 +1,23 @@
+VueloSeleccionado = request.session
+    nPasajeros = int(VueloSeleccionado['pasajeros'])
+    PasajeroFormSet = modelformset_factory(pasajero, form= userPasajeroForm, extra=nPasajeros)
+    DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
+    if request.method == "POST":
+        print("Posted", request.POST, "Dict")
+        pasaje = PasajeroFormSet(request.POST)
+        print(pasaje)
+        for pas in pasaje:
+            if pas.is_valid():
+                print(pas.cleaned_data)
+                pas1 = pas.save(commit= False)
+                pas1.user = request.user
+                pas1.save()
+    
+            else:
+                print("no valido")
+        return redirect('resumen')
+    else:
+        pasaje = PasajeroFormSet()
+        print("not posted")
+    
+    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo, 'pasaje': pasaje})
