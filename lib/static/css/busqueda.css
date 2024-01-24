@@ -11,106 +11,41 @@ body {
 }
 
 
-/*Recibir ofertas al correo*/
 
-.recibir-ofertas{
-    display: flex;
-    align-items: center;
-    height: 300px;
-    margin-top: 20px;
-}
 
-.boton-tres{
-    background-color: #4277ff;
-    width: 20%;
-    height: 30px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 6px;
-    color: white;
-}
 
-.boton-tres:hover{
-    background-color: #2563ff;;
-    transform: translateY(1px);
-}
+/*Navbar*/
 
-.ofertas-correo{
-    width: 78%;
-    height: 32px;
-    border: none;
-    border-radius: 8px;
+.contenedor-logo-vueloYa{
     background-color: #eeeeee;
-    padding: 10px;
-    border: solid 1px #999999;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
 }
 
-.ofertas-correo:focus{
-    outline-color: #b0b0b0;
-}
-
-.politicas-privacidad{
-    font-size: 15px;
-    color: #999999;
-    margin-top: 15px;
-    text-align: center;
-}
-
-/*Recibir ofertas al correo*/
-
-
-
-
-
-/*Footer*/
-
-.informacion-footer{
-    display: flex;
-    align-items: center;
-    background-color: #eeeeee;
-}
-
-.row.info-vueloya{
-    color: #505050;
-    text-align: center;
-}
-
-.text-uppercase{
-    margin-top: 24px;
-    font-size: 16px;
-
-}
-
-.text-body-uno{
+.contenedor-nombre-vueloya{
     color: #505050;
     text-decoration: none;
 }
 
-.text-body-uno:hover{
-    color: #808080;
-    text-decoration-line: underline;
+/*Navbar*/
+
+
+
+
+
+/*Resultados de la busqueda de vuelos*/
+
+.mauro-seis{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
 }
 
-.footer-dos {
-    color: #505050;
-    padding: 10px;
-    text-align: center;
-}
-
-
-.iconos-redes-sociales{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.iconos-redes-sociales:hover{
-    transform: scale(1.1);
-}
-
-.footer-derecha a {
-    margin-left: 15px;
-}
-
-/*Footer*/
+/*Resultados de la busqueda de vuelos*/
 
 
 
@@ -233,16 +168,337 @@ body {
 
 
 
-/*Resultados de a busqueda de vuelos*/
+/*Vista Registrarse Responsive*/
 
-.mauro-seis{
-    background-color: #eeeeee;
+.mauro-ocho{
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: auto;
 }
 
-/*Resultados de a busqueda de vuelos*/
+.centrar-cartas-signup{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
 
+.cuerpo-carta-signup{
+    background-color: #eeeeee;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.cabecera-iniciar-signup{
+    color: #505050;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.contenido-carta-signup{
+    width: 95%;
+}
+
+.parte-registrarse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.input-formulario-login{
+    border-radius: 20px;
+    border: solid 2px #505050;
+    height: 50px;
+}
+
+.input-formulario-login:focus{
+    outline: none;
+}
+
+.boton-registrarse{
+    background-color: white;
+    width: 60%;
+    height:40px;
+    border-radius: 20px;
+    border: solid 2px #505050;
+    margin-top: 6px;
+    color: #505050;
+}
+
+.boton-registrarse:hover{
+    transform: translateY(1px);
+}
+
+.texto-ya-tengo-cuenta{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+}
+
+.aceptar-terminos{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: #505050;
+}
+
+.form-text-error-datos{
+    color: #d03737;
+}
+
+/*Vista Registrarse Responsive*/
+
+
+
+
+
+/*Vista Iniciar Sesión Responsive*/
+
+.mauro-siete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.centrar-cartas-signin{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+
+}
+
+.cuerpo-carta-signin{
+    background-color: #eeeeee;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.cabecera-iniciar{
+    color: #505050;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.contenido-carta-singin{
+    width: 95%;
+}
+
+.parte-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+
+
+.boton-iniciar{
+    background-color: white;
+    width: 60%;
+    height:40px;
+    border-radius: 20px;
+    border: solid 2px #505050;
+    margin-top: 6px;
+    color: #505050;
+}
+
+.boton-iniciar:hover{
+    transform: translateY(1px);
+}
+
+.texto-no-tengo-cuenta{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+
+}
+
+.parte-recordar-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: #505050;
+}
+
+.imagen-usuario{
+    cursor: pointer;
+    width: 80px;
+}
+
+.imagen-usuario{
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.imagen-usuario:hover{
+    transform: scale(1.1);
+}
+
+.logos-redes-sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.logos-redes-sociales a{
+    margin-left: 15px;
+}
+
+.iconos-redes-sociales{
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.iconos-redes-sociales:hover{
+    transform: scale(1.1);
+}
+
+/*Vista Iniciar Sesión Responsive*/
+
+
+
+
+
+/*Recibir ofertas al correo*/
+
+.recibir-ofertas{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.boton-tres{
+    background-color: #4277ff;
+    width: 20%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 6px;
+    color: white;
+}
+
+.boton-tres:hover{
+    background-color: #2563ff;;
+    transform: translateY(1px);
+}
+
+.ofertas-correo{
+    width: 78%;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eeeeee;
+    padding: 10px;
+    border: solid 1px #999999;
+}
+
+.ofertas-correo:focus{
+    outline-color: #b0b0b0;
+}
+
+.politicas-privacidad{
+    font-size: 15px;
+    color: #999999;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/*Recibir ofertas al correo*/
+
+
+
+
+
+/*Footer*/
+
+.informacion-footer{
+    display: flex;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+.row.info-vueloya{
+    color: #505050;
+    text-align: center;
+}
+
+.text-uppercase{
+    margin-top: 24px;
+    font-size: 16px;
+
+}
+
+.text-body-uno{
+    color: #505050;
+    text-decoration: none;
+}
+
+.text-body-uno:hover{
+    color: #808080;
+    text-decoration-line: underline;
+}
+
+.footer-dos {
+    color: #505050;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.iconos-redes-sociales{
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.iconos-redes-sociales:hover{
+    transform: scale(1.1);
+}
+
+.footer-derecha a {
+    margin-left: 15px;
+}
+
+/*Footer*/
 
 
 
@@ -557,7 +813,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        height: auto;
     }
 
     .carta-imagen-signin{
@@ -577,21 +833,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 10px;
-
-    }
-
-    .imagen-usuario{
-        cursor: pointer;
-
-    }
-
-    .imagen-usuario{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
-    
-    .imagen-usuario:hover{
-        transform: scale(1.1);
     }
 
     .cuerpo-carta-signin{
@@ -608,18 +849,13 @@ body {
 
     .cabecera-iniciar{
         color: #505050;
-        padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        margin-bottom: 5px;
     }
 
-    .contenido-carta{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .contenido-carta-singin{
+        width: 90%;
     }
 
     .parte-usuario{
@@ -664,7 +900,7 @@ body {
     }
 
     .parte-recordar-usuario{
-        width: 350px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -673,14 +909,17 @@ body {
         color: #505050;
     }
 
+    .imagen-usuario{
+        cursor: pointer;
 
-    .logos-redes-sociales {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-        margin-top: 20px;
+    }
+
+    .imagen-usuario{
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    }
+    
+    .imagen-usuario:hover{
+        transform: scale(1.1);
     }
 
     .logos-redes-sociales a{
@@ -703,7 +942,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        height: auto;
     }
 
     .carta-imagen-signup{

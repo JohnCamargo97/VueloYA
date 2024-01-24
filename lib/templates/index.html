@@ -51,6 +51,14 @@
               </ul>
 
               {% else %} 
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
+                <li class="nav-item">
+                  <a class="nav-link active linea-separadora" aria-current="page" href="{% url 'registrarse' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoRegistroUsuario.png' %}" alt="Icono Registro">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'iniciarsesion' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoUsuario.png' %}" alt="Icono Inicio Sesión">Iniciar Sesión</a>
+                </li>
+              </ul>
 
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -61,15 +69,6 @@
                     <li><a class="dropdown-item" href="#" style="color: #505050;"> <img style="width: 15px;" src="{% static 'favicon.ico/IconoLLamada.png' %}" alt="Icono Llamada"> 3202232882</a></li>
                     <li><a class="dropdown-item" href="#" style="color: #505050;"> <img style="width: 15px;" src="{% static 'favicon.ico/IconoCorreoDos.png' %}" alt="Icono Correo Contacto">  vueloya@gmail.com</a></li>
                   </ul>
-                </li>
-              </ul>
-
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">       
-                <li class="nav-item">
-                  <a class="nav-link active linea-separadora" aria-current="page" href="{% url 'registrarse' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoRegistroUsuario.png' %}" alt="Icono Registro">Registrarse</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'iniciarsesion' %}"><img style="margin-right: 5px; width: 15px;" src="{% static 'favicon.ico/IconoUsuario.png' %}" alt="Icono Inicio Sesión">Iniciar Sesión</a>
                 </li>
               </ul>
               {% endif %}
