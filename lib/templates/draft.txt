@@ -1,23 +1,36 @@
-VueloSeleccionado = request.session
-    nPasajeros = int(VueloSeleccionado['pasajeros'])
-    PasajeroFormSet = modelformset_factory(pasajero, form= userPasajeroForm, extra=nPasajeros)
-    DetallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
-    if request.method == "POST":
-        print("Posted", request.POST, "Dict")
-        pasaje = PasajeroFormSet(request.POST)
-        print(pasaje)
-        for pas in pasaje:
-            if pas.is_valid():
-                print(pas.cleaned_data)
-                pas1 = pas.save(commit= False)
-                pas1.user = request.user
-                pas1.save()
-    
-            else:
-                print("no valido")
-        return redirect('resumen')
-    else:
-        pasaje = PasajeroFormSet()
-        print("not posted")
-    
-    return render (request, 'paginas/pagos.html', {'DetallesVuelo': DetallesVuelo, 'pasaje': pasaje})
+<div class="card card-with-margin" style="margin: 5px;">
+            <img class="card-img-top" src="{% static 'img/Dubai.png' %}" alt="">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #505050;">Dubai</h5>
+              <p class="card-text" style="color: #505050;">Dubái, en los Emiratos Árabes Unidos, es una ciudad conocida por su impresionante arquitectura y rascacielos emblemáticos como el Burj Khalifa.</p>
+            </div>
+            <div class="card-footer dubai">
+              <a class="precio-dubai" href="">$8.000.000 COP</a>
+              <button class="boton-dos" type="submit">Comprar</button>
+            </div>
+          </div>
+
+          <div class="card card-with-margin" style="margin: 5px;">
+            <img class="card-img-top" src="{% static 'img/Jamaica.png' %}" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #505050;">Jamaica</h5>
+              <p class="card-text" style="color: #505050;">Jamaica, una isla caribeña vibrante y llena de diversidad, cautiva con sus playas de arena blanca, aguas cristalinas y exuberantes paisajes tropicales.</p>
+            </div>
+            <div class="card-footer jamaica">
+              <a class="precio-jamaica" href="">$6.000.000 COP</a>
+              <button class="boton-dos" type="submit">Comprar</button>
+            </div>
+          </div> 
+
+          <div class="card card-with-margin" style="margin: 5px;">
+            <img class="card-img-top"  src="{% static 'img/Ottawa.png' %}" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #505050;">Ottawa</h5>
+              <p class="card-text" style="color: #505050;">Ottawa, la capital de Canadá, es una ciudad encantadora que combina la majestuosidad de su arquitectura gubernamental con la belleza natural que ofrece el río Ottawa y el Canal Rideau. </p>
+            </div>
+
+            <div class="card-footer ottawa">
+              <a class="precio-ottawa" href="">$4.500.000 COP</a>
+              <button class="boton-dos" type="submit">Comprar</button>
+            </div>
+          </div>
