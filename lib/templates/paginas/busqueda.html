@@ -10,8 +10,8 @@
 <div class="container-fluid mauro-seis">
   <div class="container">
 
-    <div class="contenedor-texto-vuelos" style="padding: 10px;">
-      <h3 class="ofertas" style="color: #505050; margin-left: 20px;">Vuelos de {{form_response.origen}} a {{form_response.destino}}</h3>
+    <div class="contenedor-texto-vuelos">
+      <h3 class="texto-vuelos-econtrados">Vuelos de {{form_response.origen}} a {{form_response.destino}}</h3>
     </div>
 
     <div class="contenedor-busqueda-vuelos">
@@ -87,7 +87,7 @@
           <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item-s">
               <h2 class="accordion-header" id="panelsStayOpen-headingOne" style="flex-grow: 0!important;">
-                <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                 Precio
                 </button>
               </h2>
@@ -135,7 +135,7 @@
           <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item-s">
               <h2 class="accordion-header" id="panelsStayOpen-headingTwo" style="flex-grow: 0!important;">
-                <button style="box-shadow: none; background-color: #eeeeee;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                 Aerolíneas
                 </button>
               </h2>
@@ -203,12 +203,16 @@
                       <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
                   </div>
                   <div class="horario-viaje">
+                    <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.origen}} </span>
                       <span style="display: block; font-weight: bold;"> {{vuelo.horasalida1}} </span>
-                      <span>-------</span>
+                    </div>
+                      <span>----</span>
+                    <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.destino}} </span>
                       <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2}} </span>
-                      <span>-------</span>
+                    </div>
+                      <span>----</span>
                       <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
                   <span class="tiempo-viaje"> Duración de Viaje {{vuelo.horasalida1}} </span>
@@ -230,15 +234,19 @@
                       <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{vuelo.id_aerolinea.nombre_aerolinea}}</span>
                   </div>
                   <div class="horario-viaje">
+                    <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.destino}} </span>
-                      <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta1}} </span>
-                      <span>-------</span>
+                      <span style="font-weight: bold;"> {{vuelo.horavuelta1}} </span>
+                    </div>
+                      <span>----</span>
+                    <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.origen}} </span>
-                      <span style="display: block; font-weight: bold;"> {{vuelo.horavuelta2}} </span>
-                      <span>-------</span>
+                      <span style="font-weight: bold;"> {{vuelo.horavuelta2}} </span>
+                    </div>
+                      <span>----</span>
                       <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
-                  <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                  <span class="tiempo-viaje"> Duración de Viaje 8hrs 30min. </span>
               </div>
 
               <div class="precio-total-vuelo">
