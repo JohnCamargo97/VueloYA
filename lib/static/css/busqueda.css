@@ -17,7 +17,7 @@ body {
 /*Navbar Responsive*/
 
 .contenedor-logo-vueloYa{
-    background-color: #eeeeee;
+    background-color: #1640D6;
     padding: 8px;
     font-size: 20px;
     font-weight: 700;
@@ -27,7 +27,6 @@ body {
 }
 
 .contenedor-nombre-vueloya{
-    color: #505050;
     text-decoration: none;
 }
 
@@ -40,7 +39,7 @@ body {
 /*Busqueda Vuelos Responsive*/
 
 .mauro-dos{
-    background-color: #293964;
+    background-color: #1640D6;
     height: 320px;
     display: flex;
     justify-content: center;
@@ -87,7 +86,7 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5.2px;
+    padding: 5px;
 }
 
 .fecha-ida{
@@ -118,11 +117,12 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5.2px;
+    padding: 5px;
 }
 
 .num-pasajeros{
     width: 70%;
+    padding: 2px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -277,7 +277,7 @@ body {
 }
 
 .boton-tres{
-    background-color: #4277ff;
+    background-color: #1640D6;
     width: 20%;
     height: 30px;
     border-radius: 8px;
@@ -287,7 +287,7 @@ body {
 }
 
 .boton-tres:hover{
-    background-color: #2563ff;;
+    background-color: #284ed8;
     transform: translateY(1px);
 }
 
@@ -303,6 +303,12 @@ body {
 
 .ofertas-correo:focus{
     outline-color: #b0b0b0;
+}
+
+.texto-ofertas-correo{
+    color: #505050;
+    font-size: 22px;
+
 }
 
 .politicas-privacidad{
@@ -627,6 +633,13 @@ body {
     margin-top: 20px;
 }
 
+.contenido-busquedas{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 /*Resultados de la busqueda de vuelos*/
 
 
@@ -673,7 +686,7 @@ body {
 }
 
 .ida-vuelo{
-    background-color: rgb(191, 251, 95);
+    background-color: #E8D8C4;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -686,7 +699,7 @@ body {
 }
 
 .regreso-vuelo{
-    background-color: rgb(191, 251, 95);
+    background-color: #E8D8C4;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -742,8 +755,8 @@ body {
 }
 
 .boton-comprar{
-    background-color: #3d74ff;
-    color: white;
+    background-color: #1640D6;
+    color: #ffffff;
     border-radius: 8px;
     border: none;
     padding: 5px;
@@ -751,7 +764,7 @@ body {
 }
 
 .boton-comprar:hover{
-    background-color: #2563ff;
+    background-color: #284ed8;
     transform: translateY(1px);
 }
 
@@ -2071,6 +2084,12 @@ body {
         background-color: #eeeeee;
         padding: 10px;
         border: solid 1px #999999;
+    }
+
+    .texto-ofertas-correo{
+        color: #505050;
+        font-size: 30px;
+    
     }
 
     .boton-tres{
