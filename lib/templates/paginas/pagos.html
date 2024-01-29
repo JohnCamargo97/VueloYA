@@ -8,289 +8,334 @@
     
 <div class="container">
 
-    <div class="container-fluid mauro-nueve">
-  
-        <div class="container">
+    <div class="container-fluid contenedor-delos-formularios-pagos">
 
-                <div class="texto-compra">
-                    <div class="gg-g">
-                        <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
-                    </div>
+            <div class="texto-compra">
+                <div class="contenedor-texto-fanilizar-compra">
+                    <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
                 </div>
+            </div>
 
-            <div class="contenedor-datos-para-pagos">
-    
-                <div class="contenido-formulario-para-pagos">
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="mauro-diez">            
-                                <div class="pasajeros">
-                                    <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                                </div>                              
-                                {{userpasajeroForm.as_p}}
+        <div class="contenedor-datos-para-pagos">
+
+            <div class="contenido-formulario-para-pagos">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="contenedor-formulario-pasajeros">            
+                        <div class="contenedor-quienes-viajan">
+                            <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
                         </div>
 
-                        <div class="mauro-once">
-                
-                                <div class="texto-recibir-vouchers">
-                                    <h3 style="color: #505050; font-size: 25px;">¿A dónde enviamos tus vouchers?</h3>
-                                </div>
-                
-                                <div class="texto-recibir-vouchers">
-                                    <h3 style="color: #505050; font-size: 15px; margin-top: 10px;">El email que elijas será fundamental para que gestiones tu reserva y recibas información importante sobre tu viaje.</h3>
-                                </div>
-                                <div class="datos-pasajeros row">
-                                    <div class="col">
-                                        <label for="pasajeros">EMAIL (DONDE RECIBIRÁS TUS VOUCHERS)</label>
-                                        <input class="pasajero-uno" type="email" class="form-control" id="id_email" name="email" placeholder="ejemplo@gmail.com" required>
-                                    </div>
-                                </div>
-                
-                                <div class="datos-pasajeros row">
-                                    <div class="col">
-                                        <label for="pasajeros">CONFIRMA TU EMAIL</label>
-                                        <input class="pasajero-uno" type="text" class="form-control" id="id_emailConfirmacion" name="emailConfirmacion" placeholder="ejemplo@gmail.com" required>
-                                    </div>
-                                </div>
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_nombre">Nombre</label>
+                            <input class="cotenedor-imput-viajeros" type="text" name="nombre" maxlength="40" required="" id="id_nombre" placeholder="Ingresa tu nombre">
+                        </p>
+
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_apellido">Apellido</label>
+                            <input class="cotenedor-imput-viajeros" type="text" name="apellido" maxlength="40" required="" id="id_apellido" placeholder="Ingresa tu apellido">
+                        </p>
+
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_tipoDeDocumento">Tipo De Documento</label>
+                            <select class="contenedor-select-viajeros" name="tipoDeDocumento" id="id_tipoDeDocumento">
+                                <option value="cedula">Cedula</option>
+                                <option value="tarjeta-identidad">Tarjeta de Identidad</option>
+                                <option value="pasaporte">Pasaporte</option>
+                            </select>
+                        </p>
+
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_nDocumento">Número De Documento</label>
+                            <input class="cotenedor-imput-viajeros" type="number" name="nDocumento" required="" id="id_nDocumento">
+                        </p>
+
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_ciudadDeResidencia">Ciudad De Residencia</label>
+                            <input class="cotenedor-imput-viajeros" type="text" name="ciudadDeResidencia" maxlength="40" required="" id="id_ciudadDeResidencia" placeholder="Villavicencio">                                
+                        </p>
+
+                        <p class="contenedor-quienes-viajan">
+                            <label for="id_puesto">Puesto:</label>
+                            <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
+                                <option value="201">201</option>
+                                <option value="202">202</option>
+                                <option value="203">203</option>
+                                <option value="204">204</option>
+                                <option value="401">401</option>
+                                <option value="402">402</option>
+                                <option value="403">403</option>
+                                <option value="404">404</option>
+                                <option value="405">405</option>
+                                <option value="406">406</option>
+                                <option value="407">407</option>
+                                <option value="408">408</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <div class="contenedor-vouchers">
+            
+                        <div class="texto-recibir-vouchers">
+                            <h3 style="color: #505050; font-size: 25px;">¿A dónde enviamos tus vouchers?</h3>
                         </div>
         
-                        <div class="mauro-doce">
-                                <div class="texto-recibir-vouchers">
-                                    <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
-                                </div>
-                                                     
-                                <div id="id_metodopago">
-                                    <div class="metodos-de-pagos-NA row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_0" name="metodopago" value="tarjetacredito" required>
-                                            <label for="id_metodopago_0">tarjeta de credito</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="metodos-de-pagos row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_1" name="metodopago" value="tarjetadebito" required>
-                                            <label for="id_metodopago_1">Tarjeta de débito</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="metodos-de-pagos row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_2" name="metodopago" value="pse" required>
-                                            <label for="id_metodopago_2">PSE</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="metodos-de-pagos row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_3" name="metodopago" value="criptomonedas" required>
-                                            <label for="id_metodopago_3">Criptomonedas</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="metodos-de-pagos row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_4" name="metodopago" value="efecty" required>
-                                            <label for="id_metodopago_4">Efecty</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="metodos-de-pagos row">
-                                        <div class="col">
-                                            <input style="cursor: pointer;" type="radio" id="id_metodopago_5" name="metodopago" value="sured" required>
-                                            <label for="id_metodopago_5">Su Red</label>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="texto-recibir-vouchers">
+                            <h3 style="color: #505050; font-size: 15px; margin-top: 10px;">El email que elijas será fundamental para que gestiones tu reserva y recibas información importante sobre tu viaje.</h3>
                         </div>
-            
-                        <div id="credito" class="mauro-trece">
-                                <div class="texto-recibir-vouchers">
-                                    <h3 style="color: #505050; font-size: 25px;">Ingresa los datos de la tarjeta</h3>
-                                </div>
-                
-                                <div class="datos-tarjetas row">
-                                    <div class="col contenedor-de-unir-datostarjeta-uno">
-                    
-                                        <div class="contenedor-agrupa-colums-datostarjeta-uno">
-                                            <label for="tarjetas">NÚMERO DE TARJETA</label>
-                                            <input class="tarjeta-usuario" type="number" id="id_numerodetarjeta" placeholder="Ingresa el número de tu tarjeta" name="numerodetarjeta">
-                                        </div>
-                    
-                                        <div class="contenedor-agrupa-colums-datostarjeta-uno-b">
-                                            <label for="tarjetas">TITULAR DE LA TARJETA</label>
-                                            <input class="tarjeta-usuario" type="text" id="id_titulartarjeta" placeholder="Como figura en la tarjeta" name="titulartarjeta">
-                                        </div>
-                    
-                                    </div>
-                                </div>
-                
-                
-                                <div class="datos-tarjetas row">
-                                    <div class="col contenedor-de-unir-datostarjeta-dos">
-                    
-                                        <div class="contenedor-vencimiento-tarjeta">
-                                            <label for="tarjetas">VENCIMIENTO</label>
-                                            <input class="vencimiento-tarjeta" type="text" id="id_vencimiento" placeholder="MM/AA" name="vencimiento" maxlenght="5">
-                                        </div>
-                    
-                                        <div class="contenedor-codigo-seguridad">
-                                            <label for="tarjetas">CÓD. SEGURIDAD</label>
-                                            <input class="codigo-seguridad" type="number" id="id_codseguridad" placeholder="MM/AA" name="codseguridad">
-                                        </div>
-                    
-                                        <div class="contenedor-documento-titular">
-                                            <label for="tarjetas">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
-                                            <input class="tarjeta-usuario" type="number" id="id_documentotitulartarjeta" placeholder="Ej: 15234568" name="documentotitulartarjeta">
-                                        </div>
-                    
-                                    </div>
-                                </div>
-                        </div>
-            
-                        <div class="aceptar-terminos-compra">
-                            <div class="contenedor-uno-del-input">
-                                <div class="contenedor-para-alinear">
-                                    <input style="cursor: pointer;" type="checkbox" id="id_tyc" name="tyc" required>
-                                </div>
-                
-                                <div class="texto-de-aceptarterminos">
-                                    <label for="aceptar">Leí y acepto las condiciones de compra , políticas de privacidad y políticas de cambios y cancelaciones.</label>
-                                </div>
-                
+                        <div class="confirmacion-vourchers row">
+                            <div class="col">
+                                <label for="pasajeros">EMAIL (DONDE RECIBIRÁS TUS VOUCHERS)</label>
+                                <input class="contenedor-email-voucher" type="email" class="form-control" id="id_email" name="email" placeholder="ejemplo@gmail.com" required>
                             </div>
                         </div>
-
-                        <div class="contenedor-boton-comprar">
-                            <div class="contenedor-del-boton-comprar-ahora">
-                                <button class="boton-comprar-ahora" type="submit">Comprar</button>
+        
+                        <div class="confirmacion-vourchers row">
+                            <div class="col">
+                                <label for="pasajeros">CONFIRMA TU EMAIL</label>
+                                <input class="contenedor-email-voucher" type="text" class="form-control" id="id_emailConfirmacion" name="emailConfirmacion" placeholder="ejemplo@gmail.com" required>
                             </div>
-
-                            <div class="texto-del-total-pago">
-                                <label style="color: #505050;" for="pagos">Total a pagar</label>
-                                <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ 900.000 </a></span>
-                            </div>
-                        </div>    
-                    </form>          
-                </div>
-
-                <div class="detalles-pagos">
-
-                    <div class="contenedor-detalles-pago">
-
-                        <div class="contenedor-de-formularios-detalles">
-
-                            <div class="texto-detalles-pago">
-                                <h3 style="color: #505050;">Detalles del pago</h3>
-                            </div>
-
-                            <form class="formulario-detalles-pago" action="#">
-                
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 18px;">Valor para 1 persona</h3>
-                                </div>
-                
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 18px;">$ 1.200.000</h3>
-                                </div>
-                
-                            </form>
-
-                            <form class="formulario-detalles-pago-dos" action="#">
-                
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 18px;">Impuestos, tasas y recargas</h3>
-                                </div>
-                
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 18px;">$ 250.000</h3>
-                                </div>
-                
-                            </form>
-
-                            <div class="total-factura">
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 20px;">TOTAL</h3>
-                                </div>
-                
-                                <div class="texto-detalles-pagos">
-                                    <h3 style="color: #505050; font-size: 20px;">$ 1.450.000</h3>
-                                </div>
-                            </div>
-
                         </div>
-
+                        
                     </div>
-
-                    <div class="contenedor-detalles-compra">
-
-
-
-                        <div class="uno">
-                            <div class="busqueda-vuelos">
-            
-                                <div class="ida-vuelo">
-                                    <div class="icono-avion">
-                                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
-                                    </div>
-                                    <div class="fecha-salida-avion">
-                                        <span>{{DetallesVuelo.fechasalida}}</span>
-                                    </div>
-                                </div>
-                
-                                <div class="info-vuelos">
-                                    <div class="nombre-aerolinea">
-                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
-                                    </div>
-                                    <div class="horario-viaje">
-                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
-                                        <span>-----</span>
-                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
-                                        <span>-----</span>
-                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                                    </div>
-                                    <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
-                                </div>
-                
-                
-                
-                                <div class="regreso-vuelo">
-                                    <div class="icono-avion">
-                                        <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
-                                    </div>
-                                    <div class="fecha-regreso-avion">
-                                        <span>{{DetallesVuelo.fechavuelta}}</span>
-                                    </div>
-                                </div>
-                
-                                <div class="info-vuelos">
-                                    <div class="nombre-aerolinea">
-                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
-                                    </div>
-                                    <div class="horario-viaje">
-                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
-                                        <span>-----</span>
-                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
-                                        <span>-----</span>
-                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                                    </div>
-                                    <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
-                                </div>
-            
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
     
+                    <div class="mauro-doce">
+                            <div class="texto-recibir-vouchers" style="margin-bottom: 10px;">
+                                <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
+                            </div>
+                                                    
+
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_0" name="metodopago" value="tarjetacredito" required>
+                                        <label for="id_metodopago_0">Tarjeta de credito</label>
+                                    </div>
+                                </div>
+
+                
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_1" name="metodopago" value="tarjetadebito" required>
+                                        <label for="id_metodopago_1">Tarjeta de débito</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_2" name="metodopago" value="pse" required>
+                                        <label for="id_metodopago_2">PSE</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_3" name="metodopago" value="criptomonedas" required>
+                                        <label for="id_metodopago_3">Criptomonedas</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_4" name="metodopago" value="efecty" required>
+                                        <label for="id_metodopago_4">Efecty</label>
+                                    </div>
+                                </div>
+                
+                                <div class="metodos-de-pagos">
+                                    <div class="contenedor-opciones-de-pagos">
+                                        <input class="input-metodos-pagos" type="radio" id="id_metodopago_5" name="metodopago" value="sured" required>
+                                        <label for="id_metodopago_5">Su Red</label>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+        
+                    <div id="credito" class="mauro-trece">
+                            <div class="texto-recibir-vouchers">
+                                <h3 style="color: #505050; font-size: 25px;">Ingresa los datos de la tarjeta</h3>
+                            </div>
+            
+                            <div class="datos-tarjetas row">
+                                <div class="col contenedor-de-unir-datostarjeta-uno">
+                
+                                    <div class="contenedor-agrupa-colums-datostarjeta-uno">
+                                        <label for="tarjetas">NÚMERO DE TARJETA</label>
+                                        <input class="tarjeta-usuario" type="number" id="id_numerodetarjeta" placeholder="Ingresa el número de tu tarjeta" name="numerodetarjeta">
+                                    </div>
+                
+                                    <div class="contenedor-agrupa-colums-datostarjeta-uno-b">
+                                        <label for="tarjetas">TITULAR DE LA TARJETA</label>
+                                        <input class="tarjeta-usuario" type="text" id="id_titulartarjeta" placeholder="Como figura en la tarjeta" name="titulartarjeta">
+                                    </div>
+                
+                                </div>
+                            </div>
+            
+            
+                            <div class="datos-tarjetas row">
+                                <div class="col contenedor-de-unir-datostarjeta-dos">
+                
+                                    <div class="contenedor-vencimiento-tarjeta">
+                                        <label for="tarjetas">VENCIMIENTO</label>
+                                        <input class="vencimiento-tarjeta" type="text" id="id_vencimiento" placeholder="MM/AA" name="vencimiento" maxlenght="5">
+                                    </div>
+                
+                                    <div class="contenedor-codigo-seguridad">
+                                        <label for="tarjetas">CÓD. SEGURIDAD</label>
+                                        <input class="codigo-seguridad" type="number" id="id_codseguridad" placeholder="MM/AA" name="codseguridad">
+                                    </div>
+                
+                                    <div class="contenedor-documento-titular">
+                                        <label for="tarjetas">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
+                                        <input class="tarjeta-usuario" type="number" id="id_documentotitulartarjeta" placeholder="Ej: 15234568" name="documentotitulartarjeta">
+                                    </div>
+                
+                                </div>
+                            </div>
+                    </div>
+        
+                    <div class="aceptar-terminos-compra">
+                        <div class="contenedor-uno-del-input">
+                            <div class="contenedor-para-alinear">
+                                <input style="cursor: pointer;" type="checkbox" id="id_tyc" name="tyc" required>
+                            </div>
+            
+                            <div class="texto-de-aceptarterminos">
+                                <label for="aceptar">Leí y acepto las condiciones de compra , políticas de privacidad y políticas de cambios y cancelaciones.</label>
+                            </div>
+            
+                        </div>
+                    </div>
+
+                    <div class="contenedor-boton-comprar">
+                        <div class="contenedor-del-boton-comprar-ahora">
+                            <button class="boton-comprar-ahora" type="submit">Comprar</button>
+                        </div>
+
+                        <div class="texto-del-total-pago">
+                            <label style="color: #505050;" for="pagos">Total a pagar</label>
+                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ 900.000 </a></span>
+                        </div>
+                    </div>    
+                </form>          
             </div>
-  
+
+            <div class="detalles-pagos">
+
+                <div class="contenedor-detalles-pago">
+
+                    <div class="contenedor-de-formularios-detalles">
+
+                        <div class="texto-detalles-pago">
+                            <h3 style="color: #505050;">Detalles del pago</h3>
+                        </div>
+
+                        <form class="formulario-detalles-pago" action="#">
+            
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 18px;">Valor para 1 persona</h3>
+                            </div>
+            
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 18px;">$ 1.200.000</h3>
+                            </div>
+            
+                        </form>
+
+                        <form class="formulario-detalles-pago-dos" action="#">
+            
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 18px;">Impuestos, tasas y recargas</h3>
+                            </div>
+            
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 18px;">$ 250.000</h3>
+                            </div>
+            
+                        </form>
+
+                        <div class="total-factura">
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 20px;">TOTAL</h3>
+                            </div>
+            
+                            <div class="texto-detalles-pagos">
+                                <h3 style="color: #505050; font-size: 20px;">$ 1.450.000</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="contenedor-detalles-compra">
+
+
+
+                    <div class="uno">
+                        <div class="busqueda-vuelos">
+        
+                            <div class="ida-vuelo">
+                                <div class="icono-avion">
+                                    <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                                </div>
+                                <div class="fecha-salida-avion">
+                                    <span>{{DetallesVuelo.fechasalida}}</span>
+                                </div>
+                            </div>
+            
+                            <div class="info-vuelos">
+                                <div class="nombre-aerolinea">
+                                    <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                </div>
+                                <div class="horario-viaje">
+                                    <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
+                                    <span>-----</span>
+                                    <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
+                                    <span>-----</span>
+                                    <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                </div>
+                                <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
+                            </div>
+            
+            
+            
+                            <div class="regreso-vuelo">
+                                <div class="icono-avion">
+                                    <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                                </div>
+                                <div class="fecha-regreso-avion">
+                                    <span>{{DetallesVuelo.fechavuelta}}</span>
+                                </div>
+                            </div>
+            
+                            <div class="info-vuelos">
+                                <div class="nombre-aerolinea">
+                                    <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                </div>
+                                <div class="horario-viaje">
+                                    <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
+                                    <span>-----</span>
+                                    <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
+                                    <span>-----</span>
+                                    <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                </div>
+                                <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                            </div>
+        
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+  
       
     </div>
   
