@@ -5,22 +5,23 @@
 {% load static %}
 
 {% block contenido %}
+
     
 <div class="container">
 
     <div class="container-fluid contenedor-delos-formularios-pagos">
 
             <div class="texto-compra">
-                <div class="contenedor-texto-fanilizar-compra">
-                    <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
-                </div>
+                <h3 style="color: #505050;">¡Falta poco! Completa tus datos y finaliza tu compra</h3>
             </div>
 
         <div class="contenedor-datos-para-pagos">
 
             <div class="contenido-formulario-para-pagos">
+
                 <form method="POST">
                     {% csrf_token %}
+
                     <div class="contenedor-formulario-pasajeros">            
                         <div class="contenedor-quienes-viajan">
                             <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
@@ -36,7 +37,7 @@
                             <input class="cotenedor-imput-viajeros" type="text" name="apellido" maxlength="40" required="" id="id_apellido" placeholder="Ingresa tu apellido">
                         </p>
 
-                        <p class="contenedor-quienes-viajan">
+                        <p class="contenedor-tipo-documento">
                             <label for="id_tipoDeDocumento">Tipo De Documento</label>
                             <select class="contenedor-select-viajeros" name="tipoDeDocumento" id="id_tipoDeDocumento">
                                 <option value="cedula">Cedula</option>
@@ -55,7 +56,7 @@
                             <input class="cotenedor-imput-viajeros" type="text" name="ciudadDeResidencia" maxlength="40" required="" id="id_ciudadDeResidencia" placeholder="Villavicencio">                                
                         </p>
 
-                        <p class="contenedor-quienes-viajan">
+                        <p class="contenedor-tipo-documento">
                             <label for="id_puesto">Puesto:</label>
                             <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
                                 <option value="201">201</option>
@@ -105,53 +106,51 @@
                             <h3 style="color: #505050; font-size: 25px;">¿Cómo deseas pagar?</h3>
                         </div>
                                                 
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_0" name="metodopago" value="tarjetacredito" required>
+                                <label for="id_metodopago_0">Tarjeta de credito</label>
+                            </div>
+                        </div>
 
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_0" name="metodopago" value="tarjetacredito" required>
-                                    <label for="id_metodopago_0">Tarjeta de credito</label>
-                                </div>
+        
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_1" name="metodopago" value="tarjetadebito" required>
+                                <label for="id_metodopago_1">Tarjeta de débito</label>
                             </div>
-
-            
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_1" name="metodopago" value="tarjetadebito" required>
-                                    <label for="id_metodopago_1">Tarjeta de débito</label>
-                                </div>
+                        </div>
+        
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_2" name="metodopago" value="pse" required>
+                                <label for="id_metodopago_2">PSE</label>
                             </div>
-            
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_2" name="metodopago" value="pse" required>
-                                    <label for="id_metodopago_2">PSE</label>
-                                </div>
+                        </div>
+        
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_3" name="metodopago" value="criptomonedas" required>
+                                <label for="id_metodopago_3">Criptomonedas</label>
                             </div>
-            
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_3" name="metodopago" value="criptomonedas" required>
-                                    <label for="id_metodopago_3">Criptomonedas</label>
-                                </div>
+                        </div>
+        
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_4" name="metodopago" value="efecty" required>
+                                <label for="id_metodopago_4">Efecty</label>
                             </div>
-            
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_4" name="metodopago" value="efecty" required>
-                                    <label for="id_metodopago_4">Efecty</label>
-                                </div>
-                            </div>
-            
-                            <div class="metodos-de-pagos">
-                                <div class="contenedor-opciones-de-pagos">
-                                    <input class="input-metodos-pagos" type="radio" id="id_metodopago_5" name="metodopago" value="sured" required>
-                                    <label for="id_metodopago_5">Su Red</label>
-                                </div>
+                        </div>
+        
+                        <div class="metodos-de-pagos">
+                            <div class="contenedor-opciones-de-pagos">
+                                <input class="input-metodos-pagos" type="radio" id="id_metodopago_5" name="metodopago" value="sured" required>
+                                <label for="id_metodopago_5">Su Red</label>
                             </div>
                         </div>
 
                     </div>
-        
+
                     <div class="contenedor-datos-impotantes-tarjeta">
 
                         <div class="texto-recibir-vouchers">
@@ -215,132 +214,136 @@
                 </form>          
             </div>
 
-            <div class="accordion" id="accordionExample" style="margin-top: 0; margin-bottom: 1rem;">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Detalles del Pago
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
+            <div class="contenedor-acordion">
 
-                        <div class="detalles-pagos">
+                <div class="accordion" id="accordionExample" style="margin-top: 0; margin-bottom: 1rem; width: 100%;">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Detalles de la Compra
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
 
-                            <div class="contenedor-detalles-pago">
-            
-                                <div class="contenedor-de-formularios-detalles">
-            
-            
-                                    <div class="formulario-detalles-pago">
-                        
-                                        <div class="texto-valor-persona">
-                                            <h3 style="color: #505050; font-size: 18px;">Valor para 1 persona</h3>
+                            <div class="detalles-pagos">
+
+                                <div class="contenedor-detalles-pago">
+                
+                                    <div class="contenedor-de-formularios-detalles">
+                
+                
+                                        <div class="formulario-detalles-pago">
+                            
+                                            <div class="texto-valor-persona">
+                                                <h3 style="color: #505050; font-size: 18px;">Valor para 1 persona</h3>
+                                            </div>
+                            
+                                            <div class="texto-valor-persona">
+                                                <h3 style="color: #696969; font-size: 16px;">$ 1.200.000</h3>
+                                            </div>
+                            
                                         </div>
-                        
-                                        <div class="texto-valor-persona">
-                                            <h3 style="color: #696969; font-size: 16px;">$ 1.200.000</h3>
+                
+                                        <form class="formulario-detalles-pago-dos" action="#">
+                            
+                                            <div class="texto-valor-impuestos">
+                                                <h3 style="color: #505050; font-size: 18px;">Impuestos, tasas y recargas</h3>
+                                            </div>
+                            
+                                            <div class="texto-valor-impuestos">
+                                                <h3 style="color: #696969; font-size: 16px;">$ 250.000</h3>
+                                            </div>
+                            
+                                        </form>
+                
+                                        <div class="total-factura">
+                                            <div class="texto-valor-final-total">
+                                                <h3 style="color: #505050; font-size: 20px;">TOTAL</h3>
+                                            </div>
+                            
+                                            <div class="texto-valor-final-total">
+                                                <h3 style="color: #505050; font-size: 20px;">$ 1.450.000</h3>
+                                            </div>
                                         </div>
-                        
+                
                                     </div>
-            
-                                    <form class="formulario-detalles-pago-dos" action="#">
-                        
-                                        <div class="texto-valor-impuestos">
-                                            <h3 style="color: #505050; font-size: 18px;">Impuestos, tasas y recargas</h3>
-                                        </div>
-                        
-                                        <div class="texto-valor-impuestos">
-                                            <h3 style="color: #696969; font-size: 16px;">$ 250.000</h3>
-                                        </div>
-                        
-                                    </form>
-            
-                                    <div class="total-factura">
-                                        <div class="texto-valor-final-total">
-                                            <h3 style="color: #505050; font-size: 20px;">TOTAL</h3>
-                                        </div>
-                        
-                                        <div class="texto-valor-final-total">
-                                            <h3 style="color: #505050; font-size: 20px;">$ 1.450.000</h3>
-                                        </div>
-                                    </div>
-            
+                
                                 </div>
-            
+                
+                                <div class="contenedor-detalles-compra">
+                
+                                    <div class="texto-detalles-vuelo">
+                                        <h3 style="color: #505050;">Detalles del Vuelo</h3>
+                                    </div>
+                
+                                    <div class="uno">
+                                        <div class="busqueda-vuelos">
+                        
+                                            <div class="ida-vuelo">
+                                                <div class="icono-avion">
+                                                    <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                                                </div>
+                                                <div class="fecha-salida-avion">
+                                                    <span>{{DetallesVuelo.fechasalida}}</span>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="info-vuelos">
+                                                <div class="nombre-aerolinea">
+                                                    <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                </div>
+                                                <div class="horario-viaje">
+                                                    <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
+                                                    <span>-----</span>
+                                                    <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
+                                                    <span>-----</span>
+                                                    <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                </div>
+                                                <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
+                                            </div>
+                            
+                            
+                            
+                                            <div class="regreso-vuelo">
+                                                <div class="icono-avion">
+                                                    <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                                                </div>
+                                                <div class="fecha-regreso-avion">
+                                                    <span>{{DetallesVuelo.fechavuelta}}</span>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="info-vuelos">
+                                                <div class="nombre-aerolinea">
+                                                    <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                </div>
+                                                <div class="horario-viaje">
+                                                    <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
+                                                    <span>-----</span>
+                                                    <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                                    <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
+                                                    <span>-----</span>
+                                                    <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                </div>
+                                                <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                                            </div>
+                        
+                                        </div>
+                                    </div>
+                
+                                </div>
+                
                             </div>
-            
-                            <div class="contenedor-detalles-compra">
-            
-                                <div class="texto-detalles-vuelo">
-                                    <h3 style="color: #505050;">Detalles del Vuelo</h3>
-                                </div>
-            
-                                <div class="uno">
-                                    <div class="busqueda-vuelos">
-                    
-                                        <div class="ida-vuelo">
-                                            <div class="icono-avion">
-                                                <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
-                                            </div>
-                                            <div class="fecha-salida-avion">
-                                                <span>{{DetallesVuelo.fechasalida}}</span>
-                                            </div>
-                                        </div>
-                        
-                                        <div class="info-vuelos">
-                                            <div class="nombre-aerolinea">
-                                                <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
-                                            </div>
-                                            <div class="horario-viaje">
-                                                <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                                <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
-                                                <span>-----</span>
-                                                <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                                <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
-                                                <span>-----</span>
-                                                <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                                            </div>
-                                            <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
-                                        </div>
-                        
-                        
-                        
-                                        <div class="regreso-vuelo">
-                                            <div class="icono-avion">
-                                                <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
-                                            </div>
-                                            <div class="fecha-regreso-avion">
-                                                <span>{{DetallesVuelo.fechavuelta}}</span>
-                                            </div>
-                                        </div>
-                        
-                                        <div class="info-vuelos">
-                                            <div class="nombre-aerolinea">
-                                                <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
-                                            </div>
-                                            <div class="horario-viaje">
-                                                <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                                <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
-                                                <span>-----</span>
-                                                <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                                <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
-                                                <span>-----</span>
-                                                <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                                            </div>
-                                            <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
-                                        </div>
-                    
-                                    </div>
-                                </div>
-            
-                            </div>
-            
+
                         </div>
-
                     </div>
-                  </div>
+                    </div>
                 </div>
+            
             </div>
 
         </div>
