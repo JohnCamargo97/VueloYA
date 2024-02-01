@@ -24,7 +24,7 @@ def home(request):
             request.session['destino'] = request.POST['destino']
             request.session['pasajeros'] = request.POST['pasajeros']
             print(request.POST)
-            return redirect('busqueda')
+            return redirect('busqueda', pas=1)
         else:
             print("campos no validos")
     else:
@@ -83,7 +83,8 @@ def pagos(request):
     
     return render (request, 'paginas/pagos.html', context)
 
-def busqueda(request):
+def busqueda(request, pas):
+    print(pas)
     form_response = request.session
     lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
     if request.method == "POST":
