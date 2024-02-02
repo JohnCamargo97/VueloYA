@@ -20,11 +20,11 @@ def home(request):
         
         if form_busqueda.is_valid():
                      
-            request.session['origen'] = request.POST['origen']
-            request.session['destino'] = request.POST['destino']
-            request.session['pasajeros'] = request.POST['pasajeros']
+            origen = request.POST['origen']
+            destino = request.POST['destino']
+            pas = request.POST['pasajeros']
             print(request.POST)
-            return redirect('busqueda', pas=1)
+            return redirect('busqueda', origen, destino, pas)
         else:
             print("campos no validos")
     else:
@@ -83,16 +83,20 @@ def pagos(request):
     
     return render (request, 'paginas/pagos.html', context)
 
-def busqueda(request, pas):
+def busqueda(request, origen, destino, pas):
+    lista_resultado = Vuelo.objects.filter(origen__icontains = origen, destino__icontains = destino).all()
     print(pas)
-    form_response = request.session
-    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
+    context = {
+        'origen': origen,
+        'destino': destino,
+        'lista_resultado': lista_resultado
+    }
     if request.method == "POST":
         request.session['vueloID'] = request.POST['Comprar']
         #request.session['pasajeros'] = form_response['pasajeros']
         return redirect('pagos')
     else:
-        return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
+        return render (request, 'paginas/busqueda.html', context)
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')
