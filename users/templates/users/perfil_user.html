@@ -8,56 +8,73 @@
 
 <div class="container-fluid" style="background-color: #eeeeee;">
 
-    <div class="container hh-h">
-
-        <div class="contenedor-formulario-editar-perfil">
+    <div class="container">
             
-            <div class="contenedor-edi-datos-perfil">
-                
-                <div class="contenedor-datos-perfil">
+        <div class="contenedor-edi-datos-perfil">
+            
+            <div class="contenedor-datos-perfil">
 
-                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
-                    <div class="contenedor-nombre-email">
-                        {{ user.username }}
-                        <br>
-                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
-                    </div>
+                <div class="contenedor-imagen-perfil">
+                    <img class="rounded-circle" src="{{user.uservueloya.picture.url}}">
+                </div>
 
-                    <div class="parte-usuario">
-                        <a class="boton-editar-perfil" href="{% url 'personal-info' %}">Editar</a>
-                    </div>
+                <div class="contenedor-nombre-email">
+
+                    <div class="contenedor-nombre-miperfil">{{ user.username }}</div>
+
+                    <div class="contenedor-email-miperfil">{{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> </div>
 
                 </div>
 
-                <div class="contenedor-datos-personales">
+                <div class="contenedor-boton-editar">
+                    <a class="boton-editar-perfil" href="{% url 'personal-info' %}">Editar</a>
+                </div>
 
-                    <div class="contenedor-datos">
+            </div>
 
-                        <div style="margin-bottom: 10px; font-weight: 600;">Nombre Completo
+            <div class="contenedor-datos-personales">
+
+                <div class="contenedor-datos">
+
+                    <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoUsuarioDos.png' %}" alt="">
+
+                        <div class="contenedor-nom-fecha-cel-genero">Nombre Completo
 
                             <div style="font-weight: 400;"> {{user.get_full_name}}</div>
-              
-                        </div>
-
-                        <div style="font-weight: 600; display:flex;">Telefono 
-                        
-                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.telefono}}</div>
-                        
+            
                         </div>
 
                     </div>
 
-                    <div class="contenedor-datos-dos">
+                    <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoCalendario.png' %}" alt="">
 
-                        <div style="margin-bottom: 10px; font-weight: 600; ">Fecha de Nacimiento
+                        <div class="contenedor-nom-fecha-cel-genero">Fecha de Nacimiento
                         
                             <div style="font-weight: 400;">{{user.uservueloya.fechaNacimiento}}</div>
                         
                         </div>
 
-                        <div style="font-weight: 600; display:flex;">Genero
+                    </div>
 
-                            <div style="margin-left: 10px; font-weight: 400;">{{user.uservueloya.genero}} </div>
+                </div>
+
+                <div class="contenedor-datos-dos">
+
+                    <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoTelefono.png' %}" alt="">
+
+                        <div class="contenedor-nom-fecha-cel-genero">Telefono
+
+                            <div style="font-weight: 400;"> 3219082345</div>
+                
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoGeneros.png' %}" alt="">
+
+                        <div class="contenedor-nom-fecha-cel-genero">Genero
+
+                            <div style="font-weight: 400;">{{user.uservueloya.genero}} </div>
 
                         </div>
 
@@ -67,79 +84,25 @@
 
             </div>
 
-            <div class="contenedor-datos-metodos-pagos">
-                
-                <div class="contenedor-datos-tarjeta">
-
-                    <div class="contenedor-texto-tarjeta-credito">
-                        <h5 style="color: #505050;">Tarjetas de credito</h5>
-                        Tarjeta 1
-                    </div>
-
-                    <div class="parte-tarjetas" style="margin-left: auto;">
-                        <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}">Agregar tarjeta</a>
-                    </div>  
-
-                </div>
-    
-            </div>
-
-            <div class="contenedor-datos-facturacion">
-                
-                <h5 style="padding: 10px; color: #505050;">Datos de Facturacion</h5>
-
-                {% for facto in factos%}
-
-                    <div class="contenedor-info-usuarios">
-
-                        <div class="contenedor-nombre-cedula-user">{{facto}}</div>
-
-                        <div class="parte-facturacion" style="margin-left: auto;">
-
-                            <a class="boton-facturacion-editar" href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
-
-                            <a class="boton-facturacion-borrar"href="{% url 'facturacion_borrar' facto.pk %}">Borrar</a>
-
-                        </div>
-
-                    </div>
-
-                {% endfor %}
-                
-                <div class="contenedor-boton-facturacion-agregar">
-                    <a class="boton-facturacion-agregar"href="{% url 'facturacion_crear' %}">Agregar nuevo</a>
-                </div>
-
-            </div>
-
-            <div class="contenedor-preferencias">
-
-                <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
-
-                <div class="contenedor-recibir-notificaciones">
-
-                    <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
-                    <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
-
-                    <div class="contenedor-aceptar-notificaciones">
-                        <input type="checkbox" id="recibir notificaciones">
-                    </div>
-
-                </div>
-
-                <div style="margin-top: 5px;">
-                    <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
-                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
-                </div>
-
-
-                <div style="margin-top: 5px;">
-                    <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
-                    <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
-                </div>
-
-            </div>
         </div>
+
+        <div class="contenedor-datos-metodos-pagos">
+                
+            <div class="contenedor-datos-tarjeta">
+
+                <div class="contenedor-texto-tarjeta-credito">
+                    <h5 style="color: #505050;">Tarjetas de credito</h5>
+                    Tarjeta 1
+                </div>
+
+                <div class="parte-tarjetas" style="margin-left: auto;">
+                    <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}">Agregar tarjeta</a>
+                </div>  
+
+            </div>
+
+        </div>
+
 
     </div>
 </div>

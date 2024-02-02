@@ -1011,6 +1011,156 @@ body {
 
 
 
+/*Formulario Editar Perfil*/
+
+.contenedor-edi-datos-perfil{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor-datos-perfil{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color:#1640D6;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-imagen-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded-circle{
+    margin-top: 5px;
+    width: 35%;
+    cursor: pointer;
+    height: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.contenedor-nombre-email{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nombre-miperfil{
+    font-size: 20px;
+}
+
+.contenedor-boton-editar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.boton-editar-perfil{
+    background-color: rgb(255, 255, 255);
+    color: rgb(60, 60, 60);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.boton-editar-perfil:hover{
+    background-color: rgb(249, 249, 249);
+    color: rgb(60, 60, 60);
+}
+
+.contenedor-edi-datos-perfil{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-datos-personales{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.contenedor-icono-tel{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nom-fecha-cel-genero{
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.icono-tel{
+    border: 1px solid #808080;
+    border-radius: 10px;
+    padding: 8px;
+    width: 35px;
+}
+
+.contenedor-datos-metodos-pagos{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.contenedor-datos-tarjeta{
+    background-color: #a3d0ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.boton-agregar-tarjetas{
+    background-color: #293964;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boton-agregar-tarjetas:hover{
+    background-color: #27345a;
+    color: white;
+}
+
+/*Formulario Editar Perfil*/
+
+
+
+
+
+
 /*Pantalla PC*/
 
 @media only screen and (min-width: 1080px) {
@@ -1819,7 +1969,7 @@ body {
 
     /*Formulario Editar Perfil*/
 
-    .hh-h{
+    .datos-miperfil{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1852,21 +2002,12 @@ body {
         border-top-right-radius: 8px;
     }
 
-    .parte-usuario{
+    .contenedor-boton-editar{
         margin-left: auto;
     }
 
     .contenedor-nombre-email{
         color: white;
-    }
-
-    .contenedor-edi-datos-perfil{
-        width: 100%;
-        background-color: rgb(255, 255, 255);
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .contenedor-imagen-perfil{
@@ -1886,6 +2027,15 @@ body {
     .boton-editar-perfil:hover{
         background-color: rgb(249, 249, 249);
         color: rgb(60, 60, 60);
+    }
+
+    .contenedor-edi-datos-perfil{
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .contenedor-datos-personales{
