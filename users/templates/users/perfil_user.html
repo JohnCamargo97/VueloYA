@@ -6,7 +6,7 @@
 
 {% block contenido %}
 
-<div class="container-fluid" style="background-color: #eeeeee;">
+<div class="container-fluid mi-perfil">
 
     <div class="container">
             
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="contenedor-boton-editar">
-                    <a class="boton-editar-perfil" href="{% url 'personal-info' %}">Editar</a>
+                    <a class="boton-editar-perfil" href="{% url 'personal-info' %}"><img class="icono-editar" src="{% static 'favicon.ico/IconoLapiz.png' %}" alt="">Editar</a>
                 </div>
 
             </div>
@@ -91,18 +91,78 @@
             <div class="contenedor-datos-tarjeta">
 
                 <div class="contenedor-texto-tarjeta-credito">
-                    <h5 style="color: #505050;">Tarjetas de credito</h5>
+                    <h5 style="color: #505050;">Agregar Tarjetas</h5>
                     Tarjeta 1
                 </div>
 
-                <div class="parte-tarjetas" style="margin-left: auto;">
-                    <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}">Agregar tarjeta</a>
+                <div class="contenedor-agregar-tarjetas">
+                    <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}"><img class="icono-agregar" src="{% static 'favicon.ico/IconoAgregar.png' %}" alt="">Tarjeta</a>
                 </div>  
 
             </div>
 
         </div>
 
+        <div class="contenedor-datos-facturacion">
+            
+            <div class="contenedor-texto-datos-facturacion">
+                <h5 style="color: #505050; padding: 10px;">Datos de Facturacion</h5>
+            </div>
+
+            {% for facto in factos%}
+
+                <div class="contenedor-info-usuarios">
+
+                    <div class="contenedor-nombre-cedula-user">{{facto}}</div>
+
+                    <div class="parte-facturacion">
+
+                        <a class="boton-facturacion-editar" href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
+
+                        <a class="boton-facturacion-borrar"href="{% url 'facturacion_borrar' facto.pk %}">Borrar</a>
+
+                    </div>
+
+                </div>
+
+                <div class="contenedor-separador-uno"><hr class="separador-uno"></div>
+
+
+            {% endfor %}
+            
+            <div class="contenedor-boton-facturacion-agregar">
+                <a class="boton-facturacion-agregar"href="{% url 'facturacion_crear' %}"><img class="icono-agregar" src="{% static 'favicon.ico/IconoAgregar.png' %}" alt="">Agregar nuevo</a>
+            </div>
+
+        </div>
+
+        <div class="contenedor-preferencias">
+
+            <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
+
+            <div class="contenedor-recibir-notificaciones">
+
+                <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
+                <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
+
+                <div class="contenedor-aceptar-notificaciones">
+                    <input type="checkbox" id="recibir notificaciones">
+                </div>
+
+            </div>
+
+            <div style="margin-top: 5px;">
+                <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
+                <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
+            </div>
+
+
+            <div style="margin-top: 5px;">
+                <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
+                <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
+            </div>
+
+        </div>
 
     </div>
 </div>
@@ -110,7 +170,7 @@
 <div class="container recibir-ofertas">
     <div class="container">
 
-      <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+      <h3 class="texto-ofertas-correo"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
 
       <div class="presentacion">
         <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">

@@ -1013,12 +1013,11 @@ body {
 
 /*Formulario Editar Perfil*/
 
-.contenedor-edi-datos-perfil{
+.mi-perfil{
+    background-color: #eeeeee;
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    height: auto;
+    padding: 15px;
 }
 
 .contenedor-datos-perfil{
@@ -1087,6 +1086,11 @@ body {
     color: rgb(60, 60, 60);
 }
 
+.icono-editar{
+    width: 15px;
+    margin-right: 5px;
+}
+
 .contenedor-edi-datos-perfil{
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -1132,7 +1136,6 @@ body {
 }
 
 .contenedor-datos-tarjeta{
-    background-color: #a3d0ff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1140,19 +1143,159 @@ body {
     width: 100%;
 }
 
+.contenedor-agregar-tarjetas{
+    width: 30%;
+}
+
 .boton-agregar-tarjetas{
-    background-color: #293964;
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
     color: white;
-    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }
 
 .boton-agregar-tarjetas:hover{
-    background-color: #27345a;
+    background-color: #1f46d5;
     color: white;
 }
+
+.icono-agregar{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.contenedor-datos-facturacion{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-info-usuarios{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.contenedor-nombre-cedula-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.parte-facturacion{
+    width: 25%;
+}
+
+
+.boton-facturacion-editar{
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.boton-facturacion-editar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.boton-facturacion-borrar{
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.boton-facturacion-borrar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.contenedor-separador-uno{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separador-uno{
+    width: 95%;
+}
+
+.contenedor-boton-facturacion-agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.boton-facturacion-agregar{
+    background-color: #1640D6;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.boton-facturacion-agregar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.contenedor-preferencias{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-recibir-notificaciones{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-aceptar-notificaciones{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
 
 /*Formulario Editar Perfil*/
 
@@ -2027,15 +2170,6 @@ body {
     .boton-editar-perfil:hover{
         background-color: rgb(249, 249, 249);
         color: rgb(60, 60, 60);
-    }
-
-    .contenedor-edi-datos-perfil{
-        width: 100%;
-        background-color: rgb(255, 255, 255);
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .contenedor-datos-personales{
