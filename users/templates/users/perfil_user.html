@@ -140,26 +140,16 @@
 
             <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
 
+            <div class="contenedor-cambiar-contrasena">
+                <a class="icono-cambiarcontrasena" href="{% url 'personal-info' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoContrasena.png' %}" alt="Icono-clave">Cambiar Contraseña</a>
+            </div>
+
+            <div class="contenedor-eliminar-cuenta">
+                <a class="icono-eliminarcuenta" href="{% url 'personal-info' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoBorrarUsuario.png' %}" alt="Icono-Eliminar">Eliminar Cuenta</a>
+            </div>
+
             <div class="contenedor-recibir-notificaciones">
-
-                <img src="{% static 'favicon.ico/IconoNotificaciones.png' %}" alt="Icono-Notificaciones">
-                <a style="font-weight: 500; color: #303030; margin-left: 5px;" class="texto-recibir-notificaciones" href="##">Recibir Notificaciones</a>
-
-                <div class="contenedor-aceptar-notificaciones">
-                    <input type="checkbox" id="recibir notificaciones">
-                </div>
-
-            </div>
-
-            <div style="margin-top: 5px;">
-                <img src="{% static 'favicon.ico/IconoPassword.png' %}" alt="Icono-clave">
-                <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Cambiar Contraseña</a>
-            </div>
-
-
-            <div style="margin-top: 5px;">
-                <img src="{% static 'favicon.ico/IconoPapelera.png' %}" alt="Icono-Eliminar">
-                <a style="font-weight: 500; color: #303030;" href="{% url 'personal-info' %}">Eliminar Cuenta</a>
+                <a class="icono-notificaciones" class="texto-recibir-notificaciones" href="##"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoNotificacion.png' %}" alt="Icono-Notificaciones"> ¿Quieres Recibir Notificaciones? <input class="input-aceptar-notificaciones" type="checkbox"></a>
             </div>
 
         </div>
