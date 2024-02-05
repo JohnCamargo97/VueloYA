@@ -1020,13 +1020,6 @@ body {
     padding: 15px;
 }
 
-.edit-miperfil{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .contenedor-datos-perfil{
     background-color: #1640D6;
     display: flex;
@@ -1080,10 +1073,12 @@ body {
 }
 
 .boton-editar-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
     color: rgb(60, 60, 60);
     padding: 10px 20px;
-    text-align: center;
     text-decoration: none;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
@@ -1249,7 +1244,7 @@ body {
 }
 
 .separador-uno{
-    width: 95%;
+    width: 98%;
 }
 
 .contenedor-boton-facturacion-agregar{
@@ -1345,6 +1340,117 @@ body {
 
 /*Formulario Editar Perfil*/
 
+
+
+
+
+/*Formulario Facturación*/
+
+.texto-datos-personales{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #505050;
+}
+
+.contenedor-formulario-facturacion{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.contenedor-para-actualizar-mis-datos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-datos-facturacion{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.label-datos-facturacion{
+    font-weight: 500;
+    color: #505050;
+    margin-bottom: 5px;
+}
+
+.select-datos-generos{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.input-foto-perfil{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    color: #505050;
+}
+
+.contenedor-boton-actualizar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-regresar-a-perfil{
+    width: 15px;
+    margin-right: 5px;
+}
+
+.boton-actualizar{
+    background-color: #1640D6;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-actualizar:hover{
+    background-color: #1f46d5;
+    color: white;
+    transform: translateY(1px);
+}
+
+/*Formulario Facturación*/
+
+
+
+
+
+/*Vista Agregar o Editar Facturación*/
+
+.select-tipo-documento-situacion-factuacion{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+/*Vista Agregar o Editar Facturación*/
 
 
 
@@ -2157,6 +2263,13 @@ body {
 
 
     /*Formulario Editar Perfil*/
+
+    .edit-miperfil{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
     .contenedor-prueba{
         width: 70%;

@@ -9,91 +9,91 @@
 {{form}}
 <div class="container-fluid" style="background-color: #eeeeee;">
 
-    <div class="container hh-h">
-
-        <div class="contenedor-formulario-editar-perfil">
+    <div class="contenedor-prueba">
             
-            <div class="contenedor-edi-datos-perfil">
-                
-                <div class="contenedor-datos-perfil">
+        <div class="contenedor-edi-datos-perfil">
+            
+            <div class="contenedor-datos-perfil">
 
-                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
-                    <div class="contenedor-nombre-email">
-                        {{ user.username }}
-                        <br>
-                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
-                    </div>
+                <div class="contenedor-img-perfil-edit">
+                    <img class="rounded-circle" src="{{user.uservueloya.picture.url}}">
+                </div>
 
-                    
-                    <div class="parte-usuario">
-                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}">Regresar a Mi Perfil</a>
-                    </div>
+                <div class="contenedor-nombre-email">
 
+                    <div class="contenedor-nombre-miperfil">{{ user.username }}</div>
+
+                    <div class="contenedor-email-miperfil">{{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> </div>
+
+                </div>
+
+                <div class="contenedor-boton-editar">
+                    <a class="boton-editar-perfil" href="{% url 'perfil_user' %}"><img class="icono-regresar-a-perfil" src="{% static 'favicon.ico/IconoFlechaizquierda.png' %}" alt="">Mi Perfil</a>
                 </div>
 
             </div>
 
-            <div class="contenedor-datos-facturacion">
+        </div>
 
-                <div class="texto-datos-personales" style="display: flex; align-items: center; justify-content: center;"><h5 style="color: #505050; padding: 12px;">Datos Facturación</h5></div>
-    
-                    <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
+        <div class="contenedor-datos-facturacion">
 
-                        {% csrf_token %}
+            <div class="texto-datos-personales" style="display: flex; align-items: center; justify-content: center;"><h5 style="color: #505050; padding: 12px;">Datos Facturación</h5></div>
 
-                        <div class="jj-j">
+                <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
 
-                            <div class="cc-c">
+                    {% csrf_token %}
 
-                                <label class="label-datos-facturacion" for="id_nombre">Nombres</label>
-                                <input class="input-datos-facturacion" type="text" name="nombre" value="{{ form.nombre.value }}" maxlength="40" required="" id="id_nombre">
+                    <div class="jj-j">
 
-                                <label class="label-datos-facturacion" for="id_tipoDeDocumento">Tipo de Documento</label>
-                                <select class="input-datos-facturacion" name="tipoDeDocumento" required id="id_tipoDeDocumento">
-                                    <option value="">---------</option>
-                                    <option value="CC" selected>CC</option>                               
-                                    <option value="TI">TI</option>                                
-                                    <option value="Pasaporte">Pasaporte</option>                                 
-                                </select>
+                        <div class="cc-c">
 
-                                <label class="label-datos-facturacion" for="id_departamento">Departamento</label>
-                                <input class="input-datos-facturacion" type="text" name="departamento" value="{{ form.departamento.value }}" maxlength="40" required="" id="id_departamento">
+                            <label class="label-datos-facturacion" for="id_nombre">Nombres</label>
+                            <input class="input-datos-facturacion" type="text" name="nombre" value="{{ form.nombre.value }}" maxlength="40" required="" id="id_nombre">
 
-                                <label class="label-datos-facturacion" for="id_situacionFiscal">Situación Fiscal</label>
-                                <select class="input-datos-facturacion" name="situacionFiscal" required id="id_situacionFiscal">
-                                    <option value="">---------</option>                               
-                                    <option selected value="Persona Natural">Persona Natural</option>                              
-                                    <option value="Persona Juridica">Persona Juridica</option>
-                                </select>
-                            </div>
+                            <label class="label-datos-facturacion" for="id_apellido">Apellidos</label>
+                            <input class="input-datos-facturacion" type="text" name="apellido" value="{{ form.apellido.value }}" maxlength="40" required="" id="id_apellido">
 
-                            <div class="bb-b">
+                            <label class="label-datos-facturacion" for="id_tipoDeDocumento">Tipo de Documento</label>
+                            <select class="select-tipo-documento-situacion-factuacion" name="tipoDeDocumento" required id="id_tipoDeDocumento">
+                                <option value="CC" selected>CC</option>                               
+                                <option value="TI">TI</option>                                
+                                <option value="Pasaporte">Pasaporte</option>                                 
+                            </select>
 
-                                <label class="label-datos-facturacion" for="id_apellido">Apellidos</label>
-                                <input class="input-datos-facturacion" type="text" name="apellido" value="{{ form.apellido.value }}" maxlength="40" required="" id="id_apellido">
-
-                                <label class="label-datos-facturacion" for="id_nDocumento">Número del Documento</label>
-                                <input class="input-datos-facturacion" type="text" name="nDocumento" value="{{ form.nDocumento.value }}" required="" id="id_nDocumento">
-
-                                <label class="label-datos-facturacion" for="id_ciudad">Ciudad</label>
-                                <input class="input-datos-facturacion" type="text" name="ciudad" value="{{ form.ciudad.value }}" maxlength="40" required="" id="id_ciudad">
-
-                                <label class="label-datos-facturacion" for="id_direccion">Dirección</label>
-                                <input class="input-datos-facturacion" type="text" name="direccion" value="{{ form.direccion.value }}" maxlength="40" required="" id="id_direccion">
-                            
-                            </div>
+                            <label class="label-datos-facturacion" for="id_nDocumento">Número del Documento</label>
+                            <input class="input-datos-facturacion" type="text" name="nDocumento" value="{{ form.nDocumento.value }}" required="" id="id_nDocumento">
 
                         </div>
 
-                            <div class="contenedor-boton-actualizar">
-                                <button class="boton-actualizar" type="submit">Actualizar</button>
-                            </div>
+                        <div class="bb-b">
 
-                    </form>
+                            <label class="label-datos-facturacion" for="id_situacionFiscal">Situación Fiscal</label>
+                            <select class="select-tipo-documento-situacion-factuacion" name="situacionFiscal" required id="id_situacionFiscal">                           
+                                <option selected value="Persona Natural">Persona Natural</option>                              
+                                <option value="Persona Juridica">Persona Juridica</option>
+                            </select>
 
-            </div>
+                            <label class="label-datos-facturacion" for="id_departamento">Departamento</label>
+                            <input class="input-datos-facturacion" type="text" name="departamento" value="{{ form.departamento.value }}" maxlength="40" required="" id="id_departamento">
+
+                            <label class="label-datos-facturacion" for="id_ciudad">Ciudad</label>
+                            <input class="input-datos-facturacion" type="text" name="ciudad" value="{{ form.ciudad.value }}" maxlength="40" required="" id="id_ciudad">
+
+                            <label class="label-datos-facturacion" for="id_direccion">Dirección</label>
+                            <input class="input-datos-facturacion" type="text" name="direccion" value="{{ form.direccion.value }}" maxlength="40" required="" id="id_direccion">
+                        
+                        </div>
+
+                    </div>
+
+                        <div class="contenedor-boton-actualizar">
+                            <button class="boton-actualizar" type="submit">Actualizar</button>
+                        </div>
+
+                </form>
 
         </div>
+
 
     </div>
 </div>
