@@ -6,9 +6,9 @@ from users import views as users_views
 
 urlpatterns = [
     path('home', views.home, name='home'),
-    path('busqueda', views.busqueda, name='busqueda'),
+    path('busqueda/<str:origen>/<str:destino>/<int:pas>', views.busqueda, name='busqueda'),
     path('misviajes', views.misviajes, name='misviajes'),
-    path('pagos', views.pagos, name='pagos'),
+    path('pagos/<int:pk>', views.pagos, name='pagos'),
     path('resumen', views.resumen, name='resumen'),
 
     path('users/', include('users.urls')),

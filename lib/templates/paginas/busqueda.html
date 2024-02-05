@@ -11,7 +11,7 @@
   <div class="container">
 
     <div class="contenedor-texto-vuelos">
-      <h3 class="texto-vuelos-econtrados">Vuelos de {{form_response.origen}} a {{form_response.destino}}</h3>
+      <h3 class="texto-vuelos-econtrados">Se muestran resultados de {{origen}} a {{destino}}</h3>
     </div>
 
     <div class="contenedor-busqueda-vuelos">
@@ -48,12 +48,12 @@
     
                   <div class="col">
                     <label for="fecha-ida">Fecha Ida</label>
-                    <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+                    <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
                   </div>
     
                   <div class="col">
                     <label for="fecha-regreso">Fecha Regreso</label>
-                    <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+                    <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
                   </div>
     
                 </div>
@@ -255,10 +255,7 @@
                       <span> Precio final a pagar </span>
                       <span style="font-weight: bold; font-size: 20px; display: block;">{{vuelo.precio}}</span>
                   </div>
-                  <form class="boton-buy" action="" method="POST">
-                    {% csrf_token%}
-                        <button class="boton-comprar" name="Comprar" value="{{vuelo.pk}}" type="submit">Comprar</button>
-                  </form>
+                        <a class="boton-comprar" href="{% url 'pagos' pk=vuelo.pk%}">Comprar</a>
               </div>
             </div>
           </div>

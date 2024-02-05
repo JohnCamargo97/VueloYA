@@ -20,11 +20,10 @@ def home(request):
         
         if form_busqueda.is_valid():
                      
-            request.session['origen'] = request.POST['origen']
-            request.session['destino'] = request.POST['destino']
-            request.session['pasajeros'] = request.POST['pasajeros']
-            print(request.POST)
-            return redirect('busqueda')
+            origen = request.POST['origen']
+            destino = request.POST['destino']
+            pas = request.POST['pasajeros']      
+            return redirect('busqueda', origen, destino, pas)
         else:
             print("campos no validos")
     else:
@@ -37,12 +36,12 @@ def home(request):
     return render(request, 'paginas/home.html', context)
 
 def misviajes(request):
-    return render (request, 'paginas/resumen.html')
+    return render (request, 'paginas/misviajes.html')
     
-def pagos(request):
+def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
-    detallesVuelo = Vuelo.objects.get(pk=VueloSeleccionado['vueloID'])
+    detallesVuelo = Vuelo.objects.get(pk=pk)
     if request.method == "POST":
         userpasajeroForm = userPasajeroForm(request.POST)
         uservoucherForm =  voucherForm(request.POST)
@@ -83,15 +82,26 @@ def pagos(request):
     
     return render (request, 'paginas/pagos.html', context)
 
-def busqueda(request):
-    form_response = request.session
-    lista_resultado = Vuelo.objects.filter(origen__icontains = form_response['origen'], destino__icontains = form_response['destino']).all()
+def busqueda(request, origen, destino, pas):
+
+    lista_resultado = Vuelo.objects.filter(origen__icontains = origen, destino__icontains = destino).all()
+
+    context = {
+        'origen': origen,
+        'destino': destino,
+        'lista_resultado': lista_resultado
+    }
+
     if request.method == "POST":
-        request.session['vueloID'] = request.POST['Comprar']
-        #request.session['pasajeros'] = form_response['pasajeros']
-        return redirect('pagos')
+        form_busqueda = BusquedaForm(request.POST)
+        if form_busqueda.is_valid():
+            origen = request.POST['origen']
+            destino = request.POST['destino']
+            pas = request.POST['pasajeros']      
+            return redirect('busqueda', origen, destino, pas)
     else:
-        return render (request, 'paginas/busqueda.html', {'lista_resultado': lista_resultado, 'form_response': form_response})
+        form_busqueda = BusquedaForm()
+        return render(request, 'paginas/busqueda.html', context)
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')
