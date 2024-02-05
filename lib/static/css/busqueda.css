@@ -1020,43 +1020,39 @@ body {
     padding: 15px;
 }
 
-.contenedor-datos-perfil{
-    display: block;
+.edit-miperfil{
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#1640D6;
-    width: 100%;
+    flex-direction: column;
+}
+
+.contenedor-datos-perfil{
+    background-color: #1640D6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 10px;
     height: auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
 }
 
-.contenedor-imagen-perfil{
+.contenedor-img-perfil-edit{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .rounded-circle{
-    margin-top: 5px;
-    width: 35%;
+    width: 100px;
     cursor: pointer;
     height: auto;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.contenedor-nombre-email{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5px;
+    margin-top: 0;
     margin-bottom: 1rem;
 }
 
@@ -1064,12 +1060,23 @@ body {
     font-size: 20px;
 }
 
+.contenedor-email-miperfil{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nombre-email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .contenedor-boton-editar{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
 .boton-editar-perfil{
@@ -1099,6 +1106,7 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
 }
 
 .contenedor-datos-personales{
@@ -1189,10 +1197,6 @@ body {
 }
 
 .contenedor-nombre-cedula-user{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     width: 60%;
 }
 
@@ -1339,7 +1343,6 @@ body {
     width: 20px;
 }
 
-
 /*Formulario Editar Perfil*/
 
 
@@ -1354,7 +1357,7 @@ body {
     /*Navbar*/
 
     .contenedor-logo-vueloYa{
-        background-color: #eeeeee;
+        background-color: #1640D6;
         padding: 10px;
         font-size: 25px;
         font-weight: 700;
@@ -2155,216 +2158,90 @@ body {
 
     /*Formulario Editar Perfil*/
 
-    .datos-miperfil{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .contenedor-formulario-editar-perfil{
-        width: 85%;
-        padding: 20px;
-    }
-
-    .rounded-circle{
-        width: 70px;
-        cursor: pointer;
-        height: auto;
-        transition: transform 0.5s ease;
-    }
-
-    .rounded-circle:hover{
-        transform: scale(1.1);
+    .contenedor-prueba{
+        width: 70%;
     }
 
     .contenedor-datos-perfil{
         display: flex;
-        align-items: center;
-        background-color:#293964;
-        width: 100%;
-        padding: 10px;
+        flex-direction: row;
         height: 150px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+    }
+    
+    .rounded-circle{
+        width: 100px;
+        cursor: pointer;
+        height: auto;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        margin-bottom: 0;
+        transition: transform 0.5s ease;
+    }
+
+    .rounded-circle:hover{
+        transform: scale(0.9);
+    }
+    
+    .contenedor-nombre-miperfil{
+        font-size: 20px;
+    }
+    
+    .contenedor-email-miperfil{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contenedor-nombre-email{
+        margin-left: 10px;
+        width: 100%;
+        align-items: flex-start;
     }
 
     .contenedor-boton-editar{
-        margin-left: auto;
-    }
-
-    .contenedor-nombre-email{
-        color: white;
-    }
-
-    .contenedor-imagen-perfil{
-        padding: 5px;
-        margin-right: 5px;
+        margin-bottom: 0;
     }
 
     .boton-editar-perfil{
-        background-color: rgb(255, 255, 255);
-        color: rgb(60, 60, 60);
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
+        width: 120px;
     }
-
+    
     .boton-editar-perfil:hover{
         background-color: rgb(249, 249, 249);
         color: rgb(60, 60, 60);
     }
-
-    .contenedor-datos-personales{
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        height: 100px;
+    
+    .icono-editar{
+        width: 15px;
+        margin-right: 5px;
     }
 
     .contenedor-datos{
         width: 50%;
+    }
+
+    .contenedor-datos-personales{
         display: flex;
-        align-items: start;
-        flex-direction: column;
     }
 
-    .contenedor-datos-dos{
-        width: 50%;
-        display:flex;
-        align-items: start;
-        flex-direction: column;
+    .contenedor-agregar-tarjetas{
+        width: 15%;
     }
-
-    .contenedor-datos-metodos-pagos{
-        width: 100%;
-        background-color: white;
-        height: 100px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .contenedor-datos-tarjeta{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .boton-agregar-tarjetas{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .boton-agregar-tarjetas:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-datos-facturacion{
-        width: 100%;
-        background-color: white;
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-info-usuarios{
-        display: flex;
-        align-items: center;
-        padding: 10px;
+    
+    .parte-facturacion{
+        width: 15%;
     }
 
     .contenedor-nombre-cedula-user{
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid #b0b0b0;
-    }
-
-    .boton-facturacion-editar{
-        background-color: #293964;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 5px;  
-    }
-
-    .boton-facturacion-editar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .boton-facturacion-borrar{
-        background-color: #293964;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .boton-facturacion-borrar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-boton-facturacion-agregar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 10px;
+        width: 100%;
     }
 
     .boton-facturacion-agregar{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
+        width: 85%;
     }
 
-    .boton-facturacion-agregar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-preferencias{
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        height: 150px;
-        background-color: white;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-recibir-notificaciones{
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-aceptar-notificaciones{
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
+    .input-aceptar-notificaciones{
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
     }
 
     /*Formulario Editar Perfil*/
