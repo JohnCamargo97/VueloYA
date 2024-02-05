@@ -37,12 +37,12 @@
 
               <div class="col">
                 <label for="fecha-ida">Fecha Ida</label>
-                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida" required>
+                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
               </div>
 
               <div class="col">
                 <label for="fecha-regreso">Fecha Regreso</label>
-                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso" required>
+                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
               </div>
 
             </div>
@@ -85,8 +85,7 @@
               </div>
               <div class="card-footer jamaica">
                 <a class="precio-jamaica" href="">{{oferta.vuelo.precio}}</a>
-                <button class="boton-dos" type="submit">Comprar</button>
-                <a class="boton-facturacion-editar" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Editar</a>
+                <a class="boton-dos" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver mas</a>
               </div>
             </div> 
           {% endfor %}
