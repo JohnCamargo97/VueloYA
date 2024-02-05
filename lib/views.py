@@ -36,7 +36,7 @@ def home(request):
     return render(request, 'paginas/home.html', context)
 
 def misviajes(request):
-    return render (request, 'paginas/resumen.html')
+    return render (request, 'paginas/misviajes.html')
     
 def pagos(request, pk):
     VueloSeleccionado = request.session
