@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.db.models import Count
+from django.db.models import Q
 from .models import Vuelo, historicoReserva, oferta
 from users.models import pasajero
-from .forms import BusquedaForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
+from .forms import BusquedaForm, filtroBusquedaForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
 from users.forms import userPasajeroForm
 from django.forms import modelformset_factory
 from random import sample
@@ -86,14 +88,12 @@ def busqueda(request, origen, destino, pas):
 
     lista_resultado = Vuelo.objects.filter(origen__icontains = origen, destino__icontains = destino).all()
 
-    context = {
-        'origen': origen,
-        'destino': destino,
-        'lista_resultado': lista_resultado
-    }
+    
 
     if request.method == "POST":
         form_busqueda = BusquedaForm(request.POST)
+        form_filtro = filtroBusquedaForm(request.POST)
+        
         if form_busqueda.is_valid():
             origen = request.POST['origen']
             destino = request.POST['destino']
@@ -101,6 +101,18 @@ def busqueda(request, origen, destino, pas):
             return redirect('busqueda', origen, destino, pas)
     else:
         form_busqueda = BusquedaForm()
+        form_filtro = filtroBusquedaForm()
+
+        AEROLINEAS = [v.id_aerolinea.nombre_aerolinea for v in lista_resultado]
+        AEROLINEAS_ID = [v.id_aerolinea_id for v in lista_resultado] 
+        AEROLINEAS_CONTEO = Vuelo.objects.values('id_aerolinea').annotate(conteo=Count('id_aerolinea'))
+        print(AEROLINEAS, AEROLINEAS_ID)
+        context = {
+        'origen': origen,
+        'destino': destino,
+        'aerolineas': AEROLINEAS,
+        'lista_resultado': lista_resultado
+    }
         return render(request, 'paginas/busqueda.html', context)
 
 def resumen(request):

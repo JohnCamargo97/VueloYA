@@ -19,6 +19,28 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
+class filtroBusquedaForm(forms.Form):
+
+    MONEDAS = [
+        ("COP", "COP"),
+        ("USD", "USD"),
+        ("EUR", "EUR"),
+    ]
+    AEROLINEAS = [
+        ("tarjetacredito", "tarjetacredito"),
+        ("tarjetadebito", "tarjetadebito"),
+        ("pse", "pse"),
+        ("criptomonedas", "criptomonedas"),
+        ("efecty", "efecty"),
+        ("sured", "sured"),
+    ]
+    rango_precio = forms.IntegerField(max_value = 450000, min_value=10000000)
+    moneda = forms.ChoiceField(choices=MONEDAS) 
+    aerolinea = forms.MultipleChoiceField(widget= forms.RadioSelect, choices=AEROLINEAS)
+
+    
+
+
 class UpdateUserVYaForm(forms.ModelForm):
     class Meta:
         model = userVueloYa
