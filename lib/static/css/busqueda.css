@@ -1365,7 +1365,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .input-datos-facturacion{
@@ -1450,6 +1450,24 @@ body {
     color: #505050;
 }
 
+.texto-datos-facturacion{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #505050;
+}
+
+.select-tipo-documento-situacion-fisca{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
 /*Vista Agregar o Editar Facturación*/
 
 
@@ -1494,8 +1512,10 @@ body {
         justify-content: center;
     }
 
-
     /*Navbar*/
+
+
+
 
 
     /*Resultados Vuelos*/
@@ -1554,6 +1574,9 @@ body {
     }
 
     /*Resultados Vuelos*/
+
+
+
 
 
     /*Filtro Precio y Moneda*/
@@ -1619,6 +1642,10 @@ body {
     
     /*Filtro Precio y Moneda*/
 
+
+
+
+
     /*Filtro Aerolíneas*/
 
     .filtro-aerolineas{
@@ -1660,6 +1687,9 @@ body {
       }
 
     /*Filtro Aerolíneas*/
+
+
+
 
 
     /*Formulario Vuelos*/
@@ -1782,6 +1812,10 @@ body {
     }
 
     /*Formulario Vuelos*/
+
+
+
+
 
     /*Formulario Log-in*/
 
@@ -1912,6 +1946,10 @@ body {
 
     /*Formulario Log-in*/
 
+
+
+
+
     /*Formulario Sign-Up*/
 
     .mauro-ocho{
@@ -2020,6 +2058,10 @@ body {
     }
     
     /*Formulario Sing-Up*/
+
+
+
+
 
     /*Vista Formulario Pagos*/
 
@@ -2262,6 +2304,8 @@ body {
 
 
 
+
+
     /*Formulario Editar Perfil*/
 
     .edit-miperfil{
@@ -2276,7 +2320,6 @@ body {
     }
 
     .contenedor-datos-perfil{
-        display: flex;
         flex-direction: row;
         height: 150px;
     }
@@ -2359,93 +2402,62 @@ body {
 
     /*Formulario Editar Perfil*/
 
+
+
+
+
     /*Formulario Facturación*/
 
-    .contenedor-formulario-facturacion{
+    .contenedor-actualizar-datos-personales{
         width: 100%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .contenedor-datos-facturacion{
-        width: 100%;
-        background-color: white;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-boton-actualizar{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 10px;
-    }
-
-    .boton-actualizar{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        width: 50%;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .boton-actualizar:hover{
-        background-color: #27345a;
-        color: white;
-        transform: translateY(1px);
-    }
-
-    .jj-j{
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .cc-c{
-        display: flex;
-        align-items: start;
         flex-direction: column;
-        width: 40%;
     }
 
-    .bb-b{
+    .contenedor-dos-actualizar-datos-personales{
+        width: 100%;
         display: flex;
-        align-items: start;
         flex-direction: column;
-        width: 40%;
+    }
 
+    .contenedor-para-actualizar-mis-datos{
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .select-datos-generos{
+        width: 85%;
     }
 
     .input-datos-facturacion{
         width: 85%;
-        height: 40px;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        border: 1px solid #b0b0b0;
-        padding: 5px;
-        color: #505050;
     }
 
-    .input-datos-facturacion:focus{
-        outline: none;
-    }
-
-    .label-datos-facturacion{
-        font-weight: 500;
-        color: #505050;
-        margin-bottom: 5px;
+    .texto-datos-personales{
+        justify-content: center;
     }
 
     /*Formulario Facturación*/
+
+
+
+
+
+    /*Vista Agregar o Editar Facturación*/
+
+    .texto-datos-facturacion{
+        justify-content: center;
+    }
+
+    .select-tipo-documento-situacion-fisca{
+        width: 85%;
+    }
+
+    /*Vista Agregar o Editar Facturación*/
+
+
+
+
 
     /* Vista Mis Viajes*/
 
@@ -2538,9 +2550,10 @@ body {
         transform: scale(1.1);
     }
 
-
-
     /* Vista Mis Viajes*/
+
+
+
 
 
     /*Recibir ofertas al correo*/
@@ -2583,6 +2596,9 @@ body {
     }
 
     /*Recibir ofertas al correo*/
+
+
+
 
 
     /*Footer*/
