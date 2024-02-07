@@ -22,10 +22,10 @@ def home(request):
         
         if form_busqueda.is_valid():
                      
-            origen = request.POST['origen']
-            destino = request.POST['destino']
-            pas = request.POST['pasajeros']      
-            return redirect('busqueda', origen, destino, pas)
+            request.session['origen'] = request.POST['origen']
+            request.session['destino'] = request.POST['destino']
+            request.session['pasajeros'] = request.POST['pasajeros']    
+            return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pas'])
         else:
             print("campos no validos")
     else:
@@ -88,29 +88,30 @@ def busqueda(request, origen, destino, pas):
 
     lista_resultado = Vuelo.objects.filter(origen__icontains = origen, destino__icontains = destino).all()
 
-    
-
     if request.method == "POST":
         form_busqueda = BusquedaForm(request.POST)
         form_filtro = filtroBusquedaForm(request.POST)
-        
+        print(request.POST)
+        if form_filtro.is_valid():
+            print(form_filtro.cleaned_data)
+
         if form_busqueda.is_valid():
-            origen = request.POST['origen']
-            destino = request.POST['destino']
-            pas = request.POST['pasajeros']      
-            return redirect('busqueda', origen, destino, pas)
+            request.session['origen'] = request.POST['origen']
+            request.session['destino'] = request.POST['destino']
+            request.session['pasajeros'] = request.POST['pasajeros']    
+            return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
+        
     else:
         form_busqueda = BusquedaForm()
         form_filtro = filtroBusquedaForm()
 
-        AEROLINEAS = [v.id_aerolinea.nombre_aerolinea for v in lista_resultado]
-        AEROLINEAS_ID = [v.id_aerolinea_id for v in lista_resultado] 
-        AEROLINEAS_CONTEO = Vuelo.objects.values('id_aerolinea').annotate(conteo=Count('id_aerolinea'))
-        print(AEROLINEAS, AEROLINEAS_ID)
+        AEROLINEAS = Vuelo.objects.filter(origen__icontains = origen, destino__icontains = destino).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "conteo")
+        print(AEROLINEAS)
         context = {
         'origen': origen,
         'destino': destino,
         'aerolineas': AEROLINEAS,
+        'form_filtro': form_filtro,
         'lista_resultado': lista_resultado
     }
         return render(request, 'paginas/busqueda.html', context)

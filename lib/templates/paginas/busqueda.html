@@ -18,167 +18,150 @@
 
       <div class="contenido-busquedas">
 
-        <div class="container mauro-dos">
+        <form class="formulario-uno" action="#" method="POST">
+          {% csrf_token%}
+          <div class="container mauro-dos">
 
-          <div class="container navbar-uno">
-    
-            <nav class="navbar">
-              <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
-            </nav>
-    
-              <form class="formulario-uno" action="#" method="post">
-                {% csrf_token%}
-    
-                <div class="contenedor-origen-destino row">
-    
-                  <div class="col">
-                    <label for="origen">Origen</label>
-                    <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
-                  </div>
-    
-                  <div class="col">
-                    <label for="destino">Destino</label>
-                    <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
-                  </div>
-    
-                </div>
-    
-    
-                <div class="contenedor-fechas-vuelos row">
-    
-                  <div class="col">
-                    <label for="fecha-ida">Fecha Ida</label>
-                    <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
-                  </div>
-    
-                  <div class="col">
-                    <label for="fecha-regreso">Fecha Regreso</label>
-                    <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
-                  </div>
-    
-                </div>
-    
-    
-                <div class="contenedor-pasajeros row">
-    
-                  <div class="col">
-    
-                    <label for="pasajeros">Número de Pasajeros</label>
-                    <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
-                      <option value="1">1 pasajero</option>
-                      <option value="2">2 pasajeros</option>
-                      <option value="3">3 pasajeros</option>
-                      <option value="4">4 pasajeros</option>
-                    </select>
-                    
-                  </div>
-    
-                </div>
-                
-                <button class="boton-uno" type="submit">Buscar</button>
-    
-              </form>
-    
-          </div>
-        </div>
-
-        <div class="filtro-precio">
-
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item-s">
-              <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Filtro de Precios
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  <div class="rango-valor">
-
-                    <input class="rango-valor-vuelos" type="range">
-
-                    <div class="rango-precios">
-                      <h3 class="texto-moneda">$ 450.000</h3>
-                      <h3 class="texto-moneda">$ 1.500.000</h3>
+            <div class="container navbar-uno">
+      
+              <nav class="navbar">
+                <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
+              </nav>
+      
+                  <div class="contenedor-origen-destino row">
+      
+                    <div class="col">
+                      <label for="origen">Origen</label>
+                      <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
                     </div>
-
-                  </div>
-
-                  <div class="contenedor-elegir-moneda">
-                    
-                    <div class="monedas-para-elegir">
-
-                      <h3 class="texto-moneda">Moneda</h3>
-
-                        <select class="num-monedas" name="tipo-moneda" id="moneda">
-                          <option class="opciones-monedas" value="COL">COP</option>
-                          <option class="opciones-monedas" value="COL">USD</option>
-                          <option class="opciones-monedas" value="COL">EUR</option>
-                        </select>
-
+      
+                    <div class="col">
+                      <label for="destino">Destino</label>
+                      <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
                     </div>
-
+      
                   </div>
-
-                </div>
-
-              </div>
+      
+      
+                  <div class="contenedor-fechas-vuelos row">
+      
+                    <div class="col">
+                      <label for="fecha-ida">Fecha Ida</label>
+                      <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
+                    </div>
+      
+                    <div class="col">
+                      <label for="fecha-regreso">Fecha Regreso</label>
+                      <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
+                    </div>
+      
+                  </div>
+      
+      
+                  <div class="contenedor-pasajeros row">
+      
+                    <div class="col">
+      
+                      <label for="pasajeros">Número de Pasajeros</label>
+                      <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+                        <option value="1">1 pasajero</option>
+                        <option value="2">2 pasajeros</option>
+                        <option value="3">3 pasajeros</option>
+                        <option value="4">4 pasajeros</option>
+                      </select>
+                      
+                    </div>
+      
+                  </div>
+                  
+                  <button class="boton-uno" type="submit">Buscar</button>
+      
             </div>
           </div>
-        
-        </div>
 
+          <div class="filtro-precio">
 
-        <div class="filtro-aerolineas">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item-s">
+                <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Filtro de Precios
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
 
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item-s">
-              <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Filtros de Aerolíneas
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="rango-valor">
 
-                <div class="accordion-body">
+                      <input class="rango-valor-vuelos" type="range" name="rango_precio" min="450000" max="10000000" id="id_rango_precio">
 
-                  <div class="contenedor-selecion-aerolineas">
+                      <div class="rango-precios">
+                        <h3 class="texto-moneda">$ 450.000</h3>
+                        <h3 class="texto-moneda">$ 10.000.000</h3>
+                      </div>
 
-                    <div class="aerolineas">
-                        <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
-                        <label class="label-aerolineas" for="Aerolineas">Avianca Airlines</label>
-                        <span>(80)</span>
                     </div>
 
-                    <div class="aerolineas">
-                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
-                      <label class="label-aerolineas" for="Aerolineas">Qatar Airways</label>
-                      <span>(20)</span>
-                    </div>
+                    <div class="contenedor-elegir-moneda">
+                      
+                      <div class="monedas-para-elegir">
 
-                    <div class="aerolineas">
-                      <input class="input-aerolineas" type="checkbox" id="seleccionAerolineas" name="Aerolinea" required>
-                      <label class="label-aerolineas" for="Aerolineas">American Airlines</label>
-                      <span>(10)</span>
-                    </div>
+                        <h3 class="texto-moneda">Moneda</h3>
 
+                          <select class="num-monedas" name="moneda" id="id_moneda">
+                            <option class="opciones-monedas" value="COP">COP</option>
+                            <option class="opciones-monedas" value="USD">USD</option>
+                            <option class="opciones-monedas" value="EUR">EUR</option>
+                          </select>
+
+                      </div>
+                    </div>
                   </div>
-
                 </div>
-
               </div>
             </div>
+          
           </div>
-        
-        </div>
 
-        {% for aero in aerolineas %}
-          {{aero}}
-        {% endfor %}
+          <div class="filtro-aerolineas">
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item-s">
+                <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Filtros de Aerolíneas
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+
+                  <div class="accordion-body">
+
+                    <div class="contenedor-selecion-aerolineas">
+                      {% for aerolinea in aerolineas%}
+                        <div class="aerolineas">
+                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="aerolinea">
+                            <label class="label-aerolineas" for="Aerolineas">{{aerolinea.0}}</label>
+                            <span>({{aerolinea.1}})</span>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>       
+          </div> 
+        </form>
+
+        <form class="formulario-uno" method="POST">
+          {% csrf_token%}
+
+          {{form_filtro}}
+          <button class="boton-uno" type="submit">Buscar</button>
+        </form>
 
       </div>
 
+  
 
       <div  class="resultados-busqueda">
         

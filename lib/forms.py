@@ -27,16 +27,16 @@ class filtroBusquedaForm(forms.Form):
         ("EUR", "EUR"),
     ]
     AEROLINEAS = [
-        ("tarjetacredito", "tarjetacredito"),
-        ("tarjetadebito", "tarjetadebito"),
-        ("pse", "pse"),
-        ("criptomonedas", "criptomonedas"),
-        ("efecty", "efecty"),
-        ("sured", "sured"),
+        ("Qatar Airways", "Qatar Airways"),
+        ("Eurowings", "United Airlines"),
+        ("Austrian Airlines", "Austrian Airlines"),
+        ("American Airlines", "American Airlines"),
+        ("China Airlines", "China Airlines"),
+        ("avianca", "avianca"),
     ]
-    rango_precio = forms.IntegerField(max_value = 450000, min_value=10000000)
+    rango_precio = forms.IntegerField(max_value = 10000000, min_value=450000)
     moneda = forms.ChoiceField(choices=MONEDAS) 
-    aerolinea = forms.MultipleChoiceField(widget= forms.RadioSelect, choices=AEROLINEAS)
+    aerolinea = forms.MultipleChoiceField(choices=AEROLINEAS)
 
     
 
