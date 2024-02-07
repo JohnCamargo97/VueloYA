@@ -280,7 +280,7 @@ body {
 .boton-tres{
     background-color: #1640D6;
     width: 20%;
-    height: 30px;
+    padding: 8px;
     border-radius: 8px;
     border: none;
     margin-top: 6px;
@@ -294,11 +294,10 @@ body {
 
 .ofertas-correo{
     width: 78%;
-    height: 32px;
+    padding: 8px;
     border: none;
     border-radius: 8px;
     background-color: #eeeeee;
-    padding: 10px;
     border: solid 1px #999999;
 }
 
@@ -362,6 +361,7 @@ body {
 
 
 .iconos-redes-sociales{
+    width: 40px;
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
@@ -770,6 +770,7 @@ body {
 
 .boton-comprar-busqueda:hover{
     background-color: #284ed8;
+    color: #ffffff;
     transform: translateY(1px);
 }
 
@@ -1573,13 +1574,7 @@ body {
     /*Navbar*/
 
     .contenedor-logo-vueloYa{
-        background-color: #1640D6;
-        padding: 10px;
         font-size: 25px;
-        font-weight: 700;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        cursor: pointer;
     }
 
     .logo-vueloya{
@@ -2599,33 +2594,10 @@ body {
 
     .ofertas-correo{
         width: 75%;
-        height: 42px;
-        border: none;
-        border-radius: 8px;
-        background-color: #eeeeee;
-        padding: 10px;
-        border: solid 1px #999999;
     }
 
     .texto-ofertas-correo{
-        color: #505050;
         font-size: 30px;
-    
-    }
-
-    .boton-tres{
-        background-color: #2563ff;
-        width: 20%;
-        height: 40px;
-        border-radius: 8px;
-        margin: 10px;
-        border: none;
-        color: white;
-    }
-
-    .boton-tres:hover{
-        background-color: #2d69ff;
-        transform: translateY(1px);
     }
 
     /*Recibir ofertas al correo*/
