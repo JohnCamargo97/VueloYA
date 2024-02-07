@@ -64,16 +64,18 @@ body {
 
 .mauro-uno{
     background-color: #eeeeee;
-    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    height: 360px; 
+    height: 400px; 
 
 }
 
 .mauro-dos{
     background-color: #1640D6;
-    height: 320px;
+    height: auto;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,6 +258,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #1640D6;
+    width: 100px;
     padding: 10px;
     color: #ffffff;
     text-decoration: none;
@@ -280,7 +283,7 @@ body {
     background-color: #eeeeee;
     display: flex;
     align-items: center;
-    height: 680px;
+    height: 550px;
     margin-top: 20px;
 }
 
@@ -637,13 +640,6 @@ body {
 
 
     /*Top lugares más buscados*/
-
-    .mauro-tres{
-        background-color: #eeeeee;
-        display: flex;
-        align-items: center;
-        height: 600px;
-    }
     
     .img-fluid{
         margin-top: 0px;

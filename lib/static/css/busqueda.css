@@ -40,7 +40,8 @@ body {
 
 .mauro-dos{
     background-color: #1640D6;
-    height: 320px;
+    height: auto;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,7 +308,7 @@ body {
 
 .texto-ofertas-correo{
     color: #505050;
-    font-size: 22px;
+    font-size: 20px;
 
 }
 
@@ -627,6 +628,7 @@ body {
 
 .resultados-busqueda{
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -741,6 +743,7 @@ body {
     background-color: white;
     border: solid 1px #d4d4d4;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-end-end-radius: 8px;
     border-end-start-radius: 8px;
@@ -753,16 +756,19 @@ body {
     justify-content: center;
 }
 
-.boton-comprar{
+.boton-comprar-busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #1640D6;
+    width: 100px;
+    height: 40px;
     color: #ffffff;
+    text-decoration: none;
     border-radius: 8px;
-    border: none;
-    padding: 10px;
-
 }
 
-.boton-comprar:hover{
+.boton-comprar-busqueda:hover{
     background-color: #284ed8;
     transform: translateY(1px);
 }
@@ -1015,7 +1021,7 @@ body {
 
 .mi-perfil{
     background-color: #eeeeee;
-    width: 100%;
+    margin-top: 10px;
     height: auto;
     padding: 15px;
 }
@@ -1481,7 +1487,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    margin-top: 10px;
     height: auto;
     padding: 20px;
 }
@@ -1622,10 +1628,6 @@ body {
     }
 
     .resultados-busqueda{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         margin: 10px;
     }
 
@@ -1864,18 +1866,6 @@ body {
         font-size: 14px;
         padding: 2px 6px;
         color: #808080;
-    }
-    
-    .precio-total-vuelo{
-        width: 100%;
-        height: auto;
-        background-color: white;
-        border: solid 1px #d4d4d4;
-        display: flex;
-        justify-content: space-between;
-        border-end-end-radius: 8px;
-        border-end-start-radius: 8px;
-        padding: 5px;
     }
     
     .boton-buy{
