@@ -7,6 +7,8 @@ from lib.forms import UpdateUserVYaForm
 from users.forms import userFactForm
 from .models import userFacturacion
 
+def inicio_user(request):
+    return render(request, 'users/inicio_user.html')
 
 def register(request):
     

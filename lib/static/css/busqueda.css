@@ -1567,6 +1567,88 @@ body {
 
 
 
+/*Vista Inicio Log-in*/
+
+.fondo-login{
+    background-color: #eeeeee;
+    height: 710px;
+}
+
+.contenedor-cuerpo-login{
+    width: 100%;
+    height: 710px;
+}
+
+.contenedor-carta-login{
+    width: 100%;
+    height: 710px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contenedor-imagen-logo-vueloya{
+    width: 100%;
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:("../img/Planeta.png");
+     margin-top: 50px;
+}
+
+.contenedor-singin-and-singup{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.contenedor-botonsingin-botonsingup{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.botonsingin{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.botonsingin:hover{
+    color: white;
+}
+
+.botonsingup{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.botonsingup:hover{
+    color: white;
+}
+
+/*Vista Inicio Log-in*/
+
+
+
+
+
 /*Pantalla PC*/
 
 @media only screen and (min-width: 1080px) {
