@@ -36,7 +36,7 @@ class filtroBusquedaForm(forms.Form):
     ]
     rango_precio = forms.IntegerField(max_value = 10000000, min_value=450000)
     moneda = forms.ChoiceField(choices=MONEDAS) 
-    aerolinea = forms.MultipleChoiceField(choices=AEROLINEAS)
+    aerolinea = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=AEROLINEAS)
 
     
 
