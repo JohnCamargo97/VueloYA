@@ -381,98 +381,120 @@ body {
 
 /*Vista Registrarse Responsive*/
 
-.mauro-ocho{
+.contenedor-centrar-cartas-signup{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signup{
+.contenedor-mensaje-de-bienvenida-registro{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signup{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-registrarse{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 700px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
 
-.cabecera-iniciar-signup{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.contenido-carta-signup{
-    width: 95%;
+.contenido-carta-singup{
+    width: 100%;
+    height: auto;
 }
 
 .parte-registrarse{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-formulario-registrarse{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.input-formulario-login{
-    border-radius: 20px;
-    border: solid 2px #505050;
-    height: 50px;
-}
-
-.input-formulario-login:focus{
+.input-formulario-registrarse:focus{
     outline: none;
-}
-
-.boton-registrarse{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-registrarse:hover{
-    transform: translateY(1px);
-}
-
-.texto-ya-tengo-cuenta{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
 }
 
 .aceptar-terminos{
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-acepto-terminos{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-acepto-terminos:hover{
+    color: white;
+}
+
+.aceptacion-terminos{
+    color: white;
+}
+
+.aceptacion-terminos:hover{
+    color: white;
+}
+
+.boton-registrarse{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
     padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-texto-ya-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
-    color: #505050;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.texto-ya-tengo-cuenta{
+    color: white;
+}
+
+.texto-ya-tengo-cuenta:hover{
+    color: white;
 }
 
 .form-text-error-datos{
-    color: #d03737;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 /*Vista Registrarse Responsive*/
@@ -483,126 +505,139 @@ body {
 
 /*Vista Iniciar Sesión Responsive*/
 
-.mauro-siete{
+.contenedor-centrar-cartas-signin{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signin{
+.contenedor-mensaje-de-bienvenida{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signin{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-iniciarsesion{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 550px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-}
-
-.cabecera-iniciar{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5px;
 }
 
 .contenido-carta-singin{
-    width: 95%;
+    width: 100%;
+    height: auto;
 }
 
 .parte-usuario{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-username-password{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-
-
-.boton-iniciar{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-iniciar:hover{
-    transform: translateY(1px);
-}
-
-.texto-no-tengo-cuenta{
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
-
+.input-username-password:focus{
+    outline: none;
 }
 
 .parte-recordar-usuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-olvido-contrasena{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-olvido-contrasena:hover{
+    color: rgb(214, 214, 214);
+
+}
+
+.boton-iniciar{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-google{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.continuar-con-google{
+    background-color: white;
+    color: #505050;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.continuar-con-google:hover{
     color: #505050;
 }
 
-.imagen-usuario{
-    cursor: pointer;
-    width: 80px;
+.icono-google-and-flecha{
+    width: 35px;
 }
 
-.imagen-usuario{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.imagen-usuario:hover{
-    transform: scale(1.1);
-}
-
-.logos-redes-sociales {
+.contenedor-texto-no-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    margin-top: 20px;
 }
 
-.logos-redes-sociales a{
-    margin-left: 15px;
+.texto-no-tengo-cuenta{
+    color: white;
 }
 
-.iconos-redes-sociales{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+.texto-no-tengo-cuenta:hover{
+    color: white;
 }
 
-.iconos-redes-sociales:hover{
-    transform: scale(1.1);
-}
 
 /*Vista Iniciar Sesión Responsive*/
 
@@ -1945,7 +1980,7 @@ body {
 
     /*Formulario Log-in*/
 
-    .mauro-siete{
+    /*.mauro-siete{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2052,7 +2087,7 @@ body {
 
     .imagen-usuario{
         transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
+    /*}
     
     .imagen-usuario:hover{
         transform: scale(1.1);
@@ -2064,7 +2099,7 @@ body {
 
     .iconos-redes-sociales{
         transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
+    /*}
     
     .iconos-redes-sociales:hover{
         transform: scale(1.1);
