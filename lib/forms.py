@@ -19,7 +19,7 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
-class filtroBusquedaForm(forms.Form):
+class filtroForm(forms.Form):
 
     MONEDAS = [
         ("COP", "COP"),

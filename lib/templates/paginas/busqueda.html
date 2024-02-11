@@ -74,11 +74,14 @@
       
                   </div>
                   
-                  <button class="boton-uno" type="submit">Buscar</button>
+                  <button class="boton-uno" type="submit" name="busqueda", value="busqueda">Buscar</button>
       
             </div>
           </div>
+        </form>
 
+        <form class="formulario-uno" action="#" method="POST">
+          {% csrf_token%}
           <div class="filtro-precio">
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -150,13 +153,7 @@
               </div>
             </div>       
           </div> 
-        </form>
-
-        <form class="formulario-uno" method="POST">
-          {% csrf_token%}
-
-          {{form_filtro}}
-          <button class="boton-uno" type="submit">Buscar</button>
+          <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
         </form>
 
       </div>
