@@ -1978,247 +1978,71 @@ body {
 
 
 
-    /*Formulario Log-in*/
 
-    /*.mauro-siete{
+    /*Vista Inicio Log-in*/
+
+    .fondo-login{
+        background: linear-gradient(to bottom, #ffd448, #b400b4); /* Cambia los colores según tus preferencias */
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 20px;
+    }
+
+    .contenedor-carta-login{
+        flex-direction: row;
+        padding: 20px;
+        width: 80%;
         height: auto;
     }
 
-    .carta-imagen-signin{
-        width: 35%;
-        height: 700px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image:url("../img/Avion.png");
-        border-radius: 8px 0px 0px 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    .contenedor-singin-and-singup{
+        height: 600px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 50px;
     }
 
-    .centrar-cartas-signin{
+    .contenedor-botonsingin-botonsingup{
         width: 100%;
-        height: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 100px;
+        justify-content: flex-start;
     }
 
-    .cuerpo-carta-signin{
-        background-color: #eeeeee;
-        width: 35%;
-        height: 700px;
-        border-radius: 0px 8px 8px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    .contenedor-botonsingup{
+        margin-left: 50px;
+    }
+    
+    .botonsingin{
+        padding: 20px 35px;
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
     }
 
-    .cabecera-iniciar{
-        color: #505050;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .botonsingin:hover{
+        background-color: rgb(252, 66, 66);
+        transform: scale(1.1);
+    }
+    
+    .botonsingup{
+        padding: 20px 35px;
     }
 
-    .contenido-carta-singin{
-        width: 90%;
-    }
-
-    .parte-usuario{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-    }
-
-    .input-formulario-login{
-        border-radius: 20px;
-        border: solid 2px #505050;
-        height: 50px;
-    }
-
-    .input-formulario-login:focus{
-        outline: none;
-    }
-
-    .boton-iniciar{
-        background-color: white;
-        width: 60%;
-        height:40px;
-        border-radius: 20px;
-        border: solid 2px #505050;
-        margin-top: 6px;
-        color: #505050;
-    }
-
-    .boton-iniciar:hover{
+    .botonsingup:hover{
+        background-color: rgb(252, 66, 66);
         transform: translateY(1px);
     }
 
-    .texto-no-tengo-cuenta{
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #505050;
-
-    }
-
-    .parte-recordar-usuario{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        margin-bottom: 5px;
-        color: #505050;
-    }
-
-    .imagen-usuario{
-        cursor: pointer;
-
-    }
-
-    .imagen-usuario{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    /*}
-    
-    .imagen-usuario:hover{
-        transform: scale(1.1);
-    }
-
-    .logos-redes-sociales a{
-        margin-left: 15px;
-    }
-
-    .iconos-redes-sociales{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    /*}
-    
-    .iconos-redes-sociales:hover{
-        transform: scale(1.1);
-    }
-
-    /*Formulario Log-in*/
-
-
-
-
-
-    /*Formulario Sign-Up*/
-
-    .mauro-ocho{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .contenedor-imagen-logo-vueloya{
         height: auto;
     }
 
-    .carta-imagen-signup{
-        background-color: #eeeeee;
-        width: 35%;
-        height: 650px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image:url("../img/Avion.png");
-        border-radius: 8px 0px 0px 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .centrar-cartas-signup{
+    .imagen-vueloya{
         width: 100%;
-        height: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 40px;
+        height: 600px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
     }
 
-    .cuerpo-carta-signup{
-        background-color: #eeeeee;
-        width: 40%;
-        height: 650px;
-        border-radius: 0px 8px 8px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .cabecera-iniciar-signup{
-        color: #505050;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5px;
-    }
-
-    .contenido-carta-signup{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-    }
-
-    .parte-registrarse{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-    }
-
-    .input-formulario-login{
-        border-radius: 20px;
-        border: solid 2px #505050;
-        height: 50px;
-    }
-
-    .input-formulario-login:focus{
-        outline: none;
-    }
-
-    .boton-registrarse{
-        background-color: white;
-        width: 60%;
-        height:40px;
-        border-radius: 20px;
-        border: solid 2px #505050;
-        margin-top: 6px;
-        color: #505050;
-    }
-
-    .boton-registrarse:hover{
-        transform: translateY(1px);
-    }
-
-    .texto-ya-tengo-cuenta{
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #505050;
-    }
-
-    .aceptar-terminos{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        color: #505050;
-    }
-    
-    /*Formulario Sing-Up*/
+    /*Vista Inicio Log-in*/
 
 
 

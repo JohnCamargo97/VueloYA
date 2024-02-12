@@ -100,7 +100,7 @@ def busqueda(request, origen, destino, pas):
             request.session['pasajeros'] = request.POST['pasajeros']
             request.session['rango_precio'] = request.POST['rango_precio']
             request.session['aerolinea'] = request.POST['aerolinea']
-
+ 
             return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
         else:
             return render(request, 'paginas/busqueda.html', context)    
