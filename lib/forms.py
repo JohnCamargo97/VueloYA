@@ -19,6 +19,28 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
+class filtroBusquedaForm(forms.Form):
+
+    MONEDAS = [
+        ("COP", "COP"),
+        ("USD", "USD"),
+        ("EUR", "EUR"),
+    ]
+    AEROLINEAS = [
+        ("Qatar Airways", "Qatar Airways"),
+        ("Eurowings", "United Airlines"),
+        ("Austrian Airlines", "Austrian Airlines"),
+        ("American Airlines", "American Airlines"),
+        ("China Airlines", "China Airlines"),
+        ("avianca", "avianca"),
+    ]
+    rango_precio = forms.IntegerField(max_value = 10000000, min_value=450000)
+    moneda = forms.ChoiceField(choices=MONEDAS) 
+    aerolinea = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=AEROLINEAS)
+
+    
+
+
 class UpdateUserVYaForm(forms.ModelForm):
     class Meta:
         model = userVueloYa

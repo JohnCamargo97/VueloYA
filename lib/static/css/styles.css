@@ -26,7 +26,7 @@ body {
 .contenedor-logo-vueloYa{
     background-color: #1640D6;
     padding: 8px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -46,7 +46,7 @@ body {
 }
 
 .contenedor-menu-opciones:hover{
-    border-bottom: 1px solid #505050;
+    border-bottom: none;
 }
 
 .contenedor-nombre-vueloya{
@@ -496,6 +496,7 @@ body {
 
 
 .iconos-redes-sociales{
+    width: 40px;
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
@@ -530,7 +531,7 @@ body {
     }
 
     .contenedor-logo-vueloYa{
-        padding: 10px;
+        font-size: 25px;
     }
 
     .contenedor-nombre-vueloya{
@@ -570,6 +571,10 @@ body {
     .linea-separadora{
         margin-right: 10px;
         border-right: solid 1px #828282;
+    }
+
+    .contenedor-menu-opciones:hover{
+        border-bottom: 1px solid #505050;
     }
 
     /*Navbar*/
@@ -671,6 +676,12 @@ body {
         justify-content: center;
         height: 350px;
     }
+
+    .texto-ofertas{
+
+        font-size: 30px;
+    }
+    
 
 
     /*Recibir ofertas al correo*/

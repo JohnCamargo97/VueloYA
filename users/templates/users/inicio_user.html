@@ -1,0 +1,59 @@
+{% extends "indexdos.html" %}
+
+{% block titulo %} Inicio Sesión {% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+<div class="contanier-fluid fondo-login">
+
+    <div class="contenedor-carta-login">
+
+        <div class="contenedor-imagen-logo-vueloya">
+            <img class="imagen-vueloya" src="{% static 'img/LogoVueloYA.png' %}" alt="">
+        </div>
+
+        <div class="contenedor-singin-and-singup">
+
+            <div class="sub-bienvenido">
+                <h3>Bienvenido</h3>
+            </div>
+
+            <div class="texto-de-bienvenida">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, reprehenderit expedita, vel, dolorem praesentium earum veniam iusto voluptatem.
+            </div>
+
+            <div class="contenedor-botonsingin-botonsingup">
+
+                <div class="contenedor-botonsingin"><a class="botonsingin" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a></div>
+
+                <div class="contenedor-botonsingup"><a class="botonsingup" href="{% url 'registrarse' %}">Registrarse</a></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
