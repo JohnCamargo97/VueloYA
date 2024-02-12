@@ -139,12 +139,12 @@
 
                   <div class="accordion-body">
 
-                    <div class="contenedor-selecion-aerolineas">
+                    <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
                       {% for aerolinea in aerolineas%}
                         <div class="aerolineas">
-                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="aerolinea">
-                            <label class="label-aerolineas" for="Aerolineas">{{aerolinea.0}}</label>
-                            <span>({{aerolinea.1}})</span>
+                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="aerolinea" value="{{aerolinea.1}}">
+                            <label class="label-aerolineas">{{aerolinea.0}}</label>
+                            <span>({{aerolinea.2}})</span>
                         </div>
                       {% endfor %}
                     </div>
@@ -156,6 +156,11 @@
           <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
         </form>
 
+        <form class="formulario-uno" action="#" method="POST">
+          {% csrf_token%}
+          {{form_filtro}}
+          <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
+        </form>
       </div>
 
   
