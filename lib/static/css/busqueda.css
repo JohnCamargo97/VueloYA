@@ -40,7 +40,8 @@ body {
 
 .mauro-dos{
     background-color: #1640D6;
-    height: 320px;
+    height: auto;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,7 +280,7 @@ body {
 .boton-tres{
     background-color: #1640D6;
     width: 20%;
-    height: 30px;
+    padding: 8px;
     border-radius: 8px;
     border: none;
     margin-top: 6px;
@@ -293,11 +294,10 @@ body {
 
 .ofertas-correo{
     width: 78%;
-    height: 32px;
+    padding: 8px;
     border: none;
     border-radius: 8px;
     background-color: #eeeeee;
-    padding: 10px;
     border: solid 1px #999999;
 }
 
@@ -307,7 +307,7 @@ body {
 
 .texto-ofertas-correo{
     color: #505050;
-    font-size: 22px;
+    font-size: 20px;
 
 }
 
@@ -361,6 +361,7 @@ body {
 
 
 .iconos-redes-sociales{
+    width: 40px;
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
@@ -380,98 +381,120 @@ body {
 
 /*Vista Registrarse Responsive*/
 
-.mauro-ocho{
+.contenedor-centrar-cartas-signup{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signup{
+.contenedor-mensaje-de-bienvenida-registro{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signup{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-registrarse{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 700px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
 
-.cabecera-iniciar-signup{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.contenido-carta-signup{
-    width: 95%;
+.contenido-carta-singup{
+    width: 100%;
+    height: auto;
 }
 
 .parte-registrarse{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-formulario-registrarse{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.input-formulario-login{
-    border-radius: 20px;
-    border: solid 2px #505050;
-    height: 50px;
-}
-
-.input-formulario-login:focus{
+.input-formulario-registrarse:focus{
     outline: none;
-}
-
-.boton-registrarse{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-registrarse:hover{
-    transform: translateY(1px);
-}
-
-.texto-ya-tengo-cuenta{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
 }
 
 .aceptar-terminos{
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-acepto-terminos{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-acepto-terminos:hover{
+    color: white;
+}
+
+.aceptacion-terminos{
+    color: white;
+}
+
+.aceptacion-terminos:hover{
+    color: white;
+}
+
+.boton-registrarse{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
     padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-texto-ya-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
-    color: #505050;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.texto-ya-tengo-cuenta{
+    color: white;
+}
+
+.texto-ya-tengo-cuenta:hover{
+    color: white;
 }
 
 .form-text-error-datos{
-    color: #d03737;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 /*Vista Registrarse Responsive*/
@@ -482,126 +505,139 @@ body {
 
 /*Vista Iniciar Sesión Responsive*/
 
-.mauro-siete{
+.contenedor-centrar-cartas-signin{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signin{
+.contenedor-mensaje-de-bienvenida{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signin{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-iniciarsesion{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 550px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-}
-
-.cabecera-iniciar{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5px;
 }
 
 .contenido-carta-singin{
-    width: 95%;
+    width: 100%;
+    height: auto;
 }
 
 .parte-usuario{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-username-password{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-
-
-.boton-iniciar{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-iniciar:hover{
-    transform: translateY(1px);
-}
-
-.texto-no-tengo-cuenta{
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
-
+.input-username-password:focus{
+    outline: none;
 }
 
 .parte-recordar-usuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-olvido-contrasena{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-olvido-contrasena:hover{
+    color: rgb(214, 214, 214);
+
+}
+
+.boton-iniciar{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-google{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.continuar-con-google{
+    background-color: white;
+    color: #505050;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.continuar-con-google:hover{
     color: #505050;
 }
 
-.imagen-usuario{
-    cursor: pointer;
-    width: 80px;
+.icono-google-and-flecha{
+    width: 35px;
 }
 
-.imagen-usuario{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.imagen-usuario:hover{
-    transform: scale(1.1);
-}
-
-.logos-redes-sociales {
+.contenedor-texto-no-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    margin-top: 20px;
 }
 
-.logos-redes-sociales a{
-    margin-left: 15px;
+.texto-no-tengo-cuenta{
+    color: white;
 }
 
-.iconos-redes-sociales{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+.texto-no-tengo-cuenta:hover{
+    color: white;
 }
 
-.iconos-redes-sociales:hover{
-    transform: scale(1.1);
-}
 
 /*Vista Iniciar Sesión Responsive*/
 
@@ -627,6 +663,7 @@ body {
 
 .resultados-busqueda{
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -741,6 +778,7 @@ body {
     background-color: white;
     border: solid 1px #d4d4d4;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-end-end-radius: 8px;
     border-end-start-radius: 8px;
@@ -753,17 +791,21 @@ body {
     justify-content: center;
 }
 
-.boton-comprar{
+.boton-comprar-busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #1640D6;
+    width: 100px;
+    height: 40px;
     color: #ffffff;
+    text-decoration: none;
     border-radius: 8px;
-    border: none;
-    padding: 10px;
-
 }
 
-.boton-comprar:hover{
+.boton-comprar-busqueda:hover{
     background-color: #284ed8;
+    color: #ffffff;
     transform: translateY(1px);
 }
 
@@ -1015,7 +1057,7 @@ body {
 
 .mi-perfil{
     background-color: #eeeeee;
-    width: 100%;
+    margin-top: 10px;
     height: auto;
     padding: 15px;
 }
@@ -1457,7 +1499,7 @@ body {
     color: #505050;
 }
 
-.select-tipo-documento-situacion-fisca{
+.select-tipo-documento-situacion-fiscal{
     width: 100%;
     height: 40px;
     border-radius: 4px;
@@ -1474,6 +1516,164 @@ body {
 
 
 
+/* Vista Mis Viajes*/
+
+.cotenedor-all-misviajes{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: auto;
+    padding: 20px;
+}
+
+.contenedor-registro-misviajes{
+    width: 100%;
+}
+
+.registro-misviajes-uno{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-nombre-logo-aerolinea{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contenedor-logo-aerolinea-nombre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-informacion-del-vuelo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.ida-horasalida-escalas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ida-horaregreso-escalas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-estado-del-vuelo-precio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #b0b0b0;
+}
+
+.dias-de-viaje-dos{
+    display: none;
+}
+
+.logo-avianca-misviajes{
+    width: 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    height: auto;
+    transition: transform 0.5s ease;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-avianca-misviajes:hover{
+    transform: scale(1.1);
+}
+
+/* Vista Mis Viajes*/
+
+
+
+
+
+/*Vista Inicio Log-in*/
+
+.contenedor-carta-login{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contenedor-singin-and-singup{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 412px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.contenedor-botonsingin-botonsingup{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.botonsingin{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.botonsingin:hover{
+    color: white;
+}
+
+.botonsingup{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.botonsingup:hover{
+    color: white;
+}
+
+.contenedor-imagen-logo-vueloya{
+    width: 100%;
+    height: 300px;
+}
+
+.imagen-vueloya{
+    width: 100%;
+}
+
+/*Vista Inicio Log-in*/
+
+
+
+
+
 /*Pantalla PC*/
 
 @media only screen and (min-width: 1080px) {
@@ -1481,13 +1681,7 @@ body {
     /*Navbar*/
 
     .contenedor-logo-vueloYa{
-        background-color: #1640D6;
-        padding: 10px;
         font-size: 25px;
-        font-weight: 700;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        cursor: pointer;
     }
 
     .logo-vueloya{
@@ -1536,10 +1730,6 @@ body {
     }
 
     .resultados-busqueda{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         margin: 10px;
     }
 
@@ -1554,23 +1744,6 @@ body {
     .texto-prueba{
         color: white;
         font-size: 40px;
-    }
-
-    .imagen-informacion{
-        width: 100%;
-        height: 30%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.3),
-            rgba(0,0,0,0.3)
-        ) 
-         ,url("../img/PlayaMexico.png");
-        padding: 12px;
-        margin-bottom: 20px;
-        border-radius: 10px;
     }
 
     /*Resultados Vuelos*/
@@ -1780,18 +1953,6 @@ body {
         color: #808080;
     }
     
-    .precio-total-vuelo{
-        width: 100%;
-        height: auto;
-        background-color: white;
-        border: solid 1px #d4d4d4;
-        display: flex;
-        justify-content: space-between;
-        border-end-end-radius: 8px;
-        border-end-start-radius: 8px;
-        padding: 5px;
-    }
-    
     .boton-buy{
         display: flex;
         align-items: center;
@@ -1819,7 +1980,7 @@ body {
 
     /*Formulario Log-in*/
 
-    .mauro-siete{
+    /*.mauro-siete{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1926,7 +2087,7 @@ body {
 
     .imagen-usuario{
         transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
+    /*}
     
     .imagen-usuario:hover{
         transform: scale(1.1);
@@ -1938,7 +2099,7 @@ body {
 
     .iconos-redes-sociales{
         transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
+    /*}
     
     .iconos-redes-sociales:hover{
         transform: scale(1.1);
@@ -2449,7 +2610,7 @@ body {
         justify-content: center;
     }
 
-    .select-tipo-documento-situacion-fisca{
+    .select-tipo-documento-situacion-fiscal{
         width: 85%;
     }
 
@@ -2461,91 +2622,48 @@ body {
 
     /* Vista Mis Viajes*/
 
-    .cotenedor-all-misviajes{
-        background-color: #eeeeee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: auto;
-        padding: 20px;
-    }
-
-    .contenedor-historial-misviajes{
-        height: auto;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-registro-misviajes{
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .registro-misviajes-uno{
-        background-color: white;
-        width: 100%;
-        height: 180px;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
     .contenedor-misviajes-num-uno{
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-nombre-logo-aerolinea{
-        width: 30%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        border-right: 1px solid #808080;
-    }
-
-    .contenedor-logo-aerolinea-nombre{
-        display: flex;
-        align-items: center;
-        padding: 5px;
-    }
-
-    .contenedor-informacion-del-vuelo{
-        width: 50%;
-        height: 100%;
+        height: 160px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        border-right: 1px solid #808080;
+        margin-top: 20px;
     }
-
-    .contenedor-estado-valor-vuelos{
-        width: 30%;
-        height: 100%;
+    
+    .contenedor-logo-aerolinea-nombre{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    
+    .contenedor-informacion-del-vuelo{
+        width: 40%;
+        border-left: 1px solid #999999;
+        border-right: 1px solid #999999;
+    }
+    
+    .contenedor-estado-del-vuelo-precio{
+        flex-direction: column;
+        border-top: none;
     }
 
+    .dias-de-viaje{
+        display: none;
+    }
+
+    .dias-de-viaje-dos{
+        display: flex;
+    }
+    
+
+    .contenedor-registro-misviajes{
+        width: 70%;
+    }
+    
     .logo-avianca-misviajes{
-        width: 50px;
-        border-radius: 100px;
-        cursor: pointer;
-        height: auto;
-        transition: transform 0.5s ease;
-        border: 1px solid #eeeeee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        width: 60px;
     }
-
+    
     .logo-avianca-misviajes:hover{
         transform: scale(1.1);
     }
@@ -2566,33 +2684,10 @@ body {
 
     .ofertas-correo{
         width: 75%;
-        height: 42px;
-        border: none;
-        border-radius: 8px;
-        background-color: #eeeeee;
-        padding: 10px;
-        border: solid 1px #999999;
     }
 
     .texto-ofertas-correo{
-        color: #505050;
         font-size: 30px;
-    
-    }
-
-    .boton-tres{
-        background-color: #2563ff;
-        width: 20%;
-        height: 40px;
-        border-radius: 8px;
-        margin: 10px;
-        border: none;
-        color: white;
-    }
-
-    .boton-tres:hover{
-        background-color: #2d69ff;
-        transform: translateY(1px);
     }
 
     /*Recibir ofertas al correo*/
