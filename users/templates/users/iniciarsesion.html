@@ -6,80 +6,78 @@
 
 {% block contenido %}
 
+<div class="contanier-fluid fondo-iniciar-sesion">
 
-<div class="container-fluid mauro-siete">
+    <div class="contenedor-centrar-cartas-signin">
 
-    <div class="container centrar-cartas-signin">
+        <div class="contenedor-mensaje-de-bienvenida">
 
-            <div class="carta-imagen-signin"></div>
-            
-            <div class="cuerpo-carta-signin">
-
-                <div class="cabecera-iniciar">
-                    <img class="imagen-usuario" src="{% static 'img/Usuario.png' %}" alt="">
-                    <h3 style="margin-top: 6px;" class="text-bienvenida">¡Bienvenido!</h3>
+            <div class="contenedor-texto-singin-and-texto-feliz">
+                <div class="sub-bienvenido">
+                    <h3>Iniciar Sesión</h3>
                 </div>
-
-                <div class="contenido-carta-singin">
-
-                    <form method="POST">
-
-                        {% csrf_token %}
-
-                        <div class="parte-usuario row">
-                            <input class="input-formulario-login" type="text" id="username" name="username" placeholder="Ingresa el Usuario">
-                        </div>
-
-                        <div class="parte-usuario row">
-                            <input class="input-formulario-login" type="password" id="password" name="password" placeholder="Ingresa la Contraseña">
-                        </div>
-
-                        <div class="parte-usuario">
-                            <button class="boton-iniciar" type="submit">Ingresar</button>
-                        </div>
-
-                        {% if messages %}
-                        <div style="display: flex; justify-content: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
-                            {% for message in messages%}
-                                {{message}}
-                            {% endfor%}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {% endif %} 
-
-                        <div class="parte-recordar-usuario">
-                            <small style="display: flex;">
-                                <input style="margin-right: 8px;" type="checkbox" id="recuerdame">
-                                <label for="recuerdame">Recúerdame</label>
-                            </small>
-                            <a style="font-weight: 500; color: #303030; margin-top: 10px;" href="##">¿Olvidaste tu contraseña?</a>
-                        </div>
-
-                        <div class="texto-no-tengo-cuenta">
-                            <small>Aún no tienes cuenta? <a style="font-weight: 600; color: #303030;" href="{% url 'registrarse' %}">Registrate</a></small>
-                        </div>  
-
-                        <div class="logos-redes-sociales">
-                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
-                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
-                            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
-                        </div>
-
-                        <div class="texto.oficial" style="margin-bottom: 20px;">
-                            <p style="color: #505050; text-align: center;">©VUELOYA COLOMBIA</p>
-                        </div>
-
-
-                    </form>
-
+    
+                <div class="texto-de-bienvenida">
+                    ¡Bienvenido a VueloYA! Estamos encantados de tenerte a bordo de esta emocionante aventura en el mundo de los viajes.
                 </div>
             </div>
+
+        </div>
+
+        <div class="contenedor-formulario-iniciarsesion">
+
+            <form class="contenido-carta-singin" method="POST">
+
+                {% csrf_token %}
+
+                <div class="parte-usuario">
+                    <input class="input-username-password" type="text" id="username" name="username" placeholder="Ingresa el Usuario">
+                </div>
+
+                <div class="parte-usuario">
+                    <input class="input-username-password" type="password" id="password" name="password" placeholder="Ingresa la Contraseña">
+                </div>
+
+                <div class="parte-recordar-usuario">
+                    <a class="texto-olvido-contrasena" href="##">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <div class="parte-usuario">
+                    <button class="boton-iniciar" type="submit">Ingresar</button>
+                </div>
+
+
+                {% if messages %}
+                <div style="display: flex; justify-content: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {% for message in messages%}
+                        {{message}}
+                    {% endfor%}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+
+
+                <div class="contenedor-google">
+
+                    <a class="continuar-con-google" href="#">
+                        <img class="icono-google-and-flecha" src="{% static 'favicon.ico/IconoGoogle.png' %}" alt="">
+                        <span>Continuar con Google</span>
+                        <img class="icono-google-and-flecha" src="{% static 'favicon.ico/IconoFlechaDerecha.png' %}" alt="">
+                    </a>
+
+                </div>
+
+                <div class="contenedor-texto-no-tengo-cuenta">
+                    <span>¿Aún no tienes cuenta? <a class="texto-no-tengo-cuenta" href="{% url 'registrarse' %}">Registrate</a></span>
+                </div>  
+
+            </form>
+
+        </div>
 
     </div>
 
 </div>
-
-    
 
     
 {% endblock %}

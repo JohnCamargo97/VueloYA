@@ -17,7 +17,7 @@ body {
 /*Navbar Responsive*/
 
 .contenedor-logo-vueloYa{
-    background-color: #eeeeee;
+    background-color: #1640D6;
     padding: 8px;
     font-size: 20px;
     font-weight: 700;
@@ -27,7 +27,6 @@ body {
 }
 
 .contenedor-nombre-vueloya{
-    color: #505050;
     text-decoration: none;
 }
 
@@ -40,8 +39,9 @@ body {
 /*Busqueda Vuelos Responsive*/
 
 .mauro-dos{
-    background-color: #293964;
-    height: 320px;
+    background-color: #1640D6;
+    height: auto;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5.2px;
+    padding: 5px;
 }
 
 .fecha-ida{
@@ -118,11 +118,12 @@ body {
     display: block;
     margin-bottom: 6px;
     border-radius: 8px;
-    padding: 5.2px;
+    padding: 5px;
 }
 
 .num-pasajeros{
     width: 70%;
+    padding: 2px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -277,9 +278,9 @@ body {
 }
 
 .boton-tres{
-    background-color: #4277ff;
+    background-color: #1640D6;
     width: 20%;
-    height: 30px;
+    padding: 8px;
     border-radius: 8px;
     border: none;
     margin-top: 6px;
@@ -287,22 +288,27 @@ body {
 }
 
 .boton-tres:hover{
-    background-color: #2563ff;;
+    background-color: #284ed8;
     transform: translateY(1px);
 }
 
 .ofertas-correo{
     width: 78%;
-    height: 32px;
+    padding: 8px;
     border: none;
     border-radius: 8px;
     background-color: #eeeeee;
-    padding: 10px;
     border: solid 1px #999999;
 }
 
 .ofertas-correo:focus{
     outline-color: #b0b0b0;
+}
+
+.texto-ofertas-correo{
+    color: #505050;
+    font-size: 20px;
+
 }
 
 .politicas-privacidad{
@@ -355,6 +361,7 @@ body {
 
 
 .iconos-redes-sociales{
+    width: 40px;
     transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
@@ -374,98 +381,120 @@ body {
 
 /*Vista Registrarse Responsive*/
 
-.mauro-ocho{
+.contenedor-centrar-cartas-signup{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signup{
+.contenedor-mensaje-de-bienvenida-registro{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signup{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-registrarse{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 700px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
 
-.cabecera-iniciar-signup{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.contenido-carta-signup{
-    width: 95%;
+.contenido-carta-singup{
+    width: 100%;
+    height: auto;
 }
 
 .parte-registrarse{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-formulario-registrarse{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.input-formulario-login{
-    border-radius: 20px;
-    border: solid 2px #505050;
-    height: 50px;
-}
-
-.input-formulario-login:focus{
+.input-formulario-registrarse:focus{
     outline: none;
-}
-
-.boton-registrarse{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-registrarse:hover{
-    transform: translateY(1px);
-}
-
-.texto-ya-tengo-cuenta{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
 }
 
 .aceptar-terminos{
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-acepto-terminos{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-acepto-terminos:hover{
+    color: white;
+}
+
+.aceptacion-terminos{
+    color: white;
+}
+
+.aceptacion-terminos:hover{
+    color: white;
+}
+
+.boton-registrarse{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
     padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-texto-ya-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
-    color: #505050;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.texto-ya-tengo-cuenta{
+    color: white;
+}
+
+.texto-ya-tengo-cuenta:hover{
+    color: white;
 }
 
 .form-text-error-datos{
-    color: #d03737;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 /*Vista Registrarse Responsive*/
@@ -476,126 +505,139 @@ body {
 
 /*Vista Iniciar Sesión Responsive*/
 
-.mauro-siete{
+.contenedor-centrar-cartas-signin{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.centrar-cartas-signin{
+.contenedor-mensaje-de-bienvenida{
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.cuerpo-carta-signin{
-    background-color: #eeeeee;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.contenedor-formulario-iniciarsesion{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 550px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-}
-
-.cabecera-iniciar{
-    color: #505050;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5px;
 }
 
 .contenido-carta-singin{
-    width: 95%;
+    width: 100%;
+    height: auto;
 }
 
 .parte-usuario{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-username-password{
+    width: 90%;
+    height: 60px;
     padding: 10px;
-    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-
-
-.boton-iniciar{
-    background-color: white;
-    width: 60%;
-    height:40px;
-    border-radius: 20px;
-    border: solid 2px #505050;
-    margin-top: 6px;
-    color: #505050;
-}
-
-.boton-iniciar:hover{
-    transform: translateY(1px);
-}
-
-.texto-no-tengo-cuenta{
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #505050;
-
+.input-username-password:focus{
+    outline: none;
 }
 
 .parte-recordar-usuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-olvido-contrasena{
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-olvido-contrasena:hover{
+    color: rgb(214, 214, 214);
+
+}
+
+.boton-iniciar{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor-google{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.continuar-con-google{
+    background-color: white;
+    color: #505050;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.continuar-con-google:hover{
     color: #505050;
 }
 
-.imagen-usuario{
-    cursor: pointer;
-    width: 80px;
+.icono-google-and-flecha{
+    width: 35px;
 }
 
-.imagen-usuario{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.imagen-usuario:hover{
-    transform: scale(1.1);
-}
-
-.logos-redes-sociales {
+.contenedor-texto-no-tengo-cuenta{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    margin-top: 20px;
 }
 
-.logos-redes-sociales a{
-    margin-left: 15px;
+.texto-no-tengo-cuenta{
+    color: white;
 }
 
-.iconos-redes-sociales{
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+.texto-no-tengo-cuenta:hover{
+    color: white;
 }
 
-.iconos-redes-sociales:hover{
-    transform: scale(1.1);
-}
 
 /*Vista Iniciar Sesión Responsive*/
 
@@ -621,10 +663,18 @@ body {
 
 .resultados-busqueda{
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
+}
+
+.contenido-busquedas{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*Resultados de la busqueda de vuelos*/
@@ -633,7 +683,7 @@ body {
 
 
 
-/*Formulario Vuelos*/
+/*Vista de los resultados Vuelos*/
 
 .uno{
     width: 100%;
@@ -673,7 +723,7 @@ body {
 }
 
 .ida-vuelo{
-    background-color: rgb(191, 251, 95);
+    background-color: #D4E7C5;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -686,7 +736,7 @@ body {
 }
 
 .regreso-vuelo{
-    background-color: rgb(191, 251, 95);
+    background-color: #D4E7C5;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -724,10 +774,11 @@ body {
 
 .precio-total-vuelo{
     width: 100%;
-    height: 65px;
+    height: auto;
     background-color: white;
     border: solid 1px #d4d4d4;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-end-end-radius: 8px;
     border-end-start-radius: 8px;
@@ -738,24 +789,886 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
 }
 
-.boton-comprar{
-    background-color: #3d74ff;
-    color: white;
+.boton-comprar-busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1640D6;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    text-decoration: none;
     border-radius: 8px;
-    border: none;
-    padding: 5px;
-    margin-right: 30px;
 }
 
-.boton-comprar:hover{
-    background-color: #2563ff;
+.boton-comprar-busqueda:hover{
+    background-color: #284ed8;
+    color: #ffffff;
     transform: translateY(1px);
 }
 
-/*Formulario Vuelos*/
+/*Vista de los resultados Vuelos*/
+
+
+
+
+
+/*Vista Formulario Pagos*/
+
+.contenedor-datos-para-pagos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-formulario-para-pagos{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenedor-formulario-pasajeros{
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.cotenedor-imput-viajeros{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    padding:8px;
+}
+
+.contenedor-select-viajeros{
+    width: 30%;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    padding:8px;
+    color: #505050;
+}
+
+.contenedor-tipo-documento{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-vouchers{
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.contenedor-permiso-notificaciones{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-email-voucher{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    padding:8px;
+}
+
+.contenedor-metodos-de-pago{
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    color: #505050;
+}
+
+.metodos-de-pagos{
+    border-top: solid 1px #999999;
+    padding: 15px;
+}
+
+.contenedor-opciones-de-pagos{
+    display: flex;
+    align-items: center;
+}
+
+.input-metodos-pagos{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.metodo-uno{
+    width: 10%;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 1px #505050;
+
+}
+
+.contenedor-datos-impotantes-tarjeta{
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.tarjeta-usuario{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    padding:8px;
+}
+
+.contenedor-datostarjeta-dos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-vencimiento-tarjeta{
+    padding-top: 0;
+    margin-bottom: 1rem;
+}
+
+.vencimiento-tarjeta{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    padding:8px;
+}
+
+.contenedor-agrupa-colums-datostarjeta-uno{
+    padding-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-vencimiento-tarjeta{
+    width: 45%;
+}
+
+.contenedor-documento-titular{
+    padding-top: 0;
+    margin-bottom: 1rem;
+}
+
+.aceptar-terminos-compra{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cotenedor-input-aceptar-terminos{
+    cursor: pointer;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.contenedor-boton-comprar{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-del-boton-comprar-ahora{
+    width: 100%;
+}
+
+.contenedor-acordion{
+    width: 100%;
+}
+
+
+.boton-comprar-ahora{
+    background-color: rgb(255, 81, 81);
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.boton-comprar-ahora:hover{
+    background-color: rgb(252, 66, 66);
+    transform: translateY(1px);
+}
+
+.texto-del-total-pago{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.detalles-pagos{
+    width: 100%;
+}
+
+.texto-detalles-vuelo{
+    margin-bottom: 15px;
+}
+
+.formulario-detalles-pago{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.formulario-detalles-pago-dos{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.total-factura{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #808080;
+}
+
+/*Vista Formulario Pagos*/
+
+
+
+
+
+/*Formulario Editar Perfil*/
+
+.mi-perfil{
+    background-color: #eeeeee;
+    margin-top: 10px;
+    height: auto;
+    padding: 15px;
+}
+
+.contenedor-datos-perfil{
+    background-color: #1640D6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-img-perfil-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded-circle{
+    width: 100px;
+    cursor: pointer;
+    height: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nombre-miperfil{
+    font-size: 20px;
+}
+
+.contenedor-email-miperfil{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nombre-email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor-boton-editar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.boton-editar-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(60, 60, 60);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.boton-editar-perfil:hover{
+    background-color: rgb(249, 249, 249);
+    color: rgb(60, 60, 60);
+}
+
+.icono-editar{
+    width: 15px;
+    margin-right: 5px;
+}
+
+.contenedor-edi-datos-perfil{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.contenedor-datos-personales{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.contenedor-icono-tel{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-nom-fecha-cel-genero{
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.icono-tel{
+    border: 1px solid #808080;
+    border-radius: 10px;
+    padding: 8px;
+    width: 35px;
+}
+
+.contenedor-datos-metodos-pagos{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.contenedor-datos-tarjeta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.contenedor-agregar-tarjetas{
+    width: 30%;
+}
+
+.boton-agregar-tarjetas{
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.boton-agregar-tarjetas:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.icono-agregar{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.contenedor-datos-facturacion{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-info-usuarios{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.contenedor-nombre-cedula-user{
+    width: 60%;
+}
+
+.parte-facturacion{
+    width: 25%;
+}
+
+
+.boton-facturacion-editar{
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.boton-facturacion-editar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.boton-facturacion-borrar{
+    width: 100%;
+    padding: 10px;
+    background-color: #1640D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.boton-facturacion-borrar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.contenedor-separador-uno{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separador-uno{
+    width: 98%;
+}
+
+.contenedor-boton-facturacion-agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.boton-facturacion-agregar{
+    background-color: #1640D6;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.boton-facturacion-agregar:hover{
+    background-color: #1f46d5;
+    color: white;
+}
+
+.contenedor-preferencias{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.contenedor-cambiar-contrasena{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.icono-cambiarcontrasena{
+    font-weight: 500;
+    color: #303030;
+}
+
+.icono-cambiarcontrasena:hover{
+    color: #454545;
+}
+
+.contenedor-eliminar-cuenta{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.icono-eliminarcuenta{
+    font-weight: 500;
+    color: #303030;
+}
+
+.icono-eliminarcuenta:hover{
+
+    color: #454545;
+}
+
+.contenedor-recibir-notificaciones{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.icono-notificaciones{
+    font-weight: 500;
+    color: #303030;
+    display: flex;
+    align-items: center;
+}
+
+.icono-notificaciones:hover{
+    color: #454545;
+}
+
+.input-aceptar-notificaciones{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.contenedor-cambiar-eliminar-aceptar{
+    margin-right: 10px;
+    width: 20px;
+}
+
+/*Formulario Editar Perfil*/
+
+
+
+
+
+/*Formulario Facturación*/
+
+.texto-datos-personales{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #505050;
+}
+
+.contenedor-formulario-facturacion{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.contenedor-para-actualizar-mis-datos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-datos-facturacion{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.label-datos-facturacion{
+    font-weight: 500;
+    color: #505050;
+    margin-bottom: 5px;
+}
+
+.select-datos-generos{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.input-foto-perfil{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    color: #505050;
+}
+
+.contenedor-boton-actualizar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-regresar-a-perfil{
+    width: 15px;
+    margin-right: 5px;
+}
+
+.boton-actualizar{
+    background-color: #1640D6;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-actualizar:hover{
+    background-color: #1f46d5;
+    color: white;
+    transform: translateY(1px);
+}
+
+/*Formulario Facturación*/
+
+
+
+
+
+/*Vista Agregar o Editar Facturación*/
+
+.select-tipo-documento-situacion-factuacion{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.texto-datos-facturacion{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #505050;
+}
+
+.select-tipo-documento-situacion-fiscal{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+/*Vista Agregar o Editar Facturación*/
+
+
+
+
+
+/* Vista Mis Viajes*/
+
+.cotenedor-all-misviajes{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: auto;
+    padding: 20px;
+}
+
+.contenedor-registro-misviajes{
+    width: 100%;
+}
+
+.registro-misviajes-uno{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-nombre-logo-aerolinea{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contenedor-logo-aerolinea-nombre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-informacion-del-vuelo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.ida-horasalida-escalas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ida-horaregreso-escalas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-estado-del-vuelo-precio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #b0b0b0;
+}
+
+.dias-de-viaje-dos{
+    display: none;
+}
+
+.logo-avianca-misviajes{
+    width: 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    height: auto;
+    transition: transform 0.5s ease;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-avianca-misviajes:hover{
+    transform: scale(1.1);
+}
+
+/* Vista Mis Viajes*/
+
+
+
+
+
+/*Vista Inicio Log-in*/
+
+.contenedor-carta-login{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contenedor-singin-and-singup{
+    background-color: #1640D6;
+    color: white;
+    width: 100%; 
+    height: 412px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.contenedor-botonsingin-botonsingup{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.botonsingin{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.botonsingin:hover{
+    color: white;
+}
+
+.botonsingup{
+    background-color: #d03737;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.botonsingup:hover{
+    color: white;
+}
+
+.contenedor-imagen-logo-vueloya{
+    width: 100%;
+    height: 300px;
+}
+
+.imagen-vueloya{
+    width: 100%;
+}
+
+/*Vista Inicio Log-in*/
 
 
 
@@ -768,13 +1681,7 @@ body {
     /*Navbar*/
 
     .contenedor-logo-vueloYa{
-        background-color: #eeeeee;
-        padding: 10px;
         font-size: 25px;
-        font-weight: 700;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        cursor: pointer;
     }
 
     .logo-vueloya{
@@ -799,8 +1706,10 @@ body {
         justify-content: center;
     }
 
-
     /*Navbar*/
+
+
+
 
 
     /*Resultados Vuelos*/
@@ -821,10 +1730,6 @@ body {
     }
 
     .resultados-busqueda{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         margin: 10px;
     }
 
@@ -841,24 +1746,10 @@ body {
         font-size: 40px;
     }
 
-    .imagen-informacion{
-        width: 100%;
-        height: 30%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.3),
-            rgba(0,0,0,0.3)
-        ) 
-         ,url("../img/PlayaMexico.png");
-        padding: 12px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-    }
-
     /*Resultados Vuelos*/
+
+
+
 
 
     /*Filtro Precio y Moneda*/
@@ -873,7 +1764,7 @@ body {
     }
 
     .accordion-button:not(.collapsed){
-        color: #505050 !important;
+        color: #212529 !important;
         background-color: #eeeeee!important;
     }
 
@@ -924,6 +1815,10 @@ body {
     
     /*Filtro Precio y Moneda*/
 
+
+
+
+
     /*Filtro Aerolíneas*/
 
     .filtro-aerolineas{
@@ -967,23 +1862,49 @@ body {
     /*Filtro Aerolíneas*/
 
 
+
+
+
     /*Formulario Vuelos*/
 
     .uno{
         width: 100%;
         margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
     }
-
+    
+    .texto-prueba{
+        color: white;
+        font-size: 30px;
+    }
+    
     .contenedor-horario-vuelo{
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
         width: 30%;
     }
-
+    
+    .imagen-informacion{
+        width: 100%;
+        height: 30%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.3),
+            rgba(0,0,0,0.3)
+        ) 
+         ,url("../img/PlayaMexico.png");
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    
     .ida-vuelo{
-        background-color: #eeeeee;
+        background-color: #D4E7C5;
         display: flex;
         justify-content: space-between;
         text-align: center;
@@ -996,7 +1917,7 @@ body {
     }
     
     .regreso-vuelo{
-        background-color: #eeeeee;
+        background-color: #D4E7C5;
         display: flex;
         justify-content: space-between;
         text-align: center;
@@ -1015,13 +1936,12 @@ body {
     }
     
     .nombre-aerolinea{
-        display: flex;
+        padding: 4px;
     }
     
     .horario-viaje{
         border-top: 1px solid #d4d4d4;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 5px 8px;
@@ -1029,1030 +1949,553 @@ body {
     
     .tiempo-viaje{
         font-size: 14px;
-       padding: 2px 6px;
-       color: #808080;
-    }
-    
-    .precio-total-vuelo{
-        width: 100%;
-        height: 65px;
-        background-color: white;
-        border: solid 1px #d4d4d4;
-        display: flex;
-        justify-content: space-between;
-        border-end-end-radius: 8px;
-        border-end-start-radius: 8px;
-        padding: 5px 8px;
-    }
-    
-    .precio-final{
-        text-align: center;
+        padding: 2px 6px;
+        color: #808080;
     }
     
     .boton-buy{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 15%;
     }
-
     
     .boton-comprar{
-        background-color: #3d74ff;
-        color: white;
-        width: 100%;
-        height: 32px;
+        background-color: #1640D6;
+        color: #ffffff;
         border-radius: 8px;
         border: none;
-        padding: 2px;
-    
+        padding: 10px 25px 10px 25px;
     }
     
     .boton-comprar:hover{
-        background-color: #2563ff;
+        background-color: #284ed8;
         transform: translateY(1px);
     }
 
     /*Formulario Vuelos*/
 
-    /*Formulario Log-in*/
 
-    .mauro-siete{
+
+
+
+
+    /*Vista Inicio Log-in*/
+
+    .fondo-login{
+        background: linear-gradient(to bottom, #ffd448, #b400b4); /* Cambia los colores según tus preferencias */
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 20px;
+    }
+
+    .contenedor-carta-login{
+        flex-direction: row;
+        padding: 20px;
+        width: 80%;
         height: auto;
     }
 
-    .carta-imagen-signin{
-        width: 35%;
-        height: 700px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image:url("../img/Avion.png");
-        border-radius: 8px 0px 0px 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    .contenedor-singin-and-singup{
+        height: 600px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 50px;
     }
 
-    .centrar-cartas-signin{
+    .contenedor-botonsingin-botonsingup{
         width: 100%;
-        height: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 100px;
+        justify-content: flex-start;
     }
 
-    .cuerpo-carta-signin{
-        background-color: #eeeeee;
-        width: 35%;
-        height: 700px;
-        border-radius: 0px 8px 8px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    .contenedor-botonsingup{
+        margin-left: 50px;
+    }
+    
+    .botonsingin{
+        padding: 20px 35px;
+        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
     }
 
-    .cabecera-iniciar{
-        color: #505050;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .botonsingin:hover{
+        background-color: rgb(252, 66, 66);
+        transform: scale(1.1);
+    }
+    
+    .botonsingup{
+        padding: 20px 35px;
     }
 
-    .contenido-carta-singin{
-        width: 90%;
-    }
-
-    .parte-usuario{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-    }
-
-    .input-formulario-login{
-        border-radius: 20px;
-        border: solid 2px #505050;
-        height: 50px;
-    }
-
-    .input-formulario-login:focus{
-        outline: none;
-    }
-
-    .boton-iniciar{
-        background-color: white;
-        width: 60%;
-        height:40px;
-        border-radius: 20px;
-        border: solid 2px #505050;
-        margin-top: 6px;
-        color: #505050;
-    }
-
-    .boton-iniciar:hover{
+    .botonsingup:hover{
+        background-color: rgb(252, 66, 66);
         transform: translateY(1px);
     }
 
-    .texto-no-tengo-cuenta{
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #505050;
-
-    }
-
-    .parte-recordar-usuario{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        margin-bottom: 5px;
-        color: #505050;
-    }
-
-    .imagen-usuario{
-        cursor: pointer;
-
-    }
-
-    .imagen-usuario{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
-    
-    .imagen-usuario:hover{
-        transform: scale(1.1);
-    }
-
-    .logos-redes-sociales a{
-        margin-left: 15px;
-    }
-
-    .iconos-redes-sociales{
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-    }
-    
-    .iconos-redes-sociales:hover{
-        transform: scale(1.1);
-    }
-
-    /*Formulario Log-in*/
-
-    /*Formulario Sign-Up*/
-
-    .mauro-ocho{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .contenedor-imagen-logo-vueloya{
         height: auto;
     }
 
-    .carta-imagen-signup{
-        background-color: #eeeeee;
-        width: 35%;
-        height: 650px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image:url("../img/Avion.png");
-        border-radius: 8px 0px 0px 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .centrar-cartas-signup{
+    .imagen-vueloya{
         width: 100%;
-        height: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 40px;
+        height: 600px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
     }
 
-    .cuerpo-carta-signup{
-        background-color: #eeeeee;
-        width: 40%;
-        height: 650px;
-        border-radius: 0px 8px 8px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+    /*Vista Inicio Log-in*/
 
-    .cabecera-iniciar-signup{
-        color: #505050;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5px;
-    }
 
-    .contenido-carta-signup{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-    }
 
-    .parte-registrarse{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 5px;
-    }
 
-    .input-formulario-login{
-        border-radius: 20px;
-        border: solid 2px #505050;
-        height: 50px;
-    }
 
-    .input-formulario-login:focus{
-        outline: none;
-    }
-
-    .boton-registrarse{
-        background-color: white;
-        width: 60%;
-        height:40px;
-        border-radius: 20px;
-        border: solid 2px #505050;
-        margin-top: 6px;
-        color: #505050;
-    }
-
-    .boton-registrarse:hover{
-        transform: translateY(1px);
-    }
-
-    .texto-ya-tengo-cuenta{
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #505050;
-    }
-
-    .aceptar-terminos{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        color: #505050;
-    }
-    
-    /*Formulario Sing-Up*/
-
-    /*Formulario Pagos*/
+    /*Vista Formulario Pagos*/
 
     .contenedor-datos-para-pagos{
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        margin-bottom: 40px;
+        flex-direction: row;
     }
-
+    
     .contenido-formulario-para-pagos{
-
-        width:80%;
+        width: 100%;
         height: auto;
+    }
+    
+    .contenedor-formulario-pasajeros{
+        width: 100%;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
+    }
+    
+    .cotenedor-imput-viajeros{
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #999999;
+        padding:8px;
+    }
+    
+    .contenedor-select-viajeros{
+        width: 30%;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid #999999;
+        padding:8px;
+        color: #505050;
+    }
+    
+    .contenedor-tipo-documento{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contenedor-vouchers{
+        width: 100%;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
+    }
+    
+    .contenedor-permiso-notificaciones{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contenedor-email-voucher{
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #999999;
+        padding:8px;
+    }
+    
+    .contenedor-metodos-de-pago{
+        width: 100%;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
+        color: #505050;
+    }
+    
+    .metodos-de-pagos{
+        border-top: solid 1px #999999;
+        padding: 15px;
+    }
+    
+    .contenedor-opciones-de-pagos{
         display: flex;
         align-items: center;
-        flex-direction: column;
-        margin: 10px;
     }
-
-    .texto-compra{
-        width: 100%;
-        display: flex;
-        align-items: start;
-        text-align: start;
-        margin-top: 20px;
+    
+    .input-metodos-pagos{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
     }
-
-    .gg-g{
-        width: 80%;
-        margin-left: 20px;
-    }
-
-    .texto-detalles-pago{
-        width: 100%;
-        display: flex;
-        align-items: start;
-        text-align: start;
-    }
-
-    .mauro-diez{
-        width: 100%;
-        background-color: #f2f2f2;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    .formulario-pagos{
-        display: flex;
-        align-items: start;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .texto-recibir-vouchers{
-        margin-bottom: 10px;
-    }
-
-    .mauro-once{
-        width: 100%;
-        height: 300px;
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    .mauro-doce{
-        width: 100%;
-        height: 300px;
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    .metodos-de-pagos{
-        border-top: solid 1px;
-        width: 450px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-    }
-
-    .metodos-de-pagos-NA{
-        width: 450px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-    }
-
+    
     .metodo-uno{
         width: 10%;
         height: 35px;
         border-radius: 5px;
         border: solid 1px #505050;
-
+    
     }
-
-    .mauro-trece{
+    
+    .contenedor-datos-impotantes-tarjeta{
         width: 100%;
-        height: 250px;
         background-color: #f2f2f2;
         display: flex;
-        justify-content: flex-start;
         flex-direction: column;
-        padding: 20px;
-        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
     }
-
-    .contenedor-de-unir-datostarjeta-uno{
-        display: flex;
-        margin-bottom: 20px;
-    }
-
-    .contenedor-agrupa-colums-datostarjeta-uno{
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        margin-right: 16px;
-    }
-
-    .contenedor-agrupa-colums-datostarjeta-uno-b{
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-    }
-
+    
     .tarjeta-usuario{
         width: 100%;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
+        border-radius: 8px;
+        border: 1px solid #999999;
+        padding:8px;
     }
-
-    .tarjeta-usuario:focus{
-        outline: none;
-    }
-
-    .contenedor-de-unir-datostarjeta-dos{
+    
+    .contenedor-datostarjeta-dos{
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-
+    
     .contenedor-vencimiento-tarjeta{
-        display: flex;
-        flex-direction: column;
-        margin-right: 15px;
+        padding-top: 0;
+        margin-bottom: 1rem;
     }
-
+    
     .vencimiento-tarjeta{
-        width: 120px;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
-    }
-
-    .vencimiento-tarjeta:focus{
-        outline: none;
-    }
-
-    .contenedor-codigo-seguridad{
-        display: flex;
-        flex-direction: column;
-        margin-right: 28px;
-    }
-
-    .codigo-seguridad{
-        width: 150px;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
-    }
-
-    .codigo-seguridad:focus{
-        outline: none;
-    }
-
-    .contenedor-documento-titular{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .aceptar-terminos-compra{
-        height: 80px;
-    }
-
-    .contenedor-uno-del-input{
-        display: flex;
-    }
-
-    .texto-de-aceptarterminos{
-        margin-left: 8px;
-    }
-
-
-    .datos-pasajeros{
-        width: 450px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-    }
-
-    .pasajero-uno{
         width: 100%;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
-    }
-
-    .pasajero-uno:focus{
-        outline: none;
-    }
-
-    .documento-pasajero{
-        width: 50%;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
-        display: block;
-    }
-
-    .documento-pasajero:focus{
-        outline: none;
+        border-radius: 8px;
+        border: 1px solid #999999;
+        padding:8px;
     }
     
-    .documento-container {
+    .contenedor-agrupa-colums-datostarjeta-uno{
+        padding-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contenedor-vencimiento-tarjeta{
+        width: 45%;
+    }
+    
+    .contenedor-documento-titular{
+        padding-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .aceptar-terminos-compra{
         display: flex;
+        align-items: center;
+        margin-bottom: 20px;
     }
     
-    .documento-pasajero {
-        flex: 1; /* Ocupa todo el espacio disponible en la fila */
-        margin-right: 10px; /* Ajusta el margen entre el select y el input según tus necesidades */
+    .cotenedor-input-aceptar-terminos{
+        cursor: pointer;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
     }
     
-    .num-documento{
-        width: 50%;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 1px #505050;
-        display: block;
-    }
-
-    .num-documento:hover{
-        outline: none;
-    }
-
     .contenedor-boton-comprar{
-        width: 50%;
-        margin-top: 10px;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
-
+    
     .contenedor-del-boton-comprar-ahora{
         width: 100%;
     }
 
+    .contenedor-del-boton-comprar-ahora{
+        display: contents;
+    }
+    
+    .contenedor-acordion{
+        width: 80%;
+        margin: 20px 0px 0px 20px;
+    }
+
     .boton-comprar-ahora{
         background-color: rgb(255, 81, 81);
-        width: 100%;
+        width: 70%;
         height: 50px;
         border: none;
         border-radius: 20px;
         color: #ffffff;
         font-size: 20px;
     }
-
+    
     .boton-comprar-ahora:hover{
         background-color: rgb(252, 66, 66);
         transform: translateY(1px);
     }
-
+    
     .texto-del-total-pago{
         width: 100%;
-        margin-top: 10px;
         display: flex;
         justify-content: center;
+        margin-top: 5px;
     }
-
-    /*Formulario Pagos*/
-
-    /*Detalles del pago*/
-
+    
     .detalles-pagos{
-        width: 60%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin: 10px;
-    }
-
-    .contenedor-de-formularios-detalles{
-        width: 95%;
-    }
-
-    .contenedor-detalles-pago{
         width: 100%;
-        height: 200px;
-        background-color: #f2f2f2;
-        padding: 15px;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
-
+    
+    .texto-detalles-vuelo{
+        margin-bottom: 15px;
+    }
+    
     .formulario-detalles-pago{
-        display: flex;
-        justify-content: space-between;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
-
+    
     .formulario-detalles-pago-dos{
-        display: flex;
-        justify-content: space-between;
-        border-bottom: solid 1px #505050;
-        margin-top: 10px;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
-
+    
     .total-factura{
         display: flex;
         justify-content: space-between;
-        margin-top: 15px;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #808080;
     }
 
-    .contenedor-detalles-compra{
-        width: 100%;
-        height: 300px;
-    }
+    /*Vista Formulario Pagos*/
 
-    /*Detalles del pago*/
+
+
+
 
     /*Formulario Editar Perfil*/
 
-    .hh-h{
+    .edit-miperfil{
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
 
-    .contenedor-formulario-editar-perfil{
-        width: 85%;
-        padding: 20px;
+    .contenedor-prueba{
+        width: 70%;
     }
 
+    .contenedor-datos-perfil{
+        flex-direction: row;
+        height: 150px;
+    }
+    
     .rounded-circle{
-        width: 70px;
+        width: 100px;
         cursor: pointer;
         height: auto;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        margin-bottom: 0;
         transition: transform 0.5s ease;
     }
 
     .rounded-circle:hover{
-        transform: scale(1.1);
+        transform: scale(0.9);
     }
-
-    .contenedor-datos-perfil{
-        display: flex;
-        align-items: center;
-        background-color:#293964;
-        width: 100%;
-        padding: 10px;
-        height: 150px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+    
+    .contenedor-nombre-miperfil{
+        font-size: 20px;
     }
-
-    .parte-usuario{
-        margin-left: auto;
+    
+    .contenedor-email-miperfil{
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
-
+    
     .contenedor-nombre-email{
-        color: white;
-    }
-
-    .contenedor-edi-datos-perfil{
+        margin-left: 10px;
         width: 100%;
-        background-color: rgb(255, 255, 255);
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        align-items: flex-start;
     }
 
-    .contenedor-imagen-perfil{
-        padding: 5px;
-        margin-right: 5px;
+    .contenedor-boton-editar{
+        margin-bottom: 0;
     }
 
     .boton-editar-perfil{
-        background-color: rgb(255, 255, 255);
-        color: rgb(60, 60, 60);
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
+        width: 120px;
     }
-
+    
     .boton-editar-perfil:hover{
         background-color: rgb(249, 249, 249);
         color: rgb(60, 60, 60);
     }
-
-    .contenedor-datos-personales{
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        height: 100px;
+    
+    .icono-editar{
+        width: 15px;
+        margin-right: 5px;
     }
 
     .contenedor-datos{
         width: 50%;
+    }
+
+    .contenedor-datos-personales{
         display: flex;
-        align-items: start;
-        flex-direction: column;
     }
 
-    .contenedor-datos-dos{
-        width: 50%;
-        display:flex;
-        align-items: start;
-        flex-direction: column;
+    .contenedor-agregar-tarjetas{
+        width: 15%;
     }
-
-    .contenedor-datos-metodos-pagos{
-        width: 100%;
-        background-color: white;
-        height: 100px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .contenedor-datos-tarjeta{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .boton-agregar-tarjetas{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .boton-agregar-tarjetas:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-datos-facturacion{
-        width: 100%;
-        background-color: white;
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-info-usuarios{
-        display: flex;
-        align-items: center;
-        padding: 10px;
+    
+    .parte-facturacion{
+        width: 15%;
     }
 
     .contenedor-nombre-cedula-user{
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid #b0b0b0;
-    }
-
-    .boton-facturacion-editar{
-        background-color: #293964;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 5px;  
-    }
-
-    .boton-facturacion-editar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .boton-facturacion-borrar{
-        background-color: #293964;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .boton-facturacion-borrar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-boton-facturacion-agregar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 10px;
+        width: 100%;
     }
 
     .boton-facturacion-agregar{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
+        width: 85%;
     }
 
-    .boton-facturacion-agregar:hover{
-        background-color: #27345a;
-        color: white;
-    }
-
-    .contenedor-preferencias{
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        height: 150px;
-        background-color: white;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-recibir-notificaciones{
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-aceptar-notificaciones{
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
+    .input-aceptar-notificaciones{
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
     }
 
     /*Formulario Editar Perfil*/
 
+
+
+
+
     /*Formulario Facturación*/
 
-    .contenedor-formulario-facturacion{
+    .contenedor-actualizar-datos-personales{
         width: 100%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .contenedor-datos-facturacion{
-        width: 100%;
-        background-color: white;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .contenedor-boton-actualizar{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 10px;
-    }
-
-    .boton-actualizar{
-        background-color: #293964;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        width: 50%;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .boton-actualizar:hover{
-        background-color: #27345a;
-        color: white;
-        transform: translateY(1px);
-    }
-
-    .jj-j{
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .cc-c{
-        display: flex;
-        align-items: start;
         flex-direction: column;
-        width: 40%;
     }
 
-    .bb-b{
+    .contenedor-dos-actualizar-datos-personales{
+        width: 100%;
         display: flex;
-        align-items: start;
         flex-direction: column;
-        width: 40%;
+    }
 
+    .contenedor-para-actualizar-mis-datos{
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .select-datos-generos{
+        width: 85%;
     }
 
     .input-datos-facturacion{
         width: 85%;
-        height: 40px;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        border: 1px solid #b0b0b0;
-        padding: 5px;
-        color: #505050;
     }
 
-    .input-datos-facturacion:focus{
-        outline: none;
-    }
-
-    .label-datos-facturacion{
-        font-weight: 500;
-        color: #505050;
-        margin-bottom: 5px;
+    .texto-datos-personales{
+        justify-content: center;
     }
 
     /*Formulario Facturación*/
 
+
+
+
+
+    /*Vista Agregar o Editar Facturación*/
+
+    .texto-datos-facturacion{
+        justify-content: center;
+    }
+
+    .select-tipo-documento-situacion-fiscal{
+        width: 85%;
+    }
+
+    /*Vista Agregar o Editar Facturación*/
+
+
+
+
+
     /* Vista Mis Viajes*/
 
-    .cotenedor-all-misviajes{
-        background-color: #eeeeee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: auto;
-        padding: 20px;
-    }
-
-    .contenedor-historial-misviajes{
-        height: auto;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-registro-misviajes{
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .registro-misviajes-uno{
-        background-color: white;
-        width: 100%;
-        height: 180px;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
     .contenedor-misviajes-num-uno{
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-    }
-
-    .contenedor-nombre-logo-aerolinea{
-        width: 30%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        border-right: 1px solid #808080;
-    }
-
-    .contenedor-logo-aerolinea-nombre{
-        display: flex;
-        align-items: center;
-        padding: 5px;
-    }
-
-    .contenedor-informacion-del-vuelo{
-        width: 50%;
-        height: 100%;
+        height: 160px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        border-right: 1px solid #808080;
+        margin-top: 20px;
     }
-
-    .contenedor-estado-valor-vuelos{
-        width: 30%;
-        height: 100%;
+    
+    .contenedor-logo-aerolinea-nombre{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    
+    .contenedor-informacion-del-vuelo{
+        width: 40%;
+        border-left: 1px solid #999999;
+        border-right: 1px solid #999999;
+    }
+    
+    .contenedor-estado-del-vuelo-precio{
+        flex-direction: column;
+        border-top: none;
     }
 
+    .dias-de-viaje{
+        display: none;
+    }
+
+    .dias-de-viaje-dos{
+        display: flex;
+    }
+    
+
+    .contenedor-registro-misviajes{
+        width: 70%;
+    }
+    
     .logo-avianca-misviajes{
-        width: 50px;
-        border-radius: 100px;
-        cursor: pointer;
-        height: auto;
-        transition: transform 0.5s ease;
-        border: 1px solid #eeeeee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        width: 60px;
     }
-
+    
     .logo-avianca-misviajes:hover{
         transform: scale(1.1);
     }
 
-
-
     /* Vista Mis Viajes*/
+
+
+
 
 
     /*Recibir ofertas al correo*/
@@ -2065,30 +2508,16 @@ body {
 
     .ofertas-correo{
         width: 75%;
-        height: 42px;
-        border: none;
-        border-radius: 8px;
-        background-color: #eeeeee;
-        padding: 10px;
-        border: solid 1px #999999;
     }
 
-    .boton-tres{
-        background-color: #2563ff;
-        width: 20%;
-        height: 40px;
-        border-radius: 8px;
-        margin: 10px;
-        border: none;
-        color: white;
-    }
-
-    .boton-tres:hover{
-        background-color: #2d69ff;
-        transform: translateY(1px);
+    .texto-ofertas-correo{
+        font-size: 30px;
     }
 
     /*Recibir ofertas al correo*/
+
+
+
 
 
     /*Footer*/

@@ -6,26 +6,30 @@
 
 {% block contenido %}
 
-<div class="container-fluid" style="background-color: #eeeeee;">
+<div class="container-fluid mi-perfil">
 
-    <div class="container hh-h">
+    <div class="container edit-miperfil">
 
-        <div class="contenedor-formulario-editar-perfil">
-            
+        <div class="contenedor-prueba">
+        
             <div class="contenedor-edi-datos-perfil">
                 
                 <div class="contenedor-datos-perfil">
 
-                    <div class="contenedor-imagen-perfil"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></div>
-                    <div class="contenedor-nombre-email">
-                        {{ user.username }}
-                        <br>
-                        {{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> 
+                    <div class="contenedor-img-perfil-edit">
+                        <img class="rounded-circle" src="{{user.uservueloya.picture.url}}">
                     </div>
 
-                    
-                    <div class="parte-usuario">
-                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}">Regresar a Mi Perfil</a>
+                    <div class="contenedor-nombre-email">
+
+                        <div class="contenedor-nombre-miperfil">{{ user.username }}</div>
+
+                        <div class="contenedor-email-miperfil">{{ user.email }} <img src="{% static 'favicon.ico/IconoVerificado.png' %}" alt="Icono-Verificado"> </div>
+
+                    </div>
+
+                    <div class="contenedor-boton-editar">
+                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}"><img class="icono-regresar-a-perfil" src="{% static 'favicon.ico/IconoFlechaizquierda.png' %}" alt="">Mi Perfil</a>
                     </div>
 
                 </div>
@@ -34,15 +38,15 @@
 
             <div class="contenedor-datos-facturacion">
 
-                <div class="texto-datos-personales" style="display: flex; align-items: center; justify-content: center;"><h5 style="color: #505050; padding: 12px;">Datos Personales</h5></div>
-    
+                <div class="texto-datos-personales"><h5>Datos Personales</h5></div>
+
                     <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
 
                         {% csrf_token %}
 
-                        <div class="jj-j">
+                        <div class="contenedor-para-actualizar-mis-datos">
 
-                            <div class="cc-c">
+                            <div class="contenedor-actualizar-datos-personales">
 
                                 <label class="label-datos-facturacion" for="id_username">Nombre de Usuario</label>
                                 <input class="input-datos-facturacion" type="text" name="username" value="{{ user.username }}" maxlength="150" required="" id="id_username">
@@ -58,24 +62,21 @@
 
                             </div>
 
-                            <div class="bb-b">
+                            <div class="contenedor-dos-actualizar-datos-personales">
+
                                 <label class="label-datos-facturacion" for="id_genero">Genero</label>
-                                <select class="form-select" aria-label="Default select example" name="genero" required="" id="id_genero">
+                                <select class="select-datos-generos" aria-label="Default select example" name="genero" required="" id="id_genero">
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                     <option value="Prefiero no decir">Prefiero no decir</option>
-                                  </select>
+                                </select>
 
                                 <label class="label-datos-facturacion" for="id_telefono">Telefono</label>
                                 <input class="input-datos-facturacion" type="text" name="telefono" value="{{ user.uservueloya.telefono }}" maxlength="10" id="id_telefono">
 
                                 <label class="label-datos-facturacion" for="id_fechaNacimiento">Fecha de Nacimiento</label>
                                 <input class="input-datos-facturacion" type="text" name="fechaNacimiento" value="{{ user.uservueloya.fechaNacimiento }}" id="id_fechaNacimiento">
-
-                                <label class="label-datos-facturacion" for="id_picture">Cambiar Fotografía</label>
-                                <a style="cursor: pointer;" href="{{user.uservueloya.picture.url}}"></a>
-                                <input style="cursor: pointer;" type="file" name="picture" accept="application/png,application/jpg" id="id_picture">
-                            
+                                
                             </div>
 
                         </div>
@@ -85,19 +86,20 @@
                             </div>
 
                     </form>
-
+                </div>
+                
             </div>
-
         </div>
 
-    </div>
+    </div>  
+
 </div>
 
 
 <div class="container recibir-ofertas">
     <div class="container">
 
-      <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+      <h3 class="texto-ofertas-correo"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
 
       <div class="presentacion">
         <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
@@ -105,7 +107,7 @@
       </div>
 
       <div class="politicas-privacidad">
-        Recibirás correos promocionales de VueloYA. Para más información consulta las <a href="####">políticas de privacidad.</a>
+        Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1640D6;" href="####">políticas de privacidad.</a>
       </div>
 
     </div>
