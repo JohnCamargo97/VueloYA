@@ -7,90 +7,96 @@
 {% block contenido %}
 
 
-<div class="container-fluid mauro-ocho">
+<div class="contanier-fluid fondo-registrarse">
 
-    <div class="container centrar-cartas-signup">
+    <div class="contenedor-centrar-cartas-signup">
 
-        <div class="carta-imagen-signup"></div>
-        
-        <div class="cuerpo-carta-signup">
+        <div class="contenedor-mensaje-de-bienvenida-registro">
 
-            <div class="cabecera-iniciar-signup">
-                <h3 class="text-bienvenida">¡Únete a VueloYA!</h3>
+            <div class="contenedor-texto-singup-and-texto-feliz">
+                <div class="sub-bienvenido-regsitro">
+                    <h3>Registrarse</h3>
+                </div>
+    
+                <div class="texto-de-bienvenida-registro">
+                    En VueloYA, encontrarás las mejores opciones de vuelo, al alcance de tu mano. ¡Prepárate para despegar hacia tus destinos soñados con facilidad y comodidad!
+                </div>
             </div>
 
-            <div class="contenido-carta-signup">
+        </div>
 
-                <form method="POST">
+        <div class="contenedor-formulario-registrarse">
 
-                    {% csrf_token %}
+            <form  class="contenido-carta-singup" method="POST">
 
-                    <div class="parte-registrarse row">
-                        <input class="input-formulario-login" type="text" name="email" value= "{{ form.email.value }}" placeholder="Email" maxlength="100" autocapitalize="none" autocomplete="email" autofocus required id="id_email">
+                {% csrf_token %}
 
-                        {% if form.email.errors %}
-                            <div class="form-text-error-datos" id="basic-addon4">{{ form.email.errors }}</div>
-                        {% else %}
-                        {% endif %}
+                <div class="parte-registrarse">
+                    <input class="input-formulario-registrarse" type="text" name="email" value= "{{ form.email.value }}" placeholder="Email" maxlength="100" autocapitalize="none" autocomplete="email" autofocus required id="id_email">
 
-                    </div>
+                    {% if form.email.errors %}
+                        <div class="form-text-error-datos" id="basic-addon4">{{ form.email.errors }}</div>
+                    {% else %}
+                    {% endif %}
 
-                    <div class="parte-registrarse row">
+                </div>
 
-                        <input class="input-formulario-login" type="text" name="username" placeholder="Nombre de Usuario" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
+                <div class="parte-registrarse">
 
-                        {% if form.username.errors %}
-                            <div class="form-text-error-datos" id="basic-addon4">{{ form.username.errors }}</div>
-                        {% else %}
+                    <input class="input-formulario-registrarse" type="text" name="username" placeholder="Nombre de Usuario" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
 
-                        {% endif %}
+                    {% if form.username.errors %}
+                        <div class="form-text-error-datos" id="basic-addon4">{{ form.username.errors }}</div>
+                    {% else %}
 
-                    </div> 
+                    {% endif %}
 
-                    <div class="parte-registrarse row">
-                        <input class="input-formulario-login" type="password" name="password1" placeholder="Ingresar Contraseña" autocomplete="Nueva contraseña" autofocus required id="id_password1">
+                </div> 
 
-                        {% if form.password1.errors %}
-                            <div class="form-text-error-datos" id="basic-addon4">{{ form.password1.errors }}</div>
-                        {% else %}
-                        {% endif %}
+                <div class="parte-registrarse">
+                    <input class="input-formulario-registrarse" type="password" name="password1" placeholder="Ingresar Contraseña" autocomplete="Nueva contraseña" autofocus required id="id_password1">
 
-                    </div>
+                    {% if form.password1.errors %}
+                        <div class="form-text-error-datos" id="basic-addon4">{{ form.password1.errors }}</div>
+                    {% else %}
+                    {% endif %}
 
-                    <div class="parte-registrarse row">
-                        <input class="input-formulario-login" type="password" name="password2" placeholder="Repetir Contraseña" autocomplete="Confirmar contraseña" autofocus required id="id_password2">
+                </div>
 
-                        {% if form.password2.errors %}
-                            {% for error in form.password2.errors %}
-                            <div class="form-text-error-datos" id="basic-addon4">{{ error|escape }}</div>
-                        {% endfor %}
+                <div class="parte-registrarse">
+                    <input class="input-formulario-registrarse" type="password" name="password2" placeholder="Repetir Contraseña" autocomplete="Confirmar contraseña" autofocus required id="id_password2">
 
-                        {% else %}
-                        {% endif %} 
+                    {% if form.password2.errors %}
+                        {% for error in form.password2.errors %}
+                        <div class="form-text-error-datos" id="basic-addon4">{{ error|escape }}</div>
+                    {% endfor %}
 
-                    </div>
+                    {% else %}
+                    {% endif %} 
 
-                    <div class="aceptar-terminos">
-                        <small style="display: flex;">
-                            <input style="margin-right: 10px;" type="checkbox" id="recuerdame">
-                            <label for="recuerdame">Acepto los <a style="text-decoration: none; font-weight: 600; color: #303030;" href="#">Términos de Servicio</a> y la <a style="text-decoration: none; font-weight: 600; color: #303030;" href=""> Política de Privacidad.</a></label>
-                        </small>
-                    </div>
+                </div>
 
-                    <div class="parte-registrarse">
-                        <button class="boton-registrarse" type="submit">Registrarse</button>
-                    </div>
+                <div class="aceptar-terminos">
+                    <span class="texto-acepto-terminos">
+                        <input style="margin-right: 10px; width: 25px;" type="checkbox" id="recuerdame">
+                        <label for="recuerdame">Acepto los <a class="aceptacion-terminos" href="#">Términos de Servicio</a> y la <a class="aceptacion-terminos" href=""> Política de Privacidad.</a></label>
+                    </span>
+                </div>
 
-                    <div class="texto-ya-tengo-cuenta">
-                        <small>Ya tienes cuenta? <a style="font-weight: 600; color: #303030;" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a></small>
-                    </div>   
+                <div class="parte-registrarse">
+                    <button class="boton-registrarse" type="submit">Registrarse</button>
+                </div>
 
-                </form>
+                <div class="contenedor-texto-ya-tengo-cuenta">
+                    <span>Ya tienes cuenta? <a class="texto-ya-tengo-cuenta" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a></span>
+                </div>  
 
-            </div>
+            </form>
+
         </div>
 
     </div>
+
 </div>
 
 
