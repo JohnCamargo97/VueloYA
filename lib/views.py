@@ -130,9 +130,6 @@ class resultado(FilterView):
 
 
 
-
-
-
 class busqueda(View):
     def get(self, request, *args, **kwargs):
         lista_resultado = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
@@ -164,6 +161,7 @@ class busqueda(View):
             'lista_resultado': lista_resultado
         }
             return render(request, 'paginas/busqueda.html', context)
+
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')
