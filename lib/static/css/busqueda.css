@@ -1982,11 +1982,12 @@ body {
     /*Vista Inicio Log-in*/
 
     .fondo-login{
-        background: linear-gradient(to bottom, #ffd448, #b400b4); /* Cambia los colores según tus preferencias */
+        background: linear-gradient(to bottom, #EAECCC, #92C7CF); /* Cambia los colores según tus preferencias */
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
+        height: 900px;
     }
 
     .contenedor-carta-login{
@@ -1997,9 +1998,11 @@ body {
     }
 
     .contenedor-singin-and-singup{
-        height: 600px;
+        width: 80%;
+        height: 700px;
         border-top-left-radius: 0;
         border-bottom-right-radius: 50px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     .contenedor-botonsingin-botonsingup{
@@ -2032,14 +2035,16 @@ body {
     }
 
     .contenedor-imagen-logo-vueloya{
+        width: 80%;
         height: auto;
     }
 
     .imagen-vueloya{
         width: 100%;
-        height: 600px;
+        height: 700px;
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     /*Vista Inicio Log-in*/
