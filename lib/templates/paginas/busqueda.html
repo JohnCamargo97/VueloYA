@@ -74,11 +74,14 @@
       
                   </div>
                   
-                  <button class="boton-uno" type="submit">Buscar</button>
+                  <button class="boton-uno" type="submit" name="busqueda", value="busqueda">Buscar</button>
       
             </div>
           </div>
+        </form>
 
+        <form class="formulario-uno" action="#" method="GET">
+          {% csrf_token%}
           <div class="filtro-precio">
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -93,7 +96,7 @@
 
                     <div class="rango-valor">
 
-                      <input class="rango-valor-vuelos" type="range" name="rango_precio" min="450000" max="10000000" id="id_rango_precio">
+                      <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" max="10000000" id="id_rango_precio">
 
                       <div class="rango-precios">
                         <h3 class="texto-moneda">$ 450.000</h3>
@@ -139,9 +142,11 @@
                     <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
                       {% for aerolinea in aerolineas%}
                         <div class="aerolineas">
-                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="aerolinea" value="{{aerolinea.1}}">
+
+                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
                             <label class="label-aerolineas">{{aerolinea.0}}</label>
-                            <span>({{aerolinea.1}})</span>
+                            <span>({{aerolinea.2}})</span>
+
                         </div>
                       {% endfor %}
                     </div>
@@ -150,7 +155,16 @@
               </div>
             </div>       
           </div> 
+          <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
         </form>
+
+
+        <form class="formulario-uno" action="#" method="GET">
+          {% csrf_token%}
+          {{filter.form.as_p}}
+          <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
+        </form>
+
       </div>
 
   

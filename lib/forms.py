@@ -1,5 +1,5 @@
 from django import forms
-from .models import userVueloYa
+from .models import userVueloYa, aerolinea
 from django.forms.widgets import ClearableFileInput
 #from .models import Vuelo
 
@@ -19,21 +19,16 @@ class BusquedaForm(forms.Form):
     #        model = Vuelo
     #        fields = '__all__'
 
-class filtroBusquedaForm(forms.Form):
+class filtroForm(forms.Form):
 
     MONEDAS = [
         ("COP", "COP"),
         ("USD", "USD"),
         ("EUR", "EUR"),
     ]
-    AEROLINEAS = [
-        ("Qatar Airways", "Qatar Airways"),
-        ("Eurowings", "United Airlines"),
-        ("Austrian Airlines", "Austrian Airlines"),
-        ("American Airlines", "American Airlines"),
-        ("China Airlines", "China Airlines"),
-        ("avianca", "avianca"),
-    ]
+
+    AEROLINEAS = aerolinea.objects.all().values_list('id', 'id')
+
     rango_precio = forms.IntegerField(max_value = 10000000, min_value=450000)
     moneda = forms.ChoiceField(choices=MONEDAS) 
     aerolinea = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=AEROLINEAS)
