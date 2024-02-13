@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 from django.db.models import Q
 from .models import Vuelo, historicoReserva, oferta, aerolinea
+from django_filters.views import FilterView
+from .filter import vueloFilter
 from users.models import pasajero
 from .forms import BusquedaForm, filtroForm, voucherForm, metodoPago, datosTarjeta, terminosyCondiciones
 from users.forms import userPasajeroForm
@@ -89,73 +91,46 @@ def pagos(request, pk):
     return render (request, 'paginas/pagos.html', context)
 
 
-class resultado(ListView):
+class resultado(FilterView):
     model= Vuelo
     template_name= "paginas/busqueda.html"
+    context_object_name = "lista_resultado"
+    filterset_class = vueloFilter
 
-    #Se usa get_object y no get_query para mantener el objecto object_list
-    def get_object(self, **kwargs):
-        #query de vuelos
-        AEROLINEAS = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-        try:
-            print("kwargs aero:", kwargs['aerolineas'])
-        except:
-            print("no aerolinea")
+    def get_queryset(self, **kwargs):
+        print("request.GET: ",self.request.GET)
+        return Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
 
-        if 'aerolineas' not in kwargs:
-            print(1, kwargs)
-            kwargs['aerolineas'] = aerolinea.objects.all().values_list('id')
-            print(2, kwargs)
-        else:
-            print(3, kwargs)
-        try:
-            vuelo_list = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"], id_aerolinea__in = kwargs['aerolineas']).all()
-        except Vuelo.DoesNotExist:
-            raise Http404('Error con el servidor')
-        return vuelo_list, AEROLINEAS
-    
     def get_context_data(self, **kwargs):
-        #context = super().get_context_data(**kwargs)
-        kwargs['lista_resultado'], kwargs['aerolineas'] = self.get_object(**kwargs)
-        kwargs["origen"] = self.kwargs["origen"]
-        kwargs["destino"] = self.kwargs["destino"]
-        if 'form_busqueda' not in kwargs:
-            kwargs['response_form'] = BusquedaForm()
-        if 'form_filtro' not in kwargs:
-            kwargs['form_filtro'] = filtroForm()
-        #print(kwargs)
+        context = super(resultado, self).get_context_data(**kwargs)
+        context['origen'] = self.kwargs["origen"]
+        context['destino'] = self.kwargs["destino"]
+        context['aerolineas'] = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
 
-        return kwargs
-    
+        return context
+
     def get(self, request, *args, **kwargs):
-        #self.object_list = self.get_queryset()
-        return render(request, self.template_name, self.get_context_data())
-    
+        print("request.GET: ",request.GET)
+        return super().get(request, *args, **kwargs)
+
     def post(self, request, *args, **kwargs):
-        #self.object_list = self.get_queryset()
+        
+        print("request POST:", request)
         ctxt = {}
-        print("request POST:", request.POST)
+        ctxt['method'] = "post"
+        
         if 'busqueda' in request.POST:
             form_busqueda = BusquedaForm(request.POST)
 
             if form_busqueda.is_valid():
-                request.session['origen'] = request.POST['origen']
-                request.session['destino'] = request.POST['destino']
-                request.session['pasajeros'] = request.POST['pasajeros']
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
-            
-        if 'filtro' in request.POST:
-            form_filtro = filtroForm(request.POST)
 
-            if form_filtro.is_valid():
-                print("filtro kwargs:", self.kwargs)
-                ctxt['aerolineas'] = request.POST.getlist("aerolinea")
-                return render(request, self.template_name, self.get_context_data(**ctxt))
-            else:
-                print(form_filtro.errors)
+            return render(self.request, self.template_name, self.get_context_data())
 
-            return render(request, self.template_name, self.get_context_data())
-        
+
+
+
+
 
 
 class busqueda(View):
