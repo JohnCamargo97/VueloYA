@@ -31,7 +31,7 @@ class Vuelo(models.Model):
     id_aerolinea= models.ForeignKey(aerolinea, on_delete=models.CASCADE)
     Escalado= models.BooleanField(verbose_name='Escalas')
     escalas= models.IntegerField(verbose_name='# escalas', blank=True, default= 0)
-    precio= models.CharField(max_length=100, verbose_name='Precio', default= 'ND')
+    precio= models.IntegerField(verbose_name='Precio', default= 0)
     Ida_vuelta= models.BooleanField(default=False, verbose_name='ida_vuelta')
 
     def __str__(self):
