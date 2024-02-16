@@ -36,7 +36,7 @@
                 {% csrf_token %}
 
                 <div class="parte-registrarse">
-                    <input class="input-formulario-registrarse" type="text" name="email" value= "{{ form.email.value }}" placeholder="Email" maxlength="100" autocapitalize="none" autocomplete="email" autofocus required id="id_email">
+                    <input class="input-formulario-registrarse" type="text" name="email" placeholder="Email" maxlength="100" autocapitalize="none" autocomplete="email" autofocus required id="id_email">
 
                     {% if form.email.errors %}
                         <div class="form-text-error-datos" id="basic-addon4">{{ form.email.errors }}</div>

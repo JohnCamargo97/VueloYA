@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from PIL import Image
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ObjectDoesNotExist
+from datetime import timedelta
 
 class aerolinea(models.Model):
     #id = models.IntegerField(primary_key=True)
@@ -23,16 +24,28 @@ class Vuelo(models.Model):
     fechasalida= models.DateField(verbose_name='fecha salida', blank=True)
     horasalida1= models.TimeField(verbose_name='hora salida', blank=True, default=None)
     horasalida2= models.TimeField(verbose_name='hora llegada', blank=True, default=None)
+
+    def get_duracion1(self):
+        return self.horasalida2 - self.horasalida1
+    
+    duracion1 = property(get_duracion1)
     
     fechavuelta= models.DateField(verbose_name='fecha regreso', blank=True)
     horavuelta1= models.TimeField(verbose_name='hora salida', blank=True, default=None)
     horavuelta2= models.TimeField(verbose_name='hora llegada', blank=True, default=None)
+    
+    def get_duracion2(self):
+        return self.horavuelta2 - self.horavuelta1
+    
+    duracion2 = property(get_duracion2)
     
     id_aerolinea= models.ForeignKey(aerolinea, on_delete=models.CASCADE)
     Escalado= models.BooleanField(verbose_name='Escalas')
     escalas= models.IntegerField(verbose_name='# escalas', blank=True, default= 0)
     precio= models.IntegerField(verbose_name='Precio', default= 0)
     Ida_vuelta= models.BooleanField(default=False, verbose_name='ida_vuelta')
+
+
 
     def __str__(self):
         idstr= str(self.id)
@@ -57,7 +70,7 @@ class userVueloYa(models.Model):
         ("Prefiero no decir", "Prefiero no decir")       
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    picture = models.ImageField(default='default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
+    picture = models.ImageField(default='profile_pictures/default.png', upload_to= 'profile_pictures', validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg'])])
     genero = models.CharField(default='No especificado', max_length=25, choices=GENEROS)
     fechaNacimiento = models.DateField(default='1900-01-01', blank=True)
     telefono = models.CharField(default='', blank=True, max_length=10)
