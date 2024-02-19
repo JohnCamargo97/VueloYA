@@ -15,93 +15,99 @@
       <div class="contenedor-texto-misviajes">
         <h3 class="ofertas" style="color: #505050;">Mis Viajes</h3>
       </div>
+      <br>
+      {% for object in lista %}
+      <br>
+        Fecha registro: {{object.timestamp}}
+        <div class="registro-misviajes-uno">
 
-      <div class="registro-misviajes-uno">
+          <div class="contenedor-misviajes-num-uno">
 
-        <div class="contenedor-misviajes-num-uno">
+            <div class="contenedor-nombre-logo-aerolinea">
 
-          <div class="contenedor-nombre-logo-aerolinea">
+              <div class="contenedor-logo-aerolinea-nombre">
+                <img class="logo-avianca-misviajes" src="{% static 'img/Imagen-logo-avianca.png' %}" alt="Logo Aerolinea">
 
-            <div class="contenedor-logo-aerolinea-nombre">
-              <img class="logo-avianca-misviajes" src="{% static 'img/Imagen-logo-avianca.png' %}" alt="Logo Aerolinea">
+                <div class="nombre-aerolinea" >
+                  <span style="font-size: 20px; color: #505050;">{{object.vuelo.id_aerolinea.nombre_aerolinea}}</span>
+                </div>
 
-              <div class="nombre-aerolinea" >
-                <span style="font-size: 20px; color: #505050;">Avianca Airlines</span>
+              </div>
+
+              <div class="dias-de-viaje">
+                <span style="font-weight: 600; color: #505050;">6 DÍAS</span>
               </div>
 
             </div>
 
-            <div class="dias-de-viaje">
-              <span style="font-weight: 600; color: #505050;">6 DÍAS</span>
-            </div>
+            <div class="contenedor-informacion-del-vuelo">
+              
+              <div class="ida-horasalida-escalas">
 
-          </div>
+                <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
+                  <span style="font-weight: 600;">SALIDA</span>
+                  <span style="margin-left: 5px;">{{object.vuelo.origen}}</span>
+                </div>
 
-          <div class="contenedor-informacion-del-vuelo">
-            
-            <div class="ida-horasalida-escalas">
+                <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
+                  <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechasalida}}</span>
+                </div>
 
-              <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
-                <span style="font-weight: 600;">SALIDA</span>
-                <span style="margin-left: 5px;">CITY-CITY</span>
+                <div class="cotenedor-escalas-viaje">
+                  <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horasalida1}} - {{object.vuelo.escalas}} ESCALAS</span>
+                </div>
+
               </div>
 
-              <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
-                <span style="font-weight: 500; color: #505050; font-size: 14px;">Mie. 25 ENE. 2024</span>
+              <div class="dias-de-viaje-dos">
+                <span style="font-weight: 600; color: #505050; border-bottom: 1px solid #909090 ;">{{object.duracion}}</span>
               </div>
 
-              <div class="cotenedor-escalas-viaje">
-                <span style="font-weight: 500; color: #505050; font-size: 12px;">9:48AM - 2 ESCALAS</span>
-              </div>
+              <div class="ida-horaregreso-escalas">
 
-            </div>
+                <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
+                  <span style="font-weight: 600;">REGRESO</span>
+                  <span style="margin-left: 5px;">{{object.vuelo.destino}}</span>
+                </div>
 
-            <div class="dias-de-viaje-dos">
-              <span style="font-weight: 600; color: #505050; border-bottom: 1px solid #909090 ;">6 DÍAS</span>
-            </div>
+                <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
+                  <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechavuelta}}</span>
+                </div>
 
-            <div class="ida-horaregreso-escalas">
+                <div class="cotenedor-escalas-viaje">
+                  <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horavuelta2}} - {{object.vuelo.escalas}} ESCALAS</span>
+                </div>
 
-              <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
-                <span style="font-weight: 600;">REGRESO</span>
-                <span style="margin-left: 5px;">CITY-CITY</span>
-              </div>
-
-              <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
-                <span style="font-weight: 500; color: #505050; font-size: 14px;">Mie. 31 ENE. 2024</span>
-              </div>
-
-              <div class="cotenedor-escalas-viaje">
-                <span style="font-weight: 500; color: #505050; font-size: 12px;">7:00PM - 1 ESCALAS</span>
               </div>
 
             </div>
 
-          </div>
 
 
+            <div class="contenedor-estado-valor-vuelos">
+              
+              <div class="contenedor-estado-del-vuelo-precio">
 
-          <div class="contenedor-estado-valor-vuelos">
-            
-            <div class="contenedor-estado-del-vuelo-precio">
+                <div class="cotenedor-estado-de-misviajes" style="display: flex; margin-bottom: 5px; color: #505050;">
+                  <span style="font-weight: 600;">Estado:</span>
+                  <span style="margin-left: 5px;">{{object.estado}}</span>
+                </div>
 
-              <div class="cotenedor-estado-de-misviajes" style="display: flex; margin-bottom: 5px; color: #505050;">
-                <span style="font-weight: 600;">Estado:</span>
-                <span style="margin-left: 5px;">Completado</span>
+                <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
+                  <span style="font-weight: 600;">Valor:</span>
+                  <span style="margin-left: 5px;">$ {{object.total}} COP</span>
+                </div>
+
               </div>
-
-              <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
-                <span style="font-weight: 600;">Valor:</span>
-                <span style="margin-left: 5px;">$ 7.000.000 COP</span>
-              </div>
-
+              
             </div>
-            
+
           </div>
 
         </div>
+      <br>
 
-      </div>
+      {% endfor %}
 
     </div>
 

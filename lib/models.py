@@ -121,8 +121,10 @@ class historicoReserva(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     vuelo = models.ForeignKey(Vuelo, on_delete=models.DO_NOTHING)
     timestamp = models.DateTimeField(auto_now_add=True)
+    duracion = models.DurationField(verbose_name='total', default= timedelta(days=1))
     puestos = models.CharField(max_length=25)
     pasajeros = models.SmallIntegerField()
+    total= models.IntegerField(verbose_name='total', default= 6500000)
     estado = models.CharField(max_length=25)
     
 class oferta(models.Model):
