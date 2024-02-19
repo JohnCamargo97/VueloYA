@@ -22,6 +22,17 @@ class UpdateUserForm(forms.ModelForm):
       fields = ('username', 'first_name', 'last_name', 'email')
    
 class userFactForm(forms.ModelForm):
+
+   def __init__(self, *args, **kwargs):
+      super().__init__(*args, **kwargs)
+      
+      for visible in self.visible_fields():
+         visible.field.widget.attrs['class'] = 'input-datos-facturacion'
+         visible.field.widget.attrs['placeholder'] = visible.field.label
+      
+      self.fields["situacionFiscal"].widget.attrs.update({"class": "select-tipo-documento-situacion-fiscal"})
+      self.fields["tipoDeDocumento"].widget.attrs.update({"class": "select-tipo-documento-situacion-fiscal"})
+      
    class Meta:
       model = userFacturacion
       fields = ('situacionFiscal', 'nombre', 'apellido', 'tipoDeDocumento', 'nDocumento', 'departamento', 'ciudad', 'direccion')

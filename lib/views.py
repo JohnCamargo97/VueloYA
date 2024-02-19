@@ -1,4 +1,5 @@
 from typing import Any
+from datetime import datetime
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
@@ -44,12 +45,17 @@ def home(request):
     return render(request, 'paginas/home.html', context)
 
 def misviajes(request):
-    return render (request, 'paginas/misviajes.html')
+    lista = historicoReserva.objects.filter(user = request.user).all()
+    return render(request, 'paginas/misviajes.html', {'lista': lista})
     
 def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=pk)
+    inicio = datetime.combine(detallesVuelo.fechasalida, detallesVuelo.horasalida1)
+    final = datetime.combine(detallesVuelo.fechavuelta, detallesVuelo.horavuelta2)
+    duracion = final - inicio
+    print("duracion: ", duracion)
     if request.method == "POST":
         userpasajeroForm = userPasajeroForm(request.POST)
         uservoucherForm =  voucherForm(request.POST)
@@ -64,7 +70,7 @@ def pagos(request, pk):
 
             if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
                 print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}')
-                Reserva = historicoReserva(user= request.user, vuelo= detallesVuelo, puestos= pasajero.puesto, pasajeros= nPasajeros, estado="Reservado")
+                Reserva = historicoReserva(user= request.user, vuelo= detallesVuelo, puestos= pasajero.puesto, pasajeros= nPasajeros, estado="Reservado", total=nPasajeros*detallesVuelo.precio, duracion= duracion)
                 Reserva.save()
                 return redirect('resumen')
             else:
@@ -89,7 +95,6 @@ def pagos(request, pk):
     }
     
     return render (request, 'paginas/pagos.html', context)
-
 
 class resultado(FilterView):
     model= Vuelo
@@ -126,10 +131,6 @@ class resultado(FilterView):
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
 
             return render(self.request, self.template_name, self.get_context_data())
-
-
-
-
 class busqueda(View):
     def get(self, request, *args, **kwargs):
         lista_resultado = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
