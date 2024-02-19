@@ -134,7 +134,7 @@ body {
     box-shadow: none; /* Elimina cualquier sombra al hacer clic */
 }
 
-.boton-uno{
+.boton-busqueda{
     background-color: rgb(255, 72, 72);
     width: 100%;
     height: 35px;
@@ -144,7 +144,7 @@ body {
     color: white;
 }
 
-.boton-uno:hover{
+.boton-busqueda:hover{
     background-color: rgb(255, 81, 81);
     transform: translateY(1px);
 }
@@ -158,6 +158,13 @@ body {
 
 
 /*Filtro Precio y Moneda Responsive*/
+
+.formulario-dos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 .filtro-precio{
     width:100%;
@@ -216,6 +223,26 @@ body {
 .rango-precios{
     display: flex;
     justify-content: space-between;
+}
+
+.contenedor-rango{
+    width: 100%;
+    border: 0px solid transparent;
+}
+
+.boton-filtrar{
+    background-color: rgb(255, 72, 72);
+    width: 85%;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    color: white;
+}
+
+.boton-filtrar:hover{
+    background-color: rgb(255, 81, 81);
+    transform: translateY(1px);
 }
 
 /*Filtro Precio y Moneda Responsive*/
@@ -763,7 +790,7 @@ body {
 }
 
 .nombre-aerolinea{
-    padding: 4px;
+    margin-left: 5px;
 }
 
 .horario-viaje{
@@ -1764,11 +1791,6 @@ body {
 
     .filtro-precio{
         width:95%;
-        height: auto;
-        margin-top: 25px;
-        border-top: 1px solid #505050;
-        border-bottom: 1px solid #505050;
-        padding: 5px;
     }
 
     .accordion-button:not(.collapsed){
@@ -1941,10 +1963,6 @@ body {
         border-left: solid 1px #d4d4d4;
         border-right: solid 1px #d4d4d4;
         border-bottom: solid 1px #d4d4d4;
-    }
-    
-    .nombre-aerolinea{
-        padding: 4px;
     }
     
     .horario-viaje{
