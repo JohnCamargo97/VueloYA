@@ -74,14 +74,15 @@
       
                   </div>
                   
-                  <button class="boton-uno" type="submit" name="busqueda", value="busqueda">Buscar</button>
+                  <button class="boton-busqueda" type="submit" name="busqueda", value="busqueda">Buscar</button>
       
             </div>
           </div>
         </form>
 
-        <form class="formulario-uno" action="#" method="GET">
+        <form class="formulario-dos" action="#" method="GET">
           {% csrf_token%}
+
           <div class="filtro-precio">
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -96,7 +97,7 @@
 
                     <div class="rango-valor">
 
-                      <input type="number" style="border: 10px solid transparent; background-color: #eeeeee; color: #505050;" name="actual" min="450000" max="10000000" id="max_precio" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" placeholder="Current precio" disabled>
+                      <input class="contenedor-rango" type="number" name="actual" min="450000" max="10000000" id="max_precio" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" placeholder="Precio Actual" disabled>
                       <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" step="50000" max="10000000" id="id_rango_precio" oninput="max_precio.value=this.value">
 
                       <div class="rango-precios">
@@ -137,27 +138,35 @@
                   Filtros de Aerolíneas
                   </button>
                 </h2>
+
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
 
                   <div class="accordion-body">
 
                     <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
+
                       {% for aerolinea in aerolineas%}
+
                         <div class="aerolineas">
-
-                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
-                            <label class="label-aerolineas">{{aerolinea.0}}</label>
-                            <span>({{aerolinea.2}})</span>
-
+                          <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
+                          <label class="label-aerolineas">{{aerolinea.0}}</label>
+                          <span>({{aerolinea.2}})</span>
                         </div>
+
                       {% endfor %}
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
             </div>       
-          </div> 
-          <button class="boton-uno" type="submit" name="filtro" value="filtro"> Filtrar</button>
+          </div>
+
+          <button class="boton-filtrar" type="submit" name="filtro" value="filtro"> Filtrar</button>
+
         </form>
 
       </div>
