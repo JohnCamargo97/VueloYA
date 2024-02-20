@@ -55,7 +55,9 @@ def pagos(request, pk):
     inicio = datetime.combine(detallesVuelo.fechasalida, detallesVuelo.horasalida1)
     final = datetime.combine(detallesVuelo.fechavuelta, detallesVuelo.horavuelta2)
     duracion = final - inicio
-    print("duracion: ", duracion)
+    total = detallesVuelo.precio * nPasajeros
+    extra = total*0.19
+    print("detalles-precio: ", detallesVuelo.precio, nPasajeros)
     if request.method == "POST":
         userpasajeroForm = userPasajeroForm(request.POST)
         uservoucherForm =  voucherForm(request.POST)
@@ -86,14 +88,16 @@ def pagos(request, pk):
         usertyc = terminosyCondiciones()
 
     context = {
-        'detallesVuelo': detallesVuelo,
+        'total': total,
+        'extra': extra,
+        'DetallesVuelo': detallesVuelo,
         'userpasajeroForm': userpasajeroForm,
         'uservoucherForm': uservoucherForm,
         'usermetodopagoForm': usermetodopagoForm,
         'userdatostarjetaForm': userdatostarjetaForm,
         'tyc': usertyc
     }
-    
+    print('context: ', context)
     return render (request, 'paginas/pagos.html', context)
 
 class resultado(FilterView):
@@ -101,6 +105,7 @@ class resultado(FilterView):
     template_name= "paginas/busqueda.html"
     context_object_name = "lista_resultado"
     filterset_class = vueloFilter
+    paginate_by = 1
 
     def get_queryset(self, **kwargs):
         print("request.GET: ",self.request.GET)
