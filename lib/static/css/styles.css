@@ -198,6 +198,56 @@ body {
 
 
 
+/*Contenedor de Publicidad*/
+
+.publicdad{
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 20px;
+}
+
+.contenedor-publicidad{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-publicidad-uno{
+    width: 45%;
+    height: 300px;
+    border-radius: 8px;
+    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.img-publicidad-uno:hover{
+    transform: scale(1.1);
+}
+
+.img-publicidad-dos{
+    width: 45%;
+    height: 300px;
+    border-radius: 8px;
+    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.img-publicidad-dos:hover{
+    transform: scale(1.1);
+}
+
+/*Contenedor de Publicidad*/
+
+
+
+
+
 /*Ofertas de Viajes*/
 
 .precio-dubai{
@@ -288,7 +338,9 @@ body {
 }
 
 .img-fluid{
+    border-radius: 8px;
     margin-top: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /*Top lugares más buscados*/
@@ -647,6 +699,16 @@ body {
     
     .img-fluid{
         margin-top: 0px;
+        cursor: pointer;
+        transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+    }
+
+    .img-fluid:hover{
+        transform: scale(0.9);
+    }
+
+    .w-100{
+        border-radius: 8px;
     }
 
     /*Top lugares más buscados*/
