@@ -74,6 +74,8 @@ def personal_info(request):
             u_form.save()
             uvy_form.save()
             return redirect('perfil_user')
+        else:
+            print(u_form.errors, uvy_form.errors) 
 
     else:
         u_form = UpdateUserForm(instance=request.user)

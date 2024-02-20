@@ -6,7 +6,6 @@
 
 {% block contenido %}
 
-{{form}}
 <div class="container-fluid mi-perfil">
 
     <div class="container edit-miperfil">
@@ -52,40 +51,33 @@
                             <div class="contenedor-actualizar-datos-personales">
 
                                 <label class="label-datos-facturacion" for="id_nombre">Nombres</label>
-                                <input class="input-datos-facturacion" type="text" name="nombre" value="{{ form.nombre.value }}" maxlength="40" required="" id="id_nombre">
+                                {{form.nombre}}
 
                                 <label class="label-datos-facturacion" for="id_apellido">Apellidos</label>
-                                <input class="input-datos-facturacion" type="text" name="apellido" value="{{ form.apellido.value }}" maxlength="40" required="" id="id_apellido">
+                                {{form.apellido}}
 
                                 <label class="label-datos-facturacion" for="id_tipoDeDocumento">Tipo de Documento</label>
-                                <select class="select-tipo-documento-situacion-fiscal" name="tipoDeDocumento" required id="id_tipoDeDocumento">
-                                    <option value="CC" selected>CC</option>                               
-                                    <option value="TI">TI</option>                                
-                                    <option value="Pasaporte">Pasaporte</option>                                 
-                                </select>
+                                {{form.tipoDeDocumento}}
 
                                 <label class="label-datos-facturacion" for="id_nDocumento">Número del Documento</label>
-                                <input class="input-datos-facturacion" type="text" name="nDocumento" value="{{ form.nDocumento.value }}" required="" id="id_nDocumento">
+                                {{form.nDocumento}}
 
                             </div>
 
                             <div class="contenedor-dos-actualizar-datos-personales">
 
                                 <label class="label-datos-facturacion" for="id_situacionFiscal">Situación Fiscal</label>
-                                <select class="select-tipo-documento-situacion-fiscal" name="situacionFiscal" required id="id_situacionFiscal">                           
-                                    <option selected value="Persona Natural">Persona Natural</option>                              
-                                    <option value="Persona Juridica">Persona Juridica</option>
-                                </select>
+                                {{form.situacionFiscal}}
 
                                 <label class="label-datos-facturacion" for="id_departamento">Departamento</label>
-                                <input class="input-datos-facturacion" type="text" name="departamento" value="{{ form.departamento.value }}" maxlength="40" required="" id="id_departamento">
-
+                                {{form.departamento}}
+                            
                                 <label class="label-datos-facturacion" for="id_ciudad">Ciudad</label>
-                                <input class="input-datos-facturacion" type="text" name="ciudad" value="{{ form.ciudad.value }}" maxlength="40" required="" id="id_ciudad">
+                                {{form.ciudad}}
 
                                 <label class="label-datos-facturacion" for="id_direccion">Dirección</label>
-                                <input class="input-datos-facturacion" type="text" name="direccion" value="{{ form.direccion.value }}" maxlength="40" required="" id="id_direccion">
-                            
+                                {{form.direccion}}
+                                
                             </div>
 
                         </div>
