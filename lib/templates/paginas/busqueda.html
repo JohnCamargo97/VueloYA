@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block contenido %} 
 
 
@@ -250,7 +252,7 @@
 
                   <div class="precio-final">
                       <span> Precio final a pagar </span>
-                      <span style="font-weight: bold; font-size: 20px; display: block;">{{vuelo.precio}}</span>
+                      <span style="font-weight: bold; font-size: 20px; display: block;">$ {{vuelo.precio|intcomma}} COP</span>
                   </div>
                       <a class="boton-comprar-busqueda" href="{% url 'pagos' pk=vuelo.pk%}">Comprar</a>
               </div>
@@ -258,7 +260,107 @@
           </div>
 
         {% endfor %}
+        
+        <div class="pagination" style="justify-content: space-evenly; width: 500px; height: 40px;">
+              {% if page_obj.has_previous %}
+                  <a href="?page=1" 
+                  style="background-color: #1640D6; 
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        text-decoration: none;">&laquo; first</a>
+                  <a href="?page={{ page_obj.previous_page_number }}" 
+                  style="background-color: #166cd6; 
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px; 
+                        text-decoration: none;">previous</a>
+              {% else %}
+                  <span  
+                  style="background-color: #8395d6; 
+                        color: #cdcdcd;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        user-select: none;
+                        text-decoration: none;">&laquo; first</span>
+                  <span
+                  style="background-color: #80a4d3; 
+                        color: #cdcdcd;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        user-select: none;
+                        text-decoration: none;">previous</span>
+              {% endif %}
       
+              <span class="current" 
+              style="background-color: #ffffff; 
+                    color: #696969;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:fit-content;
+                    height: 40px;
+                    padding: 5px;
+                    user-select: none; 
+                    text-decoration: none;">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+      
+              {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}"
+                  style="background-color: #166cd6; 
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px; 
+                        text-decoration: none;">next</a>
+                  <a href="?page={{ page_obj.paginator.num_pages }}"
+                  style="background-color: #1640D6; 
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        text-decoration: none;">last &raquo;</a>
+              {% else %}
+                  <span  
+                  style="background-color: #80a4d3; 
+                        color: #cdcdcd;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        user-select: none;
+                        text-decoration: none;">next</span>
+                  <span
+                  style="background-color: #8395d6; 
+                        color: #cdcdcd;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80px;
+                        height: 40px;
+                        user-select: none;
+                        text-decoration: none;">last &raquo;</span>   
+              {% endif %}
+        </div>
+
       </div>
 
     </div>

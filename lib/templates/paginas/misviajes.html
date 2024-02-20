@@ -15,12 +15,11 @@
       <div class="contenedor-texto-misviajes">
         <h3 class="ofertas" style="color: #505050;">Mis Viajes</h3>
       </div>
-      <br>
-      {% for object in lista %}
-      <br>
-        Fecha registro: {{object.timestamp}}
-        <div class="registro-misviajes-uno">
 
+      {% for object in lista %}
+        
+        <div class="registro-misviajes-uno" style="border-bottom-left-radius: 0px;">
+          
           <div class="contenedor-misviajes-num-uno">
 
             <div class="contenedor-nombre-logo-aerolinea">
@@ -98,15 +97,21 @@
                   <span style="margin-left: 5px;">$ {{object.total}} COP</span>
                 </div>
 
+                <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
+                  <span style="font-weight: 600;">Puestos:</span>
+                  <span style="margin-left: 5px;">{{object.pasajeros}}</span>
+                </div>
+
               </div>
               
             </div>
 
           </div>
-
+          
         </div>
-      <br>
-
+        <div  style="padding-left: 10px; padding-right: 10px; background-color: #ffffff; width: fit-content; color: #505050; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);">
+          <small><pre>Fecha registro: {{object.timestamp}}</pre></small>
+        </div>
       {% endfor %}
 
     </div>
