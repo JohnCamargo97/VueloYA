@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'lib.apps.LibConfig',
+    'users.apps.UsersConfig',
     #'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,10 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lib.apps.LibConfig',
     'django_filters',
     'django.contrib.humanize',
-    'users.apps.UsersConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -138,4 +139,5 @@ AUTHENTICATION_BACKENDS = [
    'django.contrib.auth.backends.ModelBackend', 
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ALLOWED_HOSTS = ['192.168.20.28', '192.168.20.20', '127.0.0.1', 'localhost']
