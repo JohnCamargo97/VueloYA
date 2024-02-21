@@ -213,12 +213,12 @@ body {
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .img-publicidad-uno{
-    width: 45%;
-    height: 300px;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
     transition: transform 0.5s ease; /* Transición suave para el efecto hover */
     cursor: pointer;
@@ -226,21 +226,18 @@ body {
 }
 
 .img-publicidad-uno:hover{
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
-.img-publicidad-dos{
-    width: 45%;
-    height: 300px;
-    border-radius: 8px;
-    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+/*COLORES
 
-.img-publicidad-dos:hover{
-    transform: scale(1.1);
-}
+#ED155D FUTSIA
+#00BFC3 AZUL RARO
+#2FF3E0 AZUL RARO CLARITO
+#F8D210 AMARILLO
+#30097D AZUL RARO OSCURO
+
+*/
 
 /*Contenedor de Publicidad*/
 
