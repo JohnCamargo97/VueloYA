@@ -1,6 +1,6 @@
 {% extends "indexdos.html" %}
 
-{% block titulo %} Inicio Sesión {% endblock %}
+{% block titulo %} Personal-info {% endblock %}
 
 {% load static %}
 
@@ -11,7 +11,7 @@
     <div class="container edit-miperfil">
 
         <div class="contenedor-prueba">
-            
+        
             <div class="contenedor-edi-datos-perfil">
                 
                 <div class="contenedor-datos-perfil">
@@ -29,137 +29,53 @@
                     </div>
 
                     <div class="contenedor-boton-editar">
-                        <a class="boton-editar-perfil" href="{% url 'personal-info' %}"><img class="icono-editar" src="{% static 'favicon.ico/IconoLapiz.png' %}" alt="">Editar</a>
+                        <a class="boton-editar-perfil" href="{% url 'perfil_user' %}"><img class="icono-regresar-a-perfil" src="{% static 'favicon.ico/IconoFlechaizquierda.png' %}" alt="">Mi Perfil</a>
                     </div>
-
-                </div>
-
-                <div class="contenedor-datos-personales">
-
-                    <div class="contenedor-datos">
-
-                        <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoUsuarioDos.png' %}" alt="">
-
-                            <div class="contenedor-nom-fecha-cel-genero">Nombre Completo
-
-                                <div style="font-weight: 400;"> {{user.get_full_name}}</div>
-                
-                            </div>
-
-                        </div>
-
-                        <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoCalendario.png' %}" alt="">
-
-                            <div class="contenedor-nom-fecha-cel-genero">Fecha de Nacimiento
-                            
-                                <div style="font-weight: 400;">{{user.uservueloya.fechaNacimiento}}</div>
-                            
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="contenedor-datos-dos">
-
-                        <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoTelefono.png' %}" alt="">
-
-                            <div class="contenedor-nom-fecha-cel-genero">Telefono
-
-                                <div style="font-weight: 400;"> 3219082345</div>
-                    
-                            </div>
-
-                        </div>
-
-                        <div class="contenedor-icono-tel"><img class="icono-tel" src="{% static 'favicon.ico/IconoGeneros.png' %}" alt="">
-
-                            <div class="contenedor-nom-fecha-cel-genero">Genero
-
-                                <div style="font-weight: 400;">{{user.uservueloya.genero}} </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="contenedor-datos-metodos-pagos">
-                    
-                <div class="contenedor-datos-tarjeta">
-
-                    <div class="contenedor-texto-tarjeta-credito">
-                        <h5 style="color: #505050;">Agregar Tarjetas</h5>
-                        Tarjeta 1
-                    </div>
-
-                    <div class="contenedor-agregar-tarjetas">
-                        <a class="boton-agregar-tarjetas" href="{% url 'personal-info' %}"><img class="icono-agregar" src="{% static 'favicon.ico/IconoAgregar.png' %}" alt="">Tarjeta</a>
-                    </div>  
 
                 </div>
 
             </div>
 
             <div class="contenedor-datos-facturacion">
+
+                <div class="texto-datos-personales"><h5>Seguro desea borrar su cuenta</h5></div>
+                <br>
+
+                <p>Una vez confirme la eliminacion de su cuenta no podra deshacer esta accion</p>
+                <br>
+                <p>Escriba<strong>"CONFIRMAR"</strong> y presione enviar para eliminar su cuenta</p>
+                <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    <div class="contenedor-para-actualizar-mis-datos">
+
+                        <div class="contenedor-actualizar-datos-personales" style="margin: 15px;">
+                            <div class="parte-registrarse">
+                                <input class="input-datos-facturacion" type="text" name="confirmacion" autofocus required id="id_confirmacion">
                 
-                <div class="contenedor-texto-datos-facturacion">
-                    <h5 style="color: #505050; padding: 10px;">Datos de Facturacion</h5>
-                </div>
+                            </div>
+                            {% if alert %}
 
-                {% for facto in factos%}
-
-                    <div class="contenedor-info-usuarios">
-
-                        <div class="contenedor-nombre-cedula-user">{{facto}}</div>
-
-                        <div class="parte-facturacion">
-
-                            <a class="boton-facturacion-editar" href="{% url 'facturacion_editar' facto.pk %}">Editar</a>
-
-                            <a class="boton-facturacion-borrar"href="{% url 'facturacion_borrar' facto.pk %}">Borrar</a>
-
+                                {{alert}}
+                            {% endif %}
+                            <div class="parte-registrarse">
+                                <button class="boton-registrarse" type="submit">Enviar</button>
+                            </div>
                         </div>
 
+
                     </div>
-
-                    <div class="contenedor-separador-uno"><hr class="separador-uno"></div>
-
-
-                {% endfor %}
+                </form>
                 
-                <div class="contenedor-boton-facturacion-agregar">
-                    <a class="boton-facturacion-agregar"href="{% url 'facturacion_crear' %}"><img class="icono-agregar" src="{% static 'favicon.ico/IconoAgregar.png' %}" alt="">Agregar nuevo</a>
                 </div>
-
+                
             </div>
-
-            <div class="contenedor-preferencias">
-
-                <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
-
-                <div class="contenedor-cambiar-contrasena">
-                    <a class="icono-cambiarcontrasena" href="{% url 'password_reset' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoContrasena.png' %}" alt="Icono-clave">Cambiar Contraseña</a>
-                </div>
-
-                <div class="contenedor-eliminar-cuenta">
-                    <a class="icono-eliminarcuenta" href="{% url 'borrar_cuenta' user.pk %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoBorrarUsuario.png' %}" alt="Icono-Eliminar">Eliminar Cuenta</a>
-                </div>
-
-                <div class="contenedor-recibir-notificaciones">
-                    <a class="icono-notificaciones" class="texto-recibir-notificaciones" href="##"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoNotificacion.png' %}" alt="Icono-Notificaciones"> ¿Quieres Recibir Notificaciones? <input class="input-aceptar-notificaciones" type="checkbox"></a>
-                </div>
-
-            </div>
-
         </div>
-    </div>
+
+    </div>  
 
 </div>
+
 
 <div class="container recibir-ofertas">
     <div class="container">
@@ -279,4 +195,14 @@
 
 </div>
 
+
 {% endblock %}
+
+
+<h1>Password reset sent</h1>
+          
+          
+
+<p>We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly.</p>
+
+<p>If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder.</p>

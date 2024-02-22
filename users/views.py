@@ -55,6 +55,23 @@ def logout_user(request):
     logout(request)
     return redirect('home') 
 
+def delete_user(request, pk):
+    custom_alert = 'palabra clave incorrecta, revise que no tenga puntuacion y todo este en mayusculas'
+    if request.user.is_authenticated:
+        if request.POST:
+            if request.POST['confirmacion'] == 'CONFIRMAR':
+                request.user.delete()
+                return redirect('home')
+            else:
+                context = {'alert': custom_alert}
+                return render (request, 'users/borrar_cuenta.html', context)
+        else:
+            context = {}
+            return render (request, 'users/borrar_cuenta.html', context)
+    else:
+        return redirect('home')
+
+
 def mensaje_user(request):
     messages.success(request, ('Registrado exitosamente!'))
     return render (request, 'users/mensaje_user.html')
@@ -142,3 +159,4 @@ def facturacion_borrar(request, pk):
             return redirect('perfil_user')
     else:
         return redirect('home')
+
