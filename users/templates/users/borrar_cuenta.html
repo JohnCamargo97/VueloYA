@@ -38,55 +38,35 @@
 
             <div class="contenedor-datos-facturacion">
 
-                <div class="texto-datos-personales"><h5>Password reset sent</h5></div>
+                <div class="texto-datos-personales"><h5>Seguro desea borrar su cuenta</h5></div>
                 <br>
 
-                    {% if validlink %}
+                <p>Una vez confirme la eliminacion de su cuenta no podra deshacer esta accion</p>
+                <br>
+                <p>Escriba<strong>"CONFIRMAR"</strong> y presione enviar para eliminar su cuenta</p>
+                <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
 
-                        <form class="contenedor-formulario-facturacion" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="contenedor-para-actualizar-mis-datos">
 
-                            {% csrf_token %}
-                            <div class="contenedor-para-actualizar-mis-datos">
-
-                                <div class="contenedor-actualizar-datos-personales" style="margin: 15px;">
-                                    <div class="parte-registrarse">
-                                        <input class="input-formulario-registrarse" type="password" name="new_password1" placeholder="Ingresar nueva contraseña" autocomplete="new password" autofocus required id="id_new_password1">
-                        
-                                    </div>
-                    
-                                    <div class="parte-registrarse">
-                                        <input class="input-formulario-registrarse" type="password" name="new_password2" placeholder="Repetir nueva contraseña" autocomplete="new-password" autofocus required id="id_new_password2">
-                    
-                                        
-
-                                    </div>
-
-                                    <div class="parte-registrarse">
-                                        <button class="boton-registrarse" type="submit">Cambiar contrasenia</button>
-                                    </div>
-                                </div>
-
-
+                        <div class="contenedor-actualizar-datos-personales" style="margin: 15px;">
+                            <div class="parte-registrarse">
+                                <input class="input-datos-facturacion" type="text" name="confirmacion" autofocus required id="id_confirmacion">
+                
                             </div>
-                        </form>
-                        
-                        {% if form.errors %}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <div id="form_errors">
-                                {% for key, value in form.errors.items %}
-                                {{ value }}
-                                {% endfor %}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            {% if alert %}
+
+                                {{alert}}
+                            {% endif %}
+                            <div class="parte-registrarse">
+                                <button class="boton-registrarse" type="submit">Enviar</button>
                             </div>
                         </div>
-                        {% endif %}
 
-                    {% else %}
-                    <div class="alert alert-warning">
-                        The password reset link was invalid, possibly because it has already been used.
-                        Please request a new password reset.
+
                     </div>
-                    {% endif %}
+                </form>
+                
                 </div>
                 
             </div>
@@ -223,4 +203,6 @@
           
           
 
-<p>Your password has been set</p>
+<p>We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly.</p>
+
+<p>If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder.</p>

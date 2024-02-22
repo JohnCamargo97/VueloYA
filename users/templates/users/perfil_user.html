@@ -143,11 +143,11 @@
                 <h5 style="margin-bottom: 12px; color: #505050;">Preferencias</h5>
 
                 <div class="contenedor-cambiar-contrasena">
-                    <a class="icono-cambiarcontrasena" href="{% url 'personal-info' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoContrasena.png' %}" alt="Icono-clave">Cambiar Contraseña</a>
+                    <a class="icono-cambiarcontrasena" href="{% url 'password_reset' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoContrasena.png' %}" alt="Icono-clave">Cambiar Contraseña</a>
                 </div>
 
                 <div class="contenedor-eliminar-cuenta">
-                    <a class="icono-eliminarcuenta" href="{% url 'personal-info' %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoBorrarUsuario.png' %}" alt="Icono-Eliminar">Eliminar Cuenta</a>
+                    <a class="icono-eliminarcuenta" href="{% url 'borrar_cuenta' user.pk %}"><img class="contenedor-cambiar-eliminar-aceptar" src="{% static 'favicon.ico/IconoBorrarUsuario.png' %}" alt="Icono-Eliminar">Eliminar Cuenta</a>
                 </div>
 
                 <div class="contenedor-recibir-notificaciones">
