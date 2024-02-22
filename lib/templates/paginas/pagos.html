@@ -181,7 +181,7 @@
         
                             <div class="contenedor-vencimiento-tarjeta">
                                 <label for="tarjetas">CÓD. SEGURIDAD</label>
-                                <input class="vencimiento-tarjeta" type="number" id="id_codseguridad" placeholder="MM/AA" name="codseguridad">
+                                <input class="vencimiento-tarjeta" type="number" id="id_codseguridad" placeholder="123" name="codseguridad">
                             </div>
         
                         </div>
@@ -197,7 +197,7 @@
         
                     <div class="aceptar-terminos-compra">
                         <input class="cotenedor-input-aceptar-terminos" type="checkbox" id="id_tyc" name="tyc" required>
-                        <label for="aceptar">Leí y acepto las condiciones de compra, políticas de privacidad y políticas de cambios y cancelaciones.</label>
+                        <label for="aceptar">Leí y acepto las <a href="#">condiciones de compra, políticas de privacidad y políticas de cambios y cancelaciones.</a></label>
                     </div>
 
                     <div class="contenedor-boton-comprar">
@@ -207,7 +207,7 @@
 
                         <div class="texto-del-total-pago">
                             <label style="color: #505050;" for="pagos">Total a pagar</label>
-                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ 900.000 </a></span>
+                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ {{total}} COP</a></span>
                         </div>
                     </div>
 
@@ -240,7 +240,7 @@
                                             </div>
                             
                                             <div class="texto-valor-persona">
-                                                <h3 style="color: #696969; font-size: 16px;">$ 1.200.000</h3>
+                                                <h3 style="color: #696969; font-size: 16px;">$ {{DetallesVuelo.precio}} COP</h3>
                                             </div>
                             
                                         </div>
@@ -252,7 +252,7 @@
                                             </div>
                             
                                             <div class="texto-valor-impuestos">
-                                                <h3 style="color: #696969; font-size: 16px;">$ 250.000</h3>
+                                                <h3 style="color: #696969; font-size: 16px;">$ {{extra}}</h3>
                                             </div>
                             
                                         </form>
@@ -263,7 +263,7 @@
                                             </div>
                             
                                             <div class="texto-valor-final-total">
-                                                <h3 style="color: #505050; font-size: 20px;">$ 1.450.000</h3>
+                                                <h3 style="color: #505050; font-size: 20px;">$ {{total}} COP</h3>
                                             </div>
                                         </div>
                 

@@ -6,6 +6,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
   <div class="container-fluid mauro-uno">
     <div class="container mauro-dos">
 
@@ -97,7 +99,7 @@
                 <p class="card-text" style="color: #505050;">{{oferta.descripcion}}</p>
               </div>
               <div class="card-footer jamaica">
-                <span class="precio-jamaica" href="">{{oferta.vuelo.precio}}</span>
+                <span class="precio-jamaica" href="">$ {{oferta.vuelo.precio|intcomma}} COP</span>
                 <a class="boton-dos" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver Más</a>
               </div>
             </div> 

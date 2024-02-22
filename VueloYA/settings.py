@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lib.apps.LibConfig',
     'django_filters',
+    'django.contrib.humanize',
     'users.apps.UsersConfig'
 ]
 
