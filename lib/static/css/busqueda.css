@@ -155,8 +155,6 @@ body {
 
 
 
-
-
 /*Filtro Precio y Moneda Responsive*/
 
 .formulario-dos{
@@ -713,6 +711,35 @@ body {
 }
 
 /*Resultados de la busqueda de vuelos*/
+
+
+
+
+
+/*Contenedor de Publicidad*/
+
+.contenedor-publicidad-dos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-publicidad-dos{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.img-publicidad-dos:hover{
+    transform: scale(0.9);
+}
+
+/*Contenedor de Publicidad*/
 
 
 
