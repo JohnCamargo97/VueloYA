@@ -338,6 +338,11 @@ body {
     border-radius: 8px;
     margin-top: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+}
+
+.img-fluid:hover{
+    transform: scale(0.9);
 }
 
 /*Top lugares más buscados*/
@@ -697,11 +702,6 @@ body {
     .img-fluid{
         margin-top: 0px;
         cursor: pointer;
-        transition: transform 0.5s ease; /* Transición suave para el efecto hover */
-    }
-
-    .img-fluid:hover{
-        transform: scale(0.9);
     }
 
     .w-100{
