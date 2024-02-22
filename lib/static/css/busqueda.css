@@ -716,6 +716,68 @@ body {
 
 
 
+/*Paginación*/
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contenedor-boton-anterior-and-siguiente{
+    background-color: #1640D6; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12%;
+    height: auto;
+    padding: 10px; 
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.contenedor-boton-anterior-and-siguiente:hover{
+    color: #ffffff;
+}
+
+.contenedor-boton-inicio-and-final{
+    background-color: #8395d6; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12%;
+    height: auto;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    user-select: none;
+}
+
+.contenedor-paginacion-actual{
+    color: #696969;
+    border-bottom: 1px solid #696969;
+    width:fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    user-select: none; 
+    text-decoration: none;
+}
+
+/*Paginación*/
+
+
+
+
+
 /*Contenedor de Publicidad*/
 
 .contenedor-publicidad-dos{
@@ -2031,6 +2093,16 @@ body {
 
 
 
+
+
+    /*Paginación*/
+
+    .contenedor-paginacion-actual{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    /*Paginación*/
 
 
 
