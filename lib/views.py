@@ -171,6 +171,5 @@ class busqueda(View):
         }
             return render(request, 'paginas/busqueda.html', context)
 
-
-def resumen(request):
-    return render (request, 'paginas/resumen.html')
+def footer(request):
+    return render (request, "paginas/footer.html")
