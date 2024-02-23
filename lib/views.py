@@ -44,10 +44,12 @@ def home(request):
     }
     return render(request, 'paginas/home.html', context)
 
+
 def misviajes(request):
     lista = historicoReserva.objects.filter(user = request.user).all()
     return render(request, 'paginas/misviajes.html', {'lista': lista})
-    
+
+
 def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
@@ -136,6 +138,7 @@ class resultado(FilterView):
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
 
             return render(self.request, self.template_name, self.get_context_data())
+
 class busqueda(View):
     def get(self, request, *args, **kwargs):
         lista_resultado = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
