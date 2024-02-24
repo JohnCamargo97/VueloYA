@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import userFacturacion, pasajero
+from .models import userFacturacion, pasajero, puestos
 
 class RegUserForm(UserCreationForm):
    
@@ -38,6 +38,11 @@ class userFactForm(forms.ModelForm):
       fields = ('situacionFiscal', 'nombre', 'apellido', 'tipoDeDocumento', 'nDocumento', 'departamento', 'ciudad', 'direccion')
 
 class userPasajeroForm(forms.ModelForm):
+   
+   PUESTOS = puestos.objects.all().values_list('id', 'id')
+
+   puesto = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=PUESTOS)
+
    class Meta:
       model = pasajero
       fields = ('puesto', 'nombre', 'apellido', 'tipoDeDocumento', 'nDocumento', 'ciudadDeResidencia')
