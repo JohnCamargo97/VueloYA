@@ -59,22 +59,15 @@
                         <p class="contenedor-tipo-documento">
                             <label for="id_puesto">Puesto:</label>
                             <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
-                                <option value="201">201</option>
-                                <option value="202">202</option>
-                                <option value="203">203</option>
-                                <option value="204">204</option>
-                                <option value="401">401</option>
-                                <option value="402">402</option>
-                                <option value="403">403</option>
-                                <option value="404">404</option>
-                                <option value="405">405</option>
-                                <option value="406">406</option>
-                                <option value="407">407</option>
-                                <option value="408">408</option>
+                                {% for puesto in puestos %}
+                                    <option value="{{puesto.0}}">{{puesto.0}}</option>
+                                {{puesto.0}}
+                                {% endfor%}
+
                             </select>
                         </p>
                     </div>
-
+                    
                     <div class="contenedor-vouchers">
             
                         <div class="texto-recibir-vouchers">

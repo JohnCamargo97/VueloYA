@@ -8,7 +8,7 @@ from django.http import Http404
 from django.contrib.auth.models import User
 from django.db.models import Count
 from django.db.models import Q
-from .models import Vuelo, historicoReserva, oferta, aerolinea
+from .models import Vuelo, historicoReserva, oferta, aerolinea, puestos
 from django_filters.views import FilterView
 from .filter import vueloFilter
 from users.models import pasajero
@@ -54,12 +54,13 @@ def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=pk)
+    PUESTOS = puestos.objects.filter(Vuelo_id = pk).values_list("id", 'Ventana_bool')
     inicio = datetime.combine(detallesVuelo.fechasalida, detallesVuelo.horasalida1)
     final = datetime.combine(detallesVuelo.fechavuelta, detallesVuelo.horavuelta2)
     duracion = final - inicio
     total = detallesVuelo.precio * nPasajeros
     extra = total*0.19
-    print("detalles-precio: ", detallesVuelo.precio, nPasajeros)
+    print("detalles-precio: ", detallesVuelo.precio, nPasajeros, PUESTOS)
     if request.method == "POST":
         userpasajeroForm = userPasajeroForm(request.POST)
         uservoucherForm =  voucherForm(request.POST)
@@ -89,10 +90,13 @@ def pagos(request, pk):
         userdatostarjetaForm = datosTarjeta()
         usertyc = terminosyCondiciones()
 
+    
+
     context = {
         'total': total,
         'extra': extra,
         'DetallesVuelo': detallesVuelo,
+        'puestos': PUESTOS,
         'userpasajeroForm': userpasajeroForm,
         'uservoucherForm': uservoucherForm,
         'usermetodopagoForm': usermetodopagoForm,
@@ -117,7 +121,7 @@ class resultado(FilterView):
         context = super(resultado, self).get_context_data(**kwargs)
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
-        context['aerolineas'] = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
+        context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
 
         return context
 
