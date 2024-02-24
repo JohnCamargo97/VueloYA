@@ -1,4 +1,4 @@
-{% extends "indexdos.html" %}
+{% extends "footer.html" %}
 
 {% block titulo %} Mis Viajes {% endblock %}
 
@@ -8,233 +8,111 @@
 
 <div class="container-fluid cotenedor-all-misviajes">
 
+  <div class="contenedor-registro-misviajes">
 
-    
-    <div class="contenedor-registro-misviajes">
+    <div class="contenedor-texto-misviajes">
+      <h3 class="ofertas" style="color: #505050;">Mis Viajes</h3>
+    </div>
 
-      <div class="contenedor-texto-misviajes">
-        <h3 class="ofertas" style="color: #505050;">Mis Viajes</h3>
-      </div>
-
-      {% for object in lista %}
+    {% for object in lista %}
+      
+      <div class="registro-misviajes-uno" style="border-bottom-left-radius: 0px;">
         
-        <div class="registro-misviajes-uno" style="border-bottom-left-radius: 0px;">
-          
-          <div class="contenedor-misviajes-num-uno">
+        <div class="contenedor-misviajes-num-uno">
 
-            <div class="contenedor-nombre-logo-aerolinea">
+          <div class="contenedor-nombre-logo-aerolinea">
 
-              <div class="contenedor-logo-aerolinea-nombre">
-                <img class="logo-avianca-misviajes" src="{% static 'img/Imagen-logo-avianca.png' %}" alt="Logo Aerolinea">
+            <div class="contenedor-logo-aerolinea-nombre">
+              <img class="logo-avianca-misviajes" src="{% static 'img/Imagen-logo-avianca.png' %}" alt="Logo Aerolinea">
 
-                <div class="nombre-aerolinea" >
-                  <span style="font-size: 20px; color: #505050;">{{object.vuelo.id_aerolinea.nombre_aerolinea}}</span>
-                </div>
-
-              </div>
-
-              <div class="dias-de-viaje">
-                <span style="font-weight: 600; color: #505050;">6 DÍAS</span>
+              <div class="nombre-aerolinea" >
+                <span style="font-size: 20px; color: #505050;">{{object.vuelo.id_aerolinea.nombre_aerolinea}}</span>
               </div>
 
             </div>
 
-            <div class="contenedor-informacion-del-vuelo">
-              
-              <div class="ida-horasalida-escalas">
-
-                <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
-                  <span style="font-weight: 600;">SALIDA</span>
-                  <span style="margin-left: 5px;">{{object.vuelo.origen}}</span>
-                </div>
-
-                <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
-                  <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechasalida}}</span>
-                </div>
-
-                <div class="cotenedor-escalas-viaje">
-                  <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horasalida1}} - {{object.vuelo.escalas}} ESCALAS</span>
-                </div>
-
-              </div>
-
-              <div class="dias-de-viaje-dos">
-                <span style="font-weight: 600; color: #505050; border-bottom: 1px solid #909090 ;">{{object.duracion}}</span>
-              </div>
-
-              <div class="ida-horaregreso-escalas">
-
-                <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
-                  <span style="font-weight: 600;">REGRESO</span>
-                  <span style="margin-left: 5px;">{{object.vuelo.destino}}</span>
-                </div>
-
-                <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
-                  <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechavuelta}}</span>
-                </div>
-
-                <div class="cotenedor-escalas-viaje">
-                  <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horavuelta2}} - {{object.vuelo.escalas}} ESCALAS</span>
-                </div>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="contenedor-estado-valor-vuelos">
-              
-              <div class="contenedor-estado-del-vuelo-precio">
-
-                <div class="cotenedor-estado-de-misviajes" style="display: flex; margin-bottom: 5px; color: #505050;">
-                  <span style="font-weight: 600;">Estado:</span>
-                  <span style="margin-left: 5px;">{{object.estado}}</span>
-                </div>
-
-                <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
-                  <span style="font-weight: 600;">Valor:</span>
-                  <span style="margin-left: 5px;">$ {{object.total}} COP</span>
-                </div>
-
-                <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
-                  <span style="font-weight: 600;">Puestos:</span>
-                  <span style="margin-left: 5px;">{{object.pasajeros}}</span>
-                </div>
-
-              </div>
-              
+            <div class="dias-de-viaje">
+              <span style="font-weight: 600; color: #505050;">6 DÍAS</span>
             </div>
 
           </div>
-          
-        </div>
-        <div  style="padding-left: 10px; padding-right: 10px; background-color: #ffffff; width: fit-content; color: #505050; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);">
-          <small><pre>Fecha registro: {{object.timestamp}}</pre></small>
-        </div>
-      {% endfor %}
 
-    </div>
+          <div class="contenedor-informacion-del-vuelo">
+            
+            <div class="ida-horasalida-escalas">
 
-
-</div>
-
-
-<div class="container recibir-ofertas">
-  <div class="container">
-
-    <h3 class="texto-ofertas-correo"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
-
-    <div class="presentacion">
-      <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
-      <button class="boton-tres" type="submit">Enviar</button>
-    </div>
-
-    <div class="politicas-privacidad">
-      Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1640D6;" href="####">políticas de privacidad.</a>
-    </div>
-
-  </div>
-</div>
-
-<div class="container-fluid informacion-footer">
-  <div class="container">
-      <footer class="footer-uno">
-
-          <div class="row info-vueloya">
-  
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
-                  <h5 class="text-uppercase">Mi Cuenta</h5>
-  
-                  <ul class="list-unstyled">
-                      <li>
-                          <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
-                      </li>
-                      <li>
-                          <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
-                      </li>
-                  </ul>
-
+              <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
+                <span style="font-weight: 600;">SALIDA</span>
+                <span style="margin-left: 5px;">{{object.vuelo.origen}}</span>
               </div>
 
-
-
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Somos VueloYA</h5>
-  
-                  <ul class="list-unstyled">
-                      <li>
-                          <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Relación con Inversores</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Sobre VueloYA</a>
-                      </li>
-                  </ul>
+              <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
+                <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechasalida}}</span>
               </div>
 
-
-
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Confianza en tus compras</h5>
-  
-                  <ul class="list-unstyled">
-                      <li>
-                          <a href="#!" class="text-body-uno">Terminos y condiciones</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Promociones vigentes</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Politica de privacidad</a>
-                      </li>
-                  </ul>
+              <div class="cotenedor-escalas-viaje">
+                <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horasalida1}} - {{object.vuelo.escalas}} ESCALAS</span>
               </div>
 
+            </div>
 
+            <div class="dias-de-viaje-dos">
+              <span style="font-weight: 600; color: #505050; border-bottom: 1px solid #909090 ;">{{object.duracion}}</span>
+            </div>
 
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Aerolíneas</h5>
-  
-                  <ul class="list-unstyled">
-                      <li>
-                          <a href="#!" class="text-body-uno">American Airlines</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Air France</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Avianca</a>
-                      </li>
-                      <li>
-                          <a href="#!" class="text-body-uno">Latam</a>
-                      </li>
-                  </ul>
+            <div class="ida-horaregreso-escalas">
+
+              <div class="cotenedor-horasalidad" style="display: flex; margin-bottom: 5px; color: #505050;">
+                <span style="font-weight: 600;">REGRESO</span>
+                <span style="margin-left: 5px;">{{object.vuelo.destino}}</span>
               </div>
+
+              <div class="cotenedor-fechasalidad" style="margin-bottom: 5px;">
+                <span style="font-weight: 500; color: #505050; font-size: 14px;">{{object.vuelo.fechavuelta}}</span>
+              </div>
+
+              <div class="cotenedor-escalas-viaje">
+                <span style="font-weight: 500; color: #505050; font-size: 12px;">{{object.vuelo.horavuelta2}} - {{object.vuelo.escalas}} ESCALAS</span>
+              </div>
+
+            </div>
 
           </div>
 
-      </footer>
+          <div class="contenedor-estado-valor-vuelos">
+            
+            <div class="contenedor-estado-del-vuelo-precio">
+
+              <div class="cotenedor-estado-de-misviajes" style="display: flex; margin-bottom: 5px; color: #505050;">
+                <span style="font-weight: 600;">Estado:</span>
+                <span style="margin-left: 5px;">{{object.estado}}</span>
+              </div>
+
+              <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
+                <span style="font-weight: 600;">Valor:</span>
+                <span style="margin-left: 5px;">$ {{object.total}} COP</span>
+              </div>
+
+              <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
+                <span style="font-weight: 600;">Puestos:</span>
+                <span style="margin-left: 5px;">{{object.pasajeros}}</span>
+              </div>
+
+            </div>
+            
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div  style="padding-left: 10px; padding-right: 10px; background-color: #ffffff; width: fit-content; color: #505050; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);">
+        <small><pre>Fecha registro: {{object.timestamp}}</pre></small>
+      </div>
+
+    {% endfor %}
+
   </div>
-</div>
-
-<div class="container">
-
-  <footer class="footer-dos">
-
-      <div class="footer-izquierda">
-          <p class="pp-p">© 2023 Copyright:VueloYA</p>
-      </div>
-
-      <div class="footer-derecha">
-          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
-          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
-          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
-      </div>
-
-  </footer>
 
 </div>
 
