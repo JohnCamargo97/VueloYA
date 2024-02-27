@@ -1364,12 +1364,15 @@ body {
 }
 
 .parte-facturacion{
-    width: 25%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 
 .boton-facturacion-editar{
-    width: 100%;
+    width: 40%;
     padding: 10px;
     background-color: #1640D6;
     color: white;
@@ -1379,7 +1382,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    margin-right: 15px;
 }
 
 .boton-facturacion-editar:hover{
@@ -1388,7 +1391,7 @@ body {
 }
 
 .boton-facturacion-borrar{
-    width: 100%;
+    width: 40%;
     padding: 10px;
     background-color: #1640D6;
     color: white;
@@ -1661,7 +1664,11 @@ body {
 .registro-misviajes-uno{
     background-color: #ffffff;
     border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .contenedor-nombre-logo-aerolinea{
@@ -1698,14 +1705,19 @@ body {
 
 .contenedor-estado-del-vuelo-precio{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px;
     border-top: 1px solid #b0b0b0;
 }
 
 .dias-de-viaje-dos{
     display: none;
+}
+
+.cotenedor-valor-final{
+    display: flex;
+    margin-bottom: 5px;
+    color: #505050;
 }
 
 .logo-avianca-misviajes{
@@ -1720,6 +1732,16 @@ body {
 
 .logo-avianca-misviajes:hover{
     transform: scale(1.1);
+}
+
+.contenedor-registro-vuelo{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    width: fit-content;
+    color: #505050;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 /* Vista Mis Viajes*/
@@ -2617,10 +2639,7 @@ body {
     .contenedor-agregar-tarjetas{
         width: 15%;
     }
-    
-    .parte-facturacion{
-        width: 15%;
-    }
+
 
     .contenedor-nombre-cedula-user{
         width: 100%;
@@ -2712,13 +2731,14 @@ body {
     }
     
     .contenedor-informacion-del-vuelo{
-        width: 40%;
+        width: 50%;
         border-left: 1px solid #999999;
         border-right: 1px solid #999999;
     }
     
     .contenedor-estado-del-vuelo-precio{
-        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         border-top: none;
     }
 
