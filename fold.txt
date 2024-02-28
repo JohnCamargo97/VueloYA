@@ -80,3 +80,12 @@
 </div>
 
                         <!-- Formulario de inicio de sesión -->
+
+
+<select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
+                                    {% for puesto in puestos %}
+                                        <option value="{{puesto.0}}">{{puesto.0}}</option>
+                                    {{puesto.0}}
+                                    {% endfor%}
+
+                                </select>

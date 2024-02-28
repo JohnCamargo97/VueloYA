@@ -40,8 +40,23 @@ class userFactForm(forms.ModelForm):
 class userPasajeroForm(forms.ModelForm):
    
    PUESTOS = puestos.objects.all().values_list('id', 'id')
+   puesto = forms.ChoiceField(widget=forms.Select, choices=PUESTOS)
+   
+   TIPO_DOCUMENTO = [
+        ("cedula", "Cedula"),
+        ("tarjeta-identidad", "Tarjeta de Identidad"),
+        ("pasaporte", "Pasaporte"),
+    ]
+   tipoDeDocumento = forms.ChoiceField(widget=forms.Select, choices=TIPO_DOCUMENTO)
 
-   puesto = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=PUESTOS)
+   def __init__(self, *args, **kwargs):
+      super().__init__(*args, **kwargs)
+      self.fields["nombre"].widget.attrs.update({"class": "cotenedor-imput-viajeros"})
+      self.fields["apellido"].widget.attrs.update({"class": "cotenedor-imput-viajeros"})
+      self.fields["tipoDeDocumento"].widget.attrs.update({"class": "contenedor-select-viajeros"})
+      self.fields["nDocumento"].widget.attrs.update({"class": "cotenedor-imput-viajeros"})
+      self.fields["ciudadDeResidencia"].widget.attrs.update({"class": "cotenedor-imput-viajeros"})
+      self.fields["puesto"].widget.attrs.update({"class": "contenedor-select-viajeros"})
 
    class Meta:
       model = pasajero

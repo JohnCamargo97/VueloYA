@@ -10,6 +10,7 @@ urlpatterns = [
     path('busqueda/<str:origen>/<str:destino>/<int:pas>/', views.resultado.as_view(), name='busqueda'),
     path('misviajes', views.misviajes, name='misviajes'),
     path('pagos/<int:pk>', views.pagos, name='pagos'),
+    path('resumen', views.resumen, name='resumen'),
     path('footer', views.footer, name='footer'),
 
     path('users/', include('users.urls')),
