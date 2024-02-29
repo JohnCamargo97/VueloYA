@@ -884,6 +884,10 @@ body {
     margin-left: 5px;
 }
 
+.logo-de-aerolineas{
+    width: 45px;
+}
+
 .horario-viaje{
     border-top: 1px solid #d4d4d4;
     display: flex;
