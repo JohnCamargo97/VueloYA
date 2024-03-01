@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block contenido %}
 
 <div class="container">
@@ -230,7 +232,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-persona">
-                                                    <h3 style="color: #696969; font-size: 16px;">$ {{DetallesVuelo.precio}} COP</h3>
+                                                    <h3 style="color: #696969; font-size: 16px;">$ {{DetallesVuelo.precio|intcomma}} COP</h3>
                                                 </div>
                                 
                                             </div>
@@ -242,7 +244,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-impuestos">
-                                                    <h3 style="color: #696969; font-size: 16px;">$ {{extra}}</h3>
+                                                    <h3 style="color: #696969; font-size: 16px;">$ {{extra|intcomma}}</h3>
                                                 </div>
                                 
                                             </form>
@@ -253,7 +255,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-final-total">
-                                                    <h3 style="color: #505050; font-size: 20px;">$ {{total}} COP</h3>
+                                                    <h3 style="color: #505050; font-size: 20px;">$ {{total|intcomma}} COP</h3>
                                                 </div>
                                             </div>
                     
