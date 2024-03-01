@@ -271,62 +271,66 @@
                                         <div class="texto-detalles-vuelo">
                                             <h3 style="color: #505050;">Detalles del Vuelo</h3>
                                         </div>
-                    
-                                        <div class="uno">
-                                            <div class="busqueda-vuelos">
-                            
-                                                <div class="ida-vuelo">
-                                                    <div class="icono-avion">
-                                                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
-                                                    </div>
-                                                    <div class="fecha-salida-avion">
-                                                        <span>{{DetallesVuelo.fechasalida}}</span>
-                                                    </div>
-                                                </div>
+
+                                        {% for vuelo in lista_resultado %}
+
+                                            <div class="uno">
+                                                <div class="busqueda-vuelos">
                                 
-                                                <div class="info-vuelos">
-                                                    <div class="nombre-aerolinea">
-                                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                    <div class="ida-vuelo">
+                                                        <div class="icono-avion">
+                                                            <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                                                        </div>
+                                                        <div class="fecha-salida-avion">
+                                                            <span>{{DetallesVuelo.fechasalida}}</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="horario-viaje">
-                                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
-                                                        <span>-----</span>
-                                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
-                                                        <span>-----</span>
-                                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                    
+                                                    <div class="info-vuelos">
+                                                        <div class="nombre-aerolinea">
+                                                            <span> <img class="logo-de-aerolineas" src="{{vuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                        </div>
+                                                        <div class="horario-viaje">
+                                                            <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                                            <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida1}} </span>
+                                                            <span>-----</span>
+                                                            <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                                            <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
+                                                            <span>-----</span>
+                                                            <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                        </div>
+                                                        <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
                                                     </div>
-                                                    <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
+                                    
+                                                    <div class="regreso-vuelo">
+                                                        <div class="icono-avion">
+                                                            <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                                                        </div>
+                                                        <div class="fecha-regreso-avion">
+                                                            <span>{{DetallesVuelo.fechavuelta}}</span>
+                                                        </div>
+                                                    </div>
+                                    
+                                                    <div class="info-vuelos">
+                                                        <div class="nombre-aerolinea">
+                                                            <span> <img class="logo-de-aerolineas" src="{{vuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                        </div>
+                                                        <div class="horario-viaje">
+                                                            <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
+                                                            <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
+                                                            <span>-----</span>
+                                                            <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
+                                                            <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
+                                                            <span>-----</span>
+                                                            <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                        </div>
+                                                        <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                                                    </div>
+                                                    
                                                 </div>
-                                
-                                                <div class="regreso-vuelo">
-                                                    <div class="icono-avion">
-                                                        <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
-                                                    </div>
-                                                    <div class="fecha-regreso-avion">
-                                                        <span>{{DetallesVuelo.fechavuelta}}</span>
-                                                    </div>
-                                                </div>
-                                
-                                                <div class="info-vuelos">
-                                                    <div class="nombre-aerolinea">
-                                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
-                                                    </div>
-                                                    <div class="horario-viaje">
-                                                        <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
-                                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta1}} </span>
-                                                        <span>-----</span>
-                                                        <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
-                                                        <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
-                                                        <span>-----</span>
-                                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
-                                                    </div>
-                                                    <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
-                                                </div>
-                                                
                                             </div>
-                                        </div>
+
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
