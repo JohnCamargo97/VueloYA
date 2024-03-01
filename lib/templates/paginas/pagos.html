@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block contenido %}
 
 <div class="container">
@@ -21,50 +23,45 @@
                 <form method="POST">
                     {% csrf_token %}
 
-                    <div class="contenedor-formulario-pasajeros">            
-                        <div class="contenedor-quienes-viajan">
-                            <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                        </div>
+                    {{ userpasajeroFormset.management_form }}
+                    <div class="contenedor-formulario-pasajeros"> 
+                                   
+                            <div class="contenedor-quienes-viajan">
+                                <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
+                            </div>
+                        {% for pasajeroform in userpasajeroFormset %}
+                            
+                            {{pasajeroform}}
+                            <p class="contenedor-quienes-viajan">
+                                <label for="id_nombre">Nombre</label>
+                                {{pasajeroform.nombre}}
+                            </p>
 
-                        <p class="contenedor-quienes-viajan">
-                            <label for="id_nombre">Nombre</label>
-                            <input class="cotenedor-imput-viajeros" type="text" name="nombre" maxlength="40" required="" id="id_nombre" placeholder="Ingresa tu nombre">
-                        </p>
+                            <p class="contenedor-quienes-viajan">
+                                <label for="id_apellido">Apellido</label>
+                                {{pasajeroform.apellido}}
+                            </p>
 
-                        <p class="contenedor-quienes-viajan">
-                            <label for="id_apellido">Apellido</label>
-                            <input class="cotenedor-imput-viajeros" type="text" name="apellido" maxlength="40" required="" id="id_apellido" placeholder="Ingresa tu apellido">
-                        </p>
+                            <p class="contenedor-tipo-documento">
+                                <label for="id_tipoDeDocumento">Tipo De Documento</label>
+                                {{pasajeroform.tipoDeDocumento}}
+                            </p>
 
-                        <p class="contenedor-tipo-documento">
-                            <label for="id_tipoDeDocumento">Tipo De Documento</label>
-                            <select class="contenedor-select-viajeros" name="tipoDeDocumento" id="id_tipoDeDocumento">
-                                <option value="cedula">Cedula</option>
-                                <option value="tarjeta-identidad">Tarjeta de Identidad</option>
-                                <option value="pasaporte">Pasaporte</option>
-                            </select>
-                        </p>
+                            <p class="contenedor-quienes-viajan">
+                                <label for="id_nDocumento">Número De Documento</label>
+                                {{pasajeroform.nDocumento}} 
+                            </p>
 
-                        <p class="contenedor-quienes-viajan">
-                            <label for="id_nDocumento">Número De Documento</label>
-                            <input class="cotenedor-imput-viajeros" type="number" name="nDocumento" required="" id="id_nDocumento">
-                        </p>
+                            <p class="contenedor-quienes-viajan">
+                                <label for="id_ciudadDeResidencia">Ciudad De Residencia</label>
+                                {{pasajeroform.ciudadDeResidencia}} 
+                            </p>
 
-                        <p class="contenedor-quienes-viajan">
-                            <label for="id_ciudadDeResidencia">Ciudad De Residencia</label>
-                            <input class="cotenedor-imput-viajeros" type="text" name="ciudadDeResidencia" maxlength="40" required="" id="id_ciudadDeResidencia" placeholder="Villavicencio">                                
-                        </p>
-
-                        <p class="contenedor-tipo-documento">
-                            <label for="id_puesto">Puesto:</label>
-                            <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
-                                {% for puesto in puestos %}
-                                    <option value="{{puesto.0}}">{{puesto.0}}</option>
-                                {{puesto.0}}
-                                {% endfor%}
-
-                            </select>
-                        </p>
+                            <p class="contenedor-tipo-documento">
+                                <label for="id_puesto">Puesto:</label>
+                                {{pasajeroform.puesto}} 
+                            </p>
+                        {% endfor %}
                     </div>
                     
                     <div class="contenedor-vouchers">
@@ -235,7 +232,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-persona">
-                                                    <h3 style="color: #696969; font-size: 16px;">$ {{DetallesVuelo.precio}} COP</h3>
+                                                    <h3 style="color: #696969; font-size: 16px;">$ {{DetallesVuelo.precio|intcomma}} COP</h3>
                                                 </div>
                                 
                                             </div>
@@ -247,7 +244,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-impuestos">
-                                                    <h3 style="color: #696969; font-size: 16px;">$ {{extra}}</h3>
+                                                    <h3 style="color: #696969; font-size: 16px;">$ {{extra|intcomma}}</h3>
                                                 </div>
                                 
                                             </form>
@@ -258,7 +255,7 @@
                                                 </div>
                                 
                                                 <div class="texto-valor-final-total">
-                                                    <h3 style="color: #505050; font-size: 20px;">$ {{total}} COP</h3>
+                                                    <h3 style="color: #505050; font-size: 20px;">$ {{total|intcomma}} COP</h3>
                                                 </div>
                                             </div>
                     

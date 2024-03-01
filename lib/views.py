@@ -8,6 +8,7 @@ from django.http import Http404
 from django.contrib.auth.models import User
 from django.db.models import Count
 from django.db.models import Q
+from django.forms import formset_factory
 from .models import Vuelo, historicoReserva, oferta, aerolinea, puestos
 from django_filters.views import FilterView
 from .filter import vueloFilter
@@ -60,18 +61,21 @@ def pagos(request, pk):
     duracion = final - inicio
     total = detallesVuelo.precio * nPasajeros
     extra = total*0.19
+    userpasajeroset = formset_factory(userPasajeroForm, extra=2)
     print("detalles-precio: ", detallesVuelo.precio, nPasajeros, PUESTOS)
     if request.method == "POST":
-        userpasajeroForm = userPasajeroForm(request.POST)
+        formset_response = userpasajeroset(request.POST)
         uservoucherForm =  voucherForm(request.POST)
         usermetodopagoForm = metodoPago(request.POST)
         userdatostarjetaForm = datosTarjeta(request.POST)
         usertyc = terminosyCondiciones(request.POST)
-        if  userpasajeroForm.is_valid():
-            print(userpasajeroForm.cleaned_data)
-            pasajero = userpasajeroForm.save(commit= False)
-            pasajero.user = request.user
-            pasajero.save()
+        if  formset_response.is_valid():
+            print('cleaned data: ', formset_response.cleaned_data)
+             
+            for form in formset_response:
+                form_save = form.save(commit= False)
+                form_save.user = request.user
+                form_save.save()
 
             if uservoucherForm.is_valid() and usermetodopagoForm.is_valid() and userdatostarjetaForm.is_valid() and usertyc.is_valid():
                 print(f'voucher: {uservoucherForm.cleaned_data}, metodo: {usermetodopagoForm.cleaned_data}, tarjeta: {userdatostarjetaForm.cleaned_data}, tyc: {usertyc.cleaned_data}')
@@ -81,23 +85,22 @@ def pagos(request, pk):
             else:
                 print("error con formularios")
         else:
-            print(userpasajeroForm.errors)
+            print("errors: ", formset_response.non_form_errors(), formset_response.errors)
         
     else:
-        userpasajeroForm = userPasajeroForm()
+        formset_response = userpasajeroset()
         uservoucherForm =  voucherForm()
         usermetodopagoForm = metodoPago()
         userdatostarjetaForm = datosTarjeta()
         usertyc = terminosyCondiciones()
 
-    
 
     context = {
         'total': total,
         'extra': extra,
         'DetallesVuelo': detallesVuelo,
         'puestos': PUESTOS,
-        'userpasajeroForm': userpasajeroForm,
+        'userpasajeroFormset': formset_response,
         'uservoucherForm': uservoucherForm,
         'usermetodopagoForm': usermetodopagoForm,
         'userdatostarjetaForm': userdatostarjetaForm,
@@ -177,3 +180,6 @@ class busqueda(View):
 
 def footer(request):
     return render (request, "paginas/footer.html")
+
+def resumen(request):
+    return render (request, 'paginas/resumen.html')

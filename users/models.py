@@ -29,11 +29,11 @@ class userFacturacion(models.Model):
 class pasajero(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     puesto = models.OneToOneField(puestos, default=200, on_delete=models.DO_NOTHING)
-    nombre = models.CharField(max_length= 40)
-    apellido = models.CharField(max_length= 40)
+    nombre = models.CharField(verbose_name='Ingresa el nombre', max_length= 40)
+    apellido = models.CharField(verbose_name='Ingresa el apellido', max_length= 40)
     tipoDeDocumento = models.CharField(max_length= 40)
     nDocumento = models.IntegerField()
-    ciudadDeResidencia = models.CharField(max_length= 40)
+    ciudadDeResidencia = models.CharField(verbose_name='Ingresa la ciudad', max_length= 40)
 
     def __str__(self):
         return f'{self.nombre} {self.apellido}'
