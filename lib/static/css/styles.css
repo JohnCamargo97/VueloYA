@@ -345,6 +345,10 @@ body {
     transform: scale(0.9);
 }
 
+.w-100{
+    border-radius: 8px;
+}
+
 /*Top lugares más buscados*/
 
 
@@ -703,11 +707,6 @@ body {
         margin-top: 0px;
         cursor: pointer;
     }
-
-    .w-100{
-        border-radius: 8px;
-    }
-
     /*Top lugares más buscados*/
 
 
