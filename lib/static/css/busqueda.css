@@ -1649,6 +1649,75 @@ body {
 
 
 
+/*Vista Cambiar Contraseña*/
+
+.input-cambio-contrasena{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #b0b0b0;
+    padding: 5px;
+    color: #505050;
+}
+
+.contenedor-actualizar-contrasena{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-cambiar-contrasena{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #505050;
+}
+
+.contenedor-nueva-contrasena{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.parte-nueva-contrasena{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.input-nueva-contrasena{
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 12px;
+}
+
+.boton-cambiar-contrasena{
+    background-color: #d03737;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+/*Vista Cambiar Contraseña*/
+
+
+
+
+
 /* Vista Mis Viajes*/
 
 .cotenedor-all-misviajes{
@@ -2713,6 +2782,24 @@ body {
     }
 
     /*Vista Agregar o Editar Facturación*/
+
+
+
+
+
+    /*Vista Cambiar Contraseña*/
+
+    .boton-cambiar-contrasena{
+        width: 50%;
+    }
+
+    .boton-cambiar-contrasena:hover{
+        background-color: #e23c3c;
+        color: white;
+        transform: translateY(1px);
+    }
+
+    /*Vista Cambiar Contraseña*/
 
 
 
