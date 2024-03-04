@@ -224,9 +224,9 @@
                       <span>----</span>
                       <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
-                  <span  id="duracion" class="tiempo-viaje"> Duración de Viaje {{vuelo.horasalida1}} </span>
+                  <span  id="duracion1" class="tiempo-viaje"></span>
                   <script> 
-                    document.getElementById("duracion").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horasalida1}}", "{{vuelo.horasalida2}}");
+                    document.getElementById("duracion1").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horasalida1}}", "{{vuelo.horasalida2}}");
                  </script>
               </div>
 
@@ -258,7 +258,10 @@
                       <span>----</span>
                       <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
-                  <span class="tiempo-viaje"> Duración de Viaje 8hrs 30min. </span>
+                  <span id="duracion2" class="tiempo-viaje"></span>
+                  <script> 
+                    document.getElementById("duracion2").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horavuelta1}}", "{{vuelo.horavuelta2}}");
+                 </script>
               </div>
 
               <div class="precio-total-vuelo">

@@ -8,6 +8,8 @@
 
 {% block contenido %}
 
+<script src="{% static 'js/script.js' %}"></script>
+
 <div class="container">
 
     <div class="container-fluid contenedor-delos-formularios-pagos">
@@ -294,7 +296,10 @@
                                                         <span>-----</span>
                                                         <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                                                     </div>
-                                                    <span class="tiempo-viaje"> Duración de Viaje {{DetallesVuelo.horasalida1}} </span>
+                                                    <span id="duracion1" class="tiempo-viaje"></span>
+                                                    <script> 
+                                                        document.getElementById("duracion1").innerHTML = 'Duracion de Viaje ' + getDuration("{{DetallesVuelo.horasalida1}}", "{{DetallesVuelo.horasalida2}}");
+                                                     </script>
                                                 </div>
                                 
                                                 <div class="regreso-vuelo">
@@ -319,7 +324,10 @@
                                                         <span>-----</span>
                                                         <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                                                     </div>
-                                                    <span class="tiempo-viaje"> Duración de Viaje 4h 30m </span>
+                                                    <span id="duracion2" class="tiempo-viaje"></span>
+                                                    <script> 
+                                                        document.getElementById("duracion2").innerHTML = 'Duracion de Viaje ' + getDuration("{{DetallesVuelo.horavuelta1}}", "{{DetallesVuelo.horavuelta2}}");
+                                                     </script>
                                                 </div>
                                                 
                                             </div>
