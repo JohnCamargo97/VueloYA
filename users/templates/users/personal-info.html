@@ -75,7 +75,7 @@
                                 <input class="input-datos-facturacion" type="text" name="telefono" value="{{ user.uservueloya.telefono }}" maxlength="10" id="id_telefono">
 
                                 <label class="label-datos-facturacion" for="id_fechaNacimiento">Fecha de Nacimiento</label>
-                                <input class="input-datos-facturacion" type="text" name="fechaNacimiento" value="{{ user.uservueloya.fechaNacimiento }}" id="id_fechaNacimiento">
+                                <input class="input-datos-facturacion" type="date" name="fechaNacimiento" value='{{ user.uservueloya.fechaNacimiento|date:"Y-m-d" }}' id="id_fechaNacimiento">
                                 
                             </div>
 
