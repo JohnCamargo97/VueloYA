@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block contenido %} 
 
 <div class="container-fluid cotenedor-all-misviajes">
@@ -90,7 +92,7 @@
 
               <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
                 <span style="font-weight: 600;">Valor:</span>
-                <span style="margin-left: 5px;">$ {{object.total}} COP</span>
+                <span style="margin-left: 5px;">$ {{object.total|intcomma}} COP</span>
               </div>
 
               <div class="cotenedor-valor-final" style="display: flex; margin-bottom: 5px; color: #505050;">
