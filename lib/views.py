@@ -50,6 +50,17 @@ def misviajes(request):
     lista = historicoReserva.objects.filter(user = request.user).all()
     return render(request, 'paginas/misviajes.html', {'lista': lista})
 
+def viajes_borrar(request, pk):
+    if request.user.is_authenticated:
+        reserva = get_object_or_404(historicoReserva, id= pk)
+        if request.user.id == reserva.user_id:    
+            reserva.delete()
+            return redirect('misviajes')
+        else:
+            return redirect('misviajes')
+    else:
+        return redirect('home')
+
 
 def pagos(request, pk):
     VueloSeleccionado = request.session

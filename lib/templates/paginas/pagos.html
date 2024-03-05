@@ -285,7 +285,7 @@
                                 
                                                 <div class="info-vuelos">
                                                     <div class="nombre-aerolinea">
-                                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                        <span> <img src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
                                                     </div>
                                                     <div class="horario-viaje">
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
