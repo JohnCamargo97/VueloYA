@@ -28,9 +28,10 @@
                     {{ userpasajeroFormset.management_form }}
                     <div class="contenedor-formulario-pasajeros"> 
                                    
-                            <div class="contenedor-quienes-viajan">
-                                <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                            </div>
+                        <div class="contenedor-quienes-viajan">
+                            <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
+                        </div>
+
                         {% for pasajeroform in userpasajeroFormset %}
                             
                             {{pasajeroform}}
@@ -64,6 +65,7 @@
                                 {{pasajeroform.puesto}} 
                             </p>
                         {% endfor %}
+                        
                     </div>
                     
                     <div class="contenedor-vouchers">

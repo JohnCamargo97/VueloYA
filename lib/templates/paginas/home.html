@@ -10,16 +10,16 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 
-  <div class="container-fluid mauro-uno">
-    <div class="container mauro-dos">
+  <div class="container-fluid contenedor-mayor-home">
+    <div class="container contenedor-menor-home">
 
-      <div class="container navbar-uno">
+      <div class="container navbar-vueloya">
 
         <nav class="navbar">
           <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
         </nav>
 
-          <form class="formulario-uno" action="#" method="post">
+          <form class="formulario-busqueda-de-vuelos" action="#" method="post">
             {% csrf_token%}
 
             <div class="contenedor-origen-destino row">
@@ -69,7 +69,7 @@
             </div>
 
 
-            <button class="boton-uno" type="submit"><img class="icono-busqueda" src="{% static 'favicon.ico/IconoBusqueda.png' %}" alt="">Buscar</button>
+            <button class="boton-buscar" type="submit"><img class="icono-busqueda" src="{% static 'favicon.ico/IconoBusqueda.png' %}" alt="">Buscar</button>
 
 
           </form>
@@ -79,7 +79,7 @@
   </div>
 
 
-    <div class="container publicdad">
+    <div class="container publicidad">
 
       <div class="contenedor-publicidad">
 
@@ -102,7 +102,7 @@
               </div>
               <div class="card-footer jamaica">
                 <span class="precio-jamaica" href="">$ {{oferta.vuelo.precio|intcomma}} COP</span>
-                <a class="boton-dos" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver Más</a>
+                <a class="boton-ver-mas" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver Más</a>
               </div>
             </div> 
           {% endfor %}
@@ -112,7 +112,7 @@
 
 
 
-    <div class="container-fluid mauro-tres">
+    <div class="container-fluid lugares-mas-buscados">
 
       <div class="container">
 
@@ -174,11 +174,11 @@
 
         <div class="presentacion">
           <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
-          <button class="boton-tres" type="submit">Enviar</button>
+          <button class="boton-enviar" type="submit">Enviar</button>
         </div>
 
         <div class="politicas-privacidad">
-          Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1640D6;" href="####">políticas de privacidad.</a>
+          Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1B1A55;" href="####">políticas de privacidad.</a>
         </div>
 
       </div>
@@ -186,7 +186,7 @@
 
     <div class="container-fluid informacion-footer">
       <div class="container">
-        <footer class="footer-uno">
+        <footer class="footer-contenido-sobrenosotros">
 
           <div class="row info-vueloya">
 
@@ -268,15 +268,18 @@
     </div>
 
     <div class="container">
-      <footer class="footer-dos">
+      <footer class="footer-copyright-and-redesociales">
+
         <div class="footer-izquierda">
-            <p class="pp-p">© 2023 Copyright:VueloYA</p>
+            <p class="contenedor-del-copyright">© 2023 Copyright:VueloYA</p>
         </div>
+
         <div class="footer-derecha">
             <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
             <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
             <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
         </div>
+        
       </footer>
     </div>
 

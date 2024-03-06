@@ -10,7 +10,7 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 
-<div class="container-fluid mauro-seis">
+<div class="container-fluid contenedor-mayor-busqueda">
   <div class="container">
 
     <div class="contenedor-texto-vuelos">
@@ -21,11 +21,11 @@
 
       <div class="contenido-busquedas">
 
-        <form class="formulario-uno" action="#" method="POST">
+        <form class="formulario-busqueda-vuelos" action="#" method="POST">
           {% csrf_token%}
-          <div class="container mauro-dos">
+          <div class="container busqueda-de-los-vuelos">
 
-            <div class="container navbar-uno">
+            <div class="container navbar-vueloya">
       
               <nav class="navbar">
                 <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
@@ -83,7 +83,7 @@
           </div>
         </form>
 
-        <form class="formulario-dos" action="#" method="GET">
+        <form class="formulario-filtro-precios-and-aerolineas" action="#" method="GET">
           {% csrf_token%}
 
           <div class="filtro-precio">
