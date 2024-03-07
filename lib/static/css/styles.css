@@ -5,6 +5,15 @@ body {
 
 }
 
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #dddddd;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #1B1A55;
+}
+
 .container {
     max-width: 1200px; /* Limita el ancho máximo del contenedor principal */
     margin: 0 auto; /* Centra el contenedor en la página */
@@ -31,31 +40,23 @@ body {
     flex-direction: row-reverse!important;
 }
 
-.dropdown-toggle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    color: #ffffff!important;
-    font-weight: 600!important;
+.navbar-toggler{
+    background-color: rgb(255, 255, 255, 0.80)!important;
+    box-shadow: none!important;
 }
+
 
 .contenedor-logo-vueloYa{
     padding: 8px;
     font-size: 20px;
     font-weight: 700;
-
-    border-bottom: 2px solid #ffffff;
+    border-radius: 0%;
     cursor: pointer;
 }
 
 .nombre-usuario{
     font-weight: 600;
-    color: #1B1A55!important;
-}
-
-.nombre-usuario:hover{
-    border-bottom: 1px solid #1B1A55;
+    color: #ffffff!important;
 }
 
 .opciones-navbar{
@@ -79,8 +80,8 @@ body {
 }
 
 .contenedor-nombre-vueloya{
-    color: #505050;
     text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.80);
 }
 
 /*Navbar*/
@@ -98,21 +99,21 @@ body {
     flex-direction: column;
     height: auto;
     width: 100%;
-    height: 30%;
+    aspect-ratio: 16/9;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.2)
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
     ) 
-     ,url("../img/PlayaMexico.png");
+     ,url("../img/playaDos.jpg");
 
 }
 
 .contenedor-menor-home{
-    background-color: #1B1A55;
+    background-color: rgba(27,26,85,0.75);
     width: 80%;
     height: auto;
     padding: 50px;
@@ -140,7 +141,7 @@ body {
 }
 
 .origen{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -150,7 +151,7 @@ body {
 }
 
 .destino{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -298,10 +299,9 @@ body {
 }
 
 .precio-jamaica{
+    font-weight: 600;
     color: #505050;
     text-decoration: none;
-    color: #808080;
-
 }
 
 .jamaica{
@@ -628,11 +628,8 @@ body {
 
     .contenedor-logo-vueloYa{
         font-size: 25px;
-    }
-
-    .contenedor-nombre-vueloya{
-        color: #505050;
-        text-decoration: none;
+        border-top-right-radius: 20px;
+        border-end-end-radius: 20px;
     }
 
     .contenedor-menu{
@@ -644,15 +641,20 @@ body {
 
     .navbar-collapse{
         flex-grow: 0!important;
-        border-radius: 12px;
         height: 60px;
         padding: 10px;
         margin-top: 0px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.80);
     }
 
     .nombre-usuario{
         margin-left: 0px;
     }
+
+    .nombre-usuario:hover{
+        border-bottom: 1px solid #ffffff;
+    }
+    
 
     .linea-separadora{
         margin-right: 10px;
@@ -660,7 +662,7 @@ body {
     }
 
     .contenedor-menu-opciones:hover{
-        border-bottom: 1px solid #505050;
+        border-bottom: 1px solid #ffffff;
     }
 
     /*Navbar*/
@@ -672,12 +674,13 @@ body {
     /*Formuario Destinos*/
 
     .contenedor-mayor-home{
-        height: 450px;
+        height: 300px;
 
     }
 
     .contenedor-menor-home{
-        margin-top: 300px;
+        background-color: rgba(27,26,85,0.95);
+        margin-top: 150px;
     }
 
     .formulario-busqueda-de-vuelos{
@@ -737,7 +740,7 @@ body {
 
     /*Ofertas que no te puedes perder*/
         .contenedor-ofertas{
-            margin-top: 200px;
+            margin-top: 180px;
         }
 
     /*Ofertas que no te puedes perder*/
@@ -827,3 +830,17 @@ body {
 
 /*Pantalla grande*/
 
+/*COLORES
+
+#ED155D FUTSIA
+#fa1662 FUTSIA CLARO HOVER
+
+#00BFC3 AZUL RARO
+#2FF3E0 AZUL RARO CLARITO
+#F8D210 AMARILLO
+#30097D AZUL RARO OSCURO
+
+
+#1B1A55 Azul Oscuro
+#212068 Azul Hover
+#9290C3 Violeta claro
