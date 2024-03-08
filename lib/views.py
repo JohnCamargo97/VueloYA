@@ -2,10 +2,12 @@ from typing import Any
 from datetime import datetime
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
+
 from django.views import View
 from django.views.generic import ListView
 from django.http import Http404
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.db.models import Q
 from django.forms import formset_factory
@@ -62,12 +64,12 @@ def viajes_borrar(request, pk):
     else:
         return redirect('home')
 
-
+@login_required
 def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=pk)
-    PUESTOS = puestos.objects.filter(Vuelo_id = pk).values_list("id", 'Ventana_bool')
+    PUESTOS = puestos.objects.filter(Vuelo_id = pk).annotate(conteo=Count('pasajero')).values_list("id", 'Ventana_bool', 'conteo').filter(conteo = 0)
     inicio = datetime.combine(detallesVuelo.fechasalida, detallesVuelo.horasalida1)
     final = datetime.combine(detallesVuelo.fechavuelta, detallesVuelo.horavuelta2)
     duracion = final - inicio
@@ -136,8 +138,8 @@ class resultado(FilterView):
         context = super(resultado, self).get_context_data(**kwargs)
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
-        context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-
+        context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
+        print(context['aerolineas'])
         return context
 
     def get(self, request, *args, **kwargs):

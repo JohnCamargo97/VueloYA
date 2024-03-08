@@ -61,8 +61,14 @@
                             </p>
 
                             <p class="contenedor-tipo-documento">
-                                <label for="id_puesto">Puesto:</label>
-                                {{pasajeroform.puesto}} 
+                                <label for="id_puesto">Puestos disponibles:</label>
+                                <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
+                                    {% for puesto in puestos %}
+                                        <option value="{{puesto.0}}">{{puesto.0}}</option>
+                                    {{puesto.0}}
+                                    {% endfor%}
+    
+                                </select>
                             </p>
                             <br>
                         {% endfor %}

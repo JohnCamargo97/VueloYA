@@ -1,1 +1,1 @@
-web: gunicorn VUELOYA.wsgi
+web: gunicorn VueloYA.wsgi

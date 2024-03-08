@@ -142,3 +142,5 @@ AUTHENTICATION_BACKENDS = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ALLOWED_HOSTS = ['192.168.20.28', '192.168.20.20', '127.0.0.1', 'localhost']
+
+LOGIN_URL = 'iniciarsesion'
