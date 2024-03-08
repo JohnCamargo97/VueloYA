@@ -97,25 +97,25 @@ class userVueloYa(models.Model):
             actual= userVueloYa.objects.get(id=self.id)
             if actual.picture!= self.picture:
                 actual.picture.delete(save=False)
+                #create thumbnail 1:1 aspect ratio if picture exists and not repeated
+                try:
+                    img = Image.open(self.picture.path)
+
+                    if img.height > 300 or img.width > 300:
+                        output_size = (300, 300)
+                        img.thumbnail(output_size)
+                    w, h = img.size
+                    if w > h:
+                        (left, upper, right, lower) = ((w-h)/2, 0, h+(w-h)/2, h)
+                    else:
+                        (left, upper, right, lower) = (0, (h-w)/2, w, w+(h-w)/2)
+                    img.crop((left, upper, right, lower)).save(self.picture.path)
+                except:
+                    pass
+                print("picture deleted")              
         except ObjectDoesNotExist:
             pass
         super().save(*args, **kwargs)
-
-        #create thumbnail 1:1 aspect ratio if picture exists
-        try:
-            img = Image.open(self.picture.path)
-
-            if img.height > 300 or img.width > 300:
-                output_size = (300, 300)
-                img.thumbnail(output_size)
-            w, h = img.size
-            if w > h:
-                (left, upper, right, lower) = ((w-h)/2, 0, h+(w-h)/2, h)
-            else:
-                (left, upper, right, lower) = (0, (h-w)/2, w, w+(h-w)/2)
-            img.crop((left, upper, right, lower)).save(self.picture.path)
-        except:
-            pass
 
 class historicoReserva(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)

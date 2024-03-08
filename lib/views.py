@@ -50,6 +50,7 @@ def misviajes(request):
     lista = historicoReserva.objects.filter(user = request.user).all()
     return render(request, 'paginas/misviajes.html', {'lista': lista})
 
+
 def viajes_borrar(request, pk):
     if request.user.is_authenticated:
         reserva = get_object_or_404(historicoReserva, id= pk)
@@ -72,7 +73,7 @@ def pagos(request, pk):
     duracion = final - inicio
     total = detallesVuelo.precio * nPasajeros
     extra = total*0.19
-    userpasajeroset = formset_factory(userPasajeroForm, extra=2)
+    userpasajeroset = formset_factory(userPasajeroForm, extra=nPasajeros)
     print("detalles-precio: ", detallesVuelo.precio, nPasajeros, PUESTOS)
     if request.method == "POST":
         formset_response = userpasajeroset(request.POST)
@@ -153,6 +154,7 @@ class resultado(FilterView):
             form_busqueda = BusquedaForm(request.POST)
 
             if form_busqueda.is_valid():
+                request.session['pasajeros'] = request.POST['pasajeros'] 
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
 
             return render(self.request, self.template_name, self.get_context_data())
@@ -189,8 +191,10 @@ class busqueda(View):
         }
             return render(request, 'paginas/busqueda.html', context)
 
+
 def footer(request):
     return render (request, "paginas/footer.html")
+
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')

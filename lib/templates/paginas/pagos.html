@@ -31,9 +31,10 @@
                             <div class="contenedor-quienes-viajan">
                                 <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
                             </div>
+                            <br>
                         {% for pasajeroform in userpasajeroFormset %}
+                            <h5 style="color: #505050;">Pasajero {{ forloop.counter }}</h5>
                             
-                            {{pasajeroform}}
                             <p class="contenedor-quienes-viajan">
                                 <label for="id_nombre">Nombre</label>
                                 {{pasajeroform.nombre}}
@@ -63,6 +64,7 @@
                                 <label for="id_puesto">Puesto:</label>
                                 {{pasajeroform.puesto}} 
                             </p>
+                            <br>
                         {% endfor %}
                     </div>
                     
