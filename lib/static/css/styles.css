@@ -19,6 +19,19 @@ body::-webkit-scrollbar-thumb{
     margin: 0 auto; /* Centra el contenedor en la página */
 }
 
+.iconos-vueloya{
+    width: 22px;
+    margin-right: 4px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 2.2px;
+
+}
+
+
+
+
+
 /*Navbar*/
 
 .contenedor-navbar{
@@ -54,6 +67,13 @@ body::-webkit-scrollbar-thumb{
     cursor: pointer;
 }
 
+.contactanos-and-iniciarsesion{
+    color: white!important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
 .nombre-usuario{
     font-weight: 600;
     color: #ffffff!important;
@@ -61,11 +81,6 @@ body::-webkit-scrollbar-thumb{
 
 .opciones-navbar{
     color: #ffffff!important;
-}
-
-.opciones-navbar-antes-de-loguearse{
-    color: #ffffff; 
-    font-weight: 600;
 }
 
 .contenedor-menu-opciones{
@@ -82,6 +97,10 @@ body::-webkit-scrollbar-thumb{
 .contenedor-nombre-vueloya{
     text-decoration: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.80);
+}
+
+.icono-correo{
+    width: 25px;
 }
 
 /*Navbar*/
@@ -125,11 +144,6 @@ body::-webkit-scrollbar-thumb{
     margin-bottom: 20px;
     color: rgb(88, 88, 88);
 }
-
-.navbar-title{
-    color: white;
-}
-
 
 .contenedor-origen-destino{
     background-color: white;
@@ -644,7 +658,11 @@ body::-webkit-scrollbar-thumb{
         height: 60px;
         padding: 10px;
         margin-top: 0px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.80);
+        width: 30%;
+    }
+
+    .contactanos-and-iniciarsesion:hover{
+        border-bottom: 1px solid #ffffff;
     }
 
     .nombre-usuario{
@@ -665,6 +683,10 @@ body::-webkit-scrollbar-thumb{
         border-bottom: 1px solid #ffffff;
     }
 
+    .icono-correo{
+        width: 35px;
+    }
+
     /*Navbar*/
 
 
@@ -681,6 +703,7 @@ body::-webkit-scrollbar-thumb{
     .contenedor-menor-home{
         background-color: rgba(27,26,85,0.95);
         margin-top: 150px;
+        height: 150px;
     }
 
     .formulario-busqueda-de-vuelos{

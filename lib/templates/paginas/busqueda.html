@@ -21,67 +21,60 @@
 
       <div class="contenido-busquedas">
 
-        <form class="formulario-busqueda-vuelos" action="#" method="POST">
-          {% csrf_token%}
-          <div class="container busqueda-de-los-vuelos">
+        <div class="container contenedor-menor-home">
 
-            <div class="container navbar-vueloya">
-      
-              <nav class="navbar">
-                <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
-              </nav>
-      
-                  <div class="contenedor-origen-destino row">
-      
-                    <div class="col">
-                      <label for="origen">Origen</label>
-                      <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
-                    </div>
-      
-                    <div class="col">
-                      <label for="destino">Destino</label>
-                      <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
-                    </div>
-      
-                  </div>
-      
-      
-                  <div class="contenedor-fechas-vuelos row">
-      
-                    <div class="col">
-                      <label for="fecha-ida">Fecha Ida</label>
-                      <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
-                    </div>
-      
-                    <div class="col">
-                      <label for="fecha-regreso">Fecha Regreso</label>
-                      <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
-                    </div>
-      
-                  </div>
-      
-      
-                  <div class="contenedor-pasajeros row">
-      
-                    <div class="col">
-      
-                      <label for="pasajeros">Número de Pasajeros</label>
-                      <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
-                        <option value="1">1 pasajero</option>
-                        <option value="2">2 pasajeros</option>
-                        <option value="3">3 pasajeros</option>
-                        <option value="4">4 pasajeros</option>
-                      </select>
-                      
-                    </div>
-      
-                  </div>
+          <form class="formulario-busqueda-vuelos" action="#" method="POST">
+            {% csrf_token%}
+              <div class="contenedor-origen-destino">
+
+                <div class="col">
+                  <label for="origen">Origen</label>
+                  <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
+                </div>
+
+                <div class="col">
+                  <label for="destino">Destino</label>
+                  <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
+                </div>
+
+              </div>
+
+
+              <div class="contenedor-fechas-vuelos">
+
+                <div class="col">
+                  <label for="fecha-ida">Fecha Ida</label>
+                  <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
+                </div>
+
+                <div class="col">
+                  <label for="fecha-regreso">Fecha Regreso</label>
+                  <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
+                </div>
+
+              </div>
+
+
+              <div class="contenedor-pasajeros">
+
+                <div class="col">
+
+                  <label for="pasajeros">Número de Pasajeros</label>
+                  <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+                    <option value="1">1 pasajero</option>
+                    <option value="2">2 pasajeros</option>
+                    <option value="3">3 pasajeros</option>
+                    <option value="4">4 pasajeros</option>
+                  </select>
                   
-                  <button class="boton-busqueda" type="submit" name="busqueda", value="busqueda">Buscar</button>
-      
-            </div>
-          </div>
-        </form>
+                </div>
+
+              </div>
+              
+              <button class="boton-buscar" type="submit" name="busqueda", value="busqueda"><img class="icono-busqueda" src="{% static 'favicon.ico/IconoBusqueda.png' %}" alt="">Buscar</button>
+          </form>
+
+        </div>
 
         <form class="formulario-filtro-precios-and-aerolineas" action="#" method="GET">
           {% csrf_token%}

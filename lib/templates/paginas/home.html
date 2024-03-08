@@ -41,15 +41,15 @@
           </ul>
 
           {% else %} 
-          <ul class="navbar-nav">
+          <ul class="navbar-nav contenedor-iniciarsesion-and-contactanos">
             <li class="nav-item">
-              <a class="nav-link active opciones-navbar-antes-de-loguearse" style="color: white; font-weight: 600;" aria-current="page" href="{% url 'inicio_user' %}">Iniciar Sesión</a>
+              <a class="nav-link active contactanos-and-iniciarsesion" aria-current="page" href="{% url 'inicio_user' %}"><img class="iconos-vueloya" src="{% static 'favicon.ico/IconoUsuarioBlanco.png' %}" alt="">Iniciar Sesión</a>
             </li>
           </ul>
 
-          <ul class="navbar-nav">
+          <ul class="navbar-nav contenedor-iniciarsesion-and-contactanos">
             <li class="nav-item">
-              <a class="nav-link active opciones-navbar-antes-de-loguearse" style="color: white; font-weight: 600;" aria-current="page" href="#footer-contenido-sobrenosotros">Contactanos</a>
+              <a class="nav-link active contactanos-and-iniciarsesion" aria-current="page" href="#footer-contenido-sobrenosotros"><img class="iconos-vueloya" src="{% static 'favicon.ico/IconoContactanos.png' %}" alt="">Contactanos</a>
             </li>
           </ul>
           {% endif %}

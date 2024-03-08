@@ -23,6 +23,27 @@ body::-webkit-scrollbar-thumb{
 
 
 
+/*Iconos*/
+
+.icono-verificacion{
+    width: 18px;
+}
+
+.icono-correo{
+    width: 25px;
+}
+
+.icono-interrogatorio{
+    width: 25px;
+    margin-right: 5px;
+}
+
+/*Iconos*/
+
+
+
+
+
 /*Navbar Responsive*/
 
 .contenedor-logo-vueloYa{
@@ -39,6 +60,19 @@ body::-webkit-scrollbar-thumb{
     text-decoration: none;
 }
 
+.contenedor-icono-helpme{
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1A55;
+    text-decoration: none;
+}
+
+.contenedor-icono-helpme:hover{
+    color: #1B1A55;
+}
+
 /*Navbar Responsive*/
 
 
@@ -47,31 +81,30 @@ body::-webkit-scrollbar-thumb{
 
 /*Busqueda Vuelos Responsive*/
 
-.busqueda-de-los-vuelos{
-    background-color: #1640D6;
+.contenedor-menor-home{
+    background-color: #1B1A55;
+    width: 80%;
     height: auto;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-bottom: 20px;
     color: rgb(88, 88, 88);
-}
-
-.navbar-title{
-    color: white;
 }
 
 .contenedor-origen-destino{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .origen{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -81,7 +114,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .destino{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -93,14 +126,16 @@ body::-webkit-scrollbar-thumb{
 
 .contenedor-fechas-vuelos{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .fecha-ida{
-    width: 100%;
+    width: 90%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -111,7 +146,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fecha-regreso{
-    width: 100%;
+    width: 90%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -124,15 +160,16 @@ body::-webkit-scrollbar-thumb{
 
 .contenedor-pasajeros{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .num-pasajeros{
-    width: 70%;
-    padding: 2px;
+    width: 100%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -143,19 +180,28 @@ body::-webkit-scrollbar-thumb{
     box-shadow: none; /* Elimina cualquier sombra al hacer clic */
 }
 
-.boton-busqueda{
-    background-color: rgb(255, 72, 72);
+.boton-buscar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ED155D;
     width: 100%;
-    height: 35px;
+    padding: 8px;
     border-radius: 8px;
+    font-size: 20px;
     border: none;
-    margin-top: 6px;
+    margin-top: 10px;
     color: white;
 }
 
-.boton-busqueda:hover{
-    background-color: rgb(255, 81, 81);
+.boton-buscar:hover{
+    background-color: #ff1664;
     transform: translateY(1px);
+}
+
+.icono-busqueda{
+    width: 15px;
+    margin-right: 5px;
 }
 
 /*Busqueda Vuelos Responsive*/
@@ -1335,7 +1381,7 @@ body::-webkit-scrollbar-thumb{
 .boton-agregar-tarjetas{
     width: 100%;
     padding: 10px;
-    background-color: #1640D6;
+    background-color: #1B1A55;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -1346,7 +1392,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-agregar-tarjetas:hover{
-    background-color: #1f46d5;
+    background-color: #212068;
     color: white;
 }
 
@@ -1387,7 +1433,7 @@ body::-webkit-scrollbar-thumb{
 .boton-facturacion-editar{
     width: 40%;
     padding: 10px;
-    background-color: #1640D6;
+    background-color: #1B1A55;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -1399,14 +1445,14 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-facturacion-editar:hover{
-    background-color: #1f46d5;
+    background-color: #212068;
     color: white;
 }
 
 .boton-facturacion-borrar{
     width: 40%;
     padding: 10px;
-    background-color: #1640D6;
+    background-color: #1B1A55;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -1417,7 +1463,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-facturacion-borrar:hover{
-    background-color: #1f46d5;
+    background-color: #212068;
     color: white;
 }
 
@@ -1439,7 +1485,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-facturacion-agregar{
-    background-color: #1640D6;
+    background-color: #1B1A55;
     color: white;
     padding: 14px 25px;
     text-align: center;
@@ -1452,7 +1498,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-facturacion-agregar:hover{
-    background-color: #1f46d5;
+    background-color: #212068;
     color: white;
 }
 
@@ -1598,7 +1644,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-actualizar{
-    background-color: #1640D6;
+    background-color: #1B1A55;
     color: white;
     padding: 14px 25px;
     text-align: center;
@@ -1610,7 +1656,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .boton-actualizar:hover{
-    background-color: #1f46d5;
+    background-color: #212068;
     color: white;
     transform: translateY(1px);
 }
@@ -1927,13 +1973,8 @@ body::-webkit-scrollbar-thumb{
         height: 50px;
     }
 
-    .contenedor-icono-helpme{
-        font-weight: 500;
-        font-size: 18px;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .icono-correo{
+        width: 35px;
     }
 
     /*Navbar*/
