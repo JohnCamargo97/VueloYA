@@ -2,10 +2,12 @@ from typing import Any
 from datetime import datetime
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
+
 from django.views import View
 from django.views.generic import ListView
 from django.http import Http404
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.db.models import Q
 from django.forms import formset_factory
@@ -51,17 +53,29 @@ def misviajes(request):
     return render(request, 'paginas/misviajes.html', {'lista': lista})
 
 
+def viajes_borrar(request, pk):
+    if request.user.is_authenticated:
+        reserva = get_object_or_404(historicoReserva, id= pk)
+        if request.user.id == reserva.user_id:    
+            reserva.delete()
+            return redirect('misviajes')
+        else:
+            return redirect('misviajes')
+    else:
+        return redirect('home')
+
+@login_required
 def pagos(request, pk):
     VueloSeleccionado = request.session
     nPasajeros = int(VueloSeleccionado['pasajeros'])
     detallesVuelo = Vuelo.objects.get(pk=pk)
-    PUESTOS = puestos.objects.filter(Vuelo_id = pk).values_list("id", 'Ventana_bool')
+    PUESTOS = puestos.objects.filter(Vuelo_id = pk).annotate(conteo=Count('pasajero')).values_list("id", 'Ventana_bool', 'conteo').filter(conteo = 0)
     inicio = datetime.combine(detallesVuelo.fechasalida, detallesVuelo.horasalida1)
     final = datetime.combine(detallesVuelo.fechavuelta, detallesVuelo.horavuelta2)
     duracion = final - inicio
     total = detallesVuelo.precio * nPasajeros
     extra = total*0.19
-    userpasajeroset = formset_factory(userPasajeroForm, extra=2)
+    userpasajeroset = formset_factory(userPasajeroForm, extra=nPasajeros)
     print("detalles-precio: ", detallesVuelo.precio, nPasajeros, PUESTOS)
     if request.method == "POST":
         formset_response = userpasajeroset(request.POST)
@@ -124,8 +138,8 @@ class resultado(FilterView):
         context = super(resultado, self).get_context_data(**kwargs)
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
-        context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-
+        context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
+        print(context['aerolineas'])
         return context
 
     def get(self, request, *args, **kwargs):
@@ -142,6 +156,7 @@ class resultado(FilterView):
             form_busqueda = BusquedaForm(request.POST)
 
             if form_busqueda.is_valid():
+                request.session['pasajeros'] = request.POST['pasajeros'] 
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
 
             return render(self.request, self.template_name, self.get_context_data())
@@ -178,8 +193,10 @@ class busqueda(View):
         }
             return render(request, 'paginas/busqueda.html', context)
 
+
 def footer(request):
     return render (request, "paginas/footer.html")
+
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')

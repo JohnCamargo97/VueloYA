@@ -71,7 +71,6 @@ def delete_user(request, pk):
     else:
         return redirect('home')
 
-
 def mensaje_user(request):
     messages.success(request, ('Registrado exitosamente!'))
     return render (request, 'users/mensaje_user.html')
