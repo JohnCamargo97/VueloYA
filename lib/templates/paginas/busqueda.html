@@ -76,103 +76,108 @@
 
         </div>
 
-        <form class="formulario-filtro-precios-and-aerolineas" action="#" method="GET">
-          {% csrf_token%}
 
-          <div class="filtro-precio">
+        <div class="container contenedor-filtro-precios">
 
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item-s">
-                <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  Filtro de Precios
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
+          <form class="formulario-filtro-precios-and-aerolineas" action="#" method="GET">
+            {% csrf_token%}
 
-                    <div class="rango-valor">
+            <div class="filtro-precio">
 
-                      <output id="output">COP 10.000.000</output>
-                      <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" step="50000" max="10000000" id="id_rango_precio" value= "10000000">
-                      
-                      <script>
-                        document.getElementById("id_rango_precio").oninput = function() { 
-                          var val = document.getElementById("id_rango_precio").value //gets the oninput value
-                          const formatter = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'COP',});                       
-                          let valFormatted = formatter.format(val);
-                          document.getElementById('output').innerHTML = valFormatted //displays this value to the html page
-                         };                                       
-                      </script>
-                      
-                      <div class="rango-precios">
-                        <h3 class="texto-moneda">$ 450.000</h3>
-                        <h3 class="texto-moneda ">$ 10.000.000</h3>
-                      </div>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item-s">
+                  <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Filtro de Precios
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
 
-                      
-                    </div>
+                      <div class="rango-valor">
 
-                    <div class="contenedor-elegir-moneda">
-                      
-                      <div class="monedas-para-elegir">
-
-                        <h3 class="texto-moneda">Moneda</h3>
-
-                          <select class="num-monedas" name="moneda" id="id_moneda">
-                            <option class="opciones-monedas" value="COP">COP</option>
-                            <option class="opciones-monedas" value="USD">USD</option>
-                            <option class="opciones-monedas" value="EUR">EUR</option>
-                          </select>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          </div>
-
-          <div class="filtro-aerolineas">
-
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item-s">
-                <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  Filtros de Aerolíneas
-                  </button>
-                </h2>
-
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-
-                  <div class="accordion-body">
-
-                    <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
-
-                      {% for aerolinea in aerolineas%}
-
-                        <div class="aerolineas">
-                          <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
-                          <label class="label-aerolineas">{{aerolinea.0}}</label>
-                          <span>({{aerolinea.2}})</span>
+                        <output id="output">COP 10.000.000</output>
+                        <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" step="50000" max="10000000" id="id_rango_precio" value= "10000000">
+                        
+                        <script>
+                          document.getElementById("id_rango_precio").oninput = function() { 
+                            var val = document.getElementById("id_rango_precio").value //gets the oninput value
+                            const formatter = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'COP',});                       
+                            let valFormatted = formatter.format(val);
+                            document.getElementById('output').innerHTML = valFormatted //displays this value to the html page
+                          };                                       
+                        </script>
+                        
+                        <div class="rango-precios">
+                          <h3 class="texto-moneda">$ 450.000</h3>
+                          <h3 class="texto-moneda ">$ 10.000.000</h3>
                         </div>
 
-                      {% endfor %}
+                        
+                      </div>
+
+                      <div class="contenedor-elegir-moneda">
+                        
+                        <div class="monedas-para-elegir">
+
+                          <h3 class="texto-moneda">Moneda</h3>
+
+                            <select class="num-monedas" name="moneda" id="id_moneda">
+                              <option class="opciones-monedas" value="COP">COP</option>
+                              <option class="opciones-monedas" value="USD">USD</option>
+                              <option class="opciones-monedas" value="EUR">EUR</option>
+                            </select>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+            <div class="filtro-aerolineas">
+
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item-s">
+                  <h2 class="accordion-header" id="flush-headingOne" style="flex-grow: 0!important;">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Filtros de Aerolíneas
+                    </button>
+                  </h2>
+
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+
+                    <div class="accordion-body">
+
+                      <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
+
+                        {% for aerolinea in aerolineas%}
+
+                          <div class="aerolineas">
+                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
+                            <label class="label-aerolineas">{{aerolinea.0}}</label>
+                            <span>({{aerolinea.2}})</span>
+                          </div>
+
+                        {% endfor %}
+
+                      </div>
 
                     </div>
 
                   </div>
 
                 </div>
+              </div>       
+            </div>
 
-              </div>
-            </div>       
-          </div>
+            <button class="boton-filtrar" type="submit" name="filtro" value="filtro"> Filtrar</button>
 
-          <button class="boton-filtrar" type="submit" name="filtro" value="filtro"> Filtrar</button>
+          </form>
 
-        </form>
+        </div>
 
       </div>
 
@@ -188,12 +193,12 @@
 
         {% for vuelo in lista_resultado %}
 
-          <div class="uno">
+          <div class="contenedor-mayor-busqueda-vuelos">
             <div class="busqueda-vuelos">
 
               <div class="ida-vuelo">
                   <div class="icono-avion">
-                      <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                      <span> <img class="iconos-aviones" src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
                   </div>
                   <div class="fecha-salida-avion">
                       <span>{{vuelo.fechasalida}}</span>
@@ -215,7 +220,7 @@
                       <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2}} </span>
                     </div>
                       <span>----</span>
-                      <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                      <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
                   <span  id="duracion1" class="tiempo-viaje"></span>
                   <script> 
@@ -227,7 +232,7 @@
 
               <div class="regreso-vuelo">
                   <div class="icono-avion">
-                      <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                      <span> <img class="iconos-aviones" src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
                   </div>
                   <div class="fecha-regreso-avion">
                       <span>{{vuelo.fechavuelta}}</span>
@@ -249,7 +254,7 @@
                       <span style="font-weight: bold;"> {{vuelo.horavuelta2}} </span>
                     </div>
                       <span>----</span>
-                      <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                      <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
                   <span id="duracion2" class="tiempo-viaje"></span>
                   <script> 

@@ -132,7 +132,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .contenedor-menor-home{
-    background-color: rgba(27,26,85,0.75);
+    background-color: rgba(27,26,85,0.80);
     width: 80%;
     height: auto;
     padding: 50px;
