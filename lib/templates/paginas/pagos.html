@@ -28,10 +28,10 @@
                     {{ userpasajeroFormset.management_form }}
                     <div class="contenedor-formulario-pasajeros"> 
                                    
-                            <div class="contenedor-quienes-viajan">
-                                <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                            </div>
-                            <br>
+                        <div class="contenedor-quienes-viajan">
+                            <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
+                        </div>
+                        <br>
                       
                         {% for pasajeroform in userpasajeroFormset %}
                             <h5 style="color: #505050;">Pasajero {{ forloop.counter }}</h5>
@@ -208,7 +208,7 @@
 
                         <div class="texto-del-total-pago">
                             <label style="color: #505050;" for="pagos">Total a pagar</label>
-                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ {{total}} COP</a></span>
+                            <span style="margin-left: 20px; font-weight: 700; color: #505050;">$ {{total|intcomma}} COP</a></span>
                         </div>
                     </div>
                 </form>
@@ -296,7 +296,7 @@
                                                 <div class="info-vuelos">
                                                     <div class="nombre-aerolinea">
 
-                                                        <span> <img src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                        <span><img class="logo-de-aerolineas" src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
 
                                                     </div>
                                                     <div class="horario-viaje">

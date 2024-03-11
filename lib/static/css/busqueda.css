@@ -1220,7 +1220,7 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .detalles-pagos{
@@ -2533,13 +2533,6 @@ body::-webkit-scrollbar-thumb{
     .contenedor-acordion{
         width: 80%;
         margin: 20px 0px 0px 20px;
-    }
-    
-    .texto-del-total-pago{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
     }
     
     .detalles-pagos{
