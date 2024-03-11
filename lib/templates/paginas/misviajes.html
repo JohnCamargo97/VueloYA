@@ -25,7 +25,7 @@
           <div class="contenedor-nombre-logo-aerolinea">
 
             <div class="contenedor-logo-aerolinea-nombre">
-              <img class="logo-avianca-misviajes" src="{% static 'img/img-avianca.png' %}" alt="Logo Aerolinea">
+              <img class="logo-avianca-misviajes" src="{{object.vuelo.id_aerolinea.logo_aerolinea.url}}" alt="Logo Aerolinea">
 
               <div class="nombre-aerolinea" >
                 <span style="font-size: 20px; color: #505050;">{{object.vuelo.id_aerolinea.nombre_aerolinea}}</span>
