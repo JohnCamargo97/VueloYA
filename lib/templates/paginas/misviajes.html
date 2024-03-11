@@ -100,13 +100,13 @@
                 <span style="margin-left: 5px;">$ {{object.total|intcomma}} COP</span>
               </div>
 
+              <a class="boton-viaje-borrar"href="{% url 'viajes_borrar' object.pk %}"><img class="icono-borrar-boleto" src="{% static 'favicon.ico/IconoBasura.png' %}" alt="">Borrar Boleto</a>
+
             </div>
             
           </div>
 
         </div>
-        
-        <a class="boton-viaje-borrar"href="{% url 'viajes_borrar' object.pk %}">Borrar</a>
 
       </div>
 

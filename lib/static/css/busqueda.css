@@ -46,6 +46,11 @@ body::-webkit-scrollbar-thumb{
     width: 20px;
 }
 
+.icono-borrar-boleto{
+    margin-right: 5px;
+    width: 20px;
+}
+
 /*Iconos*/
 
 
@@ -1247,6 +1252,21 @@ body::-webkit-scrollbar-thumb{
     margin-top: 0;
     margin-bottom: 1rem;
     border-bottom: 1px solid #808080;
+}
+
+.boton-viaje-borrar{
+    font-weight: 600px;
+    color: #505050;
+    display: flex;
+    align-items: center;
+}
+
+.boton-viaje-borrar:hover{
+    color: #303030;
+}
+
+.accordion-body{
+    padding: 10px!important;
 }
 
 /*Vista Formulario Pagos*/
@@ -2560,6 +2580,11 @@ body::-webkit-scrollbar-thumb{
         margin-bottom: 1rem;
         border-bottom: 1px solid #808080;
     }
+
+    .accordion-body{
+        padding: 20px!important;
+    }
+    
 
     /*Vista Formulario Pagos*/
 
