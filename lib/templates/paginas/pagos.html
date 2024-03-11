@@ -32,6 +32,7 @@
                                 <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
                             </div>
                             <br>
+                      
                         {% for pasajeroform in userpasajeroFormset %}
                             <h5 style="color: #505050;">Pasajero {{ forloop.counter }}</h5>
                             
@@ -72,6 +73,7 @@
                             </p>
                             <br>
                         {% endfor %}
+                        
                     </div>
                     
                     <div class="contenedor-vouchers">
@@ -196,7 +198,7 @@
         
                     <div class="aceptar-terminos-compra">
                         <input class="cotenedor-input-aceptar-terminos" type="checkbox" id="id_tyc" name="tyc" required>
-                        <label for="aceptar">Leí y acepto las <a href="#">condiciones de compra, políticas de privacidad y políticas de cambios y cancelaciones.</a></label>
+                        <label for="aceptar">Leí y acepto las <a style="color: #1B1A55;" href="#">condiciones de compra, políticas de privacidad y políticas de cambios y cancelaciones.</a></label>
                     </div>
 
                     <div class="contenedor-boton-comprar">
@@ -279,12 +281,12 @@
                                             <h3 style="color: #505050;">Detalles del Vuelo</h3>
                                         </div>
                     
-                                        <div class="uno">
+                                        <div class="contenedor-mayor-busqueda-vuelos">
                                             <div class="busqueda-vuelos">
                             
                                                 <div class="ida-vuelo">
                                                     <div class="icono-avion">
-                                                        <span> <img src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
+                                                        <span> <img class="iconos-aviones" src="{% static 'favicon.ico/IconoSalidaAvion.png' %}" alt="Icono Avion Ida"> IDA</span>
                                                     </div>
                                                     <div class="fecha-salida-avion">
                                                         <span>{{DetallesVuelo.fechasalida}}</span>
@@ -293,7 +295,9 @@
                                 
                                                 <div class="info-vuelos">
                                                     <div class="nombre-aerolinea">
+
                                                         <span> <img src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+
                                                     </div>
                                                     <div class="horario-viaje">
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
@@ -302,7 +306,7 @@
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
                                                         <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horasalida2}} </span>
                                                         <span>-----</span>
-                                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                        <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                                                     </div>
                                                     <span id="duracion1" class="tiempo-viaje"></span>
                                                     <script> 
@@ -312,7 +316,7 @@
                                 
                                                 <div class="regreso-vuelo">
                                                     <div class="icono-avion">
-                                                        <span> <img src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
+                                                        <span> <img class="iconos-aviones" src="{% static 'favicon.ico/IconoRegresoAvion.png' %}" alt="Icono Avion Ida"> Regreso</span>
                                                     </div>
                                                     <div class="fecha-regreso-avion">
                                                         <span>{{DetallesVuelo.fechavuelta}}</span>
@@ -321,7 +325,7 @@
                                 
                                                 <div class="info-vuelos">
                                                     <div class="nombre-aerolinea">
-                                                        <span> <img src="{% static 'img/Avianca.png' %}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+                                                        <span> <img class="logo-de-aerolineas" src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
                                                     </div>
                                                     <div class="horario-viaje">
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.destino}} </span>
@@ -330,7 +334,7 @@
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>
                                                         <span style="display: block; font-weight: bold;"> {{DetallesVuelo.horavuelta2}} </span>
                                                         <span>-----</span>
-                                                        <span style="cursor: pointer;"> <img src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
+                                                        <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                                                     </div>
                                                     <span id="duracion2" class="tiempo-viaje"></span>
                                                     <script> 

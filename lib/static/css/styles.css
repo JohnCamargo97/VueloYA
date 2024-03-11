@@ -5,12 +5,42 @@ body {
 
 }
 
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #dddddd;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #1B1A55;
+}
+
 .container {
     max-width: 1200px; /* Limita el ancho máximo del contenedor principal */
     margin: 0 auto; /* Centra el contenedor en la página */
 }
 
+.iconos-vueloya{
+    width: 22px;
+    margin-right: 4px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 2.2px;
+
+}
+
+
+
+
+
 /*Navbar*/
+
+.contenedor-navbar{
+    width: 100%;
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .rounded-circle{
     width: 40px;
@@ -19,23 +49,38 @@ body {
 
 .navbar-collapse{
     margin-top: 20px;
-    color: #505050!important;
+    color: #1B1A55!important;
     flex-direction: row-reverse!important;
 }
 
+.navbar-toggler{
+    background-color: rgb(255, 255, 255, 0.80)!important;
+    box-shadow: none!important;
+}
+
+
 .contenedor-logo-vueloYa{
-    background-color: #1640D6;
     padding: 8px;
     font-size: 20px;
     font-weight: 700;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 0%;
     cursor: pointer;
+}
+
+.contactanos-and-iniciarsesion{
+    color: white!important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .nombre-usuario{
     font-weight: 600;
-    color: #505050;
+    color: #ffffff!important;
+}
+
+.opciones-navbar{
+    color: #ffffff!important;
 }
 
 .contenedor-menu-opciones{
@@ -50,8 +95,12 @@ body {
 }
 
 .contenedor-nombre-vueloya{
-    color: #505050;
     text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.80);
+}
+
+.icono-correo{
+    width: 25px;
 }
 
 /*Navbar*/
@@ -62,41 +111,51 @@ body {
 
 /*Formuario Destinos*/
 
-.mauro-uno{
-    background-color: #eeeeee;
-    margin-top: 10px;
+.contenedor-mayor-home{
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    height: 400px; 
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ) 
+     ,url("../img/playaDos.jpg");
 
 }
 
-.mauro-dos{
-    background-color: #1640D6;
+.contenedor-menor-home{
+    background-color: rgba(27,26,85,0.80);
+    width: 80%;
     height: auto;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: rgb(88, 88, 88);
-}
-
-.navbar-title{
-    color: white;
 }
 
 .contenedor-origen-destino{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .origen{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -106,7 +165,7 @@ body {
 }
 
 .destino{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     border: none;
 }
@@ -118,14 +177,16 @@ body {
 
 .contenedor-fechas-vuelos{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .fecha-ida{
-    width: 100%;
+    width: 90%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -136,7 +197,8 @@ body {
 }
 
 .fecha-regreso{
-    width: 100%;
+    width: 90%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -149,15 +211,16 @@ body {
 
 .contenedor-pasajeros{
     background-color: white;
-    display: block;
-    margin-bottom: 6px;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .num-pasajeros{
-    width: 70%;
-    padding: 2px;
+    width: 100%;
+    height: 30px;
     border-radius: 5px;
     border: none;
     color: #808080;
@@ -168,11 +231,11 @@ body {
     box-shadow: none; /* Elimina cualquier sombra al hacer clic */
 }
 
-.boton-uno{
+.boton-buscar{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 72, 72);
+    background-color: #ED155D;
     width: 100%;
     padding: 8px;
     border-radius: 8px;
@@ -182,8 +245,8 @@ body {
     color: white;
 }
 
-.boton-uno:hover{
-    background-color: rgb(255, 81, 81);
+.boton-buscar:hover{
+    background-color: #ff1664;
     transform: translateY(1px);
 }
 
@@ -200,7 +263,7 @@ body {
 
 /*Contenedor de Publicidad*/
 
-.publicdad{
+.publicidad{
     width: 100%;
     height: auto;
     margin-top: 0;
@@ -229,16 +292,6 @@ body {
     transform: scale(0.9);
 }
 
-/*COLORES
-
-#ED155D FUTSIA
-#00BFC3 AZUL RARO
-#2FF3E0 AZUL RARO CLARITO
-#F8D210 AMARILLO
-#30097D AZUL RARO OSCURO
-
-*/
-
 /*Contenedor de Publicidad*/
 
 
@@ -260,10 +313,9 @@ body {
 }
 
 .precio-jamaica{
+    font-weight: 600;
     color: #505050;
     text-decoration: none;
-    color: #808080;
-
 }
 
 .jamaica{
@@ -300,11 +352,11 @@ body {
     border-top-right-radius: 5px!important;
 }
 
-.boton-dos{
+.boton-ver-mas{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1640D6;
+    background-color: #1B1A55;
     width: 100px;
     padding: 10px;
     color: #ffffff;
@@ -312,9 +364,9 @@ body {
     border-radius: 8px;
 }
 
-.boton-dos:hover{
+.boton-ver-mas:hover{
     color: #ffffff;
-    background-color: #284ed8;
+    background-color: #212068;
     transform: translateY(1px);
 }
 
@@ -326,7 +378,7 @@ body {
 
 /*Top lugares más buscados*/
 
-.mauro-tres{
+.lugares-mas-buscados{
     background-color: #eeeeee;
     display: flex;
     align-items: center;
@@ -470,8 +522,8 @@ body {
     margin-top: 20px;
 }
 
-.boton-tres{
-    background-color: #1640D6;
+.boton-enviar{
+    background-color: #1B1A55;
     width: 20%;
     padding: 8px;
     border-radius: 8px;
@@ -480,8 +532,8 @@ body {
     color: white;
 }
 
-.boton-tres:hover{
-    background-color: #284ed8;
+.boton-enviar:hover{
+    background-color: #212068;
     transform: translateY(1px);
 }
 
@@ -546,7 +598,7 @@ body {
     font-size: 20px;
 }
 
-.footer-dos {
+.footer-copyright-and-redesociales{
     color: #505050;
     padding: 10px;
     text-align: center;
@@ -590,11 +642,8 @@ body {
 
     .contenedor-logo-vueloYa{
         font-size: 25px;
-    }
-
-    .contenedor-nombre-vueloya{
-        color: #505050;
-        text-decoration: none;
+        border-top-right-radius: 20px;
+        border-end-end-radius: 20px;
     }
 
     .contenedor-menu{
@@ -606,24 +655,24 @@ body {
 
     .navbar-collapse{
         flex-grow: 0!important;
-        border-radius: 12px;
         height: 60px;
         padding: 10px;
         margin-top: 0px;
+        width: 30%;
+    }
+
+    .contactanos-and-iniciarsesion:hover{
+        border-bottom: 1px solid #ffffff;
     }
 
     .nombre-usuario{
-        font-weight: 600;
-        color: #505050;
         margin-left: 0px;
     }
 
-    .dropdown-toggle{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 10px;
+    .nombre-usuario:hover{
+        border-bottom: 1px solid #ffffff;
     }
+    
 
     .linea-separadora{
         margin-right: 10px;
@@ -631,7 +680,11 @@ body {
     }
 
     .contenedor-menu-opciones:hover{
-        border-bottom: 1px solid #505050;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .icono-correo{
+        width: 35px;
     }
 
     /*Navbar*/
@@ -642,29 +695,33 @@ body {
 
     /*Formuario Destinos*/
 
-    .mauro-uno{
+    .contenedor-mayor-home{
         height: 300px;
 
     }
 
-    .mauro-dos{
-        height: 180px;
-
+    .contenedor-menor-home{
+        background-color: rgba(27,26,85,0.95);
+        margin-top: 150px;
+        height: 150px;
     }
 
-    .formulario-uno{
+    .formulario-busqueda-de-vuelos{
+        width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        height: auto;
     }
 
     .contenedor-origen-destino{
         background-color: rgb(255, 255, 255);
         width: 33%;
-        height: 80px;
+        height: 100px;
         border-radius: 0%;
         border-top-left-radius: 20px;
         border-end-start-radius: 20px;
+        margin-bottom: 0;
         display: flex;
         align-items: center;
 
@@ -673,8 +730,9 @@ body {
     .contenedor-fechas-vuelos{
         background-color: rgb(255, 255, 255);
         width: 33%;
-        height: 80px;
+        height: 100px;
         border-radius: 0%;
+        margin-bottom: 0;
         display: flex;
         align-items: center;
     }
@@ -682,20 +740,33 @@ body {
     .contenedor-pasajeros{
         background-color: rgb(255, 255, 255);
         width: 20%;
-        height: 80px;
+        height: 100px;
         border-radius: 0%;
         border-top-right-radius: 20px;
         border-end-end-radius: 20px;
+        margin-bottom: 0;
         display: flex;
         align-items: center;
     }
 
-    .boton-uno{
+    .boton-buscar{
         width: 10%;
+        height: 50px;
         margin-top: 0;
     }
 
     /*Formuario Destinos*/
+
+
+
+
+
+    /*Ofertas que no te puedes perder*/
+        .contenedor-ofertas{
+            margin-top: 180px;
+        }
+
+    /*Ofertas que no te puedes perder*/
 
 
 
@@ -758,9 +829,8 @@ body {
         text-align: start;
     }
 
-    .footer-dos {
+    .footer-copyright-and-redesociales{
         margin-top: 10px;
-        padding: 10px;
         display: flex;
         justify-content: space-between;
         
@@ -771,7 +841,7 @@ body {
         cursor: auto;
     }
 
-    .pp-p{
+    .contenedor-del-copyright{
         margin: 0;
 
     }
@@ -783,3 +853,17 @@ body {
 
 /*Pantalla grande*/
 
+/*COLORES
+
+#ED155D FUTSIA
+#fa1662 FUTSIA CLARO HOVER
+
+#00BFC3 AZUL RARO
+#2FF3E0 AZUL RARO CLARITO
+#F8D210 AMARILLO
+#30097D AZUL RARO OSCURO
+
+
+#1B1A55 Azul Oscuro
+#212068 Azul Hover
+#9290C3 Violeta claro

@@ -10,6 +10,7 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 
+
   <div class="container-fluid mauro-uno">
     <div class="container mauro-dos">
       <div class="container navbar-uno">
@@ -17,265 +18,299 @@
           <h5 class="navbar-title">VUELOS <img src="{% static 'favicon.ico/IconoAvion.png' %}" alt="Icono Avion"></h5>
         </nav>
 
-          <form class="formulario-uno" action="#" method="post">
-            {% csrf_token%}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="contenedor-origen-destino row">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav">
+            <li class="nav-item" style="display:flex; align-items: center; justify-content: end;">
+              <a href="{% url 'perfil_user' %}"><img class="rounded-circle" src="{{user.uservueloya.picture.url}}"></a>
+              <a href="{% url 'perfil_user' %}" class="nav-link active nombre-usuario">
+                {{ user.username }}
+              </a>
+            </li>
+            <li class="nav-item">
+              <li class="nav-item contenedor-menu-opciones"><a class="nav-link active opciones-navbar" href="{% url 'misviajes' %}">Mis viajes</a></li>
+            </li>
+            <li class="nav-item">
+              <li class="nav-item contenedor-menu-opciones"><a class="nav-link active opciones-navbar" href="{% url 'cerrarsesion' %}">Cerrar sesion</a></li>
+            </li>
+          </ul>
 
-              <div class="col">
-                <label for="origen">Origen</label>
-                <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
-              </div>
+          {% else %} 
+          <ul class="navbar-nav contenedor-iniciarsesion-and-contactanos">
+            <li class="nav-item">
+              <a class="nav-link active contactanos-and-iniciarsesion" aria-current="page" href="{% url 'inicio_user' %}"><img class="iconos-vueloya" src="{% static 'favicon.ico/IconoUsuarioBlanco.png' %}" alt="">Iniciar Sesión</a>
+            </li>
+          </ul>
 
-              <div class="col">
-                <label for="destino">Destino</label>
-                <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
-              </div>
+          <ul class="navbar-nav contenedor-iniciarsesion-and-contactanos">
+            <li class="nav-item">
+              <a class="nav-link active contactanos-and-iniciarsesion" aria-current="page" href="#footer-contenido-sobrenosotros"><img class="iconos-vueloya" src="{% static 'favicon.ico/IconoContactanos.png' %}" alt="">Contactanos</a>
+            </li>
+          </ul>
+          {% endif %}
 
-            </div>
-
-
-            <div class="contenedor-fechas-vuelos row">
-
-              <div class="col">
-                <label for="fecha-ida">Fecha Ida</label>
-                <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
-              </div>
-
-              <div class="col">
-                <label for="fecha-regreso">Fecha Regreso</label>
-                <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
-              </div>
-
-            </div>
-
-
-            <div class="contenedor-pasajeros row">
-
-              <div class="col">
-
-                <label for="pasajeros">Número de Pasajeros</label>
-                <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
-                  <option value="1">1 pasajero</option>
-                  <option value="2">2 pasajeros</option>
-                  <option value="3">3 pasajeros</option>
-                  <option value="4">4 pasajeros</option>
-                </select>
-                
-              </div>
-
-            </div>
-
-
-            <button class="boton-uno" type="submit"><img class="icono-busqueda" src="{% static 'favicon.ico/IconoBusqueda.png' %}" alt="">Buscar</button>
-
-
-          </form>
+        </div>
 
       </div>
+    </nav>
+    
+    <div class="container contenedor-menor-home">
+
+      <form class="formulario-busqueda-de-vuelos" action="#" method="post">
+        {% csrf_token%}
+
+        <div class="contenedor-origen-destino">
+
+          <div class="col">
+            <label for="origen">Origen</label>
+            <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
+          </div>
+
+          <div class="col">
+            <label for="destino">Destino</label>
+            <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
+          </div>
+
+        </div>
+
+
+        <div class="contenedor-fechas-vuelos">
+
+          <div class="col">
+            <label for="fecha-ida">Fecha Ida</label>
+            <input class="fecha-ida" type="date" id="fecha-ida" name="fecha-ida">
+          </div>
+
+          <div class="col">
+            <label for="fecha-regreso">Fecha Regreso</label>
+            <input class="fecha-regreso" type="date" id="fecha-regreso" name="fecha-regreso">
+          </div>
+
+        </div>
+
+
+        <div class="contenedor-pasajeros">
+
+          <div class="col">
+
+            <label for="pasajeros">Número de Pasajeros</label>
+            <select class="num-pasajeros" id="pasajeros" name="pasajeros" required>
+              <option value="1">1 pasajero</option>
+              <option value="2">2 pasajeros</option>
+              <option value="3">3 pasajeros</option>
+              <option value="4">4 pasajeros</option>
+            </select>
+            
+          </div>
+
+        </div>
+
+        <button class="boton-buscar" type="submit"><img class="icono-busqueda" src="{% static 'favicon.ico/IconoBusqueda.png' %}" alt="">Buscar</button>
+      </form>
+
     </div>
+
   </div>
 
 
-    <div class="container publicdad">
 
-      <div class="contenedor-publicidad">
 
-        <img class="img-publicidad-uno" src="{% static 'img/PublicidadUno.png' %}" alt="">
+  <div class="container contenedor-ofertas">
+    <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;">Ofertas que no te puedes perder</h3>
 
+      <div class="card-group">
+        {% for oferta in ofertas%}
+          <div class="card card-with-margin">
+            <img class="card-img-top" src="{{oferta.image.url}}" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #505050;">{{oferta.vuelo.destino}}</h5>
+              <p class="card-text" style="color: #505050;">{{oferta.descripcion}}</p>
+            </div>
+            <div class="card-footer jamaica">
+              <span class="precio-jamaica" href="">$ {{oferta.vuelo.precio|intcomma}} COP</span>
+              <a class="boton-ver-mas" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver Más</a>
+            </div>
+          </div> 
+        {% endfor %}
       </div>
 
-    </div>
+  </div>
+
+
+
+  <div class="container-fluid lugares-mas-buscados">
 
     <div class="container">
-      <h3 class="ofertas" style="color: #505050; margin-bottom: 15px;">Ofertas que no te puedes perder</h3>
 
-        <div class="card-group">
-          {% for oferta in ofertas%}
-            <div class="card card-with-margin">
-              <img class="card-img-top" src="{{oferta.image.url}}" alt="...">
-              <div class="card-body">
-                <h5 class="card-title" style="color: #505050;">{{oferta.vuelo.destino}}</h5>
-                <p class="card-text" style="color: #505050;">{{oferta.descripcion}}</p>
-              </div>
-              <div class="card-footer jamaica">
-                <span class="precio-jamaica" href="">$ {{oferta.vuelo.precio|intcomma}} COP</span>
-                <a class="boton-dos" href="{% url 'busqueda' origen=oferta.vuelo.origen destino=oferta.vuelo.destino pas=1 %}">Ver Más</a>
-              </div>
-            </div> 
-          {% endfor %}
-        </div>
+      <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px;">Lugares más buscados</h3>
 
-    </div>
-
-
-
-    <div class="container-fluid mauro-tres">
-
-      <div class="container">
-
-        <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px;">Lugares más buscados</h3>
-
-        <div class="row tabla-uno">
-          <div class="col-md-6 top-lugares">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres.png' %}" class="d-block w-100" alt="">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>San Andres</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres2.png' %}" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>San Andres</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres3.png' %}" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>San Andres</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+      <div class="row tabla-uno">
+        <div class="col-md-6 top-lugares">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres.png' %}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>San Andres</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres2.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>San Andres</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres3.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>San Andres</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="col-md-6 informacion">
-            <img src="{% static 'img/NuestraAppVueloya.png' %}" class="img-fluid" alt="Responsive image">
-          </div>
         </div>
-      </div>  
-      
-    </div>
-
-    <div class="container recibir-ofertas">
-      <div class="container">
-
-        <h3 class="texto-ofertas"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
-
-        <div class="presentacion">
-          <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
-          <button class="boton-tres" type="submit">Enviar</button>
+        <div class="col-md-6 informacion">
+          <img src="{% static 'img/NuestraAppVueloya.png' %}" class="img-fluid" alt="Responsive image">
         </div>
-
-        <div class="politicas-privacidad">
-          Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1640D6;" href="####">políticas de privacidad.</a>
-        </div>
-
       </div>
-    </div>
+    </div>  
+    
+  </div>
 
-    <div class="container-fluid informacion-footer">
-      <div class="container">
-        <footer class="footer-uno">
-
-          <div class="row info-vueloya">
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
-              <h5 class="text-uppercase">Mi Cuenta</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mis Viajes</a>
-                </li>
-                <li>
-                  <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mi Perfil</a>
-                </li>
-              </ul>
-            </div>
-
-
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Somos VueloYA</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Relación con Inversores</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Sobre VueloYA</a>
-                </li>
-              </ul>
-            </div>
-
-
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Confianza en tus compras</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!" class="text-body-uno">Terminos y condiciones</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Promociones vigentes</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Politica de privacidad</a>
-                </li>
-              </ul>
-            </div>
-
-
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Aerolíneas</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!" class="text-body-uno">American Airlines</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Air France</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Avianca</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-body-uno">Latam</a>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          
-        </footer>
-      </div>
-    </div>
-
+  <div class="container recibir-ofertas">
     <div class="container">
-      <footer class="footer-dos">
-        <div class="footer-izquierda">
-            <p class="pp-p">© 2023 Copyright:VueloYA</p>
+
+      <h3 class="texto-ofertas"><img class="icono-correo" src="{% static 'favicon.ico/IconoCorreo.png' %}" alt="Icono de correo"> Ofertas exclusivas a tu correo</h3>
+
+      <div class="presentacion">
+        <input class="ofertas-correo" type="email" placeholder="Ingresa el correo...">
+        <button class="boton-enviar" type="submit">Enviar</button>
+      </div>
+
+      <div class="politicas-privacidad">
+        Recibirás correos promocionales de VueloYA. Para más información consulta las <a style="color: #1B1A55;" href="####">políticas de privacidad.</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid informacion-footer">
+    <div class="container">
+      <footer id="footer-contenido-sobrenosotros">
+
+        <div class="row info-vueloya">
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
+            <h5 class="text-uppercase">Mi Cuenta</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mis Viajes</a>
+              </li>
+              <li>
+                <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mi Perfil</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Somos VueloYA</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-body-uno">Ven a Trabajar a VueloYA </a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Sobre VueloYA</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">+57 3208503769</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">vueloya@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Confianza en tus compras</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-body-uno">Terminos y condiciones</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Promociones vigentes</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Politica de privacidad</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Aerolíneas</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-body-uno">American Airlines</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Air France</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Avianca</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body-uno">Latam</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-        <div class="footer-derecha">
-            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
-            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
-            <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
-        </div>
+
+        
       </footer>
     </div>
+  </div>
+
+  <div class="container">
+    <footer class="footer-copyright-and-redesociales">
+
+      <div class="footer-izquierda">
+          <p class="contenedor-del-copyright">© 2023 Copyright:VueloYA</p>
+      </div>
+
+      <div class="footer-derecha">
+          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoFacebook.png' %}" alt="Facebook"></a>
+          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoX.png' %}" alt="Twitter"></a>
+          <a href="#" ><img class="iconos-redes-sociales" src="{% static 'favicon.ico/IconoInstagram.png' %}" alt="Instagram"></a>
+      </div>
+      
+    </footer>
+  </div>
 
 {% endblock %}
