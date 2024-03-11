@@ -28,13 +28,14 @@
                     {{ userpasajeroFormset.management_form }}
                     <div class="contenedor-formulario-pasajeros"> 
                                    
-                        <div class="contenedor-quienes-viajan">
-                            <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
-                        </div>
-
+                            <div class="contenedor-quienes-viajan">
+                                <h3 style="color: #505050; font-size: 25px;">¿Quienes Viajan?</h3>
+                            </div>
+                            <br>
+                      
                         {% for pasajeroform in userpasajeroFormset %}
+                            <h5 style="color: #505050;">Pasajero {{ forloop.counter }}</h5>
                             
-                            {{pasajeroform}}
                             <p class="contenedor-quienes-viajan">
                                 <label for="id_nombre">Nombre</label>
                                 {{pasajeroform.nombre}}
@@ -61,9 +62,16 @@
                             </p>
 
                             <p class="contenedor-tipo-documento">
-                                <label for="id_puesto">Puesto:</label>
-                                {{pasajeroform.puesto}} 
+                                <label for="id_puesto">Puestos disponibles:</label>
+                                <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
+                                    {% for puesto in puestos %}
+                                        <option value="{{puesto.0}}">{{puesto.0}}</option>
+                                    {{puesto.0}}
+                                    {% endfor%}
+    
+                                </select>
                             </p>
+                            <br>
                         {% endfor %}
                         
                     </div>
@@ -287,7 +295,9 @@
                                 
                                                 <div class="info-vuelos">
                                                     <div class="nombre-aerolinea">
-                                                        <span> <img class="logo-de-aerolineas" src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+
+                                                        <span> <img src="{{DetallesVuelo.id_aerolinea.logo_aerolinea.url}}" alt="Aerolinea"> {{DetallesVuelo.id_aerolinea.nombre_aerolinea}}</span>
+
                                                     </div>
                                                     <div class="horario-viaje">
                                                         <span style="cursor: pointer;"> {{DetallesVuelo.origen}} </span>

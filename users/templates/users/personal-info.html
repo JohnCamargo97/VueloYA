@@ -77,6 +77,8 @@
                                 <label class="label-datos-facturacion" for="id_fechaNacimiento">Fecha de Nacimiento</label>
                                 <input class="input-datos-facturacion" type="date" name="fechaNacimiento" value='{{ user.uservueloya.fechaNacimiento|date:"Y-m-d" }}' id="id_fechaNacimiento">
                                 
+                                <label class="label-datos-facturacion" for="id_picture">Picture:</label>
+                                <input class="input-datos-facturacion" type="file" style="font-size: 1rem;" name="picture" accept="application/png,application/jpg" value="{{user.uservueloya.picture}}" id="id_picture">
                             </div>
 
                         </div>
