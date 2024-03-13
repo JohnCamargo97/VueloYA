@@ -15,7 +15,7 @@ class vueloFormAdmin(admin.ModelAdmin):
     
 # Register your models here.
 admin.site.register(aerolinea)
-admin.site.register(Vuelo, vueloFormAdmin)
+admin.site.register(Vuelo)
 admin.site.register(puestos)
 admin.site.register(userVueloYa)
 admin.site.register(oferta)
