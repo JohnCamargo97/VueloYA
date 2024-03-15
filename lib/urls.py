@@ -6,6 +6,7 @@ from users import views as users_views
 
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('home', views.home, name='home'),
     path('busqueda/<str:origen>/<str:destino>/<int:pas>/', views.resultado.as_view(), name='busqueda'),
     path('misviajes', views.misviajes, name='misviajes'),

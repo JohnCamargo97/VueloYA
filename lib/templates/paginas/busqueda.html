@@ -191,7 +191,7 @@
           </div>
         </div>
 
-        {% for vuelo in lista_resultado %}
+        {% for vuelo in object_list %}
 
           <div class="contenedor-mayor-busqueda-vuelos">
             <div class="busqueda-vuelos">
@@ -279,9 +279,9 @@
 
           {% if page_obj.has_previous %}
 
-            <a class="contenedor-boton-anterior-and-siguiente" href="?page=1">&laquo;</a>
+            <a class="contenedor-boton-anterior-and-siguiente" href="?page=1{% if querystring %}&amp;{{ querystring }}{% endif %}">&laquo;</a>
 
-            <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.previous_page_number }}" >&lt;</a>
+            <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.previous_page_number }}{% if querystring %}&amp;{{ querystring }}{% endif %}" >&lt;</a>
 
           {% else %}
 
@@ -297,9 +297,9 @@
       
           {% if page_obj.has_next %}
           
-              <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.next_page_number }}">&gt;</a>
+              <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.next_page_number }}{% if querystring %}&amp;{{ querystring }}{% endif %}">&gt;</a>
 
-              <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+              <a class="contenedor-boton-anterior-and-siguiente" href="?page={{ page_obj.paginator.num_pages }}{% if querystring %}&amp;{{ querystring }}{% endif %}">&raquo;</a>
 
           {% else %}
           
