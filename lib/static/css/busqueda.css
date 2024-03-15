@@ -250,8 +250,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 .accordion-button:not(.collapsed){
-    color: #505050 !important;
-    background-color: #eeeeee!important;
+    color: #212529 !important;
+    background-color: #ffffff!important;
 }
 
 .accordion-button:not(.collapsed)::after{
@@ -260,7 +260,7 @@ body::-webkit-scrollbar-thumb{
 
 .accordion-button{
     box-shadow: none!important;
-    background-color: #eeeeee!important;
+    background-color: #ffffff!important;
 }
 
 .monedas-para-elegir{
@@ -757,7 +757,7 @@ body::-webkit-scrollbar-thumb{
 /*Resultados de la busqueda de vuelos*/
 
 .contenedor-mayor-busqueda{
-    background-color: #eeeeee;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
 }
@@ -776,7 +776,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .contenido-busquedas{
@@ -787,28 +787,44 @@ body::-webkit-scrollbar-thumb{
 }
 
 .contenedor-mayor-lugares-turisticos{
-    background-color: #9c9c9c;
+    background-color: #eeeeee;
     height: auto;
     display: flex;
     align-items: center;
-    
-}
-
-.cotenedor-lugares-turisticos-de-la-ciudad{
-
-}
-
-.contenedor-imagenes-lugares-turisticos{
     margin-top: 20px;
 }
 
-.contenedor-texto-lugares-turisticos{
+.cotenedor-lugares-turisticos-de-la-ciudad{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
+.contenedor-lugares-turisticos{
+    width: 100%!important;
+    height: 400px;
+}
+
+.slide{
+    width: 100%;
+    height: 400px;
+}
+
+.contenedor-imagenes-lugares-turisticos{
+    width: 100%;
+}
+
+.contenedor-texto-lugares-turisticos{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .carousel-item{
-    height: 500px;
+    width: 100%;
+    height: 400px;
     position: relative;
 }
 
@@ -2085,6 +2101,14 @@ body::-webkit-scrollbar-thumb{
         filter: brightness(0.7);
     }
 
+    .cotenedor-lugares-turisticos-de-la-ciudad{
+        flex-direction: row;
+    }
+
+    .contenedor-texto-lugares-turisticos{
+        margin-top: 0px;
+    }
+
     /*Resultados Vuelos*/
 
 
@@ -2097,18 +2121,8 @@ body::-webkit-scrollbar-thumb{
         width:95%;
     }
 
-    .accordion-button:not(.collapsed){
-        color: #212529 !important;
-        background-color: #eeeeee!important;
-    }
-
     .accordion-button:not(.collapsed)::after{
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")!important;
-    }
-
-    .accordion-button{
-        box-shadow: none!important;
-        background-color: #eeeeee!important;
     }
 
     .monedas-para-elegir{
