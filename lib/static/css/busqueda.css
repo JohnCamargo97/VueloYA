@@ -1976,7 +1976,6 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -2236,17 +2235,18 @@ body::-webkit-scrollbar-thumb{
     }
 
     .contenedor-carta-login{
-        flex-direction: row;
+        justify-content: center;
         padding: 20px;
-        width: 80%;
+        width: 50%;
         height: auto;
     }
 
     .contenedor-singin-and-singup{
+        background-color: rgb(27, 26, 85);
         width: 80%;
         height: 650px;
         border-top-left-radius: 0;
-        border-bottom-right-radius: 50px;
+        border-top-right-radius: 0;
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
@@ -2262,12 +2262,10 @@ body::-webkit-scrollbar-thumb{
     
     .botonsingin{
         padding: 20px 35px;
-        transition: transform 0.3s ease; /* Transición suave para el efecto hover */
     }
 
     .botonsingin:hover{
         background-color: #fa1662;
-        transform: scale(1.1);
     }
     
     .botonsingup{
@@ -2276,12 +2274,10 @@ body::-webkit-scrollbar-thumb{
 
     .botonsingup:hover{
         background-color: #fa1662;
-        transform: translateY(1px);
     }
 
     .contenedor-imagen-logo-vueloya{
-        width: 80%;
-        height: auto;
+        display: none;
     }
 
     .imagen-vueloya{
@@ -2342,6 +2338,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .contenedor-formulario-iniciarsesion{
+        background-color: #1B1A55;
         height: 700px;
         border-radius: 12px;
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
