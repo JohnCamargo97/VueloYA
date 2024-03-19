@@ -24,7 +24,8 @@ def home(request):
     #3 ofertas aleatorio con sample y list comprehension
     ofertaIds = sample([offer.id for offer in oferta.objects.all()], 3)
     ofertas = oferta.objects.filter(id__in=ofertaIds).all()
-    lista_vuelos = Vuelo.objects.all()
+    lista_vuelos_origen = Vuelo.objects.all().values("origen").annotate(conteo=Count('origen'))
+    lista_vuelos_destino = Vuelo.objects.all().values("destino").annotate(conteo=Count('destino'))
 
     if request.method == "POST":
         # if this is a POST request we need to process the form data
@@ -43,7 +44,9 @@ def home(request):
 
     context = {
         'ofertas': ofertas,
-        'form_busqueda': form_busqueda
+        'form_busqueda': form_busqueda,
+        'vuelos_origen': lista_vuelos_origen,
+        'vuelos_destino': lista_vuelos_destino
     }
     return render(request, 'paginas/home.html', context)
 
@@ -123,28 +126,41 @@ def pagos(request, pk):
     print('context: ', context)
     return render (request, 'paginas/pagos.html', context)
 
-class resultado(FilterView):
+class PaginatedFilterViews(View):
+    def get_context_data(self, **kwargs):
+        context = super(PaginatedFilterViews, self).get_context_data(**kwargs)
+        if self.request.GET:
+            querystring = self.request.GET.copy()
+            if self.request.GET.get('page'):
+                del querystring['page']
+            context['querystring'] = querystring.urlencode()
+            context['dec_querystring'] = querystring
+        return context
+
+class resultado(PaginatedFilterViews, FilterView):
     model= Vuelo
     template_name= "paginas/busqueda.html"
-    context_object_name = "lista_resultado"
+    #context_object_name = "lista_resultado"
     filterset_class = vueloFilter
     paginate_by = 1
 
     def get_queryset(self, **kwargs):
-        print("request.GET: ",self.request.GET)
-        return Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
+        queryset = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
+        #filter = vueloFilter( self.request.GET, queryset= queryset1 ).qs
+        return queryset
 
     def get_context_data(self, **kwargs):
+        print("running context")
         context = super(resultado, self).get_context_data(**kwargs)
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
         context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-        print(context['aerolineas'])
+        print("getContext: ", context)
         return context
 
-    def get(self, request, *args, **kwargs):
-        print("request.GET: ",request.GET)
-        return super().get(request, *args, **kwargs)
+    #def get(self, request, *args, **kwargs):
+    #    print("request.GET: ", self.request.GET)
+    #    return super().get(self, request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         
@@ -160,38 +176,6 @@ class resultado(FilterView):
                 return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
 
             return render(self.request, self.template_name, self.get_context_data())
-
-class busqueda(View):
-    def get(self, request, *args, **kwargs):
-        lista_resultado = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
-
-        if request.method == "POST":
-            form_busqueda = BusquedaForm(request.POST)
-            form_filtro = filtroForm(request.POST)
-            print(request.POST)
-            if form_filtro.is_valid():
-                print(form_filtro.cleaned_data)
-
-            if form_busqueda.is_valid():
-                request.session['origen'] = request.POST['origen']
-                request.session['destino'] = request.POST['destino']
-                request.session['pasajeros'] = request.POST['pasajeros']    
-                return redirect('busqueda', request.POST['origen'], request.POST['destino'], request.POST['pasajeros'])
-            
-        else:
-            form_busqueda = BusquedaForm()
-            form_filtro = filtroForm()
-
-            AEROLINEAS = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "conteo")
-            print(AEROLINEAS)
-            context = {
-            'origen': self.kwargs["origen"],
-            'destino': self.kwargs["destino"],
-            'aerolineas': AEROLINEAS,
-            'form_filtro': form_filtro,
-            'lista_resultado': lista_resultado
-        }
-            return render(request, 'paginas/busqueda.html', context)
 
 
 def footer(request):
