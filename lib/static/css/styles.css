@@ -380,15 +380,15 @@ body::-webkit-scrollbar-thumb{
 
 .lugares-mas-buscados{
     background-color: #eeeeee;
+    height: auto;
     display: flex;
     align-items: center;
-    height: 550px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .img-fluid{
+    margin-top: 20px;
     border-radius: 8px;
-    margin-top: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease; /* Transición suave para el efecto hover */
 }
@@ -398,6 +398,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .w-100{
+    filter: brightness(0.7);
     border-radius: 8px;
 }
 
@@ -778,6 +779,7 @@ body::-webkit-scrollbar-thumb{
         margin-top: 0px;
         cursor: pointer;
     }
+
     /*Top lugares más buscados*/
 
 

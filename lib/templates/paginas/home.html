@@ -17,7 +17,7 @@
       <div class="contenedor-navbar">
 
         <div class="contenedor-logo-vueloYa">
-          <a class="contenedor-nombre-vueloya" href="{% url 'home' %}"> <span style="color: #ffffff;">Vuelo<span style="color: #ED155D;">YA</span></span></a>
+          <a class="contenedor-nombre-vueloya" href="{% url 'home' %}"> <span style="color: #ffffff; font-family: 'Mogra', system-ui;">Vuelo<span style="color: #ED155D;">YA</span></span></a>
         </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -159,36 +159,48 @@
 
     <div class="container">
 
-      <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px;">Lugares más buscados</h3>
+      <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px; margin-top: 20px;">Lugares más buscados de Colombia</h3>
 
-      <div class="row tabla-uno">
-        <div class="col-md-6 top-lugares">
+      <div class="row" style="margin-bottom: 20px;">
+
+        <div class="col-md-6 dimensiones-lugares-mas-buscados">
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner"style="border-radius: 8px;">
               <div class="carousel-item active">
-                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres.png' %}" class="d-block w-100" alt="">
-                <div class="carousel-caption d-none d-md-block">
+                <img src="{% static 'img/SanAndres.png' %}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-md-block">
                   <h5>San Andres</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres2.png' %}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>San Andres</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                <img src="{% static 'img/LaGuajira.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                  <h5>La Guajira</h5>
                 </div>
               </div>
               <div class="carousel-item">
-                <img style="filter: brightness(0.7);" src="{% static 'img/SanAndres3.png' %}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>San Andres</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                <img src="{% static 'img/SantaMarta.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                  <h5>Santa Marta</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/UrambaBahíaMálaga.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                  <h5>Parque Nacional Natural Uramba Bahía Málaga</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/Barichara.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-md-block">
+                  <h5>Barichara</h5>
                 </div>
               </div>
             </div>
@@ -202,9 +214,11 @@
             </button>
           </div>
         </div>
-        <div class="col-md-6 informacion">
+
+        <div class="col-md-6">
           <img src="{% static 'img/NuestraAppVueloya.png' %}" class="img-fluid" alt="Responsive image">
         </div>
+
       </div>
     </div>  
     
