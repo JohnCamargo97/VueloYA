@@ -213,19 +213,19 @@
                   <div class="horario-viaje">
                     <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.origen}} </span>
-                      <span style=" font-weight: bold;"> {{vuelo.horasalida1}} </span>
+                      <span style=" font-weight: bold;"> {{vuelo.horasalida1|date:'H:i A'}} </span>
                     </div>
                       <span>----</span>
                     <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.destino}} </span>
-                      <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2}} </span>
+                      <span style="display: block; font-weight: bold;"> {{vuelo.horasalida2|date:'H:i A'}} </span>
                     </div>
                       <span>----</span>
                       <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
                   <span  id="duracion1" class="tiempo-viaje"></span>
                   <script> 
-                    document.getElementById("duracion1").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horasalida1}}", "{{vuelo.horasalida2}}");
+                    document.getElementById("duracion1").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horasalida1|date:'H:i A'}}", "{{vuelo.horasalida2|date:'H:i A'}}");
                  </script>
               </div>
 
@@ -247,19 +247,19 @@
                   <div class="horario-viaje">
                     <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.destino}} </span>
-                      <span style="font-weight: bold;"> {{vuelo.horavuelta1}} </span>
+                      <span style="font-weight: bold;"> {{vuelo.horavuelta1|date:'H:i A'}} </span>
                     </div>
                       <span>----</span>
                     <div class="contenedor-horario-vuelo">
                       <span style="cursor: pointer;"> {{vuelo.origen}} </span>
-                      <span style="font-weight: bold;"> {{vuelo.horavuelta2}} </span>
+                      <span style="font-weight: bold;"> {{vuelo.horavuelta2|date:'H:i A'}} </span>
                     </div>
                       <span>----</span>
                       <span style="cursor: pointer;"> <img class="icono-maleta" src="{% static 'favicon.ico/IconoMaleta.png' %}" alt=""></span>
                   </div>
                   <span id="duracion2" class="tiempo-viaje"></span>
                   <script> 
-                    document.getElementById("duracion2").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horavuelta1}}", "{{vuelo.horavuelta2}}");
+                    document.getElementById("duracion2").innerHTML = 'Duracion de Viaje ' + getDuration("{{vuelo.horavuelta1|date:'H:i A'}}", "{{vuelo.horavuelta2|date:'H:i A'}}");
                  </script>
               </div>
 
