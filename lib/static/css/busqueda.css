@@ -654,6 +654,19 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
 }
 
+.contenedor-alerta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.alert-warning{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .input-username-password{
     width: 90%;
     height: 60px;
@@ -2228,9 +2241,9 @@ body::-webkit-scrollbar-thumb{
     .fondo-login{
         background: linear-gradient(to bottom, #fdfffa, #1B1A55); /* Cambia los colores según tus preferencias */
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        padding: 20px;
+        padding: 10px;
         height: 900px;
     }
 
@@ -2243,8 +2256,8 @@ body::-webkit-scrollbar-thumb{
 
     .contenedor-singin-and-singup{
         background-color: rgb(27, 26, 85);
-        width: 80%;
-        height: 650px;
+        width: 65%;
+        height: 500px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);

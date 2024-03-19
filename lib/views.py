@@ -78,6 +78,7 @@ def pagos(request, pk):
     userpasajeroset = formset_factory(userPasajeroForm, extra=nPasajeros)
     print("detalles-precio: ", detallesVuelo.precio, nPasajeros, PUESTOS)
     if request.method == "POST":
+        print("POSTED")
         formset_response = userpasajeroset(request.POST)
         uservoucherForm =  voucherForm(request.POST)
         usermetodopagoForm = metodoPago(request.POST)
@@ -99,7 +100,7 @@ def pagos(request, pk):
             else:
                 print("error con formularios")
         else:
-            print("errors: ", formset_response.non_form_errors(), formset_response.errors)
+            print("errors: ", formset_response.non_form_errors(), formset_response.errors )
         
     else:
         formset_response = userpasajeroset()
