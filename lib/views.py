@@ -24,7 +24,8 @@ def home(request):
     #3 ofertas aleatorio con sample y list comprehension
     ofertaIds = sample([offer.id for offer in oferta.objects.all()], 3)
     ofertas = oferta.objects.filter(id__in=ofertaIds).all()
-    lista_vuelos = Vuelo.objects.all()
+    lista_vuelos_origen = Vuelo.objects.all().values("origen").annotate(conteo=Count('origen'))
+    lista_vuelos_destino = Vuelo.objects.all().values("destino").annotate(conteo=Count('destino'))
 
     if request.method == "POST":
         # if this is a POST request we need to process the form data
@@ -43,7 +44,9 @@ def home(request):
 
     context = {
         'ofertas': ofertas,
-        'form_busqueda': form_busqueda
+        'form_busqueda': form_busqueda,
+        'vuelos_origen': lista_vuelos_origen,
+        'vuelos_destino': lista_vuelos_destino
     }
     return render(request, 'paginas/home.html', context)
 
@@ -123,7 +126,6 @@ def pagos(request, pk):
     print('context: ', context)
     return render (request, 'paginas/pagos.html', context)
 
-
 class PaginatedFilterViews(View):
     def get_context_data(self, **kwargs):
         context = super(PaginatedFilterViews, self).get_context_data(**kwargs)
@@ -132,6 +134,7 @@ class PaginatedFilterViews(View):
             if self.request.GET.get('page'):
                 del querystring['page']
             context['querystring'] = querystring.urlencode()
+            context['dec_querystring'] = querystring
         return context
 
 class resultado(PaginatedFilterViews, FilterView):
@@ -143,8 +146,8 @@ class resultado(PaginatedFilterViews, FilterView):
 
     def get_queryset(self, **kwargs):
         queryset = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
-        #filter = vueloFilter( self.request.GET, queryset= queryset1 ).qs
-        return queryset
+        self.filter = vueloFilter( self.request.GET, queryset= queryset ).qs
+        return self.filter
 
     def get_context_data(self, **kwargs):
         print("running context")
@@ -152,7 +155,7 @@ class resultado(PaginatedFilterViews, FilterView):
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
         context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-        print("getContext: ", context)
+        print("getContext: ", context, "filtro aeros: ",self.filter.values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo"))
         return context
 
     #def get(self, request, *args, **kwargs):

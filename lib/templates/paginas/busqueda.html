@@ -3,8 +3,8 @@
 {% block titulo %} Busqueda {% endblock %}
 
 {% load static %}
-
 {% load humanize %}
+{% load template_extras %}
 
 {% block contenido %} 
 
@@ -93,11 +93,10 @@
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-
+                      
                       <div class="rango-valor">
-
-                        <output id="output">COP 10.000.000</output>
-                        <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" step="50000" max="10000000" id="id_rango_precio" value= "10000000">
+                        <output id="output">{% if dec_querystring %}COP {{dec_querystring.precio__lt}}{% else %}COP 10000000{% endif %}</output>
+                        <input class="rango-valor-vuelos" type="range" name="precio__lt" min="450000" step="50000" max="10000000" id="id_rango_precio" value= "{% if dec_querystring %}{{dec_querystring.precio__lt}}{% else %}10000000{% endif %}">
                         
                         <script>
                           document.getElementById("id_rango_precio").oninput = function() { 
@@ -152,11 +151,13 @@
                     <div class="accordion-body">
 
                       <div class="contenedor-selecion-aerolineas" id="id_aerolinea">
-
+                           
                         {% for aerolinea in aerolineas%}
 
                           <div class="aerolineas">
-                            <input class="input-aerolineas" type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
+                            
+                            
+                            <input class="input-aerolineas"  {% if aerolinea.1|stringformat:"i" in dec_querystring|get_list:'id_aerolinea' %} checked {% endif %} type="checkbox" id="id_aerolinea" name="id_aerolinea" value="{{aerolinea.1}}">
                             <label class="label-aerolineas">{{aerolinea.0}}</label>
                             <span>({{aerolinea.2}})</span>
                           </div>
