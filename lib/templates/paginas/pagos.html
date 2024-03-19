@@ -3,7 +3,7 @@
 {% block titulo %} Pagos {% endblock %}
 
 {% load static %}
-
+{% load template_extras %}
 {% load humanize %}
 
 {% block contenido %}
@@ -61,17 +61,17 @@
 
                         <p class="contenedor-tipo-documento">
                             <label for="id_puesto">Puestos disponibles:</label>
-                            <select class="contenedor-select-viajeros" name="puesto" id="id_puesto">
+                            {{pasajeroform.puesto.field.name }}
+                            
+                            <select class="contenedor-select-viajeros" name="form-{{ forloop.counter|index }}-puesto" id="id_puesto">
                                 {% for puesto in puestos %}
                                     <option value="{{puesto.0}}">{{puesto.0}}</option>
                                 {{puesto.0}}
                                 {% endfor%}
-
                             </select>
                         </p>
                         <br>
                     {% endfor %}
-                    
                 </div>
                 
                 <div class="contenedor-vouchers">

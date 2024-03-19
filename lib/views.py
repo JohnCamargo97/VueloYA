@@ -141,13 +141,13 @@ class resultado(PaginatedFilterViews, FilterView):
     model= Vuelo
     template_name= "paginas/busqueda.html"
     #context_object_name = "lista_resultado"
-    #filterset_class = vueloFilter
+    filterset_class = vueloFilter
     paginate_by = 1
 
     def get_queryset(self, **kwargs):
         queryset = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
-        self.filter = vueloFilter( self.request.GET, queryset= queryset ).qs
-        return self.filter
+        #filter = vueloFilter( self.request.GET, queryset= queryset1 ).qs
+        return queryset
 
     def get_context_data(self, **kwargs):
         print("running context")
@@ -155,7 +155,7 @@ class resultado(PaginatedFilterViews, FilterView):
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
         context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
-        print("getContext: ", context, "filtro aeros: ",self.filter.values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo"))
+        print("getContext: ", context)
         return context
 
     #def get(self, request, *args, **kwargs):
