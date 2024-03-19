@@ -29,12 +29,24 @@
 
                 <div class="col">
                   <label for="origen">Origen</label>
-                  <input class="origen" type="text" id="origen" name="origen" placeholder="Ingresa Origen" required>
+                  <input class="origen" type="text" list="origenes" id="origen" name="origen" placeholder="Ingresa Origen" required>
+                  <datalist id="origenes">
+                    {% for origenes in vuelos_origen %}
+                      <option value="{{origenes.origen}}"></option>
+                    {% endfor %}
+                  </datalist>
                 </div>
-
+                {% for origenes in vuelos_origen %}
+                      <option value="{{origenes.origen}}"></option>
+                    {% endfor %}
                 <div class="col">
                   <label for="destino">Destino</label>
-                  <input class="destino" type="text" id="destino" name="destino" placeholder="Ingresa Destino" required>
+                  <input class="destino" type="text" list="destinos" id="destino" name="destino" placeholder="Ingresa Destino" required>
+                  <datalist id="destinos">
+                    {% for destinos in vuelos_destino %}
+                      <option value="{{destinos.destino}}"></option>
+                    {% endfor %}
+                  </datalist>
                 </div>
 
               </div>

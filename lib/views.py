@@ -156,6 +156,8 @@ class resultado(PaginatedFilterViews, FilterView):
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
         context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
+        context['vuelos_origen'] = lista_vuelos_origen = Vuelo.objects.all().values("origen").annotate(conteo=Count('origen'))
+        context['vuelos_destino'] = lista_vuelos_destino = Vuelo.objects.all().values("destino").annotate(conteo=Count('destino'))
         print("getContext: ", context)
         return context
 
