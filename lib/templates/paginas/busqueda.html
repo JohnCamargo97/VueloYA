@@ -36,9 +36,7 @@
                     {% endfor %}
                   </datalist>
                 </div>
-                {% for origenes in vuelos_origen %}
-                      <option value="{{origenes.origen}}"></option>
-                    {% endfor %}
+                
                 <div class="col">
                   <label for="destino">Destino</label>
                   <input class="destino" type="text" list="destinos" id="destino" name="destino" placeholder="Ingresa Destino" required>
