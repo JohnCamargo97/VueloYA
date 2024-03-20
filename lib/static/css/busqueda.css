@@ -2056,7 +2056,7 @@ body::-webkit-scrollbar-thumb{
 
 /*Pantalla PC*/
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1440px) {
 
     /*Navbar*/
 
@@ -2256,7 +2256,7 @@ body::-webkit-scrollbar-thumb{
 
     .contenedor-singin-and-singup{
         background-color: rgb(27, 26, 85);
-        width: 65%;
+        width: 50%;
         height: 500px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -2312,7 +2312,6 @@ body::-webkit-scrollbar-thumb{
     .fondo-iniciar-sesion{
         background: linear-gradient(to bottom, #fdfffa, #1B1A55); /* Cambia los colores según tus preferencias */
         display: flex;
-        align-items: center;
         justify-content: center;
         padding: 20px;
         height: 900px;
@@ -2330,31 +2329,22 @@ body::-webkit-scrollbar-thumb{
     }
 
     .contenedor-centrar-cartas-signin{
-        flex-direction: row;
         padding: 20px;
         width: 80%;
         height: auto;
     }
 
     .contenedor-mensaje-de-bienvenida{
-        background-color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-        width: 80%;
-        height: 625px;
-        margin-bottom: 0;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        display:  none;
     }
 
     .contenedor-formulario-iniciarsesion{
-        background-color: #1B1A55;
-        height: 700px;
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        width: 32%;
+        height: auto;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 25px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
     }
 
     .boton-iniciar:hover{
@@ -2372,14 +2362,12 @@ body::-webkit-scrollbar-thumb{
     .fondo-registrarse{
         background: linear-gradient(to bottom, #fdfffa, #1B1A55); /* Cambia los colores según tus preferencias */
         display: flex;
-        align-items: center;
         justify-content: center;
         padding: 20px;
         height: 900px;
     }
 
     .contenedor-centrar-cartas-signup{
-        flex-direction: row;
         padding: 20px;
         width: 80%;
         height: auto;
@@ -2397,22 +2385,16 @@ body::-webkit-scrollbar-thumb{
     }
 
     .contenedor-mensaje-de-bienvenida-registro{
-        background-color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-        width: 80%;
-        height: 625px;
-        margin-bottom: 0;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        display: none;
     }
 
     .contenedor-formulario-registrarse{
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        width: 32%;
+        height: auto;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 25px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
     }
 
     .boton-registrarse:hover{
