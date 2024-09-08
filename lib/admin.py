@@ -4,7 +4,7 @@ from django import forms
 from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
-from .models import Vuelo, puestos, aerolinea, userVueloYa, oferta, historicoReserva
+from .models import Vuelo, puestos, aerolinea, userVueloYa, oferta, historicoReserva, lugarTuristico
 
 
 class vueloFormAdmin(admin.ModelAdmin):
@@ -20,3 +20,4 @@ admin.site.register(puestos)
 admin.site.register(userVueloYa)
 admin.site.register(oferta)
 admin.site.register(historicoReserva)
+admin.site.register(lugarTuristico)

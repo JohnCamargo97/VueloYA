@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.db.models import Q
 from django.forms import formset_factory
-from .models import Vuelo, historicoReserva, oferta, aerolinea, puestos
+from .models import Vuelo, historicoReserva, oferta, lugarTuristico, aerolinea, puestos
 from django_filters.views import FilterView
 from .filter import vueloFilter
 from users.models import pasajero
@@ -143,7 +143,7 @@ class resultado(PaginatedFilterViews, FilterView):
     template_name= "paginas/busqueda.html"
     #context_object_name = "lista_resultado"
     filterset_class = vueloFilter
-    paginate_by = 1
+    paginate_by = 5
 
     def get_queryset(self, **kwargs):
         queryset = Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).all()
@@ -152,9 +152,14 @@ class resultado(PaginatedFilterViews, FilterView):
 
     def get_context_data(self, **kwargs):
         print("running context")
+
+        #Turismo del destino
+        turismos = lugarTuristico.objects.filter(vuelo__destino = self.kwargs["destino"]).all()
+
         context = super(resultado, self).get_context_data(**kwargs)
         context['origen'] = self.kwargs["origen"]
         context['destino'] = self.kwargs["destino"]
+        context['turismos'] = turismos
         context['aerolineas'] =  Vuelo.objects.filter(origen__icontains = self.kwargs["origen"], destino__icontains = self.kwargs["destino"]).values("id_aerolinea__nombre_aerolinea", "id_aerolinea").annotate(conteo=Count('id_aerolinea')).values_list("id_aerolinea__nombre_aerolinea", "id_aerolinea", "conteo")
         context['vuelos_origen'] = lista_vuelos_origen = Vuelo.objects.all().values("origen").annotate(conteo=Count('origen'))
         context['vuelos_destino'] = lista_vuelos_destino = Vuelo.objects.all().values("destino").annotate(conteo=Count('destino'))
@@ -180,10 +185,8 @@ class resultado(PaginatedFilterViews, FilterView):
 
             return render(self.request, self.template_name, self.get_context_data())
 
-
 def footer(request):
     return render (request, "paginas/footer.html")
-
 
 def resumen(request):
     return render (request, 'paginas/resumen.html')

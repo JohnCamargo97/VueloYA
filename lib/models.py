@@ -40,7 +40,7 @@ class Vuelo(models.Model):
         return  idstr + "-" +self.origen + "-" + self.destino #+ #" " + str(self.horasalida.hour()
     
 class puestos(models.Model):
-    #id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     Vuelo_id= models.ForeignKey(Vuelo, on_delete=models.CASCADE)
     numero= models.IntegerField(verbose_name='puesto')
     Ejecutivo_bool= models.BooleanField(verbose_name='Ejecutivo o comercial')    
@@ -122,3 +122,13 @@ class oferta(models.Model):
 
     def __str__(self):
         return f'{self.vuelo.origen} - {self.vuelo.destino}'
+
+
+class lugarTuristico(models.Model):
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.DO_NOTHING)
+    nombre_lugar= models.CharField(max_length=100, verbose_name='nombre')
+    image = models.ImageField(default='defaultbg.jpg', upload_to= 'imagen_ofertas')
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return f'{self.nombre_lugar}'
