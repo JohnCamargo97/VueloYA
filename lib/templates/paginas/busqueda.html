@@ -334,7 +334,7 @@
 
   <div class="container">
 
-    <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px; margin-top: 20px;">Lugares turisticos de Bogotá DC</h3>
+      <h3 class="lugares-top" style="color: #505050; margin-bottom: 20px; margin-top: 20px;">Lugares turisticos de {{destino}}</h3>
 
     <div class="cotenedor-lugares-turisticos-de-la-ciudad">
 
@@ -378,9 +378,9 @@
 
       <div class="contenedor-texto-lugares-turisticos">
         {% for turismo in turismos %}
-          <b>{{turismo.nombre_lugar}}
+          <div><b>{{turismo.nombre_lugar}}</b></div>
           {{turismo.descripcion}}
-          <br>
+
         {% endfor %}
       </div>
 
