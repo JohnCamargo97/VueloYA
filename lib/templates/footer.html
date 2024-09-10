@@ -69,14 +69,30 @@
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 info-uno">
                         <h5 class="text-uppercase">Mi Cuenta</h5>
 
+                        {% if user.is_authenticated %}
                         <ul class="list-unstyled">
-                        <li>
-                            <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mis Viajes</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mi Perfil</a>
-                        </li>
+                          <li>
+                            <a href="{% url 'misviajes' %}" class="text-body-uno">Mis Viajes</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'perfil_user' %}" class="text-body-uno">Mi Perfil</a>
+                            
+                          </li>
+            
+                          {% else %}
+                          <ul class="list-unstyled">
+                            <li>
+                              <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mis Viajes</a>
+                            </li>
+                            <li>
+                              <a href="{% url 'iniciarsesion' %}" class="text-body-uno">Mi Perfil</a>
+                              
+                            </li>
+                          </ul>
+            
                         </ul>
+                        {% endif %}
+
                     </div>
 
 
@@ -95,7 +111,7 @@
                             <a href="#!" class="text-body-uno">+57 3208503769</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-body-uno">vueloya@gmail.com</a>
+                            <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=es&ifkv=Ab5oB3rWZlAy5oeP1gVhq0-cTegqKVY6-qoSxaEw3RG7P17aPA40uztDvstZP-A5pHaPqsN7HUncXw&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-1139760149%3A1725567902954073&ddm=0#__utma=29003808.1862050337.1725567899.1725567899.1725567899.1&__utmb=29003808.0.10.1725567899&__utmc=29003808&__utmx=-&__utmz=29003808.1725567899.1.1.utmcsr=co.search.yahoo.com|utmccn=(referral)|utmcmd=referral|utmcct=/&__utmv=-&__utmk=84354266" class="text-body-uno">vueloya@gmail.com</a>
                           </li>
                         </ul>
                     </div>
